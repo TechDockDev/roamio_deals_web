@@ -1,0 +1,870 @@
+[2023-06-08 16:19:14] production.ERROR: SQLSTATE[HY000] [1130] Host '127.0.0.1' is not allowed to connect to this MariaDB server (SQL: select * from `bravo_terms` where `id` = 113) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1130): SQLSTATE[HY000] [1130] Host '127.0.0.1' is not allowed to connect to this MariaDB server (SQL: select * from `bravo_terms` where `id` = 113) at /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php:760)
+[stacktrace]
+#0 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php(720): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php(422): Illuminate\\Database\\Connection->run()
+#2 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2654): Illuminate\\Database\\Connection->select()
+#3 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2642): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3178): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2643): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#6 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/modules/Api/Routes/api.php(371): Illuminate\\Database\\Query\\Builder->get()
+#7 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/CallableDispatcher.php(40): Illuminate\\Routing\\RouteFileRegistrar->{closure}()
+#8 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Route.php(237): Illuminate\\Routing\\CallableDispatcher->dispatch()
+#9 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Route.php(208): Illuminate\\Routing\\Route->runCallable()
+#10 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(798): Illuminate\\Routing\\Route->run()
+#11 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#12 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/app/Http/Middleware/SetLanguageForApi.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\SetLanguageForApi->handle()
+#14 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/app/Http/Middleware/RequireChangePassword.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#15 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\RequireChangePassword->handle()
+#16 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#18 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#19 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(102): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#20 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(54): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#21 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#22 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#23 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(799): Illuminate\\Pipeline\\Pipeline->then()
+#24 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack()
+#25 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(740): Illuminate\\Routing\\Router->runRoute()
+#26 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute()
+#27 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
+#28 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#29 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/themes/Base/Core/Middleware/RunUpdater.php(72): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Themes\\Base\\Core\\Middleware\\RunUpdater->handle()
+#31 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle()
+#33 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#35 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#36 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#38 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#39 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#40 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#41 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#42 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#43 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#45 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/app/Http/Middleware/RedirectToInstaller.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\RedirectToInstaller->handle()
+#47 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#49 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
+#51 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#52 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/public/index.php(72): Illuminate\\Foundation\\Http\\Kernel->handle()
+#53 {main}
+
+[previous exception] [object] (PDOException(code: 1130): SQLSTATE[HY000] [1130] Host '127.0.0.1' is not allowed to connect to this MariaDB server at /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:70)
+[stacktrace]
+#0 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(70): PDO->__construct()
+#1 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+#2 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+#3 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1181): call_user_func()
+#6 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1217): Illuminate\\Database\\Connection->getPdo()
+#7 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php(486): Illuminate\\Database\\Connection->getReadPdo()
+#8 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php(414): Illuminate\\Database\\Connection->getPdoForSelect()
+#9 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php(753): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#10 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php(720): Illuminate\\Database\\Connection->runQueryCallback()
+#11 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Connection.php(422): Illuminate\\Database\\Connection->run()
+#12 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2654): Illuminate\\Database\\Connection->select()
+#13 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2642): Illuminate\\Database\\Query\\Builder->runSelect()
+#14 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3178): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#15 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2643): Illuminate\\Database\\Query\\Builder->onceWithColumns()
+#16 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/modules/Api/Routes/api.php(371): Illuminate\\Database\\Query\\Builder->get()
+#17 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/CallableDispatcher.php(40): Illuminate\\Routing\\RouteFileRegistrar->{closure}()
+#18 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Route.php(237): Illuminate\\Routing\\CallableDispatcher->dispatch()
+#19 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Route.php(208): Illuminate\\Routing\\Route->runCallable()
+#20 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(798): Illuminate\\Routing\\Route->run()
+#21 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#22 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/app/Http/Middleware/SetLanguageForApi.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#23 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\SetLanguageForApi->handle()
+#24 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/app/Http/Middleware/RequireChangePassword.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\RequireChangePassword->handle()
+#26 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#28 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(102): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#30 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(54): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#31 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#32 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(799): Illuminate\\Pipeline\\Pipeline->then()
+#34 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack()
+#35 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(740): Illuminate\\Routing\\Router->runRoute()
+#36 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Routing/Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute()
+#37 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(190): Illuminate\\Routing\\Router->dispatch()
+#38 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#39 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/themes/Base/Core/Middleware/RunUpdater.php(72): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#40 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Themes\\Base\\Core\\Middleware\\RunUpdater->handle()
+#41 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#42 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle()
+#43 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#45 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#46 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#47 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#48 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#49 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#51 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#52 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#53 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#54 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#55 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/app/Http/Middleware/RedirectToInstaller.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#56 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\RedirectToInstaller->handle()
+#57 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#58 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#59 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#60 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then()
+#61 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#62 /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/public/index.php(72): Illuminate\\Foundation\\Http\\Kernel->handle()
+#63 {main}
+"} 
+[2023-06-08 16:52:55] production.DEBUG: From: Booking Core <contact@bookingcore.test>
+To: karamveersg1313@gmail.com
+Subject: [Booking Core] Verify Register
+MIME-Version: 1.0
+Date: Thu, 08 Jun 2023 16:52:55 +0400
+Message-ID: <e79d0f757ec0857fd258e0445f9a4d43@bookingcore.test>
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <title></title>
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <!--<![endif]-->
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DU=
+TF-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1">
+        <link rel=3D'stylesheet' id=3D'google-font-css-css'  href=3D'https:=
+//fonts.googleapis.com/css?family=3DPoppins%3A400%2C500%2C600' type=3D'text=
+/css' media=3D'all' />
+        <style>
+            .b-email-wrap{
+                background: #ebeef2;
+                padding: 40px 0px;
+                color: #1A2B48;
+                font-size: 14px;
+                font-family: 'Poppins', sans-serif !important;
+                font-weight: normal;
+                line-height: 1.5;
+                overflow-x: hidden;
+                margin: 0px;
+            }
+            .b-header{
+                background: #5291fa;
+                padding: 30px;
+                color: white;
+            }
+            .b-header .site-title,
+            .b-header h1,
+            .b-header h2,
+            .b-header h3,
+            .b-header h4,
+            .b-header h5,
+            .b-header p
+            {
+                margin:0px;
+                display: block;
+                text-align: center;
+            }
+            .b-container{
+                max-width: 600px;
+                margin: 0px auto;
+            }
+
+            .b-panel{
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                margin-bottom: 30px;
+                padding: 30px;
+                background: white;
+            }
+            .b-panel .b-panel{
+                padding: 0px;
+                box-shadow: none;
+            }
+            .b-panel-title{
+                text-align: center;
+                margin-bottom: 30px;
+                font-size: 24px;
+                font-weight: 500;
+            }
+            .b-table-wrap{
+                overflow-x:auto;
+            }
+            .b-table{
+                width: 100%;
+            }
+            .b-table tr td,
+            .b-table .b-tr,
+            .b-table tr th{
+                padding: 10px;
+            }
+            .b-table .b-tr{
+                clear: both;
+                border-bottom: 1px solid #EAEEF3;
+            }
+            .b-table .b-tr:after{
+                display: table;
+                clear: both;
+                content:'';
+            }
+            .b-table tr td{
+                border-bottom: 1px solid #EAEEF3;
+            }
+            .b-table tbody tr:nth-child(even) td{
+                /*background: #f5f7fd;*/
+            }
+            .b-table tbody tr td.label,
+            .b-table .b-tr .label{
+                font-weight: 500;
+            }
+            .b-table tbody tr td.val,
+            .b-table .b-tr .val{
+                text-align: right;
+            }
+
+            .b-table tbody tr td.val p,
+            .b-table .b-tr .val p{
+                padding: 0;
+                margin: 0;
+            }
+
+            .b-table .b-tr .label,
+            .b-table .b-tr .val{
+                float: left;
+                width: 50%;
+            }
+            .pricing-list{
+                text-align: left;
+                margin: 0px;
+                padding: 0px;
+                list-style: none;
+            }
+            .pricing-list td{
+                padding: 7px 0px;
+            }
+            .pricing-list td .val{
+                text-align: right;
+            }
+            .pricing-list .no-flex{
+                display: block;
+            }
+            .email-headline{
+                margin-top: 0px;
+            }
+
+            .text-center{
+                text-align: center;
+            }
+
+            .btn{
+                display: inline-block;
+                color: #212529;
+                text-align: center;
+                vertical-align: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-color: #ebeef2;
+                line-height: 1.5;
+                border: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                border-radius: 3px;
+                padding: 7px 20px;
+                -webkit-transition: background .2s, color .2s;
+                transition: background .2s, color .2s;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+            }
+            .btn.btn-primary{
+
+                background: #5191FA;
+                color: white;
+            }
+            .mt20{
+                margin-top: 20px;
+            }
+            .no-padding{
+                padding: 0px;
+            }
+            .no-r-padding{
+                padding-right: 0px!important;
+            }
+            .fsz21{
+                font-size: 21px;
+            }
+            .no-b-border{
+                border-bottom: 0px!important;
+            }
+            @media screen and (max-width: 768px) {
+                .b-panel{
+                    padding: 15px;
+                }
+                .b-table tr td,
+                .b-table tr th{
+                    padding-right: 2px;
+                    padding-left: 2px;
+                }
+                .b-panel-title{
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+                .b-email-wrap{
+                    padding: 0px;
+                }
+
+                .b-table .b-tr .label,
+                .b-table .b-tr .val{
+                    float:none;
+                }
+
+                .b-table .b-tr .val{
+                    text-align: left;
+                }
+            }
+                    </style>
+    </head>
+    <body>
+        <div class=3D"b-email-wrap">
+            <div class=3D"" style=3D"">
+    <div class=3D"b-container">
+        <div class=3D"b-header">
+                        <h1 class=3D"site-title">Booking Core</h1>
+        </div>
+    </div>
+</div>
+
+                <div class=3D"b-container">
+        <div class=3D"b-panel">
+           =20
+            <h1>Hello!</h1>
+            <p>Please click the button to verify your email address!</p>
+            <p style=3D"text-align: center"><a style=3D"border-radius: 3px;
+                color: #fff;
+                display: inline-block;
+                text-decoration: none;
+                background-color: #3490dc;
+                border-top: 10px solid #3490dc;
+                border-right: 18px solid #3490dc;
+                border-bottom: 10px solid #3490dc;
+                border-left: 18px solid #3490dc;" href=3D"https://roamiodea=
+ls.techdocklabs.com/email/verify/21/9503d3c26b3dbce37298170f2fd7102df2eec51=
+0?expires=3D1686232375&signature=3Dc9d261d7ecfb9876d365a1320799809d0aa14b38=
+a330c6a7a2c6783f078ad4b3">Verify Email Address</a></p>
+            <p>If you did not create account, no further action is required=
+.</p>
+            <p>Regards,<br>Booking Core</p>
+        </div>
+    </div>
+
+            <div class=3D"b-footer" style=3D"margin-top: 0px;">
+    <div class=3D"b-container">
+       =20
+    </div>
+</div>        </div>
+    </body>
+</html>
+  
+[2023-06-08 16:52:55] production.DEBUG: From: Booking Core <contact@bookingcore.test>
+To: karamveersg1313@gmail.com
+Subject: karamveer singh has registered.
+MIME-Version: 1.0
+Date: Thu, 08 Jun 2023 16:52:55 +0400
+Message-ID: <c15b408e5fb72536139beaf3d5c708df@bookingcore.test>
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <title></title>
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <!--<![endif]-->
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DU=
+TF-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1">
+        <link rel=3D'stylesheet' id=3D'google-font-css-css'  href=3D'https:=
+//fonts.googleapis.com/css?family=3DPoppins%3A400%2C500%2C600' type=3D'text=
+/css' media=3D'all' />
+        <style>
+            .b-email-wrap{
+                background: #ebeef2;
+                padding: 40px 0px;
+                color: #1A2B48;
+                font-size: 14px;
+                font-family: 'Poppins', sans-serif !important;
+                font-weight: normal;
+                line-height: 1.5;
+                overflow-x: hidden;
+                margin: 0px;
+            }
+            .b-header{
+                background: #5291fa;
+                padding: 30px;
+                color: white;
+            }
+            .b-header .site-title,
+            .b-header h1,
+            .b-header h2,
+            .b-header h3,
+            .b-header h4,
+            .b-header h5,
+            .b-header p
+            {
+                margin:0px;
+                display: block;
+                text-align: center;
+            }
+            .b-container{
+                max-width: 600px;
+                margin: 0px auto;
+            }
+
+            .b-panel{
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                margin-bottom: 30px;
+                padding: 30px;
+                background: white;
+            }
+            .b-panel .b-panel{
+                padding: 0px;
+                box-shadow: none;
+            }
+            .b-panel-title{
+                text-align: center;
+                margin-bottom: 30px;
+                font-size: 24px;
+                font-weight: 500;
+            }
+            .b-table-wrap{
+                overflow-x:auto;
+            }
+            .b-table{
+                width: 100%;
+            }
+            .b-table tr td,
+            .b-table .b-tr,
+            .b-table tr th{
+                padding: 10px;
+            }
+            .b-table .b-tr{
+                clear: both;
+                border-bottom: 1px solid #EAEEF3;
+            }
+            .b-table .b-tr:after{
+                display: table;
+                clear: both;
+                content:'';
+            }
+            .b-table tr td{
+                border-bottom: 1px solid #EAEEF3;
+            }
+            .b-table tbody tr:nth-child(even) td{
+                /*background: #f5f7fd;*/
+            }
+            .b-table tbody tr td.label,
+            .b-table .b-tr .label{
+                font-weight: 500;
+            }
+            .b-table tbody tr td.val,
+            .b-table .b-tr .val{
+                text-align: right;
+            }
+
+            .b-table tbody tr td.val p,
+            .b-table .b-tr .val p{
+                padding: 0;
+                margin: 0;
+            }
+
+            .b-table .b-tr .label,
+            .b-table .b-tr .val{
+                float: left;
+                width: 50%;
+            }
+            .pricing-list{
+                text-align: left;
+                margin: 0px;
+                padding: 0px;
+                list-style: none;
+            }
+            .pricing-list td{
+                padding: 7px 0px;
+            }
+            .pricing-list td .val{
+                text-align: right;
+            }
+            .pricing-list .no-flex{
+                display: block;
+            }
+            .email-headline{
+                margin-top: 0px;
+            }
+
+            .text-center{
+                text-align: center;
+            }
+
+            .btn{
+                display: inline-block;
+                color: #212529;
+                text-align: center;
+                vertical-align: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-color: #ebeef2;
+                line-height: 1.5;
+                border: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                border-radius: 3px;
+                padding: 7px 20px;
+                -webkit-transition: background .2s, color .2s;
+                transition: background .2s, color .2s;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+            }
+            .btn.btn-primary{
+
+                background: #5191FA;
+                color: white;
+            }
+            .mt20{
+                margin-top: 20px;
+            }
+            .no-padding{
+                padding: 0px;
+            }
+            .no-r-padding{
+                padding-right: 0px!important;
+            }
+            .fsz21{
+                font-size: 21px;
+            }
+            .no-b-border{
+                border-bottom: 0px!important;
+            }
+            @media screen and (max-width: 768px) {
+                .b-panel{
+                    padding: 15px;
+                }
+                .b-table tr td,
+                .b-table tr th{
+                    padding-right: 2px;
+                    padding-left: 2px;
+                }
+                .b-panel-title{
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+                .b-email-wrap{
+                    padding: 0px;
+                }
+
+                .b-table .b-tr .label,
+                .b-table .b-tr .val{
+                    float:none;
+                }
+
+                .b-table .b-tr .val{
+                    text-align: left;
+                }
+            }
+                    </style>
+    </head>
+    <body>
+        <div class=3D"b-email-wrap">
+            <div class=3D"" style=3D"">
+    <div class=3D"b-container">
+        <div class=3D"b-header">
+                        <h1 class=3D"site-title">Booking Core</h1>
+        </div>
+    </div>
+</div>
+
+                <div class=3D"b-container">
+        <div class=3D"b-panel">
+            <h1 style=3D"text-align: center;">Welcome!</h1>
+<h3>Hello karamveer singh</h3>
+<p>Thank you for signing up with Booking Core! We hope you enjoy your time =
+with us.</p>
+<p>Regards,</p>
+<p>Booking Core</p>
+        </div>
+    </div>
+
+            <div class=3D"b-footer" style=3D"margin-top: 0px;">
+    <div class=3D"b-container">
+       =20
+    </div>
+</div>        </div>
+    </body>
+</html>
+  
+[2023-06-08 16:52:55] production.DEBUG: From: Booking Core <contact@bookingcore.test>
+To: contact@bookingcore.test
+Subject: karamveer singh has registered.
+MIME-Version: 1.0
+Date: Thu, 08 Jun 2023 16:52:55 +0400
+Message-ID: <21a8fdcbe0b9b5a4b5024aa3bc2403fa@bookingcore.test>
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    <head>
+        <title></title>
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <!--<![endif]-->
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DU=
+TF-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1">
+        <link rel=3D'stylesheet' id=3D'google-font-css-css'  href=3D'https:=
+//fonts.googleapis.com/css?family=3DPoppins%3A400%2C500%2C600' type=3D'text=
+/css' media=3D'all' />
+        <style>
+            .b-email-wrap{
+                background: #ebeef2;
+                padding: 40px 0px;
+                color: #1A2B48;
+                font-size: 14px;
+                font-family: 'Poppins', sans-serif !important;
+                font-weight: normal;
+                line-height: 1.5;
+                overflow-x: hidden;
+                margin: 0px;
+            }
+            .b-header{
+                background: #5291fa;
+                padding: 30px;
+                color: white;
+            }
+            .b-header .site-title,
+            .b-header h1,
+            .b-header h2,
+            .b-header h3,
+            .b-header h4,
+            .b-header h5,
+            .b-header p
+            {
+                margin:0px;
+                display: block;
+                text-align: center;
+            }
+            .b-container{
+                max-width: 600px;
+                margin: 0px auto;
+            }
+
+            .b-panel{
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                margin-bottom: 30px;
+                padding: 30px;
+                background: white;
+            }
+            .b-panel .b-panel{
+                padding: 0px;
+                box-shadow: none;
+            }
+            .b-panel-title{
+                text-align: center;
+                margin-bottom: 30px;
+                font-size: 24px;
+                font-weight: 500;
+            }
+            .b-table-wrap{
+                overflow-x:auto;
+            }
+            .b-table{
+                width: 100%;
+            }
+            .b-table tr td,
+            .b-table .b-tr,
+            .b-table tr th{
+                padding: 10px;
+            }
+            .b-table .b-tr{
+                clear: both;
+                border-bottom: 1px solid #EAEEF3;
+            }
+            .b-table .b-tr:after{
+                display: table;
+                clear: both;
+                content:'';
+            }
+            .b-table tr td{
+                border-bottom: 1px solid #EAEEF3;
+            }
+            .b-table tbody tr:nth-child(even) td{
+                /*background: #f5f7fd;*/
+            }
+            .b-table tbody tr td.label,
+            .b-table .b-tr .label{
+                font-weight: 500;
+            }
+            .b-table tbody tr td.val,
+            .b-table .b-tr .val{
+                text-align: right;
+            }
+
+            .b-table tbody tr td.val p,
+            .b-table .b-tr .val p{
+                padding: 0;
+                margin: 0;
+            }
+
+            .b-table .b-tr .label,
+            .b-table .b-tr .val{
+                float: left;
+                width: 50%;
+            }
+            .pricing-list{
+                text-align: left;
+                margin: 0px;
+                padding: 0px;
+                list-style: none;
+            }
+            .pricing-list td{
+                padding: 7px 0px;
+            }
+            .pricing-list td .val{
+                text-align: right;
+            }
+            .pricing-list .no-flex{
+                display: block;
+            }
+            .email-headline{
+                margin-top: 0px;
+            }
+
+            .text-center{
+                text-align: center;
+            }
+
+            .btn{
+                display: inline-block;
+                color: #212529;
+                text-align: center;
+                vertical-align: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-color: #ebeef2;
+                line-height: 1.5;
+                border: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                border-radius: 3px;
+                padding: 7px 20px;
+                -webkit-transition: background .2s, color .2s;
+                transition: background .2s, color .2s;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+            }
+            .btn.btn-primary{
+
+                background: #5191FA;
+                color: white;
+            }
+            .mt20{
+                margin-top: 20px;
+            }
+            .no-padding{
+                padding: 0px;
+            }
+            .no-r-padding{
+                padding-right: 0px!important;
+            }
+            .fsz21{
+                font-size: 21px;
+            }
+            .no-b-border{
+                border-bottom: 0px!important;
+            }
+            @media screen and (max-width: 768px) {
+                .b-panel{
+                    padding: 15px;
+                }
+                .b-table tr td,
+                .b-table tr th{
+                    padding-right: 2px;
+                    padding-left: 2px;
+                }
+                .b-panel-title{
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+                .b-email-wrap{
+                    padding: 0px;
+                }
+
+                .b-table .b-tr .label,
+                .b-table .b-tr .val{
+                    float:none;
+                }
+
+                .b-table .b-tr .val{
+                    text-align: left;
+                }
+            }
+                    </style>
+    </head>
+    <body>
+        <div class=3D"b-email-wrap">
+            <div class=3D"" style=3D"">
+    <div class=3D"b-container">
+        <div class=3D"b-header">
+                        <h1 class=3D"site-title">Booking Core</h1>
+        </div>
+    </div>
+</div>
+
+                <div class=3D"b-container">
+        <div class=3D"b-panel">
+            <h3>Hello Administrator</h3>
+<p>We have new registration</p>
+<p>Full name: karamveer singh</p>
+<p>Email: karamveersg1313@gmail.com</p>
+<p>Regards,</p>
+<p>Roamio deals</p>
+        </div>
+    </div>
+
+            <div class=3D"b-footer" style=3D"margin-top: 0px;">
+    <div class=3D"b-container">
+       =20
+    </div>
+</div>        </div>
+    </body>
+</html>
+  
+[2023-06-08 16:52:56] production.INFO: Broadcasting [App\Events\PusherNotificationAdminEvent] on channels [admin-channel] with payload:
+{
+    "message": "karamveer singh has been registered",
+    "avatar": "<img class=\"image-responsive\" src=\"https:\/\/roamiodeals.techdocklabs.com\/images\/avatar.png\" alt=\"karamveer singh\">",
+    "link": "https:\/\/roamiodeals.techdocklabs.com\/admin\/module\/user?s=21",
+    "idNotification": "8c51487e-ebdb-4fb7-9a58-35d6354c1d80",
+    "socket": null
+}  
