@@ -37,12 +37,10 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <?php endif; ?>
                     </ul> 
-                    <div class="">
-                      
-                                <div role="tabpanel" class="tab-pane  active" id="bravo_flight" style="width:50%;top: 165px;position: relative;">
-                                    <?php echo $__env->make(ucfirst("flight").'::frontend.layouts.search.form-search', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                </div>
-                                
+                    <div class="col-md-12 w-100">
+                        <div role="tabpanel" class="tab-pane active" id="bravo_flight" style="width:90%;top: 186px;position: relative; background:white; border-radius:10%">
+                            <?php echo $__env->make(ucfirst("flight").'::frontend.layouts.search.form-search', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                        </div> 
                     </div>
                 </div>
             <?php endif; ?>

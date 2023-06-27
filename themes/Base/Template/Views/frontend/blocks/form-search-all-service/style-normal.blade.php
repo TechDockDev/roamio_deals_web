@@ -36,12 +36,10 @@
                             @endforeach
                         @endif
                     </ul> 
-                    <div class="">
-                      
-                                <div role="tabpanel" class="tab-pane  active" id="bravo_flight" style="width:50%;top: 165px;position: relative;">
-                                    @include(ucfirst("flight").'::frontend.layouts.search.form-search')
-                                </div>
-                                
+                    <div class="col-md-12 w-100">
+                        <div role="tabpanel" class="tab-pane active" id="bravo_flight" style="width:90%;top: 186px;position: relative; background:white; border-radius:10%">
+                            @include(ucfirst("flight").'::frontend.layouts.search.form-search')
+                        </div> 
                     </div>
                 </div>
             @endif

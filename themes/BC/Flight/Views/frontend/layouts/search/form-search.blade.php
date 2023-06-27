@@ -1,4 +1,4 @@
-<form action="{{ route("flight.search") }}" class="form bravo_form" method="get" style="left: 50%;position:relative;">
+<form action="{{ route("flight.search") }}" class="form bravo_form" method="get" style="position:relative;">
     <div class="g-field-search">
         <div class="row ">
             @php $flight_search_fields = setting_item_array('flight_search_fields');

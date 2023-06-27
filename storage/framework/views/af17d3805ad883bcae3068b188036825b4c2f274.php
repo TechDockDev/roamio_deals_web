@@ -1,3 +1,12 @@
+<style>
+    .Daily-btn {
+    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+    color: white;
+    padding: 4px 4px;
+}
+</style>
+
+
 
 <?php
     $translation = $row->translate();
@@ -16,9 +25,7 @@
            <?php
            
            
-           $data = DB::table('media_files')->where('id',$row->banner_image_id)->select('file_path')->first();
-           
-           
+           $data = DB::table('media_files')->where('id',$row->banner_image_id)->select('file_path')->first();  
            ?>
             
             
@@ -96,7 +103,7 @@
                 <span class="fr_text"><?php echo e(__("from")); ?></span>
             </div>
             <div class="price">
-                <span class="text-price"><?php echo e($row->display_price); ?> <span class="unit"><?php echo e(__("/night")); ?></span></span>
+                <span class="text-price btn btn-light Daily-btn text-white"><?php echo e($row->display_price); ?> <span class="unit  text-white"><?php echo e(__("/night")); ?></span></span>
             </div>
         </div>
     </div>

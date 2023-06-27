@@ -5443,7 +5443,7 @@ body .daterangepicker .full-book-event:before {
   .thumb-image
   .service-wishlist.active
   i {
-  color: #d42681;
+    color: #FF3500;
 }
 .bravo_wrap
   .page-template-content
@@ -5455,7 +5455,7 @@ body .daterangepicker .full-book-event:before {
   content: "\f004";
 }
 .bravo_wrap .page-template-content .bravo-list-event .item-loop .location {
-  color: #d42681;
+  color: #FF3500;
   font-size: 13px;
   margin: 15px 0 0;
   padding: 0 15px;
@@ -5477,7 +5477,7 @@ body .daterangepicker .full-book-event:before {
   .item-loop
   .service-review
   .rate {
-  color: #d42681;
+    color: #FF3500;
 }
 .bravo_wrap
   .page-template-content
@@ -5526,7 +5526,7 @@ body .daterangepicker .full-book-event:before {
   color: #1a2b50;
 }
 .bravo_wrap .page-template-content .bravo-list-event .item-loop .item-title i {
-  color: #ffc107;
+  color: #FF3500;
   font-size: 15px;
   margin-right: 2px;
 }
@@ -5567,7 +5567,7 @@ body .daterangepicker .full-book-event:before {
   .g-price
   .prefix
   i {
-  color: #ffc107;
+    color: #FF3500;
   font-size: 16px;
 }
 .bravo_wrap
@@ -5601,7 +5601,7 @@ body .daterangepicker .full-book-event:before {
   .g-price
   .price
   .onsale {
-  color: #c03 !important;
+    color: #FF3500 !important;
   font-size: 14px;
   font-weight: 400;
   text-decoration: line-through;
@@ -8808,9 +8808,9 @@ img.lazy.initial,
 img.lazy.loaded {
   opacity: 1;
 }
-img:not([src]) {
+/* img:not([src]) {
   visibility: hidden;
-}
+} */
 img[data-src],
 img[data-srcset] {
   display: block;

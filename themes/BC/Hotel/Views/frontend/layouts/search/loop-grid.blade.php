@@ -1,3 +1,12 @@
+<style>
+    .Daily-btn {
+    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+    color: white;
+    padding: 4px 4px;
+}
+</style>
+
+
 
 @php
     $translation = $row->translate();
@@ -88,7 +97,7 @@
                 <span class="fr_text">{{__("from")}}</span>
             </div>
             <div class="price">
-                <span class="text-price">{{ $row->display_price }} <span class="unit">{{__("/night")}}</span></span>
+                <span class="text-price btn btn-light Daily-btn text-white">{{ $row->display_price }} <span class="unit  text-white">{{__("/night")}}</span></span>
             </div>
         </div>
     </div>
