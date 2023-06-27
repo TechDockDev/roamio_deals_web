@@ -1,6 +1,13 @@
-{{-- 
+<style>
+    .silder-item{
+      background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+      height:100%;
+ 
+    }
+</style>
 
-@php
+{{-- 
+    @php
     $translation = $row->translate();
 @endphp
 <div class="item-news">
@@ -38,5 +45,17 @@
             <a class="btn-readmore" href="{{$row->getDetailUrl()}}">{{ __('Read More')}}</a>
         </div>
     </div>
-</div> --}}
+</div> 
+--}}
+
+<div  class="background">
+<div class="container">
+<div class="row"> 
+Zxcvbnm,./
+</div>
+</div>
+</div>
+
+
+
 

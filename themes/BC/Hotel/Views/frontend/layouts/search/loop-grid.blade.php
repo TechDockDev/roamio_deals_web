@@ -15,9 +15,7 @@
            <?php
            
            
-           $data = DB::table('media_files')->where('id',$row->banner_image_id)->select('file_path')->first();
-           
-           
+           $data = DB::table('media_files')->where('id',$row->banner_image_id)->select('file_path')->first();  
            ?>
             
             

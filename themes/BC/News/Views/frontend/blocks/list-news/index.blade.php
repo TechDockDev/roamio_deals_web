@@ -9,8 +9,26 @@
          height:400px;
          border-radius:10px;   
     }
+    .text1{
+        font-size: 30px;
+    position: relative;
+    top: 244px;
+    left: 10px;
+    color: white;
+    }
+    .text2{
+        font-size: 16px;
+    position: relative;
+    top: 234px;
+    left: 10px;
+    color: white;   
+    }
+    .butn{
+        position: relative;
+    top: 241px;
+    left: 10px;
+}
 </style>
-
 
 <div class="bravo-list-news">
     <div class="container">
@@ -45,10 +63,12 @@
                     <div class="image">
                     <div class="effect"></div>
                      <div class="content">
-                        <h4 class="title">Dubai</h4>
+                        
+                        <small class="text2">Experience Better</small>
+                        <h4 class="title text1">Top Staycation Around UAE</h4>
                           <div class="desc">                                                                                                                                                                                                                                             
-                         <a href="http://127.0.0.1:8000/hotel?location_id=11" target="_blank"> 
-                        2 Hotels
+                         <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                            Explore
                          </a> 
                         </div>
                       </div>
@@ -61,12 +81,15 @@
                 <div class="destination-item">
                     <div class="image1">
                     <div class="effect"></div>
-                     <div class="content">
-                        <h4 class="title">Dubai</h4>
+                    <div class="content">
+                        
+                        <small class="text2">Experience More</small>
+                        <h4 class="title text1">Top Activities Around UAE</h4>
                           <div class="desc">                                                                                                                                                                                                                                             
-                         <a href="http://127.0.0.1:8000/hotel?location_id=11" target="_blank"> 
-                        2 Hotels
-                         </a>                                                                                                                                                                                                 </div>
+                         <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                            Explore
+                         </a> 
+                        </div>
                       </div>
                 </div>
             </div>
