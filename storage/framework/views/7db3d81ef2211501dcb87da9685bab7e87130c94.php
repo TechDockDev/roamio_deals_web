@@ -138,37 +138,39 @@ if (!empty($menus)){
 
 
  <ul class="main-menu pb-5">
-    @foreach($menus as $menuItem)
+    <?php $__currentLoopData = $menus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menuItem): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                
 
-        @php $menuItem['class'] .= " ".str_ireplace("/","_",$menuItem['url']) @endphp
-        <li class="{{$menuItem['class']}}"><a href="{{ url($menuItem['url']) }}">
-                @if(!empty($menuItem['icon']))
-                    <span class="icon text-center"><i class="{{$menuItem['icon']}}"></i></span>
-                @endif
-                {!! clean($menuItem['title'],[
+        <?php $menuItem['class'] .= " ".str_ireplace("/","_",$menuItem['url']) ?>
+        <li class="<?php echo e($menuItem['class']); ?>"><a href="<?php echo e(url($menuItem['url'])); ?>">
+                <?php if(!empty($menuItem['icon'])): ?>
+                    <span class="icon text-center"><i class="<?php echo e($menuItem['icon']); ?>"></i></span>
+                <?php endif; ?>
+                <?php echo clean($menuItem['title'],[
                     'Attr.AllowedClasses'=>null
-                ]) !!}
+                ]); ?>
+
             </a>
-            @if(!empty($menuItem['children']))
+            <?php if(!empty($menuItem['children'])): ?>
                 <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
-                    @foreach($menuItem['children'] as $menuItem2)
-                        <li class="{{$menuItem['class']}}"><a href="{{ url($menuItem2['url']) }}">
-                                @if(!empty($menuItem2['icon']))
-                                    <i class="{{$menuItem2['icon']}}"></i>
-                                @endif
-                                {!! clean($menuItem2['title'],[
+                    <?php $__currentLoopData = $menuItem['children']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menuItem2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li class="<?php echo e($menuItem['class']); ?>"><a href="<?php echo e(url($menuItem2['url'])); ?>">
+                                <?php if(!empty($menuItem2['icon'])): ?>
+                                    <i class="<?php echo e($menuItem2['icon']); ?>"></i>
+                                <?php endif; ?>
+                                <?php echo clean($menuItem2['title'],[
                                     'Attr.AllowedClasses'=>null
-                                ]) !!}</a>
+                                ]); ?></a>
                         </li>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
-            @endif
+            <?php endif; ?>
         </li>
-    @endforeach
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </ul>  
 
 
 
 
+<?php /**PATH D:\roamio_deals_web\modules/Layout/admin/parts/sidebar.blade.php ENDPATH**/ ?>
