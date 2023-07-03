@@ -32,7 +32,6 @@ Route::get('/install/environment','InstallerController@redirectToWizard')->name(
 Route::get('/clearcache',function(){
     
     Artisan::call('optimize:clear');
-    
     echo "cache clear";
     
 });

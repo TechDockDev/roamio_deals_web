@@ -410,19 +410,36 @@ if($hotels)
      return response()->json(['status'=>0,'message'=>"no data",'hotels'=>[]]);
     
 }
-
-
-    // $data = [
-    //     'hotels' => $hotels,
-    // ];
-
-    // return $data;
          
          
      }
      
-     
-     
+    public function roompricedetail(request $request)
+    { 
+      $id = $request->id;
+
+      $xdata = DB::table('bravo_hotel_rooms')->where('parent_id', $id)->get();
+
+      $alldata = [];
+
+     foreach ($xdata as $room) {
+      $roomDates = DB::table('bravo_hotel_room_dates')->where('target_id', $room->id)->get();
+      $room->roomDates = $roomDates;
+      $alldata[] = $room;
+      }  
+
+      if($alldata)
+       {
+
+         return response()->json(['rooms'=>$alldata,'status'=>1]);
+
+       }else{
+
+         return response()->json(['rooms'=>'room not available','status'=>0]);
+        
+       }
+
+    }
      
      
 }
