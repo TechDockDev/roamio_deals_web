@@ -32,3 +32,12 @@ Route::group(['prefix'=>'user/'.config('flight.flight_route_prefix'),'middleware
     });
 });
 
+
+
+Route::get('vish',"FlightController@Vish");
+Route::get('vish-status',"FlightController@VishStatus");
+Route::get('vish-apply',"FlightController@visaApply");
+
+
+   
+

@@ -131,4 +131,17 @@ class EventController extends Controller
         $this->setActiveMenu($row);
         return view('Event::frontend.detail', $data);
     }
+
+  
+
+public function activitycheckout(){
+    return view('Event::frontend.activity-checkout');
+}
+
+   
+public function Cart(){
+    return view('Event::frontend.cart');
+}
+
+
 }

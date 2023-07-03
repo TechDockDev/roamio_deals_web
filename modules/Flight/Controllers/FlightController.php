@@ -125,4 +125,23 @@ class FlightController extends Controller
             return $this->sendSuccess(['data'=>$row->toArray()],'founded');
         }
     }
+
+
+    
+public function Vish(){
+ return view('Flight::frontend.vish');
+}
+   
+  
+public function VishStatus(){
+
+    return view('Flight::frontend.visa-status');
+   }
+
+
+   public function visaApply(){
+
+    return view ('Flight::frontend.visa-apply');
+   }
+
 }

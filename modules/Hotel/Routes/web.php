@@ -4,7 +4,14 @@ use \Illuminate\Support\Facades\Route;
 Route::group(['prefix'=>config('hotel.hotel_route_prefix')],function(){
     Route::get('/','HotelController@index')->name('hotel.search'); // Search
     Route::get('/{slug}','HotelController@detail')->name('hotel.detail');// Detail
+   
+
+    
 });
+
+
+Route::get('hotel-wish-list','HotelController@Wishlist')->name('hotel.wishlist');
+
 
 Route::group(['prefix'=>'user/'.config('hotel.hotel_route_prefix'),'middleware' => ['auth','verified']],function(){
     Route::get('/','VendorController@index')->name('hotel.vendor.index');

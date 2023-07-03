@@ -6,6 +6,12 @@ Route::group(['prefix'=>env('EVENT_ROUTE_PREFIX','event')],function(){
     Route::get('/{slug}','EventController@detail')->name('event.detail');// Detail
 });
 
+
+Route::get('event-activity-checkout','EventController@activitycheckout');
+Route::get('event-cart','EventController@Cart');
+
+
+
 Route::group(['prefix'=>'user/'.env('EVENT_ROUTE_PREFIX','event'),'middleware' => ['auth','verified']],function(){
     Route::get('/','VendorEventController@indexEvent')->name('event.vendor.index');
     Route::get('/create','VendorEventController@createEvent')->name('event.vendor.create');
