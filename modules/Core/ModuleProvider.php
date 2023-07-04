@@ -45,22 +45,22 @@ class ModuleProvider extends ModuleServiceProvider
     public static function getAdminSubmenu()
     {
         return [
-            /*[
+            [
                 'id'=>'updater',
                 'parent'=>'tools',
                 'title'=>__("Updater"),
                 'url'=>'admin/module/core/updater',
                 'icon'=>'icon ion-md-download',
                 'permission'=>'system_log_view'
-            ],*/
-            // [
-            //     'id'=>'plugin',
-            //     'parent'=>'tools',
-            //     'title'=>__("Plugins"),
-            //     'url'=>route('core.admin.plugins.index'),
-            //     'icon'=>'icon ion-md-color-wand',
-            //     'permission'=>'plugin_manage'
-            // ]
+            ],
+            [
+                'id'=>'plugin',
+                'parent'=>'tools',
+                'title'=>__("Plugins"),
+                'url'=>route('core.admin.plugins.index'),
+                'icon'=>'icon ion-md-color-wand',
+                'permission'=>'plugin_manage'
+            ]
         ];
     }
 }
