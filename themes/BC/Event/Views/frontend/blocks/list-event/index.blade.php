@@ -47,7 +47,7 @@ h1 { color: white }
 #slideshow-inner {
     width: 100%;
     height: 100%;
-    background-color: rgb(0,0,0);
+    background-color: white;
     overflow: hidden;
     position: relative;
 }
@@ -236,6 +236,26 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 
 .description input[type=checkbox]:checked~.description-text { opacity: 1 }
 
+@keyframes slide {
+    0% { left: 0; }
+    20% { left: 0; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+
+#slideshow-inner>ul {
+    animation: slide 20s infinite;
+}
+
+#slideshow-wrap:hover #slideshow-inner>ul {
+    animation-play-state: paused;
+}
+
 </style>
 
  
@@ -274,8 +294,8 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 
 
 
-<div  class="background mb-5">
-    <div class="container">
+<div class="background mb-5">
+    <div class="container-fluid">
     <div class="row d-flex  justify-content-center p-4"> 
      <div class="col-md-6">
         <h3  class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
@@ -294,73 +314,132 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
      </div>
      <div class="col-md-6 p-4">
         <div id="slideshow-wrap">
-            <input type="radio" id="button-1" name="controls" checked="checked"/>
-            <label for="button-1"></label>
-            <input type="radio" id="button-2" name="controls"/>
-            <label for="button-2"></label>
-            <input type="radio" id="button-3" name="controls"/>
-            <label for="button-3"></label>
-            <input type="radio" id="button-4" name="controls"/>
-            <label for="button-4"></label>
-            <input type="radio" id="button-5" name="controls"/>
-            <label for="button-5"></label>
+                   <input type="radio" id="button-1" name="controls" checked="checked"/>
+                   <input type="radio" id="button-2" name="controls"/>
+                   <input type="radio" id="button-3" name="controls"/>
+                   <input type="radio" id="button-4" name="controls"/>
+                    <input type="radio" id="button-5" name="controls"/>
            
             <div id="slideshow-inner">
                 <ul>
                     <li id="slide1">
-                        <img src="https://cssdeck.com/uploads/media/items/3/3yiC6Yq.jpg" />
-                        <div class="description">
-                            <input type="checkbox" id="show-description-1"/>
-                            <label for="show-description-1" class="show-description-label">I</label>
-                            <div class="description-text">
-                                <h2>Flower power</h2>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                       
+                        <p class="py-4 p-3">
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                             <br>
+                        </p>
+                      
+                          <div class="row">
+                            <div class="col-md-4">
+                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
                             </div>
-                        </div>
+                            <div class="col-md-8">
+                               <h5> Risiya khan</h5>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               
+
+                            </div>
+                          </div>
                     </li>
                     <li id="slide2">
-                        <img src="https://cssdeck.com/uploads/media/items/4/40Ly3VB.jpg" />
-                        <div class="description">
-                            <input type="checkbox" id="show-description-2"/>
-                            <label for="show-description-2" class="show-description-label">I</label>
-                            <div class="description-text">
-                                <h2>Golden sunset</h2>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                        <p class="py-4  p-3">
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                        </p>
+                      
+                          <div class="row">
+                            <div class="col-md-4">
+                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
                             </div>
-                        </div>
+                            <div class="col-md-8">
+                               <h5> Risiya khan</h5>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               
+
+                            </div>
+                          </div>
+                        
                     </li>
                     <li id="slide3">
-                        <img src="https://cssdeck.com/uploads/media/items/0/00kih8g.jpg" />
-                        <div class="description">
-                            <input type="checkbox" id="show-description-3"/>
-                            <label for="show-description-3" class="show-description-label">I</label>
-                            <div class="description-text">
-                                <h2>Flower power again</h2>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                        <p class="py-4  p-3" >
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                        </p>
+                      
+                          <div class="row">
+                            <div class="col-md-4">
+                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
                             </div>
-                        </div>
+                            <div class="col-md-8">
+                               <h5> Risiya khan</h5>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               
+
+                            </div>
+                          </div>
+                      
                     </li>
                     <li id="slide4">
-                        <img src="https://cssdeck.com/uploads/media/items/2/2rT2vdx.jpg" />
-                        <div class="description">
-                            <input type="checkbox" id="show-description-4"/>
-                            <label for="show-description-4" class="show-description-label">I</label>
-                            <div class="description-text">
-                                <h2>Stormy coast</h2>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                        <p class="py-4  p-3">
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                        </p>
+                      
+                          <div class="row">
+                            <div class="col-md-4">
+                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
                             </div>
-                        </div>
+                            <div class="col-md-8">
+                               <h5> Risiya khan</h5>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               
+
+                            </div>
+                          </div>
                     </li>
                     <li id="slide5">
-                        <img src="https://cssdeck.com/uploads/media/items/8/8k3N3EL.jpg" />
-                        <div class="description">
-                            <input type="checkbox" id="show-description-5"/>
-                            <label for="show-description-5" class="show-description-label">I</label>
-                            <div class="description-text">
-                                <h2>Splash!</h2>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                        <p class="py-4  p-3" >
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
+                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
+                        </p>
+                      
+                          <div class="row">
+                            <div class="col-md-4">
+                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
                             </div>
-                        </div>
+                            <div class="col-md-8">
+                               <h5> Risiya khan</h5>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               
+
+                            </div>
+                          </div>
                     </li>
                 </ul>
             </div>
@@ -372,3 +451,14 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 </div>
 
 
+<script>
+var slides = document.querySelectorAll('#slideshow-inner>ul>li');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide, 2000);
+
+function nextSlide() {
+    slides[currentSlide].classList.remove('show');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('show');
+}
+</script>

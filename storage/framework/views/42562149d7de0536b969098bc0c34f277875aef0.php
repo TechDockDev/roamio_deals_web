@@ -730,8 +730,10 @@
                   <div class="wizard-panel-btn">
                     <button class="br-button wizard-btn-canc" type="button">Cancel
                     </button>
-                    <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Save
+                    <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed to next traveller details
                     </button>
+
+                    cvnbmbn,m
                     
                   </div>
                 </div>

@@ -1,5 +1,6 @@
  <div class="bravo_header">
-    <div class="<?php echo e($container_class ?? 'container'); ?>">
+    <div class="<?php echo e($container_class ?? 'container'); ?>" 
+>
         <div class="content">
             <div class="header-left">
                 <a href="<?php echo e(url(app_get_locale(false,'/'))); ?>" class="bravo-logo">
@@ -11,22 +12,17 @@
                     ?>
                     <?php if($logo_id): ?>
                         <?php $logo = get_file_url($logo_id,'full') ?>
-                        <img src="<?php echo e($logo); ?>" style="height: 93px;" alt="<?php echo e(setting_item("site_title")); ?>">
+                        <img src="<?php echo e($logo); ?>" style=" height: 91px;
+                      
+                        position: relative;" alt="<?php echo e(setting_item("site_title")); ?>">
                     <?php endif; ?>
                 </a>
-                
-
-
-
-
-   <div class="bravo_topbar">
+             
+   <div class="bravo_topbar" style="height: 94px;">
     <div class="container">
         <div class="content">
-            
             <div class="topbar-left">
-
                  <ul class="topbar-items">
-
                     <div style="position: relative !important;
                          left: -327px !Important;
                      top: 41px; !important">
@@ -37,26 +33,36 @@
 
                    
         <div class="col-md-12 mx-auto">
-            <div class="input-group" style="left: -69%;
-    width: 198%; top: 10px;">
-                <input class="form-control border-end-0 border" type="search" value="search" id="example-search-input">
+            <div class="input-group" style="left: -97%;
+            width: 198%;
+            top: 10px;">
+                <input class="form-control border-end-0 border" type="search" id="example-search-input" placeholder="Search for destinations or activities" style="background:#F6F6F6;">
                 <span class="input-group-append" style="margin-bottom: 0px;
-    border-bottom: 1px solid #dae1e7;">
-                    <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button" style="height: 39px">
+              border-bottom: 1px solid #dae1e7;">
+                    <button class="btn btn-outline-secondary border-start-0 border-bottom-0 border ms-n5" type="button" style="height: 39px;background:#F6F6F6;">
                         <i class="fa fa-search"></i>
                     </button>
                 </span>
             </div>
         </div>
+                    
+        <div class="col-md-12">
+          <p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>  WishList </p>
+          <p style="color: gray;
+          left: 280px;
+          position: relative;
+          top: -53px;"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  cart </p>
+        </div>
    
                     
-                    <div style="float: right;
-    right: -344px;
-    position: relative;
-    top: -30px;">
+     <div style="float: right;
+     right: -335px;
+     position: relative;
+     top: -98px;
+ ">
                 <?php if(!Auth::check()): ?>
                         <li class="login-item">
-                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="border:1px solid #FE9000"><?php echo e(__('Login')); ?></a>
+                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900;"><?php echo e(__('Login')); ?></a>
                         </li>
                         <?php if(is_enable_registration()): ?>
                             <li class="signup-item">
@@ -199,7 +205,7 @@
 
                         </a>
                     </li>
-                    
+                  
                     <?php if(Auth::user()->hasPermission('dashboard_access')): ?>
                         <li>
                             <a href="<?php echo e(route('admin.index')); ?>"><i class="icon ion-ios-ribbon"></i> <?php echo e(__("Admin Dashboard")); ?></a>

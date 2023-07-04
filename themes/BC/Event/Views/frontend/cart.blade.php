@@ -99,10 +99,7 @@
               <div class="input-container" style="border:1px solid gray; border-radius:10px;">
                 <img src="{{asset(url('images/Group.png'))}}" alt="Image">
                 <input type="text" placeholder="Apply" style="border:none">
-              </div>
-
-
-              
+              </div> 
             </div>
             
           </div>
