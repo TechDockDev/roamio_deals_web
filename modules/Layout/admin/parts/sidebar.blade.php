@@ -66,6 +66,8 @@ if(!empty($custom_modules)){
     foreach($custom_modules as $moduleData){
         $module = $moduleData['id'];
 
+        
+
         $moduleClass = $moduleData['class'];
 
         if(class_exists($moduleClass))

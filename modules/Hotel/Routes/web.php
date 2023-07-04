@@ -16,7 +16,6 @@ Route::get('explore-staycation','HotelController@staycationexplore')->name('hote
 
 
 
-
 Route::group(['prefix'=>'user/'.config('hotel.hotel_route_prefix'),'middleware' => ['auth','verified']],function(){
     Route::get('/','VendorController@index')->name('hotel.vendor.index');
     Route::get('/create','VendorController@create')->name('hotel.vendor.create');

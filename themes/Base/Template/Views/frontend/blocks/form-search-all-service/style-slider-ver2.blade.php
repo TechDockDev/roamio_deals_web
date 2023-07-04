@@ -4,7 +4,7 @@
             @php $img = get_file_url($item['bg_image'],'full') @endphp
             <div class="item" style="background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('{{$img}}') !important">
                 <h2 class="sub-heading text-center">{{ $item['desc'] ?? "" }}</h2>
-                <h1 class="text-heading text-center">{{ $item['title'] ?? "" }}</h1>
+                <h4 class="text-heading text-center">{{ $item['title'] ?? "" }}</h4>
             </div>
         @endforeach
     </div>
