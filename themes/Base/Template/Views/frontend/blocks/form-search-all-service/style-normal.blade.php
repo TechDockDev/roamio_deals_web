@@ -6,7 +6,12 @@
   .mailchimp{
     display: none !important; 
   }
+ 
 } 
+
+ .text-heading{
+    font-size:18px;
+  }
 </style>
 
 
@@ -25,7 +30,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12" style="left: 50px;">
-            <h1 class="text-heading">{{$title}}</h1>
+            <h3 class="text-heading">{{$title}}</h3>
             <div class="sub-heading">{{$sub_title}}</div>
             @if(empty($hide_form_search))
                 <div class="g-form-control">
