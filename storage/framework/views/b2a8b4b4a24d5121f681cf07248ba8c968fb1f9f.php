@@ -1,12 +1,4 @@
 
-
-
-  
-
-
-
-
-
 <?php if(!is_api()): ?>
 	<div class="bravo_footer " style="margin-top:120px;">
 		
