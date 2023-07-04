@@ -54,6 +54,10 @@ Route::group(['middleware' => 'api'],function(){
     
 });
 
+
+Route::get('hotelroomdetailget','SearchController@roompricedetail');
+
+
 /* Layout HomePage */
 
 Route::get('home-page','BookingController@getHomeLayout')->name('api.get_home_layout');

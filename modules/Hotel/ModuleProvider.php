@@ -49,12 +49,12 @@ class ModuleProvider extends ModuleServiceProvider
                 'children'   => [
                     'add'=>[
                         'url'        => route('hotel.admin.index'),
-                        'title'      => __('All Hotels'),
+                        'title'      => __('All Staycation'),
                         'permission' => 'hotel_view',
                     ],
                     'create'=>[
                         'url'        => route('hotel.admin.create'),
-                        'title'      => __('Add new Hotel'),
+                        'title'      => __('Add new Staycation'),
                         'permission' => 'hotel_create',
                     ],
                     'attribute'=>[
@@ -132,11 +132,11 @@ class ModuleProvider extends ModuleServiceProvider
                 'children' => [
                     [
                         'url'   => route('hotel.vendor.index'),
-                        'title'  => __("All Hotels"),
+                        'title'  => __("All Staycation"),
                     ],
                     [
                         'url'   => route('hotel.vendor.create'),
-                        'title'      => __("Add Hotel"),
+                        'title'      => __("Add Staycation"),
                         'permission' => 'hotel_create',
                     ],
                     [

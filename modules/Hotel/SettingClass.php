@@ -12,7 +12,7 @@ class SettingClass extends BaseSettingsClass
         $configs = [
             'hotel' => [
                 'id' => 'hotel',
-                'title' => __("Hotel Settings"),
+                'title' => __("StayCation Settings"),
                 'position' => 20,
                 'view' => "Hotel::admin.settings.hotel",
                 "keys" => [

@@ -1,0 +1,1 @@
+<?php /**PATH D:\roamio_deals_web\themes/Base/Template/Views/frontend/blocks/offer-block/index.blade.php ENDPATH**/ ?>
