@@ -143,5 +143,10 @@ public function Cart(){
     return view('Event::frontend.cart');
 }
 
+public function ActivityExp(){
+    return view('Event::frontend.explore-activity');
+}
+
+
 
 }
