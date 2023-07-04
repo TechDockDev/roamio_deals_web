@@ -72,11 +72,11 @@
                     <?php else: ?>
                         <?php echo $__env->make('Layout::parts.notification', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         <li class="login-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="login"><?php echo e(__("Hi, :name",['name'=>Auth::user()->getDisplayName()])); ?>
+                            <a href="#" data-toggle="dropdown"  class="login " style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; padding:10px;"><?php echo e(__("Hi, :name",['name'=>Auth::user()->getDisplayName()])); ?>
 
                                 <i class="fa fa-angle-down"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-user text-left">
+                            <ul class="dropdown-menu dropdown-menu-user text-left" style="width:140px;">
                                 <?php if(empty( setting_item('wallet_module_disable') )): ?>
                                     <li class="credit_amount">
                                         <a href="<?php echo e(route('user.wallet')); ?>"><i class="fa fa-money"></i> <?php echo e(__("Credit: :amount",['amount'=>auth()->user()->balance])); ?></a>
@@ -85,9 +85,7 @@
                                 <?php if(is_vendor()): ?>
                                 <!--<li class="menu-hr"><a href="<?php echo e(route('vendor.dashboard')); ?>" class="menu-hr"><i class="icon ion-md-analytics"></i> <?php echo e(__("Vendor Dashboard")); ?></a></li>-->
                                 <?php endif; ?>
-                                <li class="<?php if(is_vendor()): ?> menu-hr <?php endif; ?>">
-                                    <a href="<?php echo e(route('user.profile.index')); ?>"><i class="icon ion-md-construct"></i> <?php echo e(__("My profile")); ?></a>
-                                </li>
+                                
                                 <?php if(setting_item('inbox_enable')): ?>
                                 <li class="menu-hr">
                                     <a href="<?php echo e(route('user.chat')); ?>"><i class="fa fa-comments"></i> <?php echo e(__("Messages")); ?>
@@ -98,12 +96,9 @@
                                     </a>
                                 </li>
                                 <?php endif; ?>
-                                    <li class="menu-hr"><a href="<?php echo e(route('user.booking_history')); ?>"><i class="fa fa-clock-o"></i> <?php echo e(__("Booking History")); ?></a></li>
-                                <li class="menu-hr"><a href="<?php echo e(route('user.change_password')); ?>"><i class="fa fa-lock"></i> <?php echo e(__("Change password")); ?></a></li>
+                                    
 
-                                <?php if(is_enable_plan() ): ?>
-                                    <li class="menu-hr"><a href="<?php echo e(route('user.plan')); ?>"><i class="fa fa-list-alt"></i> <?php echo e(__("My plan")); ?></a></li>
-                                <?php endif; ?>
+                                
 
                                 <?php if(is_admin()): ?>
                                     <li class="menu-hr"><a href="<?php echo e(route('admin.index')); ?>"><i class="icon ion-ios-ribbon"></i> <?php echo e(__("Admin Dashboard")); ?></a></li>
@@ -188,7 +183,7 @@
         <div class="user-profile">
             <div class="b-close"><i class="icofont-scroll-left"></i></div>
             <div class="avatar"></div>
-            <ul>
+            <ul style="width:100%;">
                 <?php if(!Auth::check()): ?>
                     <li>
                         <a href="#login" data-toggle="modal" data-target="#login" class="login"><?php echo e(__('Login')); ?></a>
@@ -200,7 +195,7 @@
                     <?php endif; ?>
                 <?php else: ?>
                     <li>
-                        <a href="<?php echo e(route('user.profile.index')); ?>">
+                        <a href="<?php echo e(route('user.profile.index')); ?>" class="btn btn-light" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white;">
                             <i class="icofont-user-suited"></i> <?php echo e(__("Hi, :Name",['name'=>Auth::user()->getDisplayName()])); ?>
 
                         </a>

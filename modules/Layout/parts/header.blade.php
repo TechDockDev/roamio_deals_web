@@ -72,10 +72,10 @@
                     @else
                         @include('Layout::parts.notification')
                         <li class="login-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="login">{{__("Hi, :name",['name'=>Auth::user()->getDisplayName()])}}
+                            <a href="#" data-toggle="dropdown"  class="login " style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; padding:10px;">{{__("Hi, :name",['name'=>Auth::user()->getDisplayName()])}}
                                 <i class="fa fa-angle-down"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-user text-left">
+                            <ul class="dropdown-menu dropdown-menu-user text-left" style="width:140px;">
                                 @if(empty( setting_item('wallet_module_disable') ))
                                     <li class="credit_amount">
                                         <a href="{{route('user.wallet')}}"><i class="fa fa-money"></i> {{__("Credit: :amount",['amount'=>auth()->user()->balance])}}</a>
@@ -84,9 +84,9 @@
                                 @if(is_vendor())
                                 <!--<li class="menu-hr"><a href="{{route('vendor.dashboard')}}" class="menu-hr"><i class="icon ion-md-analytics"></i> {{__("Vendor Dashboard")}}</a></li>-->
                                 @endif
-                                <li class="@if(is_vendor()) menu-hr @endif">
+                                {{-- <li class="@if(is_vendor()) menu-hr @endif">
                                     <a href="{{route('user.profile.index')}}"><i class="icon ion-md-construct"></i> {{__("My profile")}}</a>
-                                </li>
+                                </li> --}}
                                 @if(setting_item('inbox_enable'))
                                 <li class="menu-hr">
                                     <a href="{{route('user.chat')}}"><i class="fa fa-comments"></i> {{__("Messages")}}
@@ -96,12 +96,12 @@
                                     </a>
                                 </li>
                                 @endif
-                                    <li class="menu-hr"><a href="{{route('user.booking_history')}}"><i class="fa fa-clock-o"></i> {{__("Booking History")}}</a></li>
-                                <li class="menu-hr"><a href="{{route('user.change_password')}}"><i class="fa fa-lock"></i> {{__("Change password")}}</a></li>
+                                    {{-- <li class="menu-hr"><a href="{{route('user.booking_history')}}"><i class="fa fa-clock-o"></i> {{__("Booking History")}}</a></li>
+                                <li class="menu-hr"><a href="{{route('user.change_password')}}"><i class="fa fa-lock"></i> {{__("Change password")}}</a></li> --}}
 
-                                @if(is_enable_plan() )
+                                {{-- @if(is_enable_plan() )
                                     <li class="menu-hr"><a href="{{route('user.plan')}}"><i class="fa fa-list-alt"></i> {{__("My plan")}}</a></li>
-                                @endif
+                                @endif --}}
 
                                 @if(is_admin())
                                     <li class="menu-hr"><a href="{{route('admin.index')}}"><i class="icon ion-ios-ribbon"></i> {{__("Admin Dashboard")}}</a></li>
@@ -183,7 +183,7 @@
         <div class="user-profile">
             <div class="b-close"><i class="icofont-scroll-left"></i></div>
             <div class="avatar"></div>
-            <ul>
+            <ul style="width:100%;">
                 @if(!Auth::check())
                     <li>
                         <a href="#login" data-toggle="modal" data-target="#login" class="login">{{__('Login')}}</a>
@@ -195,7 +195,7 @@
                     @endif
                 @else
                     <li>
-                        <a href="{{route('user.profile.index')}}">
+                        <a href="{{route('user.profile.index')}}" class="btn btn-light" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white;">
                             <i class="icofont-user-suited"></i> {{__("Hi, :Name",['name'=>Auth::user()->getDisplayName()])}}
                         </a>
                     </li>
