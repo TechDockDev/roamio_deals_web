@@ -15,7 +15,7 @@
 
                 <h2 style="width: fit-content;
                 margin: auto;">
-                    <img src="http://127.0.0.1:8000/uploads/0000/1/2023/05/11/logo.png" style="height: 90px">
+                    <img src="{{asset('uploads/0000/1/2023/05/11/logo.png')}}" style="height: 90px">
                      <p class="pt-3 text-center" style="font-size: 20px;">Login or Sign up</p>
                 </h2>
                 @include('Layout::auth/login-form')
@@ -39,7 +39,7 @@
             <div class="modal-body">
                 <h2 style="width: fit-content;
                 margin: auto;">
-                    <img src="http://127.0.0.1:8000/uploads/0000/1/2023/05/11/logo.png" style="height: 90px">
+                    <img src="{{asset('uploads/0000/1/2023/05/11/logo.png')}}" style="height: 90px">
                      <p class="pt-3 text-center" style="font-size: 20px;">Login or Sign up</p>
                 </h2>
                 @include('Layout::auth/register-form')

@@ -210,11 +210,28 @@ p {
    
 
 </style>
-  <center><h3  class="title" style="margin-top: 43px;">Explore UAE <span style="color: #FE9000;">Staycation</span></h3></center>
+  <center><h3  class="title" style="margin-top: 43px;">Explore UAE <span style="color: #FE9000;">Staycation</span></h3>
+  
+      <div class="title">
+           <img src = "{{asset('uploads/0000/1/2023/07/04/banner.jpg')}}">
+        </div>
+        </center>
+  
+ 
+  
+  
 <div class="container mt-5">
+    
    <div class="row">
     <h4  class="title" style="margin-top: 43px;">Best Deals On Staycation</h4>
-   </div>
+  </div>
+  
+  <a href="" style="top: -32px;
+    position: relative;
+    left: -111px;
+    float: right;"><h5>View All</h5></a>
+  
+  
    <div class="row">
         <div class="col-md-4">
             <div class="card"  style="border-radius: 10px;">
@@ -272,6 +289,12 @@ p {
                 <div class="title">
             StayCation
         </div>
+        
+         <a href="" style="top: -32px;
+    position: relative;
+    left: -111px;
+    float: right;"><h5>View All</h5></a>
+    
             <div class="sub-title">
                 Hotel highly rated for thoughtful design
             </div>
@@ -290,16 +313,16 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="http://127.0.0.1:8000/hotel/hotel-roamio-khan">        
+        <a href="https://roamiogit.techdocklabs.com/hotel/hotel-roamio-khan">        
                     
-                    <img src="http://127.0.0.1:8000/uploads/0000/1/2023/05/15/316127300.jpg" class="img-responsive" alt="">
+                    <img src="https://roamiogit.techdocklabs.com/uploads/0000/1/2023/05/15/316127300.jpg" class="img-responsive" alt="">
         </a>
                 <div class="service-wishlist " data-id="12" data-type="hotel">
             <i class="fa fa-heart"></i>
         </div>
     </div>
     <div class="item-title">
-        <a href="http://127.0.0.1:8000/hotel/hotel-roamio-khan">
+        <a href="https://roamiogit.techdocklabs.com/hotel/hotel-roamio-khan">
                             Hotel Roamio Khan
         </a>
             </div>
@@ -339,15 +362,9 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="http://127.0.0.1:8000/hotel/hyatt-centric-victoria">
+        <a href="https://roamiogit.techdocklabs.com/hotel/hyatt-centric-victoria">
             
-          
-                       
-            
-           
-                                     
-                    
-                    <img src="http://127.0.0.1:8000/uploads/demo/space/space-3.jpg" class="img-responsive" alt="">
+                    <img src="https://roamiogit.techdocklabs.com/uploads/demo/space/space-3.jpg" class="img-responsive" alt="">
                  
                          
         </a>
@@ -356,7 +373,7 @@ p {
         </div>
     </div>
     <div class="item-title">
-        <a href="http://127.0.0.1:8000/hotel/hyatt-centric-victoria">
+        <a href="https://roamiogit.techdocklabs.com/hotel/hyatt-centric-victoria">
                             Hyatt Centric Victoria 
         </a>
             </div>
@@ -396,15 +413,9 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="http://127.0.0.1:8000/hotel/jitendra-hotel">
+        <a href="https://roamiogit.techdocklabs.com/hotel/jitendra-hotel">
             
-          
-                       
-            
-           
-                                     
-                    
-                    <img src="http://127.0.0.1:8000/uploads/0000/1/2023/05/15/images.jpg" class="img-responsive" alt="">
+                    <img src="https://roamiogit.techdocklabs.com/uploads/0000/1/2023/05/15/images.jpg" class="img-responsive" alt="">
                  
                          
         </a>
@@ -413,7 +424,7 @@ p {
         </div>
     </div>
     <div class="item-title">
-        <a href="http://127.0.0.1:8000/hotel/jitendra-hotel">
+        <a href="https://roamiogit.techdocklabs.com/hotel/jitendra-hotel">
                             Jitendra Hotel
         </a>
             </div>
@@ -453,15 +464,10 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="http://127.0.0.1:8000/hotel/sierra-hotel">
-            
-          
-                       
-            
-           
-                                     
+        <a href="https://roamiogit.techdocklabs.com/hotel/sierra-hotel">
+        
                     
-                    <img src="http://127.0.0.1:8000/uploads/0000/1/2023/05/19/life-resort-hotel-resort-hotel-wallpaper-preview.jpeg" class="img-responsive" alt="">
+                    <img src="https://roamiogit.techdocklabs.com/uploads/0000/1/2023/05/19/life-resort-hotel-resort-hotel-wallpaper-preview.jpeg" class="img-responsive" alt="">
                  
                          
         </a>
@@ -470,7 +476,7 @@ p {
         </div>
     </div>
     <div class="item-title">
-        <a href="http://127.0.0.1:8000/hotel/sierra-hotel">
+        <a href="https://roamiogit.techdocklabs.com/hotel/sierra-hotel">
                             Sierra Hotel
         </a>
             </div>
@@ -523,17 +529,19 @@ p {
         </div>
     </div>
 
-    <div class="row">
-        <h4  class="title">Top Rated Staycation</h4>
-    </div>
+   
     
        
     
 <div class="container">
     <div class="bravo-list-hotel layout_normal">
                 <div class="title">
-            StayCation
+          Top Rated  StayCation
         </div>
+         <a href="" style="top: -32px;
+    position: relative;
+    left: -111px;
+    float: right;"><h5>View All</h5></a>
             <div class="sub-title">
                 Hotel highly rated for thoughtful design
             </div>
@@ -552,16 +560,16 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="http://127.0.0.1:8000/hotel/hotel-roamio-khan">        
+        <a href="https://roamiogit.techdocklabs.com/hotel/hotel-roamio-khan">        
                     
-                    <img src="http://127.0.0.1:8000/uploads/0000/1/2023/05/15/316127300.jpg" class="img-responsive" alt="">
+                    <img src="https://roamiogit.techdocklabs.com/uploads/0000/1/2023/05/15/316127300.jpg" class="img-responsive" alt="">
         </a>
                 <div class="service-wishlist " data-id="12" data-type="hotel">
             <i class="fa fa-heart"></i>
         </div>
     </div>
     <div class="item-title">
-        <a href="http://127.0.0.1:8000/hotel/hotel-roamio-khan">
+        <a href="https://roamiogit.techdocklabs.com/hotel/hotel-roamio-khan">
                             Hotel Roamio Khan
         </a>
             </div>
@@ -601,15 +609,10 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="http://127.0.0.1:8000/hotel/hyatt-centric-victoria">
+        <a href="{{url('hotel/hyatt-centric-victoria')}}">
             
-          
-                       
-            
-           
-                                     
                     
-                    <img src="http://127.0.0.1:8000/uploads/demo/space/space-3.jpg" class="img-responsive" alt="">
+                    <img src="{{asset('uploads/demo/space/space-3.jpg')}}" class="img-responsive" alt="">
                  
                          
         </a>
@@ -618,7 +621,7 @@ p {
         </div>
     </div>
     <div class="item-title">
-        <a href="http://127.0.0.1:8000/hotel/hyatt-centric-victoria">
+        <a href="{{url('hotel/hyatt-centric-victoria')}}">
                             Hyatt Centric Victoria 
         </a>
             </div>
@@ -658,24 +661,17 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="http://127.0.0.1:8000/hotel/jitendra-hotel">
+        <a href="{{url('hotel/jitendra-hotel')}}">
             
-          
-                       
-            
-           
-                                     
-                    
-                    <img src="http://127.0.0.1:8000/uploads/0000/1/2023/05/15/images.jpg" class="img-responsive" alt="">
+                    <img src="{{asset('uploads/0000/1/2023/05/15/images.jpg')}}" class="img-responsive" alt="">
                  
-                         
         </a>
                 <div class="service-wishlist " data-id="17" data-type="hotel">
             <i class="fa fa-heart"></i>
         </div>
     </div>
     <div class="item-title">
-        <a href="http://127.0.0.1:8000/hotel/jitendra-hotel">
+        <a href="{{url('hotel/jitendra-hotel')}}">
                             Jitendra Hotel
         </a>
             </div>
@@ -715,15 +711,9 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="http://127.0.0.1:8000/hotel/sierra-hotel">
+        <a href="{{url('hotel/sierra-hotel')}}">
             
-          
-                       
-            
-           
-                                     
-                    
-                    <img src="http://127.0.0.1:8000/uploads/0000/1/2023/05/19/life-resort-hotel-resort-hotel-wallpaper-preview.jpeg" class="img-responsive" alt="">
+                    <img src="{{asset('uploads/0000/1/2023/05/19/life-resort-hotel-resort-hotel-wallpaper-preview.jpeg')}}" class="img-responsive" alt="">
                  
                          
         </a>
@@ -732,7 +722,7 @@ p {
         </div>
     </div>
     <div class="item-title">
-        <a href="http://127.0.0.1:8000/hotel/sierra-hotel">
+        <a href="{{url('hotel/sierra-hotel')}}">
                             Sierra Hotel
         </a>
             </div>
