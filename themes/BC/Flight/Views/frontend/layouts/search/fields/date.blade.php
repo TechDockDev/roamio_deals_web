@@ -11,7 +11,7 @@
                  
                     top: 7px;
                     position: relative;
-                    font-size: 124%;">Visa</label>
+                    font-size: 124%;"><a href="{{url('visa-page')}}">Visa</a></label>
                     <div class="render check-in-render font-size-14"></div>
                     <div class="render check-out-render font-size-14"></div>
                 </div>
