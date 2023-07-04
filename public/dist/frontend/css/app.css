@@ -8956,6 +8956,7 @@ background: #fff;
 }
 .bravo_wrap .bravo_header {
   border-bottom: 1px solid #eaeef3;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px;
 }
 .bravo_wrap .bravo_header .content {
   align-items: center;
@@ -9900,4 +9901,14 @@ left: 530px;
   height: 10vh;
   justify-content: center;
   width: 10vh;
+}
+
+.card1{
+  padding:10px !important;
+}
+
+@media only screen and (max-width: 600px) {
+.main-footer{
+text-align: center !important;
+}
 }

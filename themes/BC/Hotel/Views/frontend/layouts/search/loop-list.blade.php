@@ -9,8 +9,7 @@
     @endif
     <div class="thumb-image">
        <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl()}}">
-            
-          
+        
            <?php
            
            
