@@ -48,13 +48,12 @@
                     
         <div class="col-md-12">
           <a href="{{url('hotel-wish-list')}}"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>WishList</p></a>
-          <p style="color: gray;
+         <a href="{{url('event-cart')}}"> <p style="color: gray;
           left: 280px;
           position: relative;
-          top: -53px;"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  cart </p>
+          top: -53px;"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  cart </p></a>
         </div>
-   
-                    
+         
      <div style="float: right;
      right: -335px;
      position: relative;
