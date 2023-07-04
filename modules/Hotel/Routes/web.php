@@ -12,6 +12,10 @@ Route::group(['prefix'=>config('hotel.hotel_route_prefix')],function(){
 
 Route::get('hotel-wish-list','HotelController@Wishlist')->name('hotel.wishlist');
 
+Route::get('explore-staycation','HotelController@staycationexplore')->name('hotel.exploreStaycation');
+
+
+
 
 Route::group(['prefix'=>'user/'.config('hotel.hotel_route_prefix'),'middleware' => ['auth','verified']],function(){
     Route::get('/','VendorController@index')->name('hotel.vendor.index');

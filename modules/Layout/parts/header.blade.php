@@ -1,6 +1,5 @@
  <div class="bravo_header">
-    <div class="{{$container_class ?? 'container'}}" 
->
+    <div class="{{$container_class ?? 'container'}}">
         <div class="content">
             <div class="header-left">
                 <a href="{{url(app_get_locale(false,'/'))}}" class="bravo-logo">
@@ -12,17 +11,28 @@
                     @endphp
                     @if($logo_id)
                         <?php $logo = get_file_url($logo_id,'full') ?>
-                        <img src="{{$logo}}" style=" height: 91px;
-                      
-                        position: relative;" alt="{{setting_item("site_title")}}">
+                        <img src="{{$logo}}" style="height: 93px;" alt="{{setting_item("site_title")}}">
                     @endif
                 </a>
-             
-   <div class="bravo_topbar" style="height: 94px;">
+               {{-- <div class="bravo-menu">
+                    <?php generate_menu('primary') ?>
+                </div>  --}} 
+
+
+
+
+   <div class="bravo_topbar">
     <div class="container">
         <div class="content">
+            {{-- <div class="topbar-left">
+
+                {!! clean(setting_item_with_lang("topbar_left_text")) !!}
+
+            </div> --}}
             <div class="topbar-left">
+
                  <ul class="topbar-items">
+
                     <div style="position: relative !important;
                          left: -327px !Important;
                      top: 41px; !important">
@@ -33,36 +43,26 @@
 
                    
         <div class="col-md-12 mx-auto">
-            <div class="input-group" style="left: -97%;
-            width: 198%;
-            top: 10px;">
-                <input class="form-control border-end-0 border" type="search" id="example-search-input" placeholder="Search for destinations or activities" style="background:#F6F6F6;">
+            <div class="input-group" style="left: -69%;
+    width: 198%; top: 10px;">
+                <input class="form-control border-end-0 border" type="search" value="search" id="example-search-input">
                 <span class="input-group-append" style="margin-bottom: 0px;
-              border-bottom: 1px solid #dae1e7;">
-                    <button class="btn btn-outline-secondary border-start-0 border-bottom-0 border ms-n5" type="button" style="height: 39px;background:#F6F6F6;">
+    border-bottom: 1px solid #dae1e7;">
+                    <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button" style="height: 39px">
                         <i class="fa fa-search"></i>
                     </button>
                 </span>
             </div>
         </div>
-                    
-        <div class="col-md-12">
-          <p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>  WishList </p>
-          <p style="color: gray;
-          left: 280px;
-          position: relative;
-          top: -53px;"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  cart </p>
-        </div>
    
                     
-     <div style="float: right;
-     right: -335px;
-     position: relative;
-     top: -98px;
- ">
+                    <div style="float: right;
+    right: -344px;
+    position: relative;
+    top: -30px;">
                 @if(!Auth::check())
                         <li class="login-item">
-                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900;">{{__('Login')}}</a>
+                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="border:1px solid #FE9000">{{__('Login')}}</a>
                         </li>
                         @if(is_enable_registration())
                             <li class="signup-item">
@@ -72,10 +72,10 @@
                     @else
                         @include('Layout::parts.notification')
                         <li class="login-item dropdown">
-                            <a href="#" data-toggle="dropdown"  class="login " style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; padding:10px;">{{__("Hi, :name",['name'=>Auth::user()->getDisplayName()])}}
+                            <a href="#" data-toggle="dropdown" class="login">{{__("Hi, :name",['name'=>Auth::user()->getDisplayName()])}}
                                 <i class="fa fa-angle-down"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-user text-left" style="width:140px;">
+                            <ul class="dropdown-menu dropdown-menu-user text-left">
                                 @if(empty( setting_item('wallet_module_disable') ))
                                     <li class="credit_amount">
                                         <a href="{{route('user.wallet')}}"><i class="fa fa-money"></i> {{__("Credit: :amount",['amount'=>auth()->user()->balance])}}</a>
@@ -84,9 +84,9 @@
                                 @if(is_vendor())
                                 <!--<li class="menu-hr"><a href="{{route('vendor.dashboard')}}" class="menu-hr"><i class="icon ion-md-analytics"></i> {{__("Vendor Dashboard")}}</a></li>-->
                                 @endif
-                                {{-- <li class="@if(is_vendor()) menu-hr @endif">
+                                <li class="@if(is_vendor()) menu-hr @endif">
                                     <a href="{{route('user.profile.index')}}"><i class="icon ion-md-construct"></i> {{__("My profile")}}</a>
-                                </li> --}}
+                                </li>
                                 @if(setting_item('inbox_enable'))
                                 <li class="menu-hr">
                                     <a href="{{route('user.chat')}}"><i class="fa fa-comments"></i> {{__("Messages")}}
@@ -96,12 +96,12 @@
                                     </a>
                                 </li>
                                 @endif
-                                    {{-- <li class="menu-hr"><a href="{{route('user.booking_history')}}"><i class="fa fa-clock-o"></i> {{__("Booking History")}}</a></li>
-                                <li class="menu-hr"><a href="{{route('user.change_password')}}"><i class="fa fa-lock"></i> {{__("Change password")}}</a></li> --}}
+                                    <li class="menu-hr"><a href="{{route('user.booking_history')}}"><i class="fa fa-clock-o"></i> {{__("Booking History")}}</a></li>
+                                <li class="menu-hr"><a href="{{route('user.change_password')}}"><i class="fa fa-lock"></i> {{__("Change password")}}</a></li>
 
-                                {{-- @if(is_enable_plan() )
+                                @if(is_enable_plan() )
                                     <li class="menu-hr"><a href="{{route('user.plan')}}"><i class="fa fa-list-alt"></i> {{__("My plan")}}</a></li>
-                                @endif --}}
+                                @endif
 
                                 @if(is_admin())
                                     <li class="menu-hr"><a href="{{route('admin.index')}}"><i class="icon ion-ios-ribbon"></i> {{__("Admin Dashboard")}}</a></li>
@@ -183,7 +183,7 @@
         <div class="user-profile">
             <div class="b-close"><i class="icofont-scroll-left"></i></div>
             <div class="avatar"></div>
-            <ul style="width:100%;">
+            <ul>
                 @if(!Auth::check())
                     <li>
                         <a href="#login" data-toggle="modal" data-target="#login" class="login">{{__('Login')}}</a>
@@ -195,11 +195,13 @@
                     @endif
                 @else
                     <li>
-                        <a href="{{route('user.profile.index')}}" class="btn btn-light" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white;">
+                        <a href="{{route('user.profile.index')}}">
                             <i class="icofont-user-suited"></i> {{__("Hi, :Name",['name'=>Auth::user()->getDisplayName()])}}
                         </a>
                     </li>
-                  
+                    {{-- @if(Auth::user()->hasPermission('dashboard_vendor_access'))
+                        <!--<li><a href="{{route('vendor.dashboard')}}"><i class="icon ion-md-analytics"></i> {{__("Vendor Dashboard")}}</a></li>-->
+                    @endif --}}
                     @if(Auth::user()->hasPermission('dashboard_access'))
                         <li>
                             <a href="{{route('admin.index')}}"><i class="icon ion-ios-ribbon"></i> {{__("Admin Dashboard")}}</a>

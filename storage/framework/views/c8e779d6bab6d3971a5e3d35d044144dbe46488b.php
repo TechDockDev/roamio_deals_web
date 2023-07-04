@@ -1,1 +1,0 @@
-<?php /**PATH /home/u533143048/domains/techdocklabs.com/public_html/roamiodeals/themes/Base/Template/Views/frontend/blocks/offer-block/index.blade.php ENDPATH**/ ?>
