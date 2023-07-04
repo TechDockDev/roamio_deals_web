@@ -6,49 +6,49 @@
         'icon'  => 'icon ion-ios-desktop',
         "position"=>0
     ],
-    // 'menu'=>[
-    //     "position"=>60,
-    //     'url'        => route('core.admin.menu.index'),
-    //     'title'      => __("Menu"),
-    //     'icon'       => 'icon ion-ios-apps',
-    //     'permission' => 'menu_view',
-    // ],
+    'menu'=>[
+        "position"=>60,
+        'url'        => route('core.admin.menu.index'),
+        'title'      => __("Menu"),
+        'icon'       => 'icon ion-ios-apps',
+        'permission' => 'menu_view',
+    ],
 
     
-    // 'general'=>[
-    //     "position"=>80,
-    //     'url'        => route('core.admin.settings.index',['group'=>'general']),
-    //     'title'      => __('Setting'),
-    //     'icon'       => 'icon ion-ios-cog',
-    //     'permission' => 'setting_update',
-    //     'children'   => \Modules\Core\Models\Settings::getSettingPages(true)
-    // ], 
-    // 'tools'=>[
-    //     "position"=>90,
-    //     'url'      => route('core.admin.tool.index'),
-    //     'title'    => __("Tools"),
-    //     'icon'     => 'icon ion-ios-hammer',
-    //     'children' => [
-    //         'language'=>[
-    //             'url'        => route('language.admin.index'),
-    //             'title'      => __('Languages'),
-    //             'icon'       => 'icon ion-ios-globe',
-    //             'permission' => 'language_manage',
-    //         ],
-    //         'translation'=>[
-    //             'url'        => route('language.admin.translations.index'),
-    //             'title'      => __("Translation Manager"),
-    //             'icon'       => 'icon ion-ios-globe',
-    //             'permission' => 'language_translation',
-    //         ],
-    //         'logs'=>[
-    //             'url'        => route('admin.logs'),
-    //             'title'      => __("System Logs"),
-    //             'icon'       => 'icon ion-ios-nuclear',
-    //             'permission' => 'system_log_view',
-    //         ],
-    //     ]
-    // ],
+    'general'=>[
+        "position"=>80,
+        'url'        => route('core.admin.settings.index',['group'=>'general']),
+        'title'      => __('Setting'),
+        'icon'       => 'icon ion-ios-cog',
+        'permission' => 'setting_update',
+        'children'   => \Modules\Core\Models\Settings::getSettingPages(true)
+    ], 
+    'tools'=>[
+        "position"=>90,
+        'url'      => route('core.admin.tool.index'),
+        'title'    => __("Tools"),
+        'icon'     => 'icon ion-ios-hammer',
+        'children' => [
+            'language'=>[
+                'url'        => route('language.admin.index'),
+                'title'      => __('Languages'),
+                'icon'       => 'icon ion-ios-globe',
+                'permission' => 'language_manage',
+            ],
+            'translation'=>[
+                'url'        => route('language.admin.translations.index'),
+                'title'      => __("Translation Manager"),
+                'icon'       => 'icon ion-ios-globe',
+                'permission' => 'language_translation',
+            ],
+            'logs'=>[
+                'url'        => route('admin.logs'),
+                'title'      => __("System Logs"),
+                'icon'       => 'icon ion-ios-nuclear',
+                'permission' => 'system_log_view',
+            ],
+        ]
+    ],
 ];   
 
 
@@ -136,38 +136,83 @@ if (!empty($menus)){
 }
 ?>
 
+{{--
+<!-- <ul class="main-menu pb-5">-->
+<!--    @foreach($menus as $menuItem)-->
+    
+<!--        @php $menuItem['class'] .= " ".str_ireplace("/","_",$menuItem['url']) @endphp-->
+<!--        <li class="{{$menuItem['class']}}"><a href="{{ url($menuItem['url']) }}">-->
+            
+<!--                @if(!empty($menuItem['icon']))-->
+<!--                    <span class="icon text-center"><i class="{{$menuItem['icon']}}"></i></span>-->
+<!--                @endif-->
+<!--                {!! clean($menuItem['title'],[-->
+<!--                    'Attr.AllowedClasses'=>null-->
+<!--                ]) !!}-->
+<!--            </a>-->
+<!--            @if(!empty($menuItem['children']))-->
+<!--                <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>-->
+<!--                <ul class="children">-->
+<!--                    @foreach($menuItem['children'] as $menuItem2)-->
+<!--                        <li class="{{$menuItem['class']}}"><a href="{{ url($menuItem2['url']) }}">-->
+<!--                                @if(!empty($menuItem2['icon']))-->
+<!--                                    <i class="{{$menuItem2['icon']}}"></i>-->
+<!--                                @endif-->
+<!--                                {!! clean($menuItem2['title'],[-->
+<!--                                    'Attr.AllowedClasses'=>null-->
+<!--                                ]) !!}</a>-->
+<!--                        </li>-->
+<!--                    @endforeach-->
+<!--                </ul>-->
+<!--            @endif-->
+<!--        </li>-->
+<!--    @endforeach-->
+<!--</ul>  -->
+--}}
 
- <ul class="main-menu pb-5">
+<ul class="main-menu pb-5">
     @foreach($menus as $menuItem)
-               
-
-        @php $menuItem['class'] .= " ".str_ireplace("/","_",$menuItem['url']) @endphp
-        <li class="{{$menuItem['class']}}"><a href="{{ url($menuItem['url']) }}">
+        @php 
+            $menuItem['class'] .= " " . str_ireplace("/", "_", $menuItem['url']);
+            $hideMenu = stripos($menuItem['title'], 'Tools') !== false ||
+                       
+                        stripos($menuItem['title'], 'Reports') !== false;
+        @endphp
+        @unless($hideMenu)
+            <li class="{{$menuItem['class']}}"><a href="{{ url($menuItem['url']) }}">
                 @if(!empty($menuItem['icon']))
                     <span class="icon text-center"><i class="{{$menuItem['icon']}}"></i></span>
                 @endif
-                {!! clean($menuItem['title'],[
-                    'Attr.AllowedClasses'=>null
+                {!! clean($menuItem['title'], [
+                    'Attr.AllowedClasses' => null
                 ]) !!}
             </a>
             @if(!empty($menuItem['children']))
                 <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
                     @foreach($menuItem['children'] as $menuItem2)
-                        <li class="{{$menuItem['class']}}"><a href="{{ url($menuItem2['url']) }}">
+                        @php
+                            $hideMenu2 = stripos($menuItem2['title'], 'Tools') !== false ||
+                                       
+                                         stripos($menuItem2['title'], 'Reports') !== false;
+                        @endphp
+                        @unless($hideMenu2)
+                            <li class="{{$menuItem['class']}}"><a href="{{ url($menuItem2['url']) }}">
                                 @if(!empty($menuItem2['icon']))
                                     <i class="{{$menuItem2['icon']}}"></i>
                                 @endif
-                                {!! clean($menuItem2['title'],[
-                                    'Attr.AllowedClasses'=>null
-                                ]) !!}</a>
-                        </li>
+                                {!! clean($menuItem2['title'], [
+                                    'Attr.AllowedClasses' => null
+                                ]) !!}
+                            </a></li>
+                        @endunless
                     @endforeach
                 </ul>
             @endif
-        </li>
+            </li>
+        @endunless
     @endforeach
-</ul>  
+</ul>
 
 
 

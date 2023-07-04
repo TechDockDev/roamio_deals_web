@@ -137,17 +137,22 @@ if (!empty($menus)){
 ?>
 
 
- <ul class="main-menu pb-5">
-    <?php $__currentLoopData = $menus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menuItem): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-               
 
-        <?php $menuItem['class'] .= " ".str_ireplace("/","_",$menuItem['url']) ?>
-        <li class="<?php echo e($menuItem['class']); ?>"><a href="<?php echo e(url($menuItem['url'])); ?>">
+<ul class="main-menu pb-5">
+    <?php $__currentLoopData = $menus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menuItem): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php 
+            $menuItem['class'] .= " " . str_ireplace("/", "_", $menuItem['url']);
+            $hideMenu = stripos($menuItem['title'], 'Tools') !== false ||
+                       
+                        stripos($menuItem['title'], 'Reports') !== false;
+        ?>
+        <?php if (! ($hideMenu)): ?>
+            <li class="<?php echo e($menuItem['class']); ?>"><a href="<?php echo e(url($menuItem['url'])); ?>">
                 <?php if(!empty($menuItem['icon'])): ?>
                     <span class="icon text-center"><i class="<?php echo e($menuItem['icon']); ?>"></i></span>
                 <?php endif; ?>
-                <?php echo clean($menuItem['title'],[
-                    'Attr.AllowedClasses'=>null
+                <?php echo clean($menuItem['title'], [
+                    'Attr.AllowedClasses' => null
                 ]); ?>
 
             </a>
@@ -155,20 +160,29 @@ if (!empty($menus)){
                 <span class="btn-toggle"><i class="fa fa-angle-left pull-right"></i></span>
                 <ul class="children">
                     <?php $__currentLoopData = $menuItem['children']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menuItem2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <li class="<?php echo e($menuItem['class']); ?>"><a href="<?php echo e(url($menuItem2['url'])); ?>">
+                        <?php
+                            $hideMenu2 = stripos($menuItem2['title'], 'Tools') !== false ||
+                                       
+                                         stripos($menuItem2['title'], 'Reports') !== false;
+                        ?>
+                        <?php if (! ($hideMenu2)): ?>
+                            <li class="<?php echo e($menuItem['class']); ?>"><a href="<?php echo e(url($menuItem2['url'])); ?>">
                                 <?php if(!empty($menuItem2['icon'])): ?>
                                     <i class="<?php echo e($menuItem2['icon']); ?>"></i>
                                 <?php endif; ?>
-                                <?php echo clean($menuItem2['title'],[
-                                    'Attr.AllowedClasses'=>null
-                                ]); ?></a>
-                        </li>
+                                <?php echo clean($menuItem2['title'], [
+                                    'Attr.AllowedClasses' => null
+                                ]); ?>
+
+                            </a></li>
+                        <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             <?php endif; ?>
-        </li>
+            </li>
+        <?php endif; ?>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-</ul>  
+</ul>
 
 
 
