@@ -47,7 +47,7 @@
         </div>
                     
         <div class="col-md-12">
-          <p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>  WishList </p>
+          <a href="<?php echo e(url('hotel-wish-list')); ?>"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>WishList</p></a>
           <p style="color: gray;
           left: 280px;
           position: relative;
