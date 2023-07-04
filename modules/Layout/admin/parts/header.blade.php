@@ -8,7 +8,10 @@ $theme = \Modules\Theme\ThemeManager::currentProvider();
 ?>
 
 <div class="header-logo flex-shrink-0">
-    <h3 class="logo-text"><a href="{{route('admin.index')}}">RoamioDeals</a></h3>
+    <h3 class="logo-text"><a href="{{route('admin.index')}}"><img src="http://127.0.0.1:8000/uploads/0000/1/2023/05/11/logo.png" style="width: 68%;
+    height: 43px;
+    position: relative;
+    left: -13px;"></a></h3>
 </div>
 <div class="header-widgets d-flex flex-grow-1">
     <div class="widgets-left d-flex flex-grow-1 align-items-center">

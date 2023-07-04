@@ -1,3 +1,15 @@
+<style>
+   @media only screen and (max-width: 600px) {
+    .helloo{
+ display: none !important;
+  }
+  .mailchimp{
+    display: none !important; 
+  }
+} 
+</style>
+
+
 @if(!empty($style) and $style == "carousel" and !empty($list_slider))
     <div class="effect">
         <div class="owl-carousel">
@@ -36,7 +48,7 @@
                             @endforeach
                         @endif
                     </ul> 
-                    <div class="col-md-12 w-100">
+                    <div class="col-md-12 w-100 helloo">
                         <div role="tabpanel" class="tab-pane active" id="bravo_flight" style="width:90%;top: 186px;position: relative; background:white; border-radius:10%">
                             @include(ucfirst("flight").'::frontend.layouts.search.form-search')
                         </div> 
