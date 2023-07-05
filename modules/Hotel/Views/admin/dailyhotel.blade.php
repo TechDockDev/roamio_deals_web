@@ -5,7 +5,7 @@
             <h1 class="title-bar">{{!empty($recovery) ? __('Recovery') : __("Today deals")}}</h1>
             <div class="title-actions">
                 @if(empty($recovery))
-                <a href="javascript:void(0)"  data-toggle="modal" data-target="#myModal" class="btn btn-primary">{{__("Add new today deals hotel")}}</a>
+                <a href="javascript:void(0)"  data-toggle="modal" data-target="#myModal" class="btn btn-primary">{{__("Add new today deals Staycation")}}</a>
                 @endif
             </div>
         </div>
@@ -96,7 +96,7 @@
                                                     {{__("Action")}}
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="">{{__("Edit hotel")}}</a>
+                                                    <a class="dropdown-item" href="">{{__("Edit Staycation")}}</a>
                                                     <a class="dropdown-item" href="">{{__("Manage Rooms")}}</a>
                                                     <a class="dropdown-item" href="">{{__("Manage Rooms Availability")}}</a>
                                                 </div>
@@ -125,7 +125,7 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Add Hotels For daily deals</h4>
+          <h4 class="modal-title">Add Staycations For daily deals</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         
@@ -135,7 +135,7 @@
           <form id="formget" action="/action_page.php">
 
 <div class="form-group">
-    <label for="bannerImage">Hotel Image:</label>
+    <label for="bannerImage">Staycation Image:</label>
    <center><img id="flah" class="d-block " src="https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Transparent-Image.png" alt="First slide" style="height:160px; width:420px;"></center>
   </div>
 

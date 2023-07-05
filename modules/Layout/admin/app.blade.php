@@ -174,13 +174,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 copy-right" >
-                        {{date('Y')}} &copy; {{__('Roamiodeals by')}} <a href="{{__('https://www.bookingcore.org')}}" target="_blank">{{__('Techdocklabs Team')}}</a>
+                        {{date('Y')}} &copy; {{__('Roamiodeals by')}} <a href="{{__('https://www.techdocklabs.com')}}" target="_blank">{{__('Techdocklabs Team')}}</a>
                     </div>
                     <div class="col-md-6">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a href="{{__('https://www.bookingcore.org')}}" target="_blank">{{__('About Us')}}</a>
-                            <a href="{{__('https://m.me/bookingcore')}}" target="_blank">{{__('Contact Us')}}</a>
-                        </div>
+                       {{-- <div class="text-md-right footer-links d-none d-sm-block">
+                            <a href="#" target="_blank">{{__('About Us')}}</a>
+                            <a href="#" target="_blank">{{__('Contact Us')}}</a>
+                        </div> --}} 
                     </div>
                 </div>
             </div>
