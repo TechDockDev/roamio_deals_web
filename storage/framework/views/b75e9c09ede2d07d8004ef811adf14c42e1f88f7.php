@@ -40,7 +40,7 @@
         <div class="col-md-4 text-center">
             <div class="card1">
                 <img src="images/Frame_2.png" class="card-img-top" alt="...">
-                
+               
             </div>
         </div>
         <div class="col-md-4 text-center">

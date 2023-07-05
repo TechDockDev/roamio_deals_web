@@ -90,19 +90,13 @@
         <div class="col-md-4 text-center">
             <div class="card1">
                 <img src="images/Frame_1.svg" class="card-img-top" alt="...">
-                {{-- <div class="card-body">
-                    <h5 class="card-title">Best Price Guarantee</h5>
-                    <p class="card-text">Best Recommendations according to your Interest</p>
-                </div> --}}
+                
             </div>
         </div>
         <div class="col-md-4 text-center">
             <div class="card1">
                 <img src="images/Frame_2.png" class="card-img-top" alt="...">
-                {{-- <div class="card-body">
-                    <h5 class="card-title">Best Offer</h5>
-                    <p class="card-text">Best Recommendations according to your Interest and offers.</p>
-                </div> --}}
+               
             </div>
         </div>
         <div class="col-md-4 text-center">
