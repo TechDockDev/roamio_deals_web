@@ -141,7 +141,16 @@ public function VishStatus(){
 
    public function visaApply(){
 
-    return view ('Flight::frontend.visa-apply');
+    $data = DB::table('visa_entry')->get();
+    $visadata = [];
+    
+    foreach ($data as $dt) {
+        $details = DB::table('visa_entry_details')->where('entry_id', $dt->id)->get();
+        $dt->visa_entry_details = $details;
+        $visadata[] = $dt;
+    }
+
+    return view ('Flight::frontend.visa-apply',compact('visadata'));
    }
 
 }
