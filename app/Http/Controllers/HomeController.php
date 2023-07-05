@@ -10,6 +10,7 @@ use Modules\News\Models\Tag;
 use Modules\News\Models\News;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+
 class HomeController extends Controller
 {
     /**
@@ -43,10 +44,20 @@ class HomeController extends Controller
                 'translation'=>$translation,
                 'is_home' => true,
             ];
-            
 
+           
+            
+          
+        
             return view('Page::frontend.detail',$data);
+
+
         }
+
+
+
+
+
         $model_News = News::where("status", "publish");
         $data = [
             'rows'=>$model_News->paginate(5),

@@ -2852,7 +2852,7 @@ body .daterangepicker .full-book-event:before {
   }
 }
 .bravo_wrap .page-template-content .bravo-testimonial .item {
-  border: 1px solid #d7dce3;
+  /* border: 1px solid #d7dce3; */
   border-radius: 3px;
   margin-bottom: 30px;
   min-height: 250px;

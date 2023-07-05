@@ -91,6 +91,9 @@ class HotelController extends Controller
             $data['html_class'] = 'full-page';
             return view('Hotel::frontend.search-map', $data);
         }
+
+
+        
         return view('Hotel::frontend.search', $data);
     }
 

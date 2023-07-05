@@ -4,7 +4,7 @@ namespace Modules\Hotel\Blocks;
 use Modules\Template\Blocks\BaseBlock;
 use Modules\Hotel\Models\Hotel;
 use Modules\Location\Models\Location;
-
+use DB;
 class ListHotel extends BaseBlock
 {
 
@@ -143,7 +143,71 @@ class ListHotel extends BaseBlock
             'title'      => $model['title'],
             'desc'       => $model['desc'],
         ];
-        return view('Hotel::frontend.blocks.list-hotel.index', $data);
+
+
+     //fetch for category
+           
+        $datacat = DB::table('bravo_terms')->where('attr_id','22')->get();
+    
+        $fetch = [];
+        
+        foreach($datacat as $dd)
+        {
+           $image = DB::table('media_files')->where('id',$dd->image_id)->first();
+           $dd->banner_image ='/uploads/'. $image->file_path;
+           $fetch[] = $dd;
+            
+        }
+
+
+        //   fetch for daily 
+
+        // $user_id = $request->id;
+
+      $terms = DB::table('bravo_terms')->where('attr_id', '18')->get();
+        $datas = [];
+        
+
+   foreach ($terms as $parent) {
+    $name = $parent->name;
+    $childData = DB::table('bravo_hotel_term')->where('term_id', $parent->id)->distinct()->take(3)->get();
+    $hotels = [];
+
+    foreach ($childData as $child) {
+        $id = $child->target_id;
+        $hotelsData = DB::table('bravo_hotels')->where('id', $id)->take(3)->get();
+        
+        foreach ($hotelsData as $hotel) {
+            $wishlist = DB::table('user_wishlist')
+                ->where('object_id', $hotel->id)
+                // ->where('user_id', $user_id)
+                ->where('object_model', 'hotel')
+                ->select('id')
+                ->first();
+            
+            $conditionwishlist = $wishlist ? true : false;
+            $bannerId = $hotel->banner_image_id;
+            $bannerimage = DB::table('media_files')->where('id', $bannerId)->first();
+            $hotel->banner_image = "uploads/$bannerimage->file_path";
+            $hotel->wishlist = $conditionwishlist;
+            $hotels[] = $hotel;
+        }
+    }
+
+    $datas[] = [
+        'id' => $parent->id,
+        'parent_name' => $name,
+        'hotels' => $hotels,
+    ];
+}
+
+
+// dd($datas);
+
+
+
+        // return view('Hotel::frontend.blocks.list-hotel.index', $data , $fetch);
+        return view('Hotel::frontend.blocks.list-hotel.index',$data, compact('fetch','datas'));
     }
 
     public function contentAPI($model = []){

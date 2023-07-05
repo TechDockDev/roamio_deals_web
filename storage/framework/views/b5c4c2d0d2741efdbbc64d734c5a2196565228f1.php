@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style>
   
 
@@ -128,63 +130,64 @@ p {
     text-align: center;
     font-size: 22px;
 }
-   
+.fass:hover {
+  color: red !important;
+}
+    
+
 
 </style>
 
+
+
 <div class="container mt-5">
-   <div class="row">
-    <h4  class="title" style="margin-top: 43px;">Daily Deals</h4>
-   </div>
-   <div class="row">
-        <div class="col-md-4">
-            <div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-        </div>
-   
-   </div>
+    <?php $__currentLoopData = $datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dealydeal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <div class="row">
+       <h4 class="title" style="margin-top: 43px;"><?php echo e($dealydeal['parent_name']); ?> <span style="float:right; color:#FF3500; font-size:15px;">View All</span></h4>
+    </div>
+    <div class="row">
+       <?php $__currentLoopData = $dealydeal['hotels']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+       <div class="col-md-4">
+          <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
+             <div class="Daily-Deals1" style="position: relative;">
+                <img src="<?php echo e($hotel->banner_image); ?>" style="height:200px; width:100%; border-radius: 10px;">
+                <span class="fa fa-heart fa-3x fass" style="position: absolute;
+                top: 10px;
+                right: 10px;
+                color: white;
+                text-shadow: 1px 1px 2px black;
+                /* float: right; */
+                left: 270px;
+                height: 30px;
+                width: 30px;
+                background: white;
+                padding: 6px 6px;
+                border-radius:30px;
+            "></span>
+             </div>
+             <div class="card-body">
+                <h5 class="card-title"><?php echo e($hotel->title); ?></h5>
+                <p class="card-text">
+                   <span><i class="fa fa-map-marker" aria-hidden="true"></i>  <?php echo e($hotel->address); ?></span>
+                </p>
+                <p>
+                   <span class="btn btn-light Daily-btn"><?php echo e($hotel->star_rate); ?> <i class="fa fa-star"></i></span>
+                   (4)
+                   <span> Excellent </span>
+                </p>
+                <p>
+                   <span style="font-size:25px; color:black;"><?php echo e($hotel->price); ?></span>
+                   <span style="font-size:25px;"> AED </span>
+                   <span class="btn btn-light Daily-btn"><?php echo e($hotel->discount_percent); ?>% OFF</span>
+                </p>
+             </div>
+          </div>
+       </div>
+       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div>
+
 
 
 
@@ -226,113 +229,41 @@ p {
 
 
 
-
 <div class="container">
     <div class="row">
-        <h4  class="title">Explore the peak of Dubai</h4>
+        <h4 class="title">Explore the peak of Dubai</h4>
     </div>
-	<div class="row">  
-		<div id="filtering">
-			<button class="bttn active" onclick="geeksportal('all')">Show all</button>
-			<button class="bttn" onclick="geeksportal('Top Trending In Dubai')">Top Trending In Dubai</button>
-			<button class="bttn" onclick="geeksportal('Top Discount')">Top Discount</button>
-			<button class="bttn" onclick="geeksportal('Top Rated')">Top Rated</button>
-			<button class="bttn" onclick="geeksportal('Top Selling')">Top Selling</button>
-
-		</div>
-	</div>
+    <div class="row">  
+        <div id="filtering">
+            <button class="bttn active" onclick="geeksportal('all')">Show all</button>
+            <button class="bttn" onclick="geeksportal('Top Trending In Dubai')">Top Trending In Dubai</button>
+            <button class="bttn" onclick="geeksportal('Top Discount')">Top Discount</button>
+            <button class="bttn" onclick="geeksportal('Top Rated')">Top Rated</button>
+            <button class="bttn" onclick="geeksportal('Top Selling')">Top Selling</button>
+        </div>
+    </div>
 
     <div class="row">
-        <h4  class="title">Categories</h4>
+        <h4 class="title">Categories</h4>
     </div>
-    
 
-	<div class="row"> 
-    <div class="col-md-3">
-        <div class="column Top Trending In Dubai">
-			<div class="card1">
-                  <div class="categories">
-                     <h2 class="heading">Staycation</h2>
-                  </div>
-			</div>
-		</div>
-    </div>
-    <div class="col-md-3">
-        <div class="column Top Discount">
-			<div class="card1">
-                <div class="categories">
-                    <h2 class="heading">Water Adventure</h2>
-                </div>
-          </div>
-		</div>
-    </div>
-    <div class="col-md-3">
-        <div class="column Top Rated">
-			<div class="card1">
-                <div class="categories">
-                    <h2 class="heading">Desert Safari</h2>
-                </div>
-          </div>
-		</div>
-    </div>
-    <div class="col-md-3">
-        <div class="column Top Selling">
-			<div class="card1">
-                <div class="categories">
-                    <h2  class="heading">Sports</h2>
-                </div>
-          </div>
-		</div>
-    </div>
-    </div>
     <div class="row"> 
+        <?php $__currentLoopData = $fetch; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="col-md-3">
             <div class="column Top Trending In Dubai">
-                <div class="card1">
-                      <div class="categories">
-                         <h2 class="heading">Parks</h2>
-                      </div>
+                <div class="card1" style="position: relative;">
+                    <div class="categories1" style="position: relative;">
+                        <img src="<?php echo e($cat->banner_image); ?>" alt="" srcset="" style="height:200px; width:100%; border-radius:10px;">
+                        <h2 class="heading" style="position: absolute; top: 76%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 100%; font-weight: 900;"><?php echo e($cat->name); ?></h2>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="column Top Discount">
-                <div class="card1">
-                    <div class="categories">
-                        <h2 class="heading">Attraction</h2>
-                    </div>
-              </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="column Top Rated">
-                <div class="card1">
-                    <div class="categories">
-                        <h2 class="heading">Combo Packs</h2>
-                    </div>
-              </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="column Top Selling">
-                <div class="card1">
-                    <div class="categories">
-                        <h2 class="heading">View All > </h2>
-                    </div>
-              </div>
-            </div>
-        </div>
-        </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+</div>
 
-		
 
-	
-
-		
-
-	
-
-	</div>
 
 
 
@@ -402,3 +333,4 @@ for (var i = 0; i < btns.length; i++) {
 }
     </script> 
   
+<?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Hotel/Views/frontend/blocks/list-hotel/index.blade.php ENDPATH**/ ?>
