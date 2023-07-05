@@ -1,5 +1,5 @@
 <div class="panel">
-    <div class="panel-title"><strong>{{__("Hotel Content")}}</strong></div>
+    <div class="panel-title"><strong>{{__("Staycation Content")}}</strong></div>
     <div class="panel-body">
         <?php
         

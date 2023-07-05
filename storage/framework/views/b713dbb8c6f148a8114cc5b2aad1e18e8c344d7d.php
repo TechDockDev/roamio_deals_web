@@ -1,5 +1,6 @@
  <div class="bravo_header">
-    <div class="<?php echo e($container_class ?? 'container'); ?>">
+    <div class="<?php echo e($container_class ?? 'container'); ?>" 
+>
         <div class="content">
             <div class="header-left">
                 <a href="<?php echo e(url(app_get_locale(false,'/'))); ?>" class="bravo-logo">
@@ -11,22 +12,17 @@
                     ?>
                     <?php if($logo_id): ?>
                         <?php $logo = get_file_url($logo_id,'full') ?>
-                        <img src="<?php echo e($logo); ?>" style="height: 93px;" alt="<?php echo e(setting_item("site_title")); ?>">
+                        <img src="<?php echo e($logo); ?>" style=" height: 91px;
+                      
+                        position: relative;" alt="<?php echo e(setting_item("site_title")); ?>">
                     <?php endif; ?>
                 </a>
-                
-
-
-
-
-   <div class="bravo_topbar">
+             
+   <div class="bravo_topbar" style="height: 94px;">
     <div class="container">
         <div class="content">
-            
             <div class="topbar-left">
-
                  <ul class="topbar-items">
-
                     <div style="position: relative !important;
                          left: -327px !Important;
                      top: 41px; !important">
@@ -37,26 +33,35 @@
 
                    
         <div class="col-md-12 mx-auto">
-            <div class="input-group" style="left: -69%;
-    width: 198%; top: 10px;">
-                <input class="form-control border-end-0 border" type="search" value="search" id="example-search-input">
+            <div class="input-group" style="left: -97%;
+            width: 198%;
+            top: 10px;">
+                <input class="form-control border-end-0 border" type="search" id="example-search-input" placeholder="Search for destinations or activities" style="background:#F6F6F6;">
                 <span class="input-group-append" style="margin-bottom: 0px;
-    border-bottom: 1px solid #dae1e7;">
-                    <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button" style="height: 39px">
+              border-bottom: 1px solid #dae1e7;">
+                    <button class="btn btn-outline-secondary border-start-0 border-bottom-0 border ms-n5" type="button" style="height: 39px;background:#F6F6F6;">
                         <i class="fa fa-search"></i>
                     </button>
                 </span>
             </div>
         </div>
-   
                     
-                    <div style="float: right;
-    right: -344px;
-    position: relative;
-    top: -30px;">
+        <div class="col-md-12">
+          <a href="<?php echo e(url('hotel-wish-list')); ?>"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>WishList</p></a>
+         <a href="<?php echo e(url('event-cart')); ?>"> <p style="color: gray;
+          left: 280px;
+          position: relative;
+          top: -53px;"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  cart </p></a>
+        </div>
+         
+     <div style="float: right;
+     right: -335px;
+     position: relative;
+     top: -98px;
+ ">
                 <?php if(!Auth::check()): ?>
                         <li class="login-item">
-                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="border:1px solid #FE9000"><?php echo e(__('Login')); ?></a>
+                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900;"><?php echo e(__('Login')); ?></a>
                         </li>
                         <?php if(is_enable_registration()): ?>
                             <li class="signup-item">
@@ -66,11 +71,11 @@
                     <?php else: ?>
                         <?php echo $__env->make('Layout::parts.notification', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         <li class="login-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="login"><?php echo e(__("Hi, :name",['name'=>Auth::user()->getDisplayName()])); ?>
+                            <a href="#" data-toggle="dropdown"  class="login " style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; padding:10px;"><?php echo e(__("Hi, :name",['name'=>Auth::user()->getDisplayName()])); ?>
 
                                 <i class="fa fa-angle-down"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-user text-left">
+                            <ul class="dropdown-menu dropdown-menu-user text-left" style="width:140px;">
                                 <?php if(empty( setting_item('wallet_module_disable') )): ?>
                                     <li class="credit_amount">
                                         <a href="<?php echo e(route('user.wallet')); ?>"><i class="fa fa-money"></i> <?php echo e(__("Credit: :amount",['amount'=>auth()->user()->balance])); ?></a>
@@ -79,9 +84,7 @@
                                 <?php if(is_vendor()): ?>
                                 <!--<li class="menu-hr"><a href="<?php echo e(route('vendor.dashboard')); ?>" class="menu-hr"><i class="icon ion-md-analytics"></i> <?php echo e(__("Vendor Dashboard")); ?></a></li>-->
                                 <?php endif; ?>
-                                <li class="<?php if(is_vendor()): ?> menu-hr <?php endif; ?>">
-                                    <a href="<?php echo e(route('user.profile.index')); ?>"><i class="icon ion-md-construct"></i> <?php echo e(__("My profile")); ?></a>
-                                </li>
+                                
                                 <?php if(setting_item('inbox_enable')): ?>
                                 <li class="menu-hr">
                                     <a href="<?php echo e(route('user.chat')); ?>"><i class="fa fa-comments"></i> <?php echo e(__("Messages")); ?>
@@ -92,12 +95,9 @@
                                     </a>
                                 </li>
                                 <?php endif; ?>
-                                    <li class="menu-hr"><a href="<?php echo e(route('user.booking_history')); ?>"><i class="fa fa-clock-o"></i> <?php echo e(__("Booking History")); ?></a></li>
-                                <li class="menu-hr"><a href="<?php echo e(route('user.change_password')); ?>"><i class="fa fa-lock"></i> <?php echo e(__("Change password")); ?></a></li>
+                                    
 
-                                <?php if(is_enable_plan() ): ?>
-                                    <li class="menu-hr"><a href="<?php echo e(route('user.plan')); ?>"><i class="fa fa-list-alt"></i> <?php echo e(__("My plan")); ?></a></li>
-                                <?php endif; ?>
+                                
 
                                 <?php if(is_admin()): ?>
                                     <li class="menu-hr"><a href="<?php echo e(route('admin.index')); ?>"><i class="icon ion-ios-ribbon"></i> <?php echo e(__("Admin Dashboard")); ?></a></li>
@@ -182,7 +182,7 @@
         <div class="user-profile">
             <div class="b-close"><i class="icofont-scroll-left"></i></div>
             <div class="avatar"></div>
-            <ul>
+            <ul style="width:100%;">
                 <?php if(!Auth::check()): ?>
                     <li>
                         <a href="#login" data-toggle="modal" data-target="#login" class="login"><?php echo e(__('Login')); ?></a>
@@ -194,12 +194,12 @@
                     <?php endif; ?>
                 <?php else: ?>
                     <li>
-                        <a href="<?php echo e(route('user.profile.index')); ?>">
+                        <a href="<?php echo e(route('user.profile.index')); ?>" class="btn btn-light" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white;">
                             <i class="icofont-user-suited"></i> <?php echo e(__("Hi, :Name",['name'=>Auth::user()->getDisplayName()])); ?>
 
                         </a>
                     </li>
-                    
+                  
                     <?php if(Auth::user()->hasPermission('dashboard_access')): ?>
                         <li>
                             <a href="<?php echo e(route('admin.index')); ?>"><i class="icon ion-ios-ribbon"></i> <?php echo e(__("Admin Dashboard")); ?></a>

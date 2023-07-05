@@ -2,10 +2,10 @@
 <div class ="main-content">
  <div class="container-fluid">
         <div class="d-flex justify-content-between mb20">
-            <h1 class="title-bar">{{!empty($recovery) ? __('Recovery') : __("All daily/best hotel deals")}}</h1>
+            <h1 class="title-bar">{{!empty($recovery) ? __('Recovery') : __("All daily/best Staycation deals")}}</h1>
             <div class="title-actions">
                 @if(empty($recovery))
-                <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" class="btn btn-primary">{{__("Add new hotel")}}</a>
+                <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" class="btn btn-primary">{{__("Add new Staycation")}}</a>
                 @endif
             </div>
         </div>
@@ -85,8 +85,8 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th> {{ __('Hotel Image')}}</th>
-                            <th width="200px"> {{ __('Hotel Name')}}</th>
+                            <th> {{ __('Staycation Image')}}</th>
+                            <th width="200px"> {{ __('Staycation Name')}}</th>
                             <th width="200px"> {{ __('Check out time')}}</th>
                             <th width="180px"> {{ __('Check in time')}}</th>
                             <th width="100px">{{ __('Price')}}</th>
@@ -134,7 +134,7 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Update Hotels</h4>
+          <h4 class="modal-title">Update Staycations</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         
@@ -160,8 +160,8 @@
 
 
   <div class="form-group col-md-6">
-    <label for="link">Hotel Name</label>
-    <input type="text" name="title" class="form-control" placeholder="Type Hotel Name" id="link">
+    <label for="link">Staycation Name</label>
+    <input type="text" name="title" class="form-control" placeholder="Type Staycation Name" id="link">
   </div>
 
  <div class="form-group col-md-6">
@@ -185,8 +185,8 @@
   <select name="condition" class="form-control" required>
     <option class="" id="ggcondition">select condition</option>
    
-    <option value="bestdeal">Best Deals hotel</option>
-    <option value="todaydeal">Today Deals hotel</option>
+    <option value="bestdeal">Best Deals Staycation</option>
+    <option value="todaydeal">Today Deals Staycation</option>
      
   </select>
   </div>
@@ -224,7 +224,7 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Add Hotels</h4>
+          <h4 class="modal-title">Add Staycation</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         
@@ -250,8 +250,8 @@
 
 
   <div class="form-group col-md-6">
-    <label for="link">Hotel Name</label>
-    <input type="text" name="title" class="form-control" placeholder="Type Hotel Name" id="link" required>
+    <label for="link">Staycation Name</label>
+    <input type="text" name="title" class="form-control" placeholder="Type Staycation Name" id="link" required>
   </div>
 
  <div class="form-group col-md-6">
@@ -275,8 +275,8 @@
   <select name="condition" class="form-control" id="sel1" required>
     <option class="">select condition</option>
    
-    <option value="bestdeal">Best Deals hotel</option>
-    <option value="todaydeal">Today Deals hotel</option>
+    <option value="bestdeal">Best Deals Staycation</option>
+    <option value="todaydeal">Today Deals Staycation</option>
      
   </select>
   </div>
@@ -314,7 +314,7 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">delete hotel</h4>
+          <h4 class="modal-title">delete Staycations</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         
@@ -324,7 +324,7 @@
 <form id="formget" method="post" action="{{route('hotel.admin.deletebesttoday')}}">
          @csrf
 
-         <h5>Are you sure want to delete this hotel??</h5>
+         <h5>Are you sure want to delete this Staycation??</h5>
 
         <input type="text" name="id" class="form-control" style="display:none;" id="deletefield" value="">
 
@@ -422,7 +422,7 @@ Swal.fire({
 Swal.fire({
   icon: 'success',
   title: 'operation success',
-  text: 'hotel added successfully'
+  text: 'Staycation added successfully'
 });   
   
 </script>
@@ -459,7 +459,7 @@ Swal.fire({
 Swal.fire({
   icon: 'success',
   title: 'operation success',
-  text: 'hotel deleted successfully'
+  text: 'Staycation deleted successfully'
 });   
   
 </script>
