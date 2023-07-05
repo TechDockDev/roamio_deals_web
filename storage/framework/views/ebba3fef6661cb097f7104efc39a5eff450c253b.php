@@ -1,8 +1,8 @@
-@extends('layouts.app')
-@push('css')
-<link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}" />
+
+<?php $__env->startPush('css'); ?>
+<link href="<?php echo e(asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version'))); ?>" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css")); ?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/fotorama/fotorama.css")); ?>" />
 
 <style>
   .accordion {
@@ -567,8 +567,8 @@
 
   }
 </style>
-@endpush
-@section('content')
+<?php $__env->stopPush(); ?>
+<?php $__env->startSection('content'); ?>
 
 
 
@@ -655,34 +655,34 @@
             <div class="wizard-panel-content">
 
 
-              @foreach($visadata as $visa)
-              <button class="accordion">{{$visa->entry}}</button>
+              <?php $__currentLoopData = $visadata; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $visa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <button class="accordion"><?php echo e($visa->entry); ?></button>
               <div class="panel" style="display: flex; flex-direction: column;">
 
                 <div class="container" style="margin-top:10px; margin-bottom:10px;">
                   <div class="row">
-                    @foreach ($visa->visa_entry_details as $item)
+                    <?php $__currentLoopData = $visa->visa_entry_details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-4">
                       <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
                       
                         <div style="padding:10px;">
                         <div style="display: flex; justify-content: flex-end;">
-                    <input type="radio" class="form-check-input" style=" height: 20px; width: 20px; order: 1;" id="check{{$item->id}}" name="selected_option" value="{{$item->id}}">
+                    <input type="radio" class="form-check-input" style=" height: 20px; width: 20px; order: 1;" id="check<?php echo e($item->id); ?>" name="selected_option" value="<?php echo e($item->id); ?>">
                 </div>
-                          <h5>{{$item->days}}</h5>
-                          <h6>{{$item->title}}</h6>
-                           <p>{!! $item->discription !!}</p>
+                          <h5><?php echo e($item->days); ?></h5>
+                          <h6><?php echo e($item->title); ?></h6>
+                           <p><?php echo $item->discription; ?></p>
 
-                          <h4>{{$item->price}}</h4>
+                          <h4><?php echo e($item->price); ?></h4>
                         </div>
                       </div>
                     </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </div>
                 </div>
 
               </div>
-              @endforeach
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
             <div class="wizard-panel-btn">
               <button class="br-button wizard-btn-canc" type="button">Cancel
@@ -817,4 +817,5 @@
   }
 </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\roamio_deals_web\themes/BC/Flight/Views/frontend/visa-apply.blade.php ENDPATH**/ ?>
