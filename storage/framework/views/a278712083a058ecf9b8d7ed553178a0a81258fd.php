@@ -29,9 +29,6 @@
                     <?php echo $__env->make('Core::frontend.currency-switcher', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <?php echo $__env->make('Language::frontend.switcher', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
-
-
-                   
         <div class="col-md-12 mx-auto">
             <div class="input-group" style="left: -97%;
             width: 198%;
@@ -47,14 +44,13 @@
         </div>
                     
         <div class="col-md-12">
-          <p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>  WishList </p>
-          <p style="color: gray;
+          <a href="<?php echo e(url('hotel-wish-list')); ?>"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>WishList</p></a>
+         <a href="<?php echo e(url('event-cart')); ?>"> <p style="color: gray;
           left: 280px;
           position: relative;
-          top: -53px;"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  cart </p>
+          top: -53px;"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  cart </p></a>
         </div>
-   
-                    
+         
      <div style="float: right;
      right: -335px;
      position: relative;

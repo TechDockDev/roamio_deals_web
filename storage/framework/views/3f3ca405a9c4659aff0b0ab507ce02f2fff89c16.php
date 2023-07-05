@@ -1,12 +1,7 @@
  
  
    <style>
-    .background{
-      background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
-      height:100%;
-      width:100%;
- 
-    }
+    
 
     @font-face {
     font-family: 'WebSymbolsRegular';
@@ -21,12 +16,7 @@
     padding: 0;
 }
 
-body {
-    background-image: url(https://subtlepatterns.com/patterns/dark_wall.png);
-    background-repeat: repeat;
-    height: 500px;
-    padding: 1px;
-}
+
 
 h1 { color: white }
 
@@ -258,6 +248,18 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 
 </style>
 
+<?php
+    $review = DB::table('bravo_review')->limit(10)->get();
+
+    $user_review = [];
+
+    foreach ($review as $rr) {
+        $user = DB::table('users')->select('first_name', 'last_name', 'images')->where('id', $rr->user_id)->first();
+        $rr->user = $user;
+        $user_review[] = $rr;
+    }
+?>
+
  
  <div class="container">
     <div class="bravo-list-event layout_<?php echo e($style_list); ?>">
@@ -296,161 +298,82 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 
 
 
-<div class="background mb-5">
-    <div class="container-fluid">
-    <div class="row d-flex  justify-content-center p-4"> 
-     <div class="col-md-6">
-        <h3  class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-        <p class="card-text text-white pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <div class="row">
-            <div class="col-md-6">
-                <h3  class="card-text pt-2 text-white p-1">13M +</h3>
-                <p class="card-text text-white">Happy Customers</p>
-            </div>
-            <div class="col-md-6">
-                <h3  class="card-text pt-2 text-white p-1">5.0 <i class="fa fa-star"></i></h3>
-                <p class="card-text text-white ">Overall Rating</p>
-            </div>
-        </div>
-      
-     </div>
-     <div class="col-md-6 p-4">
-        <div id="slideshow-wrap">
-                   <input type="radio" id="button-1" name="controls" checked="checked"/>
-                   <input type="radio" id="button-2" name="controls"/>
-                   <input type="radio" id="button-3" name="controls"/>
-                   <input type="radio" id="button-4" name="controls"/>
-                    <input type="radio" id="button-5" name="controls"/>
-           
-            <div id="slideshow-inner">
-                <ul>
-                    <li id="slide1">
-                       
-                        <p class="py-4 p-3">
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                             <br>
-                        </p>
-                      
-                          <div class="row">
-                            <div class="col-md-4">
-                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
-                            </div>
-                            <div class="col-md-8">
-                               <h5> Risiya khan</h5>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               
-
-                            </div>
-                          </div>
-                    </li>
-                    <li id="slide2">
-                        <p class="py-4  p-3">
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                        </p>
-                      
-                          <div class="row">
-                            <div class="col-md-4">
-                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
-                            </div>
-                            <div class="col-md-8">
-                               <h5> Risiya khan</h5>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               
-
-                            </div>
-                          </div>
-                        
-                    </li>
-                    <li id="slide3">
-                        <p class="py-4  p-3" >
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                        </p>
-                      
-                          <div class="row">
-                            <div class="col-md-4">
-                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
-                            </div>
-                            <div class="col-md-8">
-                               <h5> Risiya khan</h5>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               
-
-                            </div>
-                          </div>
-                      
-                    </li>
-                    <li id="slide4">
-                        <p class="py-4  p-3">
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                        </p>
-                      
-                          <div class="row">
-                            <div class="col-md-4">
-                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
-                            </div>
-                            <div class="col-md-8">
-                               <h5> Risiya khan</h5>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               
-
-                            </div>
-                          </div>
-                    </li>
-                    <li id="slide5">
-                        <p class="py-4  p-3" >
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit.
-                            Lorem ipsum dolor sit amet, consectetur adpiscing elit. Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                             Nam urna purus, convallis ac augue vulputate, dictum consequat velit. Sed fermentum feugiat diam, vel suscipit enim.
-                        </p>
-                      
-                          <div class="row">
-                            <div class="col-md-4">
-                            <img src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" style="border-radius:100px; height: 100px;">
-                            </div>
-                            <div class="col-md-8">
-                               <h5> Risiya khan</h5>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               <i class="fa fa-star"></i>
-                               
-
-                            </div>
-                          </div>
-                    </li>
-                </ul>
+<div class="container-fluid mb-5 w-100" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
+    <div class="row d-flex justify-content-center p-4"> 
+        <div class="col-md-6">
+            <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
+            <p class="card-text text-white pt-3">At XYZ Hotel, our top priority is customer satisfaction. We take great pride in providing exceptional service and creating memorable experiences for our guests. Don't just take our word for it - here's what some of our happy customers have to say.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="card-text pt-2 text-white p-1">13M +</h3>
+                    <p class="card-text text-white">Happy Customers</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="card-text pt-2 text-white p-1">5.0 <i class="fa fa-star"></i></h3>
+                    <p class="card-text text-white">Overall Rating</p>
+                </div>
             </div>
         </div>
-    
-     </div>
-    </div>
+        <div class="col-md-6 p-4">
+            <div id="slideshow-wrap">
+                <input type="radio" id="button-1" name="controls" checked="checked"/>
+                <input type="radio" id="button-2" name="controls"/>
+                <input type="radio" id="button-3" name="controls"/>
+                <input type="radio" id="button-4" name="controls"/>
+                <input type="radio" id="button-5" name="controls"/>
+
+                <div id="slideshow-inner">
+                    <?php if(!empty($user_review)): ?>
+                    <div id="testimonial-carousel" class="carousel slide bravo-testimonial" data-ride="carousel">
+                        <div class="container">
+                            <div class="carousel-inner">
+                                <?php $active = true; ?>
+                                <?php $__currentLoopData = array_chunk($user_review, 3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chunk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="carousel-item <?php echo e($active ? 'active' : ''); ?>">
+                                        <div class="row">
+                                            <?php $__currentLoopData = $chunk; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <div class="col-md-12">
+                                                    <div class="item has-matchHeight">
+                                                        <div class="author">
+                                                            <?php if(!empty($item->user->images)): ?>
+                                                                <img src="/image/<?php echo e($item->user->images); ?>" alt="<?php echo e($item->user->first_name); ?>" style="height:100px; width:100px; border-radius:100px;">
+                                                            <?php else: ?>
+                                                                <img src="/default-image.jpg" alt="Default Image">
+                                                            <?php endif; ?>
+                                                            <div class="author-meta">
+                                                                <?php if(!empty($item->user->first_name) && !empty($item->user->last_name)): ?>
+                                                                    <h4><?php echo e($item->user->first_name); ?> <?php echo e($item->user->last_name); ?></h4>
+                                                                <?php endif; ?>
+                                                                <?php if(!empty($item->rate_number)): ?>
+                                                                    <div class="star">
+                                                                        <?php for($i = 0; $i < $item->rate_number; $i++): ?>
+                                                                            <i class="fa fa-star" style="color:#FF3500;"></i>
+                                                                        <?php endfor; ?>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                        </div>
+                                                        <p>
+                                                            <?php echo e($item->content); ?>
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </div>
+                                    </div>
+                                    <?php $active = false; ?>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 
 
 <script>
