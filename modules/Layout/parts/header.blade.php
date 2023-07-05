@@ -29,9 +29,6 @@
                     @include('Core::frontend.currency-switcher')
                     @include('Language::frontend.switcher')
                     </div>
-
-
-                   
         <div class="col-md-12 mx-auto">
             <div class="input-group" style="left: -97%;
             width: 198%;
