@@ -2433,3 +2433,34 @@
 #98 {main}
 >>>>>>> 5f9dc8e8f6459755befc010da8680fdbe4f675f5
 "} 
+[2023-07-04 16:40:12] production.ERROR: syntax error, unexpected identifier "Route" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected identifier \"Route\" at C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\modules\\Event\\Routes\\web.php:18)
+[stacktrace]
+#0 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(503): Illuminate\\Routing\\RouteFileRegistrar->register('C:\\\\Users\\\\komal\\\\...')
+#1 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(457): Illuminate\\Routing\\Router->loadRoutes('C:\\\\Users\\\\komal\\\\...')
+#2 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(192): Illuminate\\Routing\\Router->group(Array, 'C:\\\\Users\\\\komal\\\\...')
+#3 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\modules\\Event\\RouterServiceProvider.php(57): Illuminate\\Routing\\RouteRegistrar->group('C:\\\\Users\\\\komal\\\\...')
+#4 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\modules\\Event\\RouterServiceProvider.php(39): Modules\\Event\\RouterServiceProvider->mapWebRoutes()
+#5 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Modules\\Event\\RouterServiceProvider->map()
+#6 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(651): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(122): Illuminate\\Container\\Container->call(Array)
+#11 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#12 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#13 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#14 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#15 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#16 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(651): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#17 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\ServiceProvider.php(119): Illuminate\\Container\\Container->call(Object(Closure))
+#18 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(936): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#19 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(914): Illuminate\\Foundation\\Application->bootProvider(Object(Modules\\Event\\RouterServiceProvider))
+#20 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(Modules\\Event\\RouterServiceProvider), 56)
+#21 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(915): array_walk(Array, Object(Closure))
+#22 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#23 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(242): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#24 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(383): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#25 C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(153): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 {main}
+"} 

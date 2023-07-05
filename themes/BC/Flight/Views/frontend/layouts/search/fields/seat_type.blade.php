@@ -22,9 +22,9 @@ $minValue = 0;
 		<img src="{{asset('icon/Juggler.svg')}}" style="height:35px;   left: 177%;
     position: relative;
     top: -16px;"> 
-	   <label style="left: 145%;
+	  <a href="{{ url('explore-activity')}}"><label style="left: 145%;
      position: relative;
      top: 21px;
-     font-size: 18px;">Activities</label>
+     font-size: 18px;">Activities</label></a>
 	</div>
 </div>
