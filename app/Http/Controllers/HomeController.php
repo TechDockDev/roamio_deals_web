@@ -43,6 +43,8 @@ class HomeController extends Controller
                 'translation'=>$translation,
                 'is_home' => true,
             ];
+            
+
             return view('Page::frontend.detail',$data);
         }
         $model_News = News::where("status", "publish");

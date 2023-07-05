@@ -1,8 +1,8 @@
-@extends('layouts.app')
-@push('css')
-    <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
+
+<?php $__env->startPush('css'); ?>
+    <link href="<?php echo e(asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version'))); ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css")); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/fotorama/fotorama.css")); ?>"/>
   
 
     <!-- Latest compiled and minified CSS -->
@@ -31,8 +31,8 @@
     border-radius: 10px;
         }
     </style>
- @endpush
- @section('content')
+ <?php $__env->stopPush(); ?>
+ <?php $__env->startSection('content'); ?>
  
    <div class="container mt-4 pt-4">
     <div class="row">
@@ -62,21 +62,21 @@
         <div class="col-md-10 w-100 card-item justify-content-center offset-md-1">
             <div class="row  text-center">
                 <div class="col-md-4 py-4">
-                    <a href="" style="text-decoration: none;"><img src="{{ asset('images\list-check_2.svg')}}" alt="" srcset="">
+                    <a href="" style="text-decoration: none;"><img src="<?php echo e(asset('images\list-check_2.svg')); ?>" alt="" srcset="">
                     <div class="card-body" 
                     >
                         Check Visa Status
                     </div> </a>
                 </div>
                 <div class="col-md-4 py-4">
-                   <a href="{{ url('visa-apply')}}" style="text-decoration: none;"><img src="{{ asset('images\info-circle_1.svg')}}" alt="">
+                   <a href="<?php echo e(url('visa-apply')); ?>" style="text-decoration: none;"><img src="<?php echo e(asset('images\info-circle_1.svg')); ?>" alt="">
                     <div class="card-body">
                         Apply UAE Visa
                     </div>
                 </a>
                 </div>
                 <div class="col-md-4 py-4">
-                    <a href="{{ url('visa-status')}}" style="text-decoration: none;"><img src="{{ asset('images\hand-index-thumb_3.svg')}}" alt="">
+                    <a href="<?php echo e(url('visa-status')); ?>" style="text-decoration: none;"><img src="<?php echo e(asset('images\hand-index-thumb_3.svg')); ?>" alt="">
                     <div class="card-body">
                         Important Terms & Conditions
                     </div>
@@ -95,28 +95,28 @@
     <div class="row">
         <div class="col-md-4">
          <p>Select your nationality, travel date and number of passengers</p>
-          <img src="{{ asset('images/Complete_3.png')}}"  class="img">
+          <img src="<?php echo e(asset('images/Complete_3.png')); ?>"  class="img">
         </div>
        <div class="col-md-4">
-        <img src="{{ asset('images/Vector _134.png')}}"  class="img">
+        <img src="<?php echo e(asset('images/Vector _134.png')); ?>"  class="img">
        </div>
        <div class="col-md-4">
         <p>Select visa type </p>
-        <img src="{{ asset('images/Complete_4.png')}}"  class="img">
+        <img src="<?php echo e(asset('images/Complete_4.png')); ?>"  class="img">
        </div>
     </div>
 
     <div class="row pt-2">
         <div class="col-md-4">
          <p>finish payment and there you go</p>
-          <img src="{{ asset('images/Complete_1.png')}}"  class="img">
+          <img src="<?php echo e(asset('images/Complete_1.png')); ?>"  class="img">
         </div>
        <div class="col-md-4">
-        <img src="{{ asset('images/Vector_132.png')}}"  class="img">
+        <img src="<?php echo e(asset('images/Vector_132.png')); ?>"  class="img">
        </div>
        <div class="col-md-4">
         <p>enter your personal details and upload travel documents </p>
-        <img src="{{ asset('images/Complete_4.png')}}"  class="img">
+        <img src="<?php echo e(asset('images/Complete_4.png')); ?>"  class="img">
        </div>
     </div>
 </div>
@@ -128,7 +128,7 @@
         <div class="row  d-flex justify-content-center">
             <div class="col-md-4 text-center">
                 <div class="card1">
-                    <img class="card-img-top UAE-Img" src="{{asset('images/Complete_6.svg')}}" alt="Card image cap">
+                    <img class="card-img-top UAE-Img" src="<?php echo e(asset('images/Complete_6.svg')); ?>" alt="Card image cap">
                     <div class="card-body py-2">
                       <h5 class="card-title">Simple & hassle free process</h5>
                       <p class="card-text">Our visa application process is designed to be easy and straightforward. You can complete the application form in just a few minutes</p>
@@ -138,7 +138,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="card1 ">
-                    <img class="card-img-top UAE-Img" src="{{asset('images/Complete_7.png')}}" alt="Card image cap">
+                    <img class="card-img-top UAE-Img" src="<?php echo e(asset('images/Complete_7.png')); ?>" alt="Card image cap">
                     <div class="card-body py-2">
                       <h5 class="card-title">Best Price Guaranteed</h5>
                       <p class="card-text">We offer competitive pricing for our visa services, and we are committed to providing the best value for our customers.</p>
@@ -148,7 +148,7 @@
             </div>
             <div class="col-md-4 text-center mb-4">
                 <div class="card1">
-                    <img class="card-img-top UAE-Img" src="{{asset('images/Complete_8.png')}}" alt="Card image cap">
+                    <img class="card-img-top UAE-Img" src="<?php echo e(asset('images/Complete_8.png')); ?>" alt="Card image cap">
                     <div class="card-body py-2">
                       <h5 class="card-title">Check Visa Status</h5>
                       <p class="card-text">You can easily check the status of your visa application at any time. Simply enter your visa reference number, and you will be able to see the progress of your application.</p>
@@ -240,4 +240,5 @@
 </div>
  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- @endsection
+ <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Flight/Views/frontend/vish.blade.php ENDPATH**/ ?>
