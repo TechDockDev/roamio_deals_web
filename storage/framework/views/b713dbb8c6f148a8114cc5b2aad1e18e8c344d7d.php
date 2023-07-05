@@ -29,9 +29,6 @@
                     <?php echo $__env->make('Core::frontend.currency-switcher', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <?php echo $__env->make('Language::frontend.switcher', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     </div>
-
-
-                   
         <div class="col-md-12 mx-auto">
             <div class="input-group" style="left: -97%;
             width: 198%;
