@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @push('css')
 <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('libs/fotorama/fotorama.css') }}" />
 
 <style>
   .accordion {
@@ -748,38 +748,6 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="br-upload">
-                      <label class="upload-label" for="single-file"><span></span></label>
-                      <input class="upload-input" id="single-file" type="file" accept=".pdf, .docx, image/jpeg" />
-                      <div class="upload-list"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="br-upload">
-                      <label class="upload-label" for="single-file"><span></span></label>
-                      <input class="upload-input" id="single-file" type="file" accept=".pdf, .docx, image/jpeg" />
-                      <div class="upload-list"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="br-upload">
-                      <label class="upload-label" for="single-file"><span></span></label>
-                      <input class="upload-input" id="single-file" type="file" accept=".pdf, .docx, image/jpeg" />
-                      <div class="upload-list"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="wizard-panel-btn">
               <button class="br-button wizard-btn-canc" type="button">Cancel

@@ -70,8 +70,8 @@
                 'advance'=>[
                     'id'   => 'advance',
                     'title' => __("Advanced Settings"),
-                    'position'=>80,
-					'view'      => "Core::admin.settings.groups.advance",
+                //     'position'=>80,
+				// 	'view'      => "Core::admin.settings.groups.advance",
 					"keys"      => [
                         'map_provider',
                         'map_gmap_key',

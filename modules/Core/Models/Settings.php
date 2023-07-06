@@ -62,11 +62,11 @@ class Settings extends BaseModel
                 'title' => __("General Settings"),
                 'position'=>10
             ],
-            'style'=>[
-                'id'   => 'style',
-                'title' => __("Style Settings"),
-                'position'=>70
-            ],
+             // 'style'=>[
+            //     'id'   => 'style',
+            //     'title' => __("Style Settings"),
+            //     'position'=>70
+            // ],
         ];
 
         // Modules

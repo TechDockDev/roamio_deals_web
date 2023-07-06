@@ -25,3 +25,46 @@ yarn-error.log
 storage/bc.php
 storage/installed
 public/themes/*/dist
+storage/framework/cache/data/13/c8/
+        storage/framework/cache/data/16/
+        storage/framework/cache/data/22/3b/
+        storage/framework/cache/data/2b/83/
+        storage/framework/cache/data/2c/
+        storage/framework/cache/data/31/f8/
+        storage/framework/cache/data/32/
+        storage/framework/cache/data/40/e5/
+        storage/framework/cache/data/45/
+        storage/framework/cache/data/4b/a8/
+        storage/framework/cache/data/4f/
+        storage/framework/cache/data/55/8a/
+        storage/framework/cache/data/58/
+        storage/framework/cache/data/5d/
+        storage/framework/cache/data/69/e6/
+        storage/framework/cache/data/6b/
+        storage/framework/cache/data/82/
+        storage/framework/cache/data/83/48/
+        storage/framework/cache/data/89/
+        storage/framework/cache/data/8c/df/
+        storage/framework/cache/data/95/
+        storage/framework/cache/data/a2/
+        storage/framework/cache/data/c9/02/
+        storage/framework/cache/data/d8/5b/
+        storage/framework/cache/data/dc/09/
+        storage/framework/cache/data/df/c8/
+        storage/framework/cache/data/e5/
+        storage/framework/cache/data/f6/
+        storage/framework/cache/data/fd/
+        storage/framework/sessions/
+        storage/framework/views/1278eb5a75809c8073fb0a9015c0b635878b3345.php
+        storage/framework/views/1bc0d66e3ade62522e12460f21165c898334a8fa.php
+        storage/framework/views/32c6d895f3ce3dfc1bee1d61f20ff4736528e4c9.php
+        storage/framework/views/4b02bd6d3eac8e148baa841a73b7d3e200f86c3c.php
+        storage/framework/views/556473fc018d1601748809c09d9eb6d5f220e760.php
+        storage/framework/views/7db3d81ef2211501dcb87da9685bab7e87130c94.php
+        storage/framework/views/a2b2632894bb9f0b213f1d4bbfe5b2f3801d0351.php
+        storage/framework/views/ae4307e88d20fdf94d67e026838116c656aa94b6.php
+        storage/framework/views/d880994123b2428e3405634e977624064c7164b1.php
+        storage/framework/views/e12f89526c7dec3402a89e45b3c4c4b3a495198b.php
+        storage/framework/views/ebba3fef6661cb097f7104efc39a5eff450c253b.php
+        storage/logs/laravel-2023-07-06.log
+        storage/framework/cache/data/
