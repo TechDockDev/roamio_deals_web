@@ -755,8 +755,6 @@
               <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed to next traveller details
               </button>
 
-
-         
             </div>
           </div>
 
