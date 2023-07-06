@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @push('css')
 <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('libs/fotorama/fotorama.css') }}" />
 
 <style>
   .accordion {
@@ -748,9 +748,6 @@
                 </div>
               </div>
 
-              
-
-              
             </div>
             <div class="wizard-panel-btn">
               <button class="br-button wizard-btn-canc" type="button">Cancel
