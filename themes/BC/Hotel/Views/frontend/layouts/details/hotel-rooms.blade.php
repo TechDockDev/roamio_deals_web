@@ -1,4 +1,4 @@
-<div id="hotel-rooms" class="hotel_rooms_form" v-cloak="" :class="{'d-none':enquiry_type!='book'}">
+{{-- <div id="hotel-rooms" class="hotel_rooms_form" v-cloak="" :class="{'d-none':enquiry_type!='book'}">
     <h3 class="heading-section">{{__('Available Rooms')}}</h3>
     <div class="nav-enquiry" v-if="is_form_enquiry_and_book">
         <div class="enquiry-item active" >
@@ -254,5 +254,5 @@
             {{__("No room available with your selected date. Please change your search critical")}}
         </div>
     </div>
-</div>
+</div> --}}
 @include("Booking::frontend.global.enquiry-form",['service_type'=>'hotel'])

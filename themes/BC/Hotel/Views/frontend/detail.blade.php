@@ -1,3 +1,20 @@
+ <style>
+    .Daily-btn{
+    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+   color:white;
+padding: 4px 4px;
+}
+..fass {
+    font-size: 19px;
+    color: white;
+    float: right;
+    position: relative;
+    left: -17px;
+    top: 9px;
+}
+ </style>
+
+
 @extends('layouts.app')
 @push('css')
     <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
@@ -25,7 +42,65 @@
                         </div>
                     </div>
                 </div>
-            </div>
+               
+        
+                    
+
+                  
+                     
+                        <div class="row">
+                           <h4 class="title" style="margin-top: 43px;">Recently Viewed Deals<span style="float:right; color:#FF3500; font-size:15px;">View All</span></h4>
+                        </div>
+                        <div class="row">
+                            @foreach ($datas as $hotel)
+                           <div class="col-md-4">
+                              <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
+                                 <div class="Daily-Deals1" style="position: relative;">
+                                    <img src="{{ asset($hotel->bannerImage) }}" style="height:200px; width:100%; border-radius: 10px;">
+                                     <span class="fa fa-heart fa-3x fass" style="position: absolute;
+                                    top: 10px;
+                                    right: 10px;
+                                    color: white;
+                                   
+                                    left: 270px;
+                                   
+                                
+                                    padding: 6px 6px;
+                                    border-radius:30px;
+                                   "></span>
+                                 </div>
+                                 <div class="card-body">
+                                    <h5 class="card-title">{{ $hotel->title}}</h5>
+                                    <p class="card-text">
+                                       <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{  $hotel->address}} </span>
+                                    </p>
+                                    <p>
+                                       <span class="btn btn-light Daily-btn"  style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+                                       color:white;
+                                    padding: 4px 4px;"> {{  $hotel->review_score}}<i class="fa fa-star"></i></span>
+                                       {{  $hotel->star_rate}}
+                                       <span> Excellent </span>
+                                    </p>
+                                    <p>
+                                       <span style="font-size:25px; color:black;" >{{  $hotel->price}}</span>
+                                       <span style="font-size:25px;"> AED </span>
+                                       <span class="btn btn-light Daily-btn" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+                                       color:white;
+                                    padding: 4px 4px;">{{  $hotel->discount_percent}} % OFF</span>
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           @endforeach
+                        </div>
+                     
+                    </div>
+                  
+              
+
+       
+            
+             
 
         </div>
         @include('Hotel::frontend.layouts.details.hotel-form-enquiry-mobile')
