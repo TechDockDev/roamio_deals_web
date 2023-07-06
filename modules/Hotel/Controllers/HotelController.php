@@ -10,6 +10,8 @@ use Modules\Review\Models\Review;
 use Modules\Core\Models\Attributes;
 use DB;
 
+use Carbon\Carbon;
+
 class HotelController extends Controller
 {
     protected $hotelClass;
@@ -91,6 +93,9 @@ class HotelController extends Controller
             $data['html_class'] = 'full-page';
             return view('Hotel::frontend.search-map', $data);
         }
+   
+       
+
 
 
         
@@ -132,8 +137,43 @@ class HotelController extends Controller
             'class' => 'active'
         ];
 
-        $this->setActiveMenu($row);
-        return view('Hotel::frontend.detail', $data);
+ $this->setActiveMenu($row);
+                  
+ $limit = 3; // Specify the limit to 3
+ $page = $request->page;
+ $user_id = $request->id;
+ 
+ $posts = DB::table('bravo_hotels')->limit($limit)->get();
+ 
+ $datas = [];
+ 
+ foreach ($posts as $p) {
+     $wishlist = DB::table('user_wishlist')
+         ->where('object_id', $p->id)
+         ->where('user_id', $user_id)
+         ->where('object_model', 'hotel')
+         ->first(); // Retrieve only one result, if exists
+ 
+     $conditionwishlist = $wishlist ? true : false;
+ 
+     $bannerImage = DB::table('media_files')
+         ->where('id', $p->banner_image_id)
+         ->select('file_path')
+         ->first();
+ 
+     if ($bannerImage) {
+         $p->bannerImage = "uploads/$bannerImage->file_path";
+     }
+ 
+     $p->wishlist = $conditionwishlist;
+ 
+     $datas[] = $p;
+ }
+ 
+
+ 
+
+        return view('Hotel::frontend.detail', $data ,compact('datas'));
     }
 
     public function checkAvailability(){

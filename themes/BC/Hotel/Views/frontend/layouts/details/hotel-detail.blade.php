@@ -1,4 +1,25 @@
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-D/6EhP9EoPWv/+iu/joNRhv+4S3YSSyfG6+Cwy1c4PoCvqj0qvK9cmumvv9SKCXL" crossorigin="anonymous">
+<style>
+  
+    .fas{
+ color:red;
+    }
+    .cancellation-btn{
+    padding: 6px 6px;
+     font-size: 12px;   
+    }
+    .Offer-btn{
+     padding: 6px 6px;
+     font-size: 12px;  
+     background:#FFF3E3;
+     color: #FF3500; 
+    }
+    ..star-rate {
+    color: gold; /* Change the color as desired */
+}
+</style>
+
 @if($row->getGallery())
     <div class="g-gallery">
         <div class="fotorama" data-width="100%" data-thumbwidth="135" data-thumbheight="135" data-thumbmargin="15" data-nav="thumbs" data-allowfullscreen="true">
@@ -33,21 +54,40 @@
 
 <div class="g-header">
     <div class="left">
-        @if($row->star_rate)
-            <div class="star-rate">
-                @for ($star = 1 ;$star <= $row->star_rate ; $star++)
-                    <i class="fa fa-star"></i>
-                @endfor
-            </div>
-        @endif
-        <h1>{{$translation->title}}</h1>
-        @if($translation->address)
+       
+        <h3>{{$translation->title}}</h3>
+
+        <p>{{$row->star_rate }}</p>
+        <div class="star-rate">
+            <i class="fa fa-star">{{$row->review_score }}</i> Excellent
+        </div>
+            {{-- @if($row->star_rate) --}}
+          {{-- <div class="star-rate">
+            @for ($star = 1 ;$star <= $row->star_rate ; $star++)
+                <i class="fa fa-star"> {{ $row->star_rate}}</i>
+            @endfor
+          </div> --}}
+          {{-- @endif --}}
+        
+          {{-- (4 reviews)  --}}
+            @if($translation->address)
             <h2 class="address"><i class="fa fa-map-marker"></i>
-                {{$translation->address}}
+                {{$translation->address}} 
             </h2>
-        @endif
+          @endif
+          
+          <p><button class="btn btn-light mt-2 cancellation-btn">Free cancellation (24 Hours Prior)</button> 
+            <span>
+                <button class="btn btn-light mt-2 cancellation-btn">Instant confirmation</button>
+            </span>
+        </p> 
+          <p><button class="btn btn-light mt-2 Offer-btn">TRENDING</button> 
+            <span>
+                <button class="btn btn-light mt-2 Offer-btn">Offer Ending Soon</button>
+            </span>
+         </p>   
     </div>
-    <div class="right">
+    {{-- <div class="right">
         @if($row->getReviewEnable())
             @if($review_score)
                 <div class="review-score">
@@ -66,7 +106,7 @@
                 </div>
             @endif
         @endif
-    </div>
+    </div> --}}
 </div>
 
 
