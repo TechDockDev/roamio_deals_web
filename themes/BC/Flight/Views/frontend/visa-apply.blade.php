@@ -582,18 +582,16 @@
           <button class="wizard-progress-btn"  title="Dados Pessoais"><span class="info">Visa Application</span></button>
           <button class="wizard-progress-btn"  title="Validar Dados" active="active"><span class="info">Visa Type</span></button>
           <button class="wizard-progress-btn"  title="Habilitar Cadastro" active="active"><span class="info">Upload Document</span></button>
-
         </div>
-
-      
-
+        
         <div class="wizard-form">
           <div class="wizard-panel" active="active">
             <div class="wizard-panel-content" style="margin-top:50px;">
               <div class="row">
                 <div class="col-md-6">
                 <div class="form-group">
-                    <select id="nationalitySelect" class="form-control" required>
+                  
+                  <select id="nationalitySelect" class="form-control" required>
                       <option>--Nationality--</option>
                       <option>India</option>
                       <option>Bangladesh</option>
@@ -605,13 +603,14 @@
                       <option>Phillipines</option>
                       <option>Bankok</option>
                       <option>Britain</option>
+                   </select>
 
-                    </select>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="date" class="form-control" id="travelDateInput" aria-describedby="emailHelp" placeholder="Travel Dates">
+              <input type="text" class="form-control" id="travelDateInput" aria-describedby="emailHelp" placeholder="Travel Dates" pattern="\d{2}/\d{2}/\d{4}">
+
                   </div>
                 </div>
               </div>
@@ -621,7 +620,8 @@
                   <div class="form-group">
                     <select id="rangeSelect" class="form-control" required>
                       <option>--Number of Traveller (Adults)--</option>
-                      <option value="1">1  </option>
+                       <option value="0">0</option>
+                      <option value="1">1 </option>
                       <option value="2">2 </option>
                       <option value="3">3 </option>
                       <option value="4">4 </option>
@@ -641,6 +641,7 @@
                     <div class="form-group">
                       <select id="childSelect" class="form-control" required>
                         <option>--Number of Traveller (Childs)--</option>
+                        <option value="0">0</option>
                         <option value="1">1 </option>
                         <option value="2">2 </option>
                         <option value="3">3 </option>
@@ -714,26 +715,24 @@
 
          <div class="wizard-panel">
 
-
           <div class="wizard-panel-content" id="userRegisterForm">
 
               <div id="divContainer"></div>
-              
+           
            </div>
                 
-            <div class="wizard-panel-btn">
-              <a href="{{url('visa-page')}}" class=" btn btn-danger br-button wizard-btn-canc" type="button">Cancel
+             <div class="wizard-panel-btn">
+              <a href="{{url('visa-page')}}" class="btn btn-danger br-button wizard-btn-canc" type="button">Cancel
               </a>
 
-
-                 @if(auth()->user())
+               @if(auth()->user())
 
                <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed to next traveller details
-              </button>
+               </button>
 
-              @else
+               @else
           
-               <button data-toggle="modal" data-target="#login" class="br-button primary wizard-btn" type="button" style="background:#FF3500;">login
+            <button data-toggle="modal" data-target="#login" class="br-button primary wizard-btn" type="button" style="background:#FF3500;">login
               </button>
 
               @endif
@@ -743,14 +742,36 @@
 
         </div>
 
-
-      
       </div>
     </div>
   </div>
 </div>
 </form>
 
+
+  <script>
+
+  var input = document.getElementById("travelDateInput");
+
+  input.addEventListener("focus", function() {
+  input.setAttribute("data-placeholder", input.getAttribute("placeholder"));
+  input.removeAttribute("placeholder");
+  });
+
+  input.addEventListener("blur", function() {
+  input.setAttribute("placeholder", input.getAttribute("data-placeholder"));
+  input.removeAttribute("data-placeholder");
+  });
+
+
+  </script>
+
+<script>
+  document.querySelector('.card').addEventListener('click', function() {
+    var radio = document.querySelector('.form-check-input');
+    radio.checked = true;
+  });
+</script>
 
 <script>
    function validateForm() {
@@ -762,7 +783,7 @@
 
     var nextButton = document.querySelector('.wizard-btn-next');
 
-    if (adultCount > 0 && childCount > 0) {
+    if (adultCount > 0 || childCount > 0) {
       nextButton.style.display = 'block';
     } else {
       nextButton.style.display = 'none';
