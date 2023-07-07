@@ -81,7 +81,7 @@ class HotelController extends AdminController
             'hotel_manage_others' => $this->hasPermission('hotel_manage_others'),
             'breadcrumbs'        => [
                 [
-                    'name' => __('Hotels'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
@@ -109,11 +109,11 @@ class HotelController extends AdminController
             'translation'    => new $this->hotelTranslationClass(),
             'breadcrumbs'    => [
                 [
-                    'name' => __('Hotels'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
-                    'name'  => __('Add Hotel'),
+                    'name'  => __('Add Staycation'),
                     'class' => 'active'
                 ],
             ],
@@ -145,7 +145,7 @@ class HotelController extends AdminController
             'recovery'           => 1,
             'breadcrumbs'        => [
                 [
-                    'name' => __('Hotels'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
@@ -181,11 +181,11 @@ class HotelController extends AdminController
             'enable_multi_lang'=>true,
             'breadcrumbs'    => [
                 [
-                    'name' => __('Hotels'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
-                    'name'  => __('Edit Hotel'),
+                    'name'  => __('Edit Staycation'),
                     'class' => 'active'
                 ],
             ],

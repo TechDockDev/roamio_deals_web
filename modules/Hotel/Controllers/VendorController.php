@@ -63,7 +63,7 @@ class VendorController extends FrontendController
             'rows' => $list_hotel->paginate(5),
             'breadcrumbs'        => [
                 [
-                    'name' => __('Manage Hotels'),
+                    'name' => __('Manage Staycation'),
                     'url'  => route('hotel.vendor.index')
                 ],
                 [
@@ -71,7 +71,7 @@ class VendorController extends FrontendController
                     'class' => 'active'
                 ],
             ],
-            'page_title'         => __("Manage Hotels"),
+            'page_title'         => __("Manage Staycation"),
         ];
         return view('Hotel::frontend.vendorHotel.index', $data);
     }
@@ -86,7 +86,7 @@ class VendorController extends FrontendController
             'recovery'           => 1,
             'breadcrumbs'        => [
                 [
-                    'name' => __('Manage Hotels'),
+                    'name' => __('Manage Staycations'),
                     'url'  => route('hotel.vendor.index')
                 ],
                 [
@@ -94,7 +94,7 @@ class VendorController extends FrontendController
                     'class' => 'active'
                 ],
             ],
-            'page_title'         => __("Recovery Hotels"),
+            'page_title'         => __("Recovery Staycation"),
         ];
         return view('Hotel::frontend.vendorHotel.index', $data);
     }
@@ -111,7 +111,7 @@ class VendorController extends FrontendController
             'attributes'    => $this->attributesClass::where('service', 'hotel')->get(),
             'breadcrumbs'        => [
                 [
-                    'name' => __('Manage Hotels'),
+                    'name' => __('Manage Staycations'),
                     'url'  => route('hotel.vendor.index')
                 ],
                 [
@@ -119,7 +119,7 @@ class VendorController extends FrontendController
                     'class' => 'active'
                 ],
             ],
-            'page_title'         => __("Create Hotels"),
+            'page_title'         => __("Create Staycation"),
         ];
         return view('Hotel::frontend.vendorHotel.detail', $data);
     }
@@ -193,7 +193,7 @@ class VendorController extends FrontendController
             if($id > 0 ){
                 event(new UpdatedServiceEvent($row));
 
-                return back()->with('success',  __('Hotel updated') );
+                return back()->with('success',  __('Staycation updated') );
             }else{
                 event(new CreatedServicesEvent($row));
                 return redirect(route('hotel.vendor.edit',['id'=>$row->id]))->with('success', __('Hotel created') );

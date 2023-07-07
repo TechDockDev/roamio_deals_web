@@ -66,7 +66,7 @@ class VendorRoomController extends FrontendController
             'rows'               => $query->with(['author'])->paginate(20),
             'breadcrumbs'        => [
                 [
-                    'name' => __('Hotels'),
+                    'name' => __('Staycations'),
                     'url'  => route('hotel.vendor.index')
                 ],
                 [
@@ -104,7 +104,7 @@ class VendorRoomController extends FrontendController
             'enable_multi_lang'=>true,
             'breadcrumbs'    => [
                 [
-                    'name' => __('Hotels'),
+                    'name' => __('Staycations'),
                     'url'  => route('hotel.vendor.index')
                 ],
                 [
@@ -150,7 +150,7 @@ class VendorRoomController extends FrontendController
             'enable_multi_lang'=>true,
             'breadcrumbs'    => [
                 [
-                    'name' => __('Hotels'),
+                    'name' => __('Staycations'),
                     'url'  => route('hotel.vendor.index')
                 ],
                 [

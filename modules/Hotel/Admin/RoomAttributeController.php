@@ -35,7 +35,7 @@ class RoomAttributeController extends AdminController
             'translation'    => new AttributesTranslation(),
             'breadcrumbs' => [
                 [
-                    'name' => __('Hotel'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
@@ -62,7 +62,7 @@ class RoomAttributeController extends AdminController
             'row'         => $row,
             'breadcrumbs' => [
                 [
-                    'name' => __('Hotel'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
@@ -143,7 +143,7 @@ class RoomAttributeController extends AdminController
             'translation'    => new TermsTranslation(),
             'breadcrumbs' => [
                 [
-                    'name' => __('Hotel'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
@@ -174,7 +174,7 @@ class RoomAttributeController extends AdminController
             'enable_multi_lang'=>true,
             'breadcrumbs' => [
                 [
-                    'name' => __('Hotel'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
