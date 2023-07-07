@@ -25,6 +25,7 @@ text-decoration: line-through;
 
 
 
+
     
     
 
@@ -32,82 +33,34 @@ text-decoration: line-through;
    
     <div class="bravo-list-hotel-related-widget">
         <h5  style="margin-top:-23px;">Packages</h5>
-    
-        <div class="card mb-3">
-            <div class="card-body">
-                <p class="card-title">Weekday Stay for 2 adults & 2 children below 12 years</p>
-                <p class="card-text">
-                    <span class="text-item2">250 AED</span>
-                    <span class="text-item">199</span>
-                    <small>AED / night</small>
-                </p>
-                <p>
-                    <div class="container">
-                        <button data-decrease class="inbtn">-</button>
-                        <input data-value type="text" value="1" disabled style="width: 21px; border:none;">
-                        <button data-increase class="inbtn">+</button>
-                        <small>Number of Room</small>
-                    </div>
-                </p>
+        <?php if(count($datas) > 0): ?>
+        <?php $__currentLoopData = $datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rooms): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="card-title"><?php echo e($rooms->title); ?></p>
+                    <p class="card-text">
+                        <span class="text-item2"><?php echo e($rooms->price); ?> AED</span>
+                        <span class="text-item"><?php echo e($rooms->discount_percent); ?></span>
+                        <br>
+                        <span class="text-black"><?php echo e($rooms->discounted_price); ?></span>
+                        <small>AED / night</small>
+                    </p>
+                    <p>
+                        <div class="container">
+                            <button data-decrease class="inbtn">-</button>
+                            <input data-value type="text" value="1" disabled style="width: 21px; border:none;">
+                            <button data-increase class="inbtn">+</button>
+                            <small>Number of Room</small>
+                        </div>
+                    </p>
+                </div>
             </div>
-        </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <?php else: ?>
+        <p>No data found.</p>
+    <?php endif; ?>
     
-        <div class="card mb-3">
-            <div class="card-body">
-                <p class="card-title">Weekday Stay for 2 adults & 2 children below 12 years</p>
-                <p class="card-text">
-                    <span class="text-item2">250 AED</span>
-                    <span class="text-item">199</span>
-                    <small>AED / night</small>
-                </p>
-                <p>
-                    <div class="container">
-                        <button data-decrease class="inbtn">-</button>
-                        <input data-value type="text" value="1" disabled style="width: 21px; border:none;">
-                        <button data-increase class="inbtn">+</button>
-                        <small>Number of Room</small>
-                    </div>
-                </p>
-            </div>
-        </div>
-    
-        <div class="card mb-3">
-            <div class="card-body">
-                <p class="card-title">Weekday Stay for 2 adults & 2 children below 12 years</p>
-                <p class="card-text">
-                    <span class="text-item2">250 AED</span>
-                    <span class="text-item">199</span>
-                    <small>AED / night</small>
-                </p>
-                <p>
-                    <div class="container">
-                        <button data-decrease class="inbtn">-</button>
-                        <input data-value type="text" value="1" disabled style="width: 21px; border:none;">
-                        <button data-increase class="inbtn">+</button>
-                        <small>Number of Room</small>
-                    </div>
-                </p>
-            </div>
-        </div>
-    
-        <div class="card mb-3">
-            <div class="card-body">
-                <p class="card-title">Weekday Stay for 2 adults & 2 children below 12 years</p>
-                <p class="card-text">
-                    <span class="text-item2">250 AED</span>
-                    <span class="text-item">199</span>
-                    <small>AED / night</small>
-                </p>
-                <p>
-                    <div class="container">
-                        <button data-decrease class="inbtn">-</button>
-                        <input data-value type="text" value="1" disabled style="width: 21px; border:none;">
-                        <button data-increase class="inbtn">+</button>
-                        <small>Number of Room</small>
-                    </div>
-                </p>
-            </div>
-        </div>
+       
         <button class="btn btn-light btn-text w-100 mb-3">Quick Checkout</button>
         <button class="btn btn-light w-100 card-btn mb-3">Add to Cart</button> 
     </div>

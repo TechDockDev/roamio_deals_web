@@ -78,152 +78,56 @@ padding: 4px 4px;
 @section('content')
 <div class="container mt-3">
     <div class="row">
-     <h4  class="title py-3 mx-3" >Wishlist</h4>
+     <h4  class="title py-3 mx-3 text-center" >Wishlist</h4>
     </div>
     <div class="row mb-4">
-         <div class="col-md-4">
-             <div class="card"  style="border-radius: 10px;">
-                 <div class="Daily-Deals">
-                 <span class="fa fa-heart fa-3x fass"></span>
+      
+      @if(count($rows) > 0)
+      @foreach($rows as $wishlist)
+          <div class="col-md-4">
+              <div class="card" style="border-radius: 10px;">
+                  
+                   <div class="Daily-Deals1" style="position: relative;">
+                    <img src="{{ $wishlist['service']['image'] }}" style="height:200px; width:100%; border-radius: 10px;">
+                    <span class="fa fa-heart fa-3x fass" style=" 
+                 
+                    right: 10px;
+                    color: white;
+                    text-shadow: 1px 1px 2px black;
+                    top: -188px;
+                    padding: 6px 6px;
+                    border-radius:30px;">
+                </span>
                  </div>
-                 <div class="card-body">
-                   <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                   <p class="card-text">
-                     <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                     Al Ain</p></span>
-                     <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                   <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                 </div>
-               </div>
-         </div>
-         <div class="col-md-4">
-             <div class="card"  style="border-radius: 10px;">
-                 <div class="Daily-Deals">
-                 <span class="fa fa-heart fa-3x fass"></span>
-                 </div>
-                 <div class="card-body">
-                   <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                   <p class="card-text">
-                     <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                     Al Ain</p></span>
-                     <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                   <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                 </div>
-               </div>
-         </div>
-         <div class="col-md-4">
-             <div class="card"  style="border-radius: 10px;">
-                 <div class="Daily-Deals">
-                 <span class="fa fa-heart fa-3x fass"></span>
-                 </div>
-                 <div class="card-body">
-                   <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                   <p class="card-text">
-                     <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                     Al Ain</p></span>
-                     <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                   <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                 </div>
-               </div>
-         </div>
-    
-    </div>
-    <div class="row mb-4">
-        <div class="col-md-4">
-            <div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-        </div>
-   
-   </div>
-   <div class="row mb-4">
-    <div class="col-md-4">
-        <div class="card"  style="border-radius: 10px;">
-            <div class="Daily-Deals">
-            <span class="fa fa-heart fa-3x fass"></span>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-              <p class="card-text">
-                <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                Al Ain</p></span>
-                <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-              <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-            </div>
-          </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card"  style="border-radius: 10px;">
-            <div class="Daily-Deals">
-            <span class="fa fa-heart fa-3x fass"></span>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-              <p class="card-text">
-                <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                Al Ain</p></span>
-                <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-              <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-            </div>
-          </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card"  style="border-radius: 10px;">
-            <div class="Daily-Deals">
-            <span class="fa fa-heart fa-3x fass"></span>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-              <p class="card-text">
-                <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                Al Ain</p></span>
-                <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-              <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-            </div>
-          </div>
-    </div>
 
-</div>
+                 
+
+                  <div class="card-body">
+                      <h5 class="card-title">{{ $wishlist['service']['title'] }}</h5>
+                      <p class="card-text">
+                          <span><i class="fa fa-map-marker" aria-hidden="true"></i>
+                          {{ $wishlist['service']['location']['name'] }}</p></span>
+                      <p>
+                          <span class="btn btn-light Daily-btn">4.2 </span> (4)
+                          </span><span> Excellent </span>
+                      </p>
+                      <p>
+                          <span style="font-size: 25px; color: black;">{{ $wishlist['service']['price'] }}</span>
+                          <span style="font-size: 25px;"> AED </span>
+                          <span class="btn btn-light Daily-btn">23% OFF</span>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      @endforeach
+  @else
+      <p class="text-center  mx-3">No data found.</p>
+  @endif
+  
+  
+  
+
+        
  </div>
  
  <div class="bravo-list-news">

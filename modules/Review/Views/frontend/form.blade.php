@@ -32,7 +32,6 @@
                         </div>
                     </div>
                     <div class="col-lg-7">
-                        cvbnm,nbvbnm,.
                         <div class="review-sumary">
                             @if(isset($review_score['rate_score']))
                                 @foreach($review_score['rate_score'] as $item)
@@ -69,7 +68,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">{{$userInfo->getDisplayName()}}</h4>
-                                    <div class="date">{{display_datetime($item->created_at)}}</div>
+                                    <div class="date" style="right: -647px; position: relative;">{{display_datetime($item->created_at)}}</div>
                                 </div>
                             </div>
                         </div>
@@ -114,12 +113,13 @@
                                         </div>
                                     </div>
                                 </div>
-                        </div>
+                            </div>
                         @endif
                     </div>
                 @endforeach
             @endif
         </div>
+        
         <div class="review-pag-wrapper">
             @if($review_list->total() > 0)
                 <div class="bravo-pagination">

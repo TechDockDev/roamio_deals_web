@@ -2,13 +2,21 @@
 
 <?php if(setting_item($row->type."_enable_review")): ?>
     <div class="bravo-reviews" id="bravo-reviews">
-        <h3><?php echo e(__("Reviews")); ?></h3>
+        <h3><?php echo e(__("Reviews & Feedback")); ?></h3>
         <?php if($review_score): ?>
             <div class="review-box">
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="review-box-score">
-                            <div class="review-score">
+                            <div class="review-score"  style="font-size: 10px;
+                            background-color:#FF3500;
+                            color: white;
+                            width: 30%;
+                            height: 26%;
+                            border-radius: 5px;
+                            left: 1;
+                            position: relative;
+                            left: 107px;">
                                 <?php echo e($review_score['score_total']); ?><span class="per-total">/5</span>
                             </div>
                             <div class="review-score-text">
@@ -31,9 +39,13 @@
                         </div>
                     </div>
                     <div class="col-lg-7">
+
+                
                         <div class="review-sumary">
-                            <?php if(!empty($review_score['rate_score'])): ?>
-                                <?php $__currentLoopData = $review_score['rate_score']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                         
+                            <?php if(!empty($review_score['score_total'])): ?>
+                                <?php $__currentLoopData = $review_score['rate']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="item">
                                         <div class="label">
                                             <?php echo e($item['title']); ?>
@@ -47,7 +59,15 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php endif; ?>
                         </div>
+                         
+                        
+                        
+                        
+                        
+
+                       
                     </div>
+                    
                 </div>
             </div>
         <?php endif; ?>

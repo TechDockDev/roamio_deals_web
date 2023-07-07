@@ -150,7 +150,8 @@ p {
        <div class="col-md-4">
           <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
              <div class="Daily-Deals1" style="position: relative;">
-                <img src="{{ $hotel->banner_image }}" style="height:200px; width:100%; border-radius: 10px;">
+                
+               <a href=""><img src="{{ $hotel->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
                 <span class="fa fa-heart fa-3x fass" style="position: absolute;
                 top: 10px;
                 right: 10px;

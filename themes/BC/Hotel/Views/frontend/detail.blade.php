@@ -64,7 +64,7 @@ padding: 4px 4px;
                                    
                                     left: 270px;
                                    
-                                
+                                        font-size:17px;
                                     padding: 6px 6px;
                                     border-radius:30px;
                                    "></span>

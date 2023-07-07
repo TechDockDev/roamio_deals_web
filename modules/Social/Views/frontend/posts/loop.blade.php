@@ -12,7 +12,7 @@
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">{{$userInfo->getDisplayName()}}</h4>
-                    <div class="date">{{display_datetime($post->created_at)}}</div>
+                    <div class="date" style="right: -647px; position: relative;">{{display_datetime($post->created_at)}}</div>
                 </div>
             </div>
         </div>
