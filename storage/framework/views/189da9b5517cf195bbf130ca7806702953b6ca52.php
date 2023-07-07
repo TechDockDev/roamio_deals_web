@@ -213,74 +213,64 @@ p {
   <center><h3  class="title" style="margin-top: 43px;">Explore UAE <span style="color: #FE9000;">Staycation</span></h3>
   
       <div class="title">
-           <img src = "<?php echo e(asset('uploads/0000/1/2023/07/04/banner.jpg')); ?>">
+           
         </div>
         </center>
   
  
   
-  
-<div class="container mt-5">
-    
-   <div class="row">
-    <h4  class="title" style="margin-top: 43px;">Best Deals On Staycation</h4>
-  </div>
-  
-  <a href="" style="top: -32px;
-    position: relative;
-    left: -111px;
-    float: right;"><h5>View All</h5></a>
-  
-  
-   <div class="row">
-        <div class="col-md-4">
-            <div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="title" style="margin-top: 43px;">Best Deals On Staycation</h4>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
+                <div class="col-md-6">
+                    <a href="#" style="float: right; margin-top: 28px;"><h5>View All</h5></a>
                 </div>
-              </div>
+            </div>
+        
+            <div class="row">
+                <?php $__currentLoopData = $datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="col-md-4">
+                        <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
+                            <div class="Daily-Deals1" style="position: relative;">
+                                <a href="<?php echo e(url('/hotel/' . $hotel->slug)); ?>"><img src="<?php echo e($hotel->bannerImage); ?>" style="height:200px; width:100%; border-radius: 10px;"></a>
+                                <span class="fa fa-heart fa-3x fass" style="position: absolute;
+                                    top: 10px;
+                                    right: 10px;
+                                    color: white;
+                                    text-shadow: 1px 1px 2px black;
+                                    left: 270px;
+                                    height: 30px;
+                                    width: 30px;
+                                    background: white;
+                                    padding: 6px 6px;
+                                    border-radius:30px;
+                                "></span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo e($hotel->title); ?></h5>
+                                <p class="card-text">
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>  <?php echo e($hotel->address); ?></span>
+                                </p>
+                                <p>
+                                    <span class="btn btn-light Daily-btn"><?php echo e($hotel->star_rate); ?> <i class="fa fa-star"></i></span>
+                                    (4)
+                                    <span> Excellent </span>
+                                </p>
+                                <p>
+                                    <span style="font-size:25px; color:black;"><?php echo e($hotel->price); ?></span>
+                                    <span style="font-size:25px;"> AED </span>
+                                    <span class="btn btn-light Daily-btn"><?php echo e($hotel->discount_percent); ?>% OFF</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
         </div>
-        <div class="col-md-4">
-            <div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-        </div>
-   
-   </div>
-</div>
+        
+
 
 
 
@@ -547,7 +537,7 @@ p {
             </div>
                 <div class="list-item">
                             <div class="row">
-                                            <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                             <style>
     .Daily-btn {
     background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);

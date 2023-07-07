@@ -105,12 +105,14 @@ class HotelController extends Controller
         return view('Hotel::frontend.search', $data);
     }
 
-    public function detail(Request $request, $slug)
-    {
-
-      
+     public function detail(Request $request, $slug)
+     {
+                    
+        
         $row = $this->hotelClass::where('slug', $slug)->with(['location','translation','hasWishList'])->first();;
       
+       
+
        $id =$row->id;
        
      
@@ -188,10 +190,9 @@ class HotelController extends Controller
      $datas[] = $p;
      }
  
-    
- 
 
-        return view('Hotel::frontend.detail', $data ,compact('datas'));
+
+ return view('Hotel::frontend.detail', $data ,compact('datas'));
     }
 
     public function checkAvailability(){
@@ -293,7 +294,51 @@ class HotelController extends Controller
 
  public function staycationexplore(){
 
-   return view('Hotel::staycationExplore');
+
+    $limit = 3; // Specify the limit to 3
+//    $page = $request->page;
+//    $user_id = $request->id;
+
+    $posts = DB::table('bravo_hotels')->take(3)->get();
+
+
+    // $posts = DB::table('bravo_hotels')
+    // ->join('bravo_hotel_rooms', 'bravo_hotels.id', '=', 'bravo_hotel_rooms.parent_id')
+    // ->select('bravo_hotels.*', 'bravo_hotel_rooms.title', DB::raw('bravo_hotels.price - (bravo_hotels.price * bravo_hotels.discount_percent / 100) AS discounted_price'))
+    // ->limit($limit)
+    // ->where('bravo_hotel_rooms.parent_id', $id)
+    // ->get();
+
+ 
+    $datas = [];
+ 
+ foreach ($posts as $p) {
+     $wishlist = DB::table('user_wishlist')
+         ->where('object_id', $p->id)
+        //  ->where('user_id', $user_id)
+         ->where('object_model', 'hotel')
+         ->first(); // Retrieve only one result, if exists
+ 
+     $conditionwishlist = $wishlist ? true : false;
+ 
+     $bannerImage = DB::table('media_files')
+         ->where('id', $p->banner_image_id)
+         ->select('file_path')
+         ->first();
+ 
+     if ($bannerImage) {
+         $p->bannerImage = "uploads/$bannerImage->file_path";
+     }
+ 
+     $p->wishlist = $conditionwishlist;
+ 
+     $datas[] = $p;
+     }
+ 
+
+   
+
+   return view('Hotel::staycationExplore' ,compact('datas'));
 
  }
 
