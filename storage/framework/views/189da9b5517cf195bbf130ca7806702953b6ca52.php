@@ -1,9 +1,9 @@
 
-@extends('layouts.app')
-@push('css')
-    <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
+
+<?php $__env->startPush('css'); ?>
+    <link href="<?php echo e(asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version'))); ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css")); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/fotorama/fotorama.css")); ?>"/>
     <style>
 .categories{
   background-size: cover;
@@ -75,8 +75,8 @@ padding: 4px 4px;
 }
 
 </style>
-@endpush
-@section('content')
+<?php $__env->stopPush(); ?>
+<?php $__env->startSection('content'); ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   
@@ -213,7 +213,7 @@ p {
   <center><h3  class="title" style="margin-top: 43px;">Explore UAE <span style="color: #FE9000;">Staycation</span></h3>
   
       <div class="title">
-           {{-- <img src = "{{asset('uploads/0000/1/2023/07/04/banner.jpg')}}"> --}}
+           
         </div>
         </center>
   
@@ -230,11 +230,11 @@ p {
             </div>
         
             <div class="row">
-                @foreach ($datas as $hotel)
+                <?php $__currentLoopData = $datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-md-4">
                         <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
                             <div class="Daily-Deals1" style="position: relative;">
-                                <a href="{{ url('/hotel/' . $hotel->slug) }}"><img src="{{ $hotel->bannerImage }}" style="height:200px; width:100%; border-radius: 10px;"></a>
+                                <a href="<?php echo e(url('/hotel/' . $hotel->slug)); ?>"><img src="<?php echo e($hotel->bannerImage); ?>" style="height:200px; width:100%; border-radius: 10px;"></a>
                                 <span class="fa fa-heart fa-3x fass" style="position: absolute;
                                     top: 10px;
                                     right: 10px;
@@ -249,24 +249,24 @@ p {
                                 "></span>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ $hotel->title }}</h5>
+                                <h5 class="card-title"><?php echo e($hotel->title); ?></h5>
                                 <p class="card-text">
-                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>  {{ $hotel->address }}</span>
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>  <?php echo e($hotel->address); ?></span>
                                 </p>
                                 <p>
-                                    <span class="btn btn-light Daily-btn">{{ $hotel->star_rate }} <i class="fa fa-star"></i></span>
+                                    <span class="btn btn-light Daily-btn"><?php echo e($hotel->star_rate); ?> <i class="fa fa-star"></i></span>
                                     (4)
                                     <span> Excellent </span>
                                 </p>
                                 <p>
-                                    <span style="font-size:25px; color:black;">{{ $hotel->price }}</span>
+                                    <span style="font-size:25px; color:black;"><?php echo e($hotel->price); ?></span>
                                     <span style="font-size:25px;"> AED </span>
-                                    <span class="btn btn-light Daily-btn">{{ $hotel->discount_percent }}% OFF</span>
+                                    <span class="btn btn-light Daily-btn"><?php echo e($hotel->discount_percent); ?>% OFF</span>
                                 </p>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
         
@@ -599,10 +599,10 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="{{url('hotel/hyatt-centric-victoria')}}">
+        <a href="<?php echo e(url('hotel/hyatt-centric-victoria')); ?>">
             
                     
-                    <img src="{{asset('uploads/demo/space/space-3.jpg')}}" class="img-responsive" alt="">
+                    <img src="<?php echo e(asset('uploads/demo/space/space-3.jpg')); ?>" class="img-responsive" alt="">
                  
                          
         </a>
@@ -611,7 +611,7 @@ p {
         </div>
     </div>
     <div class="item-title">
-        <a href="{{url('hotel/hyatt-centric-victoria')}}">
+        <a href="<?php echo e(url('hotel/hyatt-centric-victoria')); ?>">
                             Hyatt Centric Victoria 
         </a>
             </div>
@@ -651,9 +651,9 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="{{url('hotel/jitendra-hotel')}}">
+        <a href="<?php echo e(url('hotel/jitendra-hotel')); ?>">
             
-                    <img src="{{asset('uploads/0000/1/2023/05/15/images.jpg')}}" class="img-responsive" alt="">
+                    <img src="<?php echo e(asset('uploads/0000/1/2023/05/15/images.jpg')); ?>" class="img-responsive" alt="">
                  
         </a>
                 <div class="service-wishlist " data-id="17" data-type="hotel">
@@ -661,7 +661,7 @@ p {
         </div>
     </div>
     <div class="item-title">
-        <a href="{{url('hotel/jitendra-hotel')}}">
+        <a href="<?php echo e(url('hotel/jitendra-hotel')); ?>">
                             Jitendra Hotel
         </a>
             </div>
@@ -701,9 +701,9 @@ p {
 
 <div class="item-loop ">
         <div class="thumb-image ">
-        <a href="{{url('hotel/sierra-hotel')}}">
+        <a href="<?php echo e(url('hotel/sierra-hotel')); ?>">
             
-                    <img src="{{asset('uploads/0000/1/2023/05/19/life-resort-hotel-resort-hotel-wallpaper-preview.jpeg')}}" class="img-responsive" alt="">
+                    <img src="<?php echo e(asset('uploads/0000/1/2023/05/19/life-resort-hotel-resort-hotel-wallpaper-preview.jpeg')); ?>" class="img-responsive" alt="">
                  
                          
         </a>
@@ -712,7 +712,7 @@ p {
         </div>
     </div>
     <div class="item-title">
-        <a href="{{url('hotel/sierra-hotel')}}">
+        <a href="<?php echo e(url('hotel/sierra-hotel')); ?>">
                             Sierra Hotel
         </a>
             </div>
@@ -807,4 +807,5 @@ for (var i = 0; i < btns.length; i++) {
 }
     </script> 
   
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Hotel/Views/staycationExplore.blade.php ENDPATH**/ ?>

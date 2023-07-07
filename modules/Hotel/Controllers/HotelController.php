@@ -1,6 +1,6 @@
 <?php
 namespace Modules\Hotel\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Modules\Hotel\Models\Hotel;
 use Illuminate\Http\Request;
@@ -9,6 +9,7 @@ use Modules\Location\Models\LocationCategory;
 use Modules\Review\Models\Review;
 use Modules\Core\Models\Attributes;
 use DB;
+use Modules\User\Models\UserWishList;
 
 use Carbon\Carbon;
 
@@ -39,6 +40,8 @@ class HotelController extends Controller
 
     public function index(Request $request)
     {
+
+    
         $is_ajax = $request->query('_ajax');
         if(!empty($request->query('limit'))){
             $limit = $request->query('limit');
@@ -102,9 +105,17 @@ class HotelController extends Controller
         return view('Hotel::frontend.search', $data);
     }
 
-    public function detail(Request $request, $slug)
-    {
+     public function detail(Request $request, $slug)
+     {
+                    
+        
         $row = $this->hotelClass::where('slug', $slug)->with(['location','translation','hasWishList'])->first();;
+      
+       
+
+       $id =$row->id;
+       
+     
         if ( empty($row) or !$row->hasPermissionDetailView()) {
             return redirect('/');
         }
@@ -137,15 +148,24 @@ class HotelController extends Controller
             'class' => 'active'
         ];
 
- $this->setActiveMenu($row);
+   $this->setActiveMenu($row);
                   
- $limit = 3; // Specify the limit to 3
- $page = $request->page;
- $user_id = $request->id;
+   $limit = 3; // Specify the limit to 3
+   $page = $request->page;
+   $user_id = $request->id;
+
+   //  $postsss = DB::table('bravo_hotels')->take(3)->get();
+
+
+    $posts = DB::table('bravo_hotels')
+    ->join('bravo_hotel_rooms', 'bravo_hotels.id', '=', 'bravo_hotel_rooms.parent_id')
+    ->select('bravo_hotels.*', 'bravo_hotel_rooms.title', DB::raw('bravo_hotels.price - (bravo_hotels.price * bravo_hotels.discount_percent / 100) AS discounted_price'))
+    ->limit($limit)
+    ->where('bravo_hotel_rooms.parent_id', $id)
+    ->get();
+
  
- $posts = DB::table('bravo_hotels')->limit($limit)->get();
- 
- $datas = [];
+    $datas = [];
  
  foreach ($posts as $p) {
      $wishlist = DB::table('user_wishlist')
@@ -168,12 +188,11 @@ class HotelController extends Controller
      $p->wishlist = $conditionwishlist;
  
      $datas[] = $p;
- }
+     }
  
 
- 
 
-        return view('Hotel::frontend.detail', $data ,compact('datas'));
+ return view('Hotel::frontend.detail', $data ,compact('datas'));
     }
 
     public function checkAvailability(){
@@ -226,15 +245,100 @@ class HotelController extends Controller
 
 
 
- public function Wishlist(){
-     
-    return view('Hotel::frontend.wishlist-list');
+ public function Wishlist(Request $request){
+
+    $query = UserWishList::query()
+    ->where("user_wishlist.user_id",Auth::id())
+    ->orderBy('user_wishlist.id', 'desc')
+    ->paginate(10);
+
+
+    $rows = [];
+   foreach ($query as $item){
+    $service = $item->service;
+    if(empty($service)) continue;
+
+    $item = $item->toArray();
+    $serviceTranslation = $service->translate();
+    $item['service'] = [
+        'id'=>$service->id,
+        'title'=>$serviceTranslation->title,
+        'price'=>$service->price,
+        'sale_price'=>$service->sale_price,
+        'discount_percent'=>$service->discount_percent ?? null,
+        'image'=>get_file_url($service->banner_image_id),
+        'content'=>$serviceTranslation->content,
+        'location' => Location::selectRaw("id,name")->find($service->location_id) ?? null,
+        'is_featured' => $service->is_featured ?? null,
+        'service_icon' => $service->getServiceIconFeatured() ?? null,
+        'review_score' =>  $service->getScoreReview() ?? null,
+        'service_type' =>  $service->getModelName() ?? null,
+    ];
+       $rows[] = $item;
+
+
+}
+// return $this->sendSuccess(
+//     [
+//         'data'=>$rows,
+//         'total'=>$query->total(),
+//         'total_pages'=>$query->lastPage(),
+//     ]
+// );
+// }
+
+
+    return view('Hotel::frontend.wishlist-list',compact('rows'));
  }
 
 
  public function staycationexplore(){
 
-   return view('Hotel::staycationExplore');
+
+    $limit = 3; // Specify the limit to 3
+//    $page = $request->page;
+//    $user_id = $request->id;
+
+    $posts = DB::table('bravo_hotels')->take(3)->get();
+
+
+    // $posts = DB::table('bravo_hotels')
+    // ->join('bravo_hotel_rooms', 'bravo_hotels.id', '=', 'bravo_hotel_rooms.parent_id')
+    // ->select('bravo_hotels.*', 'bravo_hotel_rooms.title', DB::raw('bravo_hotels.price - (bravo_hotels.price * bravo_hotels.discount_percent / 100) AS discounted_price'))
+    // ->limit($limit)
+    // ->where('bravo_hotel_rooms.parent_id', $id)
+    // ->get();
+
+ 
+    $datas = [];
+ 
+ foreach ($posts as $p) {
+     $wishlist = DB::table('user_wishlist')
+         ->where('object_id', $p->id)
+        //  ->where('user_id', $user_id)
+         ->where('object_model', 'hotel')
+         ->first(); // Retrieve only one result, if exists
+ 
+     $conditionwishlist = $wishlist ? true : false;
+ 
+     $bannerImage = DB::table('media_files')
+         ->where('id', $p->banner_image_id)
+         ->select('file_path')
+         ->first();
+ 
+     if ($bannerImage) {
+         $p->bannerImage = "uploads/$bannerImage->file_path";
+     }
+ 
+     $p->wishlist = $conditionwishlist;
+ 
+     $datas[] = $p;
+     }
+ 
+
+   
+
+   return view('Hotel::staycationExplore' ,compact('datas'));
 
  }
 
