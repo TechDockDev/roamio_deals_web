@@ -81,7 +81,7 @@ class RoomController extends AdminController
             'hotel_manage_others' => $this->hasPermission('hotel_manage_others'),
             'breadcrumbs'        => [
                 [
-                    'name' => __('Hotels'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
@@ -130,7 +130,7 @@ class RoomController extends AdminController
             'enable_multi_lang'=>true,
             'breadcrumbs'    => [
                 [
-                    'name' => __('Hotels'),
+                    'name' => __('Staycation'),
                     'url'  => route('hotel.admin.index')
                 ],
                 [
