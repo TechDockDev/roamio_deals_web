@@ -1,12 +1,19 @@
 @if(setting_item($row->type."_enable_review"))
     <div class="bravo-reviews" id="bravo-reviews">
-        <h3>{{__("Reviews")}}</h3>
+        <h3>{{__("Reviews & FeedBack")}}</h3>
         @if($review_score)
             <div class="review-box">
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="review-box-score">
-                            <div class="review-score">
+                            <div class="review-score"  style="font-size: 10px;
+                            background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+                            height: 43px !important;
+                            position: relative;
+                            top: -6px;
+                            width: 100px;
+                            left: 94px;
+                            border-radius: 4px;">
                                 {{$review_score['score_total']}}<span class="per-total">/5</span>
                             </div>
                             <div class="review-score-text">
@@ -26,21 +33,22 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="review-sumary">
-                            @if($review_score['rate_score'])
+                            @if(isset($review_score['rate_score']))
                                 @foreach($review_score['rate_score'] as $item)
                                     <div class="item">
                                         <div class="label">
-                                            {{$item['title']}}
+                                            {{ $item['title'] }}
                                         </div>
                                         <div class="progress">
-                                            <div class="percent green" style="width: {{$item['percent']}}%"></div>
+                                            <div class="percent green" style="width: {{ $item['percent'] }}%"></div>
                                         </div>
-                                        <div class="number">{{$item['total']}}</div>
+                                        <div class="number">{{ $item['total'] }}</div>
                                     </div>
                                 @endforeach
                             @endif
                         </div>
                     </div>
+                    
                 </div>
             </div>
         @endif
@@ -60,7 +68,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">{{$userInfo->getDisplayName()}}</h4>
-                                    <div class="date">{{display_datetime($item->created_at)}}</div>
+                                    <div class="date" style="right: -647px; position: relative;">{{display_datetime($item->created_at)}}</div>
                                 </div>
                             </div>
                         </div>
@@ -105,12 +113,13 @@
                                         </div>
                                     </div>
                                 </div>
-                        </div>
+                            </div>
                         @endif
                     </div>
                 @endforeach
             @endif
         </div>
+        
         <div class="review-pag-wrapper">
             @if($review_list->total() > 0)
                 <div class="bravo-pagination">
@@ -221,3 +230,8 @@
         @endif
     </div>
 @endif
+
+
+
+
+

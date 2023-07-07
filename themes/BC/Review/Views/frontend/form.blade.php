@@ -2,13 +2,21 @@
 
 @if(setting_item($row->type."_enable_review"))
     <div class="bravo-reviews" id="bravo-reviews">
-        <h3>{{__("Reviews")}}</h3>
+        <h3>{{__("Reviews & Feedback")}}</h3>
         @if($review_score)
             <div class="review-box">
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="review-box-score">
-                            <div class="review-score">
+                            <div class="review-score"  style="font-size: 10px;
+                            background-color:#FF3500;
+                            color: white;
+                            width: 30%;
+                            height: 26%;
+                            border-radius: 5px;
+                            left: 1;
+                            position: relative;
+                            left: 107px;">
                                 {{$review_score['score_total']}}<span class="per-total">/5</span>
                             </div>
                             <div class="review-score-text">
@@ -27,9 +35,13 @@
                         </div>
                     </div>
                     <div class="col-lg-7">
+
+                
                         <div class="review-sumary">
-                            @if(!empty($review_score['rate_score']))
-                                @foreach($review_score['rate_score'] as $item)
+
+                         
+                            @if(!empty($review_score['score_total']))
+                                @foreach($review_score['rate'] as $item)
                                     <div class="item">
                                         <div class="label">
                                             {{$item['title']}}
@@ -42,7 +54,15 @@
                                 @endforeach
                             @endif
                         </div>
+                         
+                        
+                        
+                        
+                        
+
+                       
                     </div>
+                    
                 </div>
             </div>
         @endif

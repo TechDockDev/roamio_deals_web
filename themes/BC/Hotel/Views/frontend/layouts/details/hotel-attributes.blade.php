@@ -2,6 +2,7 @@
     $terms_ids = $row->terms->pluck('term_id');
     $attributes = \Modules\Core\Models\Terms::getTermsById($terms_ids);
 @endphp
+{{--
 @if(!empty($terms_ids) and !empty($attributes))
     @foreach($attributes as $key => $attribute )
         @php $translate_attribute = $attribute['parent']->translate() @endphp
@@ -27,3 +28,5 @@
         @endif
     @endforeach
 @endif
+
+--}}
