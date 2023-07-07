@@ -3,6 +3,7 @@
 <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{ asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('libs/fotorama/fotorama.css') }}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <style>
   .accordion {
@@ -558,9 +559,6 @@
     background-color: var(--color);
     color: var(--active);
   }
-
- 
-
   .br-button {
     padding: 10px;
     border-radius: 12px;
@@ -569,8 +567,6 @@
 </style>
 @endpush
 @section('content')
-
-
 
 
 <div class="container">
@@ -592,8 +588,21 @@
             <div class="wizard-panel-content" style="margin-top:50px;">
               <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nationality">
+                <div class="form-group">
+                    <select class="form-control" required>
+                      <option>--Nationality--</option>
+                      <option>India</option>
+                      <option>Bangladesh</option>
+                      <option>Sri Lanka</option>
+                      <option>Malaysia</option>
+                      <option>Singapore</option>
+                      <option>Uzbekistan</option>
+                      <option>Afghanistan</option>
+                      <option>Phillipines</option>
+                      <option>Bankok</option>
+                      <option>Britain</option>
+
+                    </select>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -604,38 +613,40 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
+
                   <div class="form-group">
-                    <select class="form-control">
+                    <select id="rangeSelect" class="form-control" required>
                       <option>--Number of Traveller (Adults)--</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
+                      <option value="1">1  </option>
+                      <option value="2">2 </option>
+                      <option value="3">3 </option>
+                      <option value="4">4 </option>
+                      <option value="5">5 </option>
+                      <option value="6">6 </option>
+                      <option value="7">7 </option>
+                      <option value="8">8 </option>
+                      <option value="9">9 </option>
+                      <option value="10">10 </option>
 
                     </select>
                   </div>
+
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <div class="form-group">
-                      <select class="form-control">
+                      <select id="childSelect" class="form-control" required>
                         <option>--Number of Traveller (Childs)--</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
+                        <option value="1">1 </option>
+                        <option value="2">2 </option>
+                        <option value="3">3 </option>
+                        <option value="4">4 </option>
+                        <option value="5">5 </option>
+                        <option value="6">6 </option>
+                        <option value="7">7 </option>
+                        <option value="8">8 </option>
+                        <option value="9">9 </option>
+                        <option value="10">10 </option>
                       </select>
                     </div>
                   </div>
@@ -647,7 +658,7 @@
             <div class="wizard-panel-btn" style="top: -90px; position:relative;">
               <button class="br-button wizard-btn-canc" type="button">Cancel
               </button>
-              <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Next
+              <button class="br-button primary wizard-btn-next" onclick="printDivs()" type="button" style="background:#FF3500;">Next
               </button>
             </div>
           </div>
@@ -692,68 +703,36 @@
               </button>
 
               <button style="left: -8px;
-    position: relative;" class="br-button secondary wizard-btn-prev" type="button">previous
+                 position: relative;" class="br-button secondary wizard-btn-prev" type="button">previous
               </button>
             </div>
           </div>
-          <div class="wizard-panel">
-            <div class="wizard-panel-content">
-              <div class="h4">Traveler 1</div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contact Number">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alternate Number">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Passport Number">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Place of Issue">
-                  </div>
-                </div>
-              </div>
 
-            </div>
+         <div class="wizard-panel">
+
+
+          <div class="wizard-panel-content" id="userRegisterForm">
+
+              <div id="divContainer"></div>
+              
+           </div>
+                
             <div class="wizard-panel-btn">
-              <button class="br-button wizard-btn-canc" type="button">Cancel
+              <a href="{{url('visa-page')}}" class=" btn btn-danger br-button wizard-btn-canc" type="button">Cancel
+              </a>
+
+
+                 @if(auth()->user())
+
+               <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed to next traveller details
               </button>
-              <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed to next traveller details
+
+              @else
+          
+               <button data-toggle="modal" data-target="#login" class="br-button primary wizard-btn" type="button" style="background:#FF3500;">login
               </button>
+
+              @endif
 
             </div>
           </div>
@@ -763,6 +742,88 @@
     </div>
   </div>
 </div>
+
+
+
+  <script>
+    function printDivs() {
+  var select = document.getElementById("rangeSelect");
+  var adultSelect = document.getElementById("rangeSelect");
+  var adultCount = parseInt(adultSelect.value);
+
+  var childSelect = document.getElementById("childSelect");
+  var childCount = parseInt(childSelect.value);
+
+  var totalCount = adultCount + childCount;
+
+  var divContainer = document.getElementById("divContainer");
+  divContainer.innerHTML = ""; // Clear the container before adding new divs
+
+  for (var i = 1; i <= totalCount; i++) {
+    // Generate divs for each traveler
+    var div = document.createElement("div");
+        div.innerHTML = `
+        
+            <div class="h4">Traveler ${i}</div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contact Number">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alternate Number">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Passport Number">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Place of Issue">
+                </div>
+              </div>
+            </div>
+          
+        `;
+
+        divContainer.appendChild(div);
+      }
+    }
+  </script>
+
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src=https://www.gov.br/ds/assets/govbr-ds-dev-core/dist/core-init.js></script>
@@ -781,6 +842,36 @@
       }
     });
   }
+</script>
+<script>
+// JavaScript/jQuery
+// JavaScript/jQuery
+$(document).ready(function() {
+  // Listen for changes in the number of travelers (adults) dropdown
+  $('#number-of-travellers').change(function() {
+    var numberOfTravelers = parseInt($(this).val());
+
+    // Clear existing traveler forms
+    $('#traveller-details-container').empty();
+
+    // Generate traveler forms for each traveler
+    for (var i = 1; i <= numberOfTravelers; i++) {
+      // Clone the userRegisterForm
+      var userRegisterFormClone = $('#userRegisterForm').clone();
+
+      // Update the ID of the cloned form to avoid duplication
+      userRegisterFormClone.attr('id', 'userRegisterForm-' + i);
+
+      // Update the traveler number in the header
+      userRegisterFormClone.find('.h4').text('Traveler ' + i);
+
+      // Append the cloned form to the container
+      $('#traveller-details-container').append(userRegisterFormClone);
+    }
+  });
+});
+
+
 </script>
 
 @endsection
