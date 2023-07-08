@@ -3884,3 +3884,1389 @@
 #67 D:\\roamio_deals_web\\server.php(21): require_once('D:\\\\roamio_deals...')
 #68 {main}
 "} 
+[2023-07-08 18:23:24] production.ERROR: Undefined array key "rate" {"view":{"view":"D:\\roamio_deals_web\\themes\\BC\\Review\\Views\\frontend\\form.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-23792762 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#1715</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-23792762\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","row":"<pre class=sf-dump id=sf-dump-1656268705 data-indent-pad=\"  \"><span class=sf-dump-note>Modules\\Event\\Models\\Event</span> {<a class=sf-dump-ref>#1779</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"12 characters\">bravo_events</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:38</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>14</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+    \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"24 characters\">seven-star-hotel-sea-bay</span>\"
+    \"<span class=sf-dump-key>content</span>\" => \"\"\"
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;One of the most incredible structures on Earth, the Burj Al Arab, was built in the shape of an Arabian dhow, or yacht&#039;s sail.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The planners wanted a monolithic structure, but neither did they want to cast a shadow over downtown Dubai, so they built it 919 feet (280 meters) out to sea.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The entrance hall is lined with rare Statutario marble (the same kind used by Michelangelo in his sculptures). In total, precious marble covers 24,000 square meters in the hotel.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;But you can&#039;t have marble without gold, so 19,267 square feet (1,790 square meters) of 24-carat gold leaf was also used to embellish the interior.&lt;/p&gt;</span>
+      \"\"\"
+    \"<span class=sf-dump-key>image_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>banner_image_id</span>\" => <span class=sf-dump-num>253</span>
+    \"<span class=sf-dump-key>location_id</span>\" => <span class=sf-dump-num>11</span>
+    \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"31 characters\">Near palm jumeirah burj khalifa</span>\"
+    \"<span class=sf-dump-key>map_lat</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>map_lng</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>map_zoom</span>\" => <span class=sf-dump-num>8</span>
+    \"<span class=sf-dump-key>is_featured</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>gallery</span>\" => \"<span class=sf-dump-str title=\"16 characters\">252,254,250,249,</span>\"
+    \"<span class=sf-dump-key>video</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>faqs</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>ticket_types</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>duration</span>\" => <span class=sf-dump-num>6</span>
+    \"<span class=sf-dump-key>start_time</span>\" => \"<span class=sf-dump-str title=\"5 characters\">15:00</span>\"
+    \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"6 characters\">800.00</span>\"
+    \"<span class=sf-dump-key>discount</span>\" => <span class=sf-dump-num>20</span>
+    \"<span class=sf-dump-key>is_instant</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>enable_extra_price</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>extra_price</span>\" => \"<span class=sf-dump-str title=\"155 characters\">[{&quot;name&quot;:&quot;Good for child&quot;,&quot;price&quot;:&quot;250&quot;,&quot;discount&quot;:&quot;40&quot;,&quot;person&quot;:&quot;child&quot;},{&quot;name&quot;:&quot;Evening Bay for Couple&quot;,&quot;price&quot;:&quot;700&quot;,&quot;discount&quot;:&quot;30&quot;,&quot;person&quot;:&quot;adult&quot;}]</span>\"
+    \"<span class=sf-dump-key>review_score</span>\" => \"<span class=sf-dump-str title=\"3 characters\">2.9</span>\"
+    \"<span class=sf-dump-key>ical_import_url</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"7 characters\">publish</span>\"
+    \"<span class=sf-dump-key>default_state</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>create_user</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>update_user</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-06-05 07:13:55</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-06-06 10:15:27</span>\"
+    \"<span class=sf-dump-key>enable_service_fee</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>service_fee</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>surrounding</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>end_time</span>\" => \"<span class=sf-dump-str title=\"5 characters\">23:00</span>\"
+    \"<span class=sf-dump-key>duration_unit</span>\" => \"<span class=sf-dump-str title=\"4 characters\">hour</span>\"
+    \"<span class=sf-dump-key>author_id</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:38</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>14</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+    \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"24 characters\">seven-star-hotel-sea-bay</span>\"
+    \"<span class=sf-dump-key>content</span>\" => \"\"\"
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;One of the most incredible structures on Earth, the Burj Al Arab, was built in the shape of an Arabian dhow, or yacht&#039;s sail.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The planners wanted a monolithic structure, but neither did they want to cast a shadow over downtown Dubai, so they built it 919 feet (280 meters) out to sea.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The entrance hall is lined with rare Statutario marble (the same kind used by Michelangelo in his sculptures). In total, precious marble covers 24,000 square meters in the hotel.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;But you can&#039;t have marble without gold, so 19,267 square feet (1,790 square meters) of 24-carat gold leaf was also used to embellish the interior.&lt;/p&gt;</span>
+      \"\"\"
+    \"<span class=sf-dump-key>image_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>banner_image_id</span>\" => <span class=sf-dump-num>253</span>
+    \"<span class=sf-dump-key>location_id</span>\" => <span class=sf-dump-num>11</span>
+    \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"31 characters\">Near palm jumeirah burj khalifa</span>\"
+    \"<span class=sf-dump-key>map_lat</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>map_lng</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>map_zoom</span>\" => <span class=sf-dump-num>8</span>
+    \"<span class=sf-dump-key>is_featured</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>gallery</span>\" => \"<span class=sf-dump-str title=\"16 characters\">252,254,250,249,</span>\"
+    \"<span class=sf-dump-key>video</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>faqs</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>ticket_types</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>duration</span>\" => <span class=sf-dump-num>6</span>
+    \"<span class=sf-dump-key>start_time</span>\" => \"<span class=sf-dump-str title=\"5 characters\">15:00</span>\"
+    \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"6 characters\">800.00</span>\"
+    \"<span class=sf-dump-key>discount</span>\" => <span class=sf-dump-num>20</span>
+    \"<span class=sf-dump-key>is_instant</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>enable_extra_price</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>extra_price</span>\" => \"<span class=sf-dump-str title=\"155 characters\">[{&quot;name&quot;:&quot;Good for child&quot;,&quot;price&quot;:&quot;250&quot;,&quot;discount&quot;:&quot;40&quot;,&quot;person&quot;:&quot;child&quot;},{&quot;name&quot;:&quot;Evening Bay for Couple&quot;,&quot;price&quot;:&quot;700&quot;,&quot;discount&quot;:&quot;30&quot;,&quot;person&quot;:&quot;adult&quot;}]</span>\"
+    \"<span class=sf-dump-key>review_score</span>\" => \"<span class=sf-dump-str title=\"3 characters\">2.9</span>\"
+    \"<span class=sf-dump-key>ical_import_url</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"7 characters\">publish</span>\"
+    \"<span class=sf-dump-key>default_state</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>create_user</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>update_user</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-06-05 07:13:55</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-06-06 10:15:27</span>\"
+    \"<span class=sf-dump-key>enable_service_fee</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>service_fee</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>surrounding</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>end_time</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>duration_unit</span>\" => \"<span class=sf-dump-str title=\"4 characters\">hour</span>\"
+    \"<span class=sf-dump-key>author_id</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>faqs</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>extra_price</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>sale_price</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>ticket_types</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>service_fee</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>surrounding</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: \"<span class=sf-dump-str title=\"11 characters\">Y-m-d H:i:s</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>location</span>\" => <span class=sf-dump-note title=\"Modules\\Location\\Models\\Location
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Location\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Location</span> {<a class=sf-dump-ref>#1798</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"15 characters\">bravo_locations</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:21</span> [ &#8230;21]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:21</span> [ &#8230;21]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: \"<span class=sf-dump-str title=\"11 characters\">Y-m-d H:i:s</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:10</span> [ &#8230;10]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">slugField</span>: \"<span class=sf-dump-str title=\"4 characters\">slug</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">slugFromField</span>: \"<span class=sf-dump-str title=\"4 characters\">name</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">cleanFields</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">seo_type</span>: \"<span class=sf-dump-str title=\"8 characters\">location</span>\"
+      +<span class=sf-dump-public title=\"Public property\">translationForeignKey</span>: \"<span class=sf-dump-str title=\"9 characters\">origin_id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">translation_class</span>: \"<span class=sf-dump-str title=\"43 characters\">Modules\\Location\\Models\\LocationTranslation</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">pending</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">moved</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+    \"<span class=sf-dump-key>translation</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>hasWishList</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>terms</span>\" => <span class=sf-dump-note title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Collection</span> {<a class=sf-dump-ref>#3308</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"7 characters\">content</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"6 characters\">status</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"4 characters\">faqs</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">slugField</span>: \"<span class=sf-dump-str title=\"4 characters\">slug</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">slugFromField</span>: \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">cleanFields</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">seo_type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+  +<span class=sf-dump-public title=\"Public property\">translationForeignKey</span>: \"<span class=sf-dump-str title=\"9 characters\">origin_id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">translation_class</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+  +<span class=sf-dump-public title=\"Public property\">email_new_booking_file</span>: \"<span class=sf-dump-str title=\"32 characters\">Event::emails.new_booking_detail</span>\"
+  +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_modal_file</span>: \"<span class=sf-dump-str title=\"36 characters\">Event::frontend/booking/detail-modal</span>\"
+  +<span class=sf-dump-public title=\"Public property\">type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">reviewClass</span>: \"<span class=sf-dump-str title=\"28 characters\">Modules\\Review\\Models\\Review</span>\"
+  +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_file</span>: \"<span class=sf-dump-str title=\"30 characters\">Event::frontend/booking/detail</span>\"
+  +<span class=sf-dump-public title=\"Public property\">set_paid_modal_file</span>: \"<span class=sf-dump-str title=\"38 characters\">Event::frontend/booking/set-paid-modal</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">bookingClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Booking\\Models\\Booking</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">bookingTimeSlotsClass</span>: \"<span class=sf-dump-str title=\"39 characters\">Modules\\Booking\\Models\\BookingTimeSlots</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventDateClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventDate</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventTermClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventTerm</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventTranslationClass</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">userWishListClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\User\\Models\\UserWishList</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">locationClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\Location\\Models\\Location</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">tmp_price</span>: <span class=sf-dump-num>0</span>
+  #<span class=sf-dump-protected title=\"Protected property\">tmp_dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1656268705\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","translation":"<pre class=sf-dump id=sf-dump-1778686243 data-indent-pad=\"  \"><span class=sf-dump-note>Modules\\Event\\Models\\EventTranslation</span> {<a class=sf-dump-ref>#1745</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"24 characters\">bravo_event_translations</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>false</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:7</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>locale</span>\" => \"<span class=sf-dump-str title=\"2 characters\">en</span>\"
+    \"<span class=sf-dump-key>origin_id</span>\" => <span class=sf-dump-num>14</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+    \"<span class=sf-dump-key>content</span>\" => \"\"\"
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;One of the most incredible structures on Earth, the Burj Al Arab, was built in the shape of an Arabian dhow, or yacht&#039;s sail.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The planners wanted a monolithic structure, but neither did they want to cast a shadow over downtown Dubai, so they built it 919 feet (280 meters) out to sea.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The entrance hall is lined with rare Statutario marble (the same kind used by Michelangelo in his sculptures). In total, precious marble covers 24,000 square meters in the hotel.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;But you can&#039;t have marble without gold, so 19,267 square feet (1,790 square meters) of 24-carat gold leaf was also used to embellish the interior.&lt;/p&gt;</span>
+      \"\"\"
+    \"<span class=sf-dump-key>faqs</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"31 characters\">Near palm jumeirah burj khalifa</span>\"
+    \"<span class=sf-dump-key>surrounding</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:3</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>faqs</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>surrounding</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: \"<span class=sf-dump-str title=\"11 characters\">Y-m-d H:i:s</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"7 characters\">content</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"4 characters\">faqs</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"7 characters\">address</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"11 characters\">surrounding</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">slugField</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">slugFromField</span>: \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">cleanFields</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"7 characters\">content</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">seo_type</span>: \"<span class=sf-dump-str title=\"17 characters\">event_translation</span>\"
+  +<span class=sf-dump-public title=\"Public property\">translationForeignKey</span>: \"<span class=sf-dump-str title=\"9 characters\">origin_id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">translation_class</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+  +<span class=sf-dump-public title=\"Public property\">email_new_booking_file</span>: \"<span class=sf-dump-str title=\"32 characters\">Event::emails.new_booking_detail</span>\"
+  +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_modal_file</span>: \"<span class=sf-dump-str title=\"36 characters\">Event::frontend/booking/detail-modal</span>\"
+  +<span class=sf-dump-public title=\"Public property\">type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">reviewClass</span>: \"<span class=sf-dump-str title=\"28 characters\">Modules\\Review\\Models\\Review</span>\"
+  +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_file</span>: \"<span class=sf-dump-str title=\"30 characters\">Event::frontend/booking/detail</span>\"
+  +<span class=sf-dump-public title=\"Public property\">set_paid_modal_file</span>: \"<span class=sf-dump-str title=\"38 characters\">Event::frontend/booking/set-paid-modal</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">bookingClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Booking\\Models\\Booking</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">bookingTimeSlotsClass</span>: \"<span class=sf-dump-str title=\"39 characters\">Modules\\Booking\\Models\\BookingTimeSlots</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventDateClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventDate</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventTermClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventTerm</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventTranslationClass</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">userWishListClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\User\\Models\\UserWishList</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">locationClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\Location\\Models\\Location</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">tmp_price</span>: <span class=sf-dump-num>0</span>
+  #<span class=sf-dump-protected title=\"Protected property\">tmp_dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1778686243\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","event_related":"<pre class=sf-dump id=sf-dump-1447520736 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#1869</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"Modules\\Event\\Models\\Event
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Event\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Event</span> {<a class=sf-dump-ref>#1852</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"12 characters\">bravo_events</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:38</span> [ &#8230;38]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:38</span> [ &#8230;38]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: \"<span class=sf-dump-str title=\"11 characters\">Y-m-d H:i:s</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">slugField</span>: \"<span class=sf-dump-str title=\"4 characters\">slug</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">slugFromField</span>: \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">cleanFields</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">seo_type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+      +<span class=sf-dump-public title=\"Public property\">translationForeignKey</span>: \"<span class=sf-dump-str title=\"9 characters\">origin_id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">translation_class</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+      +<span class=sf-dump-public title=\"Public property\">email_new_booking_file</span>: \"<span class=sf-dump-str title=\"32 characters\">Event::emails.new_booking_detail</span>\"
+      +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_modal_file</span>: \"<span class=sf-dump-str title=\"36 characters\">Event::frontend/booking/detail-modal</span>\"
+      +<span class=sf-dump-public title=\"Public property\">type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">reviewClass</span>: \"<span class=sf-dump-str title=\"28 characters\">Modules\\Review\\Models\\Review</span>\"
+      +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_file</span>: \"<span class=sf-dump-str title=\"30 characters\">Event::frontend/booking/detail</span>\"
+      +<span class=sf-dump-public title=\"Public property\">set_paid_modal_file</span>: \"<span class=sf-dump-str title=\"38 characters\">Event::frontend/booking/set-paid-modal</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">bookingClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Booking\\Models\\Booking</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">bookingTimeSlotsClass</span>: \"<span class=sf-dump-str title=\"39 characters\">Modules\\Booking\\Models\\BookingTimeSlots</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">eventDateClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventDate</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">eventTermClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventTerm</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">eventTranslationClass</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">userWishListClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\User\\Models\\UserWishList</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">locationClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\Location\\Models\\Location</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">tmp_price</span>: <span class=sf-dump-num>0</span>
+      #<span class=sf-dump-protected title=\"Protected property\">tmp_dates</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1447520736\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","location_category":"<pre class=sf-dump id=sf-dump-1839053382 data-indent-pad=\"  \"><span class=sf-dump-note>Kalnoy\\Nestedset\\Collection</span> {<a class=sf-dump-ref>#2896</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1839053382\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","booking_data":"<pre class=sf-dump id=sf-dump-1192564337 data-indent-pad=\"  \"><span class=sf-dump-note>array:18</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>14</span>
+  \"<span class=sf-dump-key>ticket_types</span>\" => []
+  \"<span class=sf-dump-key>extra_price</span>\" => <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note>array:7</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"14 characters\">Good for child</span>\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"3 characters\">250</span>\"
+      \"<span class=sf-dump-key>discount</span>\" => \"<span class=sf-dump-str title=\"2 characters\">40</span>\"
+      \"<span class=sf-dump-key>person</span>\" => \"<span class=sf-dump-str title=\"5 characters\">child</span>\"
+      \"<span class=sf-dump-key>number</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>enable</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>price_html</span>\" => \"<span class=sf-dump-str title=\"4 characters\">$250</span>\"
+    </samp>]
+    <span class=sf-dump-index>1</span> => <span class=sf-dump-note>array:7</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"22 characters\">Evening Bay for Couple</span>\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"3 characters\">700</span>\"
+      \"<span class=sf-dump-key>discount</span>\" => \"<span class=sf-dump-str title=\"2 characters\">30</span>\"
+      \"<span class=sf-dump-key>person</span>\" => \"<span class=sf-dump-str title=\"5 characters\">adult</span>\"
+      \"<span class=sf-dump-key>number</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>enable</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>price_html</span>\" => \"<span class=sf-dump-str title=\"4 characters\">$700</span>\"
+    </samp>]
+  </samp>]
+  \"<span class=sf-dump-key>minDate</span>\" => \"<span class=sf-dump-str title=\"10 characters\">07/08/2023</span>\"
+  \"<span class=sf-dump-key>max_number</span>\" => <span class=sf-dump-num>1</span>
+  \"<span class=sf-dump-key>duration</span>\" => <span class=sf-dump-num>6</span>
+  \"<span class=sf-dump-key>buyer_fees</span>\" => <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note>array:9</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"11 characters\">Service fee</span>\"
+      \"<span class=sf-dump-key>desc</span>\" => \"<span class=sf-dump-str title=\"81 characters\">This helps us run our platform and offer services like 24/7 support on your trip.</span>\"
+      \"<span class=sf-dump-key>name_ja</span>\" => \"<span class=sf-dump-str title=\"5 characters\">&#12469;&#12540;&#12499;&#12473;&#26009;</span>\"
+      \"<span class=sf-dump-key>desc_ja</span>\" => \"<span class=sf-dump-str title=\"26 characters\">&#12371;&#12428;&#12395;&#12424;&#12426;&#12289;&#24403;&#31038;&#12398;&#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&#12434;&#23455;&#34892;&#12375;&#12289;&#26053;&#34892;&#20013;&#12395;</span>\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"3 characters\">100</span>\"
+      \"<span class=sf-dump-key>type</span>\" => \"<span class=sf-dump-str title=\"8 characters\">one_time</span>\"
+      \"<span class=sf-dump-key>type_name</span>\" => \"<span class=sf-dump-str title=\"11 characters\">Service fee</span>\"
+      \"<span class=sf-dump-key>type_desc</span>\" => \"<span class=sf-dump-str title=\"81 characters\">This helps us run our platform and offer services like 24/7 support on your trip.</span>\"
+      \"<span class=sf-dump-key>price_type</span>\" => \"\"
+    </samp>]
+  </samp>]
+  \"<span class=sf-dump-key>start_date</span>\" => \"\"
+  \"<span class=sf-dump-key>start_date_html</span>\" => \"<span class=sf-dump-str title=\"19 characters\">Please select date!</span>\"
+  \"<span class=sf-dump-key>end_date</span>\" => \"\"
+  \"<span class=sf-dump-key>end_date_html</span>\" => \"\"
+  \"<span class=sf-dump-key>deposit</span>\" => <span class=sf-dump-const>false</span>
+  \"<span class=sf-dump-key>deposit_type</span>\" => \"\"
+  \"<span class=sf-dump-key>deposit_amount</span>\" => \"\"
+  \"<span class=sf-dump-key>deposit_fomular</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+  \"<span class=sf-dump-key>is_form_enquiry_and_book</span>\" => <span class=sf-dump-const>true</span>
+  \"<span class=sf-dump-key>enquiry_type</span>\" => \"<span class=sf-dump-str title=\"4 characters\">book</span>\"
+  \"<span class=sf-dump-key>booking_type</span>\" => \"<span class=sf-dump-str title=\"6 characters\">ticket</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1192564337\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","review_list":"<pre class=sf-dump id=sf-dump-913822753 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Pagination\\LengthAwarePaginator</span> {<a class=sf-dump-ref>#2637</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Collection</span> {<a class=sf-dump-ref>#2592</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"Modules\\Review\\Models\\Review
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Review\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Review</span> {<a class=sf-dump-ref>#1918</a> &#8230;37}
+      <span class=sf-dump-index>1</span> => <span class=sf-dump-note title=\"Modules\\Review\\Models\\Review
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Review\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Review</span> {<a class=sf-dump-ref>#1916</a> &#8230;37}
+      <span class=sf-dump-index>2</span> => <span class=sf-dump-note title=\"Modules\\Review\\Models\\Review
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Review\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Review</span> {<a class=sf-dump-ref>#1890</a> &#8230;37}
+    </samp>]
+    #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  </samp>}
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>5</span>
+  #<span class=sf-dump-protected title=\"Protected property\">currentPage</span>: <span class=sf-dump-num>1</span>
+  #<span class=sf-dump-protected title=\"Protected property\">path</span>: \"<span class=sf-dump-str title=\"52 characters\">http://127.0.0.1:8000/event/seven-star-hotel-sea-bay</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">query</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fragment</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">pageName</span>: \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  +<span class=sf-dump-public title=\"Public property\">onEachSide</span>: <span class=sf-dump-num>3</span>
+  #<span class=sf-dump-protected title=\"Protected property\">options</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>path</span>\" => \"<span class=sf-dump-str title=\"52 characters\">http://127.0.0.1:8000/event/seven-star-hotel-sea-bay</span>\"
+    \"<span class=sf-dump-key>pageName</span>\" => \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">total</span>: <span class=sf-dump-num>3</span>
+  #<span class=sf-dump-protected title=\"Protected property\">lastPage</span>: <span class=sf-dump-num>1</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-913822753\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","seo_meta":"<pre class=sf-dump id=sf-dump-1358005147 data-indent-pad=\"  \"><span class=sf-dump-note>array:19</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>56</span>
+  \"<span class=sf-dump-key>object_id</span>\" => <span class=sf-dump-num>14</span>
+  \"<span class=sf-dump-key>object_model</span>\" => \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+  \"<span class=sf-dump-key>seo_index</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>seo_title</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>seo_desc</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>seo_image</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>seo_share</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>create_user</span>\" => <span class=sf-dump-num>1</span>
+  \"<span class=sf-dump-key>update_user</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>origin_id</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>lang</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"27 characters\">2023-06-05T03:13:55.000000Z</span>\"
+  \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"27 characters\">2023-06-05T03:13:55.000000Z</span>\"
+  \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"24 characters\">seven-star-hotel-sea-bay</span>\"
+  \"<span class=sf-dump-key>full_url</span>\" => \"<span class=sf-dump-str title=\"52 characters\">http://127.0.0.1:8000/event/seven-star-hotel-sea-bay</span>\"
+  \"<span class=sf-dump-key>service_title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+  \"<span class=sf-dump-key>service_desc</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>service_image</span>\" => <span class=sf-dump-const>null</span>
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1358005147\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","body_class":"<pre class=sf-dump id=sf-dump-702376799 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"9 characters\">is_single</span>\"
+</pre><script>Sfdump(\"sf-dump-702376799\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","breadcrumbs":"<pre class=sf-dump id=sf-dump-97266608 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  <span class=sf-dump-index>0</span> => <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Event</span>\"
+    \"<span class=sf-dump-key>url</span>\" => \"<span class=sf-dump-str title=\"27 characters\">http://127.0.0.1:8000/event</span>\"
+  </samp>]
+  <span class=sf-dump-index>1</span> => <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Dubai</span>\"
+    \"<span class=sf-dump-key>url</span>\" => \"<span class=sf-dump-str title=\"36 characters\">http://127.0.0.1:8000/location/dubai</span>\"
+  </samp>]
+  <span class=sf-dump-index>2</span> => <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+    \"<span class=sf-dump-key>class</span>\" => \"<span class=sf-dump-str title=\"6 characters\">active</span>\"
+  </samp>]
+</samp>]
+</pre><script>Sfdump(\"sf-dump-97266608\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","review_score":"<pre class=sf-dump id=sf-dump-1668582808 data-indent-pad=\"  \"><span class=sf-dump-note>array:4</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>score_total</span>\" => \"<span class=sf-dump-str title=\"3 characters\">2.9</span>\"
+  \"<span class=sf-dump-key>score_text</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Average</span>\"
+  \"<span class=sf-dump-key>total_review</span>\" => <span class=sf-dump-num>3</span>
+  \"<span class=sf-dump-key>rate_score</span>\" => <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-key>5</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Excellent</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+    <span class=sf-dump-key>4</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Very Good</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+    <span class=sf-dump-key>3</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Average</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+    <span class=sf-dump-key>2</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"4 characters\">Poor</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+    <span class=sf-dump-key>1</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"8 characters\">Terrible</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+  </samp>]
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1668582808\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined array key \"rate\" at D:\\roamio_deals_web\\themes\\BC\\Review\\Views\\frontend\\form.blade.php:44)
+[stacktrace]
+#0 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(270): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined array...', 'D:\\\\roamio_deals...', 48)
+#1 D:\\roamio_deals_web\\themes\\BC\\Review\\Views\\frontend\\form.blade.php(44): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined array...', 'D:\\\\roamio_deals...', 48)
+#2 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#3 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#5 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#6 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#7 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 D:\\roamio_deals_web\\themes\\BC\\Event\\Views\\frontend\\layouts\\details\\review.blade.php(1): Illuminate\\View\\View->render()
+#10 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#11 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#13 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#14 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#15 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#16 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#17 D:\\roamio_deals_web\\themes\\BC\\Event\\Views\\frontend\\detail.blade.php(17): Illuminate\\View\\View->render()
+#18 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#19 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#20 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#21 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#22 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#23 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#24 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#25 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#26 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#27 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#28 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#29 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(798): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#30 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 D:\\roamio_deals_web\\app\\Http\\Middleware\\RequireChangePassword.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RequireChangePassword->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 D:\\roamio_deals_web\\app\\Http\\Middleware\\SetLanguageForAdmin.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetLanguageForAdmin->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 D:\\roamio_deals_web\\app\\Http\\Middleware\\SetCurrentCurrency.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetCurrentCurrency->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 D:\\roamio_deals_web\\app\\Http\\Middleware\\HideDebugbar.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\HideDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 D:\\roamio_deals_web\\app\\Http\\Middleware\\RedirectForMultiLanguage.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RedirectForMultiLanguage->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#49 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(799): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#56 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#57 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#58 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#59 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#60 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#61 D:\\roamio_deals_web\\themes\\Base\\Core\\Middleware\\RunUpdater.php(72): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Themes\\Base\\Core\\Middleware\\RunUpdater->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#63 D:\\roamio_deals_web\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#64 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#66 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#67 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#68 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#69 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#70 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#71 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#72 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#73 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#74 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#75 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#76 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#77 D:\\roamio_deals_web\\app\\Http\\Middleware\\RedirectToInstaller.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#78 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RedirectToInstaller->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#79 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#80 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#81 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#82 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#83 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#84 D:\\roamio_deals_web\\public\\index.php(72): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#85 D:\\roamio_deals_web\\server.php(21): require_once('D:\\\\roamio_deals...')
+#86 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined array key \"rate\" at D:\\roamio_deals_web\\storage\\framework\\views\\660572a15e3cfadbd8d269234f6c3e68edcd191e.php:48)
+[stacktrace]
+#0 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(270): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined array...', 'D:\\\\roamio_deals...', 48)
+#1 D:\\roamio_deals_web\\storage\\framework\\views\\660572a15e3cfadbd8d269234f6c3e68edcd191e.php(48): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined array...', 'D:\\\\roamio_deals...', 48)
+#2 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#3 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#5 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#6 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#7 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 D:\\roamio_deals_web\\storage\\framework\\views\\e9980fd21380f97a11a0ae45868719ab97169ad7.php(1): Illuminate\\View\\View->render()
+#10 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#11 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#13 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#14 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#15 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#16 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#17 D:\\roamio_deals_web\\storage\\framework\\views\\7a87ab77313040b535c24b66148bd828460c26e8.php(17): Illuminate\\View\\View->render()
+#18 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#19 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#20 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#21 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#22 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#23 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#24 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#25 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#26 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#27 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#28 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#29 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(798): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#30 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 D:\\roamio_deals_web\\app\\Http\\Middleware\\RequireChangePassword.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RequireChangePassword->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 D:\\roamio_deals_web\\app\\Http\\Middleware\\SetLanguageForAdmin.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetLanguageForAdmin->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 D:\\roamio_deals_web\\app\\Http\\Middleware\\SetCurrentCurrency.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetCurrentCurrency->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 D:\\roamio_deals_web\\app\\Http\\Middleware\\HideDebugbar.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\HideDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 D:\\roamio_deals_web\\app\\Http\\Middleware\\RedirectForMultiLanguage.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RedirectForMultiLanguage->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#49 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(799): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#56 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#57 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#58 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#59 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#60 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#61 D:\\roamio_deals_web\\themes\\Base\\Core\\Middleware\\RunUpdater.php(72): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Themes\\Base\\Core\\Middleware\\RunUpdater->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#63 D:\\roamio_deals_web\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#64 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#66 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#67 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#68 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#69 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#70 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#71 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#72 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#73 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#74 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#75 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#76 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#77 D:\\roamio_deals_web\\app\\Http\\Middleware\\RedirectToInstaller.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#78 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RedirectToInstaller->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#79 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#80 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#81 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#82 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#83 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#84 D:\\roamio_deals_web\\public\\index.php(72): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#85 D:\\roamio_deals_web\\server.php(21): require_once('D:\\\\roamio_deals...')
+#86 {main}
+"} 
+[2023-07-08 18:23:58] production.ERROR: Undefined array key "rate" {"view":{"view":"D:\\roamio_deals_web\\themes\\BC\\Review\\Views\\frontend\\form.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-786517354 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#1715</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-786517354\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","row":"<pre class=sf-dump id=sf-dump-1034159058 data-indent-pad=\"  \"><span class=sf-dump-note>Modules\\Event\\Models\\Event</span> {<a class=sf-dump-ref>#1779</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"12 characters\">bravo_events</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:38</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>14</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+    \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"24 characters\">seven-star-hotel-sea-bay</span>\"
+    \"<span class=sf-dump-key>content</span>\" => \"\"\"
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;One of the most incredible structures on Earth, the Burj Al Arab, was built in the shape of an Arabian dhow, or yacht&#039;s sail.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The planners wanted a monolithic structure, but neither did they want to cast a shadow over downtown Dubai, so they built it 919 feet (280 meters) out to sea.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The entrance hall is lined with rare Statutario marble (the same kind used by Michelangelo in his sculptures). In total, precious marble covers 24,000 square meters in the hotel.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;But you can&#039;t have marble without gold, so 19,267 square feet (1,790 square meters) of 24-carat gold leaf was also used to embellish the interior.&lt;/p&gt;</span>
+      \"\"\"
+    \"<span class=sf-dump-key>image_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>banner_image_id</span>\" => <span class=sf-dump-num>253</span>
+    \"<span class=sf-dump-key>location_id</span>\" => <span class=sf-dump-num>11</span>
+    \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"31 characters\">Near palm jumeirah burj khalifa</span>\"
+    \"<span class=sf-dump-key>map_lat</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>map_lng</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>map_zoom</span>\" => <span class=sf-dump-num>8</span>
+    \"<span class=sf-dump-key>is_featured</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>gallery</span>\" => \"<span class=sf-dump-str title=\"16 characters\">252,254,250,249,</span>\"
+    \"<span class=sf-dump-key>video</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>faqs</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>ticket_types</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>duration</span>\" => <span class=sf-dump-num>6</span>
+    \"<span class=sf-dump-key>start_time</span>\" => \"<span class=sf-dump-str title=\"5 characters\">15:00</span>\"
+    \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"6 characters\">800.00</span>\"
+    \"<span class=sf-dump-key>discount</span>\" => <span class=sf-dump-num>20</span>
+    \"<span class=sf-dump-key>is_instant</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>enable_extra_price</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>extra_price</span>\" => \"<span class=sf-dump-str title=\"155 characters\">[{&quot;name&quot;:&quot;Good for child&quot;,&quot;price&quot;:&quot;250&quot;,&quot;discount&quot;:&quot;40&quot;,&quot;person&quot;:&quot;child&quot;},{&quot;name&quot;:&quot;Evening Bay for Couple&quot;,&quot;price&quot;:&quot;700&quot;,&quot;discount&quot;:&quot;30&quot;,&quot;person&quot;:&quot;adult&quot;}]</span>\"
+    \"<span class=sf-dump-key>review_score</span>\" => \"<span class=sf-dump-str title=\"3 characters\">2.9</span>\"
+    \"<span class=sf-dump-key>ical_import_url</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"7 characters\">publish</span>\"
+    \"<span class=sf-dump-key>default_state</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>create_user</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>update_user</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-06-05 07:13:55</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-06-06 10:15:27</span>\"
+    \"<span class=sf-dump-key>enable_service_fee</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>service_fee</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>surrounding</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>end_time</span>\" => \"<span class=sf-dump-str title=\"5 characters\">23:00</span>\"
+    \"<span class=sf-dump-key>duration_unit</span>\" => \"<span class=sf-dump-str title=\"4 characters\">hour</span>\"
+    \"<span class=sf-dump-key>author_id</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:38</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>14</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+    \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"24 characters\">seven-star-hotel-sea-bay</span>\"
+    \"<span class=sf-dump-key>content</span>\" => \"\"\"
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;One of the most incredible structures on Earth, the Burj Al Arab, was built in the shape of an Arabian dhow, or yacht&#039;s sail.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The planners wanted a monolithic structure, but neither did they want to cast a shadow over downtown Dubai, so they built it 919 feet (280 meters) out to sea.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The entrance hall is lined with rare Statutario marble (the same kind used by Michelangelo in his sculptures). In total, precious marble covers 24,000 square meters in the hotel.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;But you can&#039;t have marble without gold, so 19,267 square feet (1,790 square meters) of 24-carat gold leaf was also used to embellish the interior.&lt;/p&gt;</span>
+      \"\"\"
+    \"<span class=sf-dump-key>image_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>banner_image_id</span>\" => <span class=sf-dump-num>253</span>
+    \"<span class=sf-dump-key>location_id</span>\" => <span class=sf-dump-num>11</span>
+    \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"31 characters\">Near palm jumeirah burj khalifa</span>\"
+    \"<span class=sf-dump-key>map_lat</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>map_lng</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>map_zoom</span>\" => <span class=sf-dump-num>8</span>
+    \"<span class=sf-dump-key>is_featured</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>gallery</span>\" => \"<span class=sf-dump-str title=\"16 characters\">252,254,250,249,</span>\"
+    \"<span class=sf-dump-key>video</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>faqs</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>ticket_types</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>duration</span>\" => <span class=sf-dump-num>6</span>
+    \"<span class=sf-dump-key>start_time</span>\" => \"<span class=sf-dump-str title=\"5 characters\">15:00</span>\"
+    \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"6 characters\">800.00</span>\"
+    \"<span class=sf-dump-key>discount</span>\" => <span class=sf-dump-num>20</span>
+    \"<span class=sf-dump-key>is_instant</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>enable_extra_price</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>extra_price</span>\" => \"<span class=sf-dump-str title=\"155 characters\">[{&quot;name&quot;:&quot;Good for child&quot;,&quot;price&quot;:&quot;250&quot;,&quot;discount&quot;:&quot;40&quot;,&quot;person&quot;:&quot;child&quot;},{&quot;name&quot;:&quot;Evening Bay for Couple&quot;,&quot;price&quot;:&quot;700&quot;,&quot;discount&quot;:&quot;30&quot;,&quot;person&quot;:&quot;adult&quot;}]</span>\"
+    \"<span class=sf-dump-key>review_score</span>\" => \"<span class=sf-dump-str title=\"3 characters\">2.9</span>\"
+    \"<span class=sf-dump-key>ical_import_url</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"7 characters\">publish</span>\"
+    \"<span class=sf-dump-key>default_state</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>create_user</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>update_user</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-06-05 07:13:55</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-06-06 10:15:27</span>\"
+    \"<span class=sf-dump-key>enable_service_fee</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>service_fee</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>surrounding</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>end_time</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>duration_unit</span>\" => \"<span class=sf-dump-str title=\"4 characters\">hour</span>\"
+    \"<span class=sf-dump-key>author_id</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>faqs</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>extra_price</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>sale_price</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>ticket_types</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>service_fee</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>surrounding</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: \"<span class=sf-dump-str title=\"11 characters\">Y-m-d H:i:s</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>location</span>\" => <span class=sf-dump-note title=\"Modules\\Location\\Models\\Location
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Location\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Location</span> {<a class=sf-dump-ref>#1798</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"15 characters\">bravo_locations</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:21</span> [ &#8230;21]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:21</span> [ &#8230;21]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: \"<span class=sf-dump-str title=\"11 characters\">Y-m-d H:i:s</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:10</span> [ &#8230;10]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">slugField</span>: \"<span class=sf-dump-str title=\"4 characters\">slug</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">slugFromField</span>: \"<span class=sf-dump-str title=\"4 characters\">name</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">cleanFields</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">seo_type</span>: \"<span class=sf-dump-str title=\"8 characters\">location</span>\"
+      +<span class=sf-dump-public title=\"Public property\">translationForeignKey</span>: \"<span class=sf-dump-str title=\"9 characters\">origin_id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">translation_class</span>: \"<span class=sf-dump-str title=\"43 characters\">Modules\\Location\\Models\\LocationTranslation</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">pending</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">moved</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+    \"<span class=sf-dump-key>translation</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>hasWishList</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>terms</span>\" => <span class=sf-dump-note title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Collection</span> {<a class=sf-dump-ref>#3308</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"7 characters\">content</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"6 characters\">status</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"4 characters\">faqs</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">slugField</span>: \"<span class=sf-dump-str title=\"4 characters\">slug</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">slugFromField</span>: \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">cleanFields</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">seo_type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+  +<span class=sf-dump-public title=\"Public property\">translationForeignKey</span>: \"<span class=sf-dump-str title=\"9 characters\">origin_id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">translation_class</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+  +<span class=sf-dump-public title=\"Public property\">email_new_booking_file</span>: \"<span class=sf-dump-str title=\"32 characters\">Event::emails.new_booking_detail</span>\"
+  +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_modal_file</span>: \"<span class=sf-dump-str title=\"36 characters\">Event::frontend/booking/detail-modal</span>\"
+  +<span class=sf-dump-public title=\"Public property\">type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">reviewClass</span>: \"<span class=sf-dump-str title=\"28 characters\">Modules\\Review\\Models\\Review</span>\"
+  +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_file</span>: \"<span class=sf-dump-str title=\"30 characters\">Event::frontend/booking/detail</span>\"
+  +<span class=sf-dump-public title=\"Public property\">set_paid_modal_file</span>: \"<span class=sf-dump-str title=\"38 characters\">Event::frontend/booking/set-paid-modal</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">bookingClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Booking\\Models\\Booking</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">bookingTimeSlotsClass</span>: \"<span class=sf-dump-str title=\"39 characters\">Modules\\Booking\\Models\\BookingTimeSlots</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventDateClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventDate</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventTermClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventTerm</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventTranslationClass</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">userWishListClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\User\\Models\\UserWishList</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">locationClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\Location\\Models\\Location</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">tmp_price</span>: <span class=sf-dump-num>0</span>
+  #<span class=sf-dump-protected title=\"Protected property\">tmp_dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1034159058\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","translation":"<pre class=sf-dump id=sf-dump-2105883127 data-indent-pad=\"  \"><span class=sf-dump-note>Modules\\Event\\Models\\EventTranslation</span> {<a class=sf-dump-ref>#1745</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"24 characters\">bravo_event_translations</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>false</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:7</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>locale</span>\" => \"<span class=sf-dump-str title=\"2 characters\">en</span>\"
+    \"<span class=sf-dump-key>origin_id</span>\" => <span class=sf-dump-num>14</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+    \"<span class=sf-dump-key>content</span>\" => \"\"\"
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;One of the most incredible structures on Earth, the Burj Al Arab, was built in the shape of an Arabian dhow, or yacht&#039;s sail.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The planners wanted a monolithic structure, but neither did they want to cast a shadow over downtown Dubai, so they built it 919 feet (280 meters) out to sea.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;The entrance hall is lined with rare Statutario marble (the same kind used by Michelangelo in his sculptures). In total, precious marble covers 24,000 square meters in the hotel.&lt;/p&gt;<span class=\"sf-dump-default sf-dump-ns\">\\r\\n</span></span>
+      <span class=sf-dump-str title=\"2341 characters\">&lt;p style=&quot;box-sizing: border-box; margin: 0px; padding: 10px 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 18px; line-height: inherit; font-family: lato-light; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; color: #282828; background-color: #ffffff;&quot;&gt;But you can&#039;t have marble without gold, so 19,267 square feet (1,790 square meters) of 24-carat gold leaf was also used to embellish the interior.&lt;/p&gt;</span>
+      \"\"\"
+    \"<span class=sf-dump-key>faqs</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"31 characters\">Near palm jumeirah burj khalifa</span>\"
+    \"<span class=sf-dump-key>surrounding</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:3</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>faqs</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>surrounding</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: \"<span class=sf-dump-str title=\"11 characters\">Y-m-d H:i:s</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"7 characters\">content</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"4 characters\">faqs</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"7 characters\">address</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"11 characters\">surrounding</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">slugField</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">slugFromField</span>: \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">cleanFields</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"7 characters\">content</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">seo_type</span>: \"<span class=sf-dump-str title=\"17 characters\">event_translation</span>\"
+  +<span class=sf-dump-public title=\"Public property\">translationForeignKey</span>: \"<span class=sf-dump-str title=\"9 characters\">origin_id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">translation_class</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+  +<span class=sf-dump-public title=\"Public property\">email_new_booking_file</span>: \"<span class=sf-dump-str title=\"32 characters\">Event::emails.new_booking_detail</span>\"
+  +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_modal_file</span>: \"<span class=sf-dump-str title=\"36 characters\">Event::frontend/booking/detail-modal</span>\"
+  +<span class=sf-dump-public title=\"Public property\">type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">reviewClass</span>: \"<span class=sf-dump-str title=\"28 characters\">Modules\\Review\\Models\\Review</span>\"
+  +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_file</span>: \"<span class=sf-dump-str title=\"30 characters\">Event::frontend/booking/detail</span>\"
+  +<span class=sf-dump-public title=\"Public property\">set_paid_modal_file</span>: \"<span class=sf-dump-str title=\"38 characters\">Event::frontend/booking/set-paid-modal</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">bookingClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Booking\\Models\\Booking</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">bookingTimeSlotsClass</span>: \"<span class=sf-dump-str title=\"39 characters\">Modules\\Booking\\Models\\BookingTimeSlots</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventDateClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventDate</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventTermClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventTerm</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">eventTranslationClass</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">userWishListClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\User\\Models\\UserWishList</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">locationClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\Location\\Models\\Location</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">tmp_price</span>: <span class=sf-dump-num>0</span>
+  #<span class=sf-dump-protected title=\"Protected property\">tmp_dates</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-2105883127\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","event_related":"<pre class=sf-dump id=sf-dump-4101499 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#1869</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"Modules\\Event\\Models\\Event
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Event\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Event</span> {<a class=sf-dump-ref>#1852</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"12 characters\">bravo_events</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:38</span> [ &#8230;38]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:38</span> [ &#8230;38]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: \"<span class=sf-dump-str title=\"11 characters\">Y-m-d H:i:s</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">slugField</span>: \"<span class=sf-dump-str title=\"4 characters\">slug</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">slugFromField</span>: \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">cleanFields</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">seo_type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+      +<span class=sf-dump-public title=\"Public property\">translationForeignKey</span>: \"<span class=sf-dump-str title=\"9 characters\">origin_id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">translation_class</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+      +<span class=sf-dump-public title=\"Public property\">email_new_booking_file</span>: \"<span class=sf-dump-str title=\"32 characters\">Event::emails.new_booking_detail</span>\"
+      +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_modal_file</span>: \"<span class=sf-dump-str title=\"36 characters\">Event::frontend/booking/detail-modal</span>\"
+      +<span class=sf-dump-public title=\"Public property\">type</span>: \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">reviewClass</span>: \"<span class=sf-dump-str title=\"28 characters\">Modules\\Review\\Models\\Review</span>\"
+      +<span class=sf-dump-public title=\"Public property\">checkout_booking_detail_file</span>: \"<span class=sf-dump-str title=\"30 characters\">Event::frontend/booking/detail</span>\"
+      +<span class=sf-dump-public title=\"Public property\">set_paid_modal_file</span>: \"<span class=sf-dump-str title=\"38 characters\">Event::frontend/booking/set-paid-modal</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">bookingClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Booking\\Models\\Booking</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">bookingTimeSlotsClass</span>: \"<span class=sf-dump-str title=\"39 characters\">Modules\\Booking\\Models\\BookingTimeSlots</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">eventDateClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventDate</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">eventTermClass</span>: \"<span class=sf-dump-str title=\"30 characters\">Modules\\Event\\Models\\EventTerm</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">eventTranslationClass</span>: \"<span class=sf-dump-str title=\"37 characters\">Modules\\Event\\Models\\EventTranslation</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">userWishListClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\User\\Models\\UserWishList</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">locationClass</span>: \"<span class=sf-dump-str title=\"32 characters\">Modules\\Location\\Models\\Location</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">tmp_price</span>: <span class=sf-dump-num>0</span>
+      #<span class=sf-dump-protected title=\"Protected property\">tmp_dates</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-4101499\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","location_category":"<pre class=sf-dump id=sf-dump-790693070 data-indent-pad=\"  \"><span class=sf-dump-note>Kalnoy\\Nestedset\\Collection</span> {<a class=sf-dump-ref>#2896</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-790693070\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","booking_data":"<pre class=sf-dump id=sf-dump-108970906 data-indent-pad=\"  \"><span class=sf-dump-note>array:18</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>14</span>
+  \"<span class=sf-dump-key>ticket_types</span>\" => []
+  \"<span class=sf-dump-key>extra_price</span>\" => <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note>array:7</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"14 characters\">Good for child</span>\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"3 characters\">250</span>\"
+      \"<span class=sf-dump-key>discount</span>\" => \"<span class=sf-dump-str title=\"2 characters\">40</span>\"
+      \"<span class=sf-dump-key>person</span>\" => \"<span class=sf-dump-str title=\"5 characters\">child</span>\"
+      \"<span class=sf-dump-key>number</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>enable</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>price_html</span>\" => \"<span class=sf-dump-str title=\"4 characters\">$250</span>\"
+    </samp>]
+    <span class=sf-dump-index>1</span> => <span class=sf-dump-note>array:7</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"22 characters\">Evening Bay for Couple</span>\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"3 characters\">700</span>\"
+      \"<span class=sf-dump-key>discount</span>\" => \"<span class=sf-dump-str title=\"2 characters\">30</span>\"
+      \"<span class=sf-dump-key>person</span>\" => \"<span class=sf-dump-str title=\"5 characters\">adult</span>\"
+      \"<span class=sf-dump-key>number</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>enable</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>price_html</span>\" => \"<span class=sf-dump-str title=\"4 characters\">$700</span>\"
+    </samp>]
+  </samp>]
+  \"<span class=sf-dump-key>minDate</span>\" => \"<span class=sf-dump-str title=\"10 characters\">07/08/2023</span>\"
+  \"<span class=sf-dump-key>max_number</span>\" => <span class=sf-dump-num>1</span>
+  \"<span class=sf-dump-key>duration</span>\" => <span class=sf-dump-num>6</span>
+  \"<span class=sf-dump-key>buyer_fees</span>\" => <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note>array:9</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"11 characters\">Service fee</span>\"
+      \"<span class=sf-dump-key>desc</span>\" => \"<span class=sf-dump-str title=\"81 characters\">This helps us run our platform and offer services like 24/7 support on your trip.</span>\"
+      \"<span class=sf-dump-key>name_ja</span>\" => \"<span class=sf-dump-str title=\"5 characters\">&#12469;&#12540;&#12499;&#12473;&#26009;</span>\"
+      \"<span class=sf-dump-key>desc_ja</span>\" => \"<span class=sf-dump-str title=\"26 characters\">&#12371;&#12428;&#12395;&#12424;&#12426;&#12289;&#24403;&#31038;&#12398;&#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&#12434;&#23455;&#34892;&#12375;&#12289;&#26053;&#34892;&#20013;&#12395;</span>\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"3 characters\">100</span>\"
+      \"<span class=sf-dump-key>type</span>\" => \"<span class=sf-dump-str title=\"8 characters\">one_time</span>\"
+      \"<span class=sf-dump-key>type_name</span>\" => \"<span class=sf-dump-str title=\"11 characters\">Service fee</span>\"
+      \"<span class=sf-dump-key>type_desc</span>\" => \"<span class=sf-dump-str title=\"81 characters\">This helps us run our platform and offer services like 24/7 support on your trip.</span>\"
+      \"<span class=sf-dump-key>price_type</span>\" => \"\"
+    </samp>]
+  </samp>]
+  \"<span class=sf-dump-key>start_date</span>\" => \"\"
+  \"<span class=sf-dump-key>start_date_html</span>\" => \"<span class=sf-dump-str title=\"19 characters\">Please select date!</span>\"
+  \"<span class=sf-dump-key>end_date</span>\" => \"\"
+  \"<span class=sf-dump-key>end_date_html</span>\" => \"\"
+  \"<span class=sf-dump-key>deposit</span>\" => <span class=sf-dump-const>false</span>
+  \"<span class=sf-dump-key>deposit_type</span>\" => \"\"
+  \"<span class=sf-dump-key>deposit_amount</span>\" => \"\"
+  \"<span class=sf-dump-key>deposit_fomular</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+  \"<span class=sf-dump-key>is_form_enquiry_and_book</span>\" => <span class=sf-dump-const>true</span>
+  \"<span class=sf-dump-key>enquiry_type</span>\" => \"<span class=sf-dump-str title=\"4 characters\">book</span>\"
+  \"<span class=sf-dump-key>booking_type</span>\" => \"<span class=sf-dump-str title=\"6 characters\">ticket</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-108970906\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","review_list":"<pre class=sf-dump id=sf-dump-1616664605 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Pagination\\LengthAwarePaginator</span> {<a class=sf-dump-ref>#2637</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Collection</span> {<a class=sf-dump-ref>#2592</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"Modules\\Review\\Models\\Review
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Review\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Review</span> {<a class=sf-dump-ref>#1918</a> &#8230;37}
+      <span class=sf-dump-index>1</span> => <span class=sf-dump-note title=\"Modules\\Review\\Models\\Review
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Review\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Review</span> {<a class=sf-dump-ref>#1916</a> &#8230;37}
+      <span class=sf-dump-index>2</span> => <span class=sf-dump-note title=\"Modules\\Review\\Models\\Review
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Modules\\Review\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Review</span> {<a class=sf-dump-ref>#1890</a> &#8230;37}
+    </samp>]
+    #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  </samp>}
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>5</span>
+  #<span class=sf-dump-protected title=\"Protected property\">currentPage</span>: <span class=sf-dump-num>1</span>
+  #<span class=sf-dump-protected title=\"Protected property\">path</span>: \"<span class=sf-dump-str title=\"52 characters\">http://127.0.0.1:8000/event/seven-star-hotel-sea-bay</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">query</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fragment</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">pageName</span>: \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  +<span class=sf-dump-public title=\"Public property\">onEachSide</span>: <span class=sf-dump-num>3</span>
+  #<span class=sf-dump-protected title=\"Protected property\">options</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>path</span>\" => \"<span class=sf-dump-str title=\"52 characters\">http://127.0.0.1:8000/event/seven-star-hotel-sea-bay</span>\"
+    \"<span class=sf-dump-key>pageName</span>\" => \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">total</span>: <span class=sf-dump-num>3</span>
+  #<span class=sf-dump-protected title=\"Protected property\">lastPage</span>: <span class=sf-dump-num>1</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1616664605\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","seo_meta":"<pre class=sf-dump id=sf-dump-1864215151 data-indent-pad=\"  \"><span class=sf-dump-note>array:19</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>56</span>
+  \"<span class=sf-dump-key>object_id</span>\" => <span class=sf-dump-num>14</span>
+  \"<span class=sf-dump-key>object_model</span>\" => \"<span class=sf-dump-str title=\"5 characters\">event</span>\"
+  \"<span class=sf-dump-key>seo_index</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>seo_title</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>seo_desc</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>seo_image</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>seo_share</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>create_user</span>\" => <span class=sf-dump-num>1</span>
+  \"<span class=sf-dump-key>update_user</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>origin_id</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>lang</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"27 characters\">2023-06-05T03:13:55.000000Z</span>\"
+  \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"27 characters\">2023-06-05T03:13:55.000000Z</span>\"
+  \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"24 characters\">seven-star-hotel-sea-bay</span>\"
+  \"<span class=sf-dump-key>full_url</span>\" => \"<span class=sf-dump-str title=\"52 characters\">http://127.0.0.1:8000/event/seven-star-hotel-sea-bay</span>\"
+  \"<span class=sf-dump-key>service_title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+  \"<span class=sf-dump-key>service_desc</span>\" => <span class=sf-dump-const>null</span>
+  \"<span class=sf-dump-key>service_image</span>\" => <span class=sf-dump-const>null</span>
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1864215151\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","body_class":"<pre class=sf-dump id=sf-dump-1858097101 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"9 characters\">is_single</span>\"
+</pre><script>Sfdump(\"sf-dump-1858097101\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","breadcrumbs":"<pre class=sf-dump id=sf-dump-287745504 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  <span class=sf-dump-index>0</span> => <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Event</span>\"
+    \"<span class=sf-dump-key>url</span>\" => \"<span class=sf-dump-str title=\"27 characters\">http://127.0.0.1:8000/event</span>\"
+  </samp>]
+  <span class=sf-dump-index>1</span> => <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Dubai</span>\"
+    \"<span class=sf-dump-key>url</span>\" => \"<span class=sf-dump-str title=\"36 characters\">http://127.0.0.1:8000/location/dubai</span>\"
+  </samp>]
+  <span class=sf-dump-index>2</span> => <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Seven Star hotel Sea Bay</span>\"
+    \"<span class=sf-dump-key>class</span>\" => \"<span class=sf-dump-str title=\"6 characters\">active</span>\"
+  </samp>]
+</samp>]
+</pre><script>Sfdump(\"sf-dump-287745504\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","review_score":"<pre class=sf-dump id=sf-dump-403064228 data-indent-pad=\"  \"><span class=sf-dump-note>array:4</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>score_total</span>\" => \"<span class=sf-dump-str title=\"3 characters\">2.9</span>\"
+  \"<span class=sf-dump-key>score_text</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Average</span>\"
+  \"<span class=sf-dump-key>total_review</span>\" => <span class=sf-dump-num>3</span>
+  \"<span class=sf-dump-key>rate_score</span>\" => <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-key>5</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Excellent</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+    <span class=sf-dump-key>4</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Very Good</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+    <span class=sf-dump-key>3</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Average</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+    <span class=sf-dump-key>2</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"4 characters\">Poor</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+    <span class=sf-dump-key>1</span> => <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"8 characters\">Terrible</span>\"
+      \"<span class=sf-dump-key>total</span>\" => <span class=sf-dump-num>0</span>
+      \"<span class=sf-dump-key>percent</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+  </samp>]
+</samp>]
+</pre><script>Sfdump(\"sf-dump-403064228\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined array key \"rate\" at D:\\roamio_deals_web\\themes\\BC\\Review\\Views\\frontend\\form.blade.php:44)
+[stacktrace]
+#0 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(270): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined array...', 'D:\\\\roamio_deals...', 48)
+#1 D:\\roamio_deals_web\\themes\\BC\\Review\\Views\\frontend\\form.blade.php(44): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined array...', 'D:\\\\roamio_deals...', 48)
+#2 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#3 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#5 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#6 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#7 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 D:\\roamio_deals_web\\themes\\BC\\Event\\Views\\frontend\\layouts\\details\\review.blade.php(1): Illuminate\\View\\View->render()
+#10 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#11 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#13 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#14 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#15 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#16 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#17 D:\\roamio_deals_web\\themes\\BC\\Event\\Views\\frontend\\detail.blade.php(17): Illuminate\\View\\View->render()
+#18 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#19 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#20 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#21 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#22 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#23 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#24 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#25 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#26 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#27 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#28 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#29 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(798): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#30 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 D:\\roamio_deals_web\\app\\Http\\Middleware\\RequireChangePassword.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RequireChangePassword->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 D:\\roamio_deals_web\\app\\Http\\Middleware\\SetLanguageForAdmin.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetLanguageForAdmin->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 D:\\roamio_deals_web\\app\\Http\\Middleware\\SetCurrentCurrency.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetCurrentCurrency->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 D:\\roamio_deals_web\\app\\Http\\Middleware\\HideDebugbar.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\HideDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 D:\\roamio_deals_web\\app\\Http\\Middleware\\RedirectForMultiLanguage.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RedirectForMultiLanguage->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#49 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(799): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#56 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#57 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#58 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#59 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#60 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#61 D:\\roamio_deals_web\\themes\\Base\\Core\\Middleware\\RunUpdater.php(72): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Themes\\Base\\Core\\Middleware\\RunUpdater->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#63 D:\\roamio_deals_web\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#64 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#66 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#67 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#68 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#69 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#70 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#71 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#72 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#73 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#74 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#75 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#76 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#77 D:\\roamio_deals_web\\app\\Http\\Middleware\\RedirectToInstaller.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#78 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RedirectToInstaller->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#79 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#80 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#81 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#82 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#83 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#84 D:\\roamio_deals_web\\public\\index.php(72): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#85 D:\\roamio_deals_web\\server.php(21): require_once('D:\\\\roamio_deals...')
+#86 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined array key \"rate\" at D:\\roamio_deals_web\\storage\\framework\\views\\660572a15e3cfadbd8d269234f6c3e68edcd191e.php:48)
+[stacktrace]
+#0 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(270): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined array...', 'D:\\\\roamio_deals...', 48)
+#1 D:\\roamio_deals_web\\storage\\framework\\views\\660572a15e3cfadbd8d269234f6c3e68edcd191e.php(48): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined array...', 'D:\\\\roamio_deals...', 48)
+#2 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#3 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#5 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#6 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#7 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 D:\\roamio_deals_web\\storage\\framework\\views\\e9980fd21380f97a11a0ae45868719ab97169ad7.php(1): Illuminate\\View\\View->render()
+#10 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#11 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#13 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#14 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#15 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#16 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#17 D:\\roamio_deals_web\\storage\\framework\\views\\7a87ab77313040b535c24b66148bd828460c26e8.php(17): Illuminate\\View\\View->render()
+#18 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('D:\\\\roamio_deals...')
+#19 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#20 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('D:\\\\roamio_deals...', Array)
+#21 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\roamio_deals...', Array)
+#22 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\\roamio_deals...', Array)
+#23 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#24 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#25 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#26 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#27 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#28 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#29 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(798): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#30 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 D:\\roamio_deals_web\\app\\Http\\Middleware\\RequireChangePassword.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RequireChangePassword->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 D:\\roamio_deals_web\\app\\Http\\Middleware\\SetLanguageForAdmin.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetLanguageForAdmin->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 D:\\roamio_deals_web\\app\\Http\\Middleware\\SetCurrentCurrency.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetCurrentCurrency->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 D:\\roamio_deals_web\\app\\Http\\Middleware\\HideDebugbar.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\HideDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 D:\\roamio_deals_web\\app\\Http\\Middleware\\RedirectForMultiLanguage.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RedirectForMultiLanguage->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#49 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(799): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#56 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#57 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#58 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#59 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#60 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#61 D:\\roamio_deals_web\\themes\\Base\\Core\\Middleware\\RunUpdater.php(72): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Themes\\Base\\Core\\Middleware\\RunUpdater->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#63 D:\\roamio_deals_web\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#64 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#66 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#67 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#68 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#69 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#70 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#71 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#72 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#73 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#74 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#75 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#76 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#77 D:\\roamio_deals_web\\app\\Http\\Middleware\\RedirectToInstaller.php(40): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#78 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RedirectToInstaller->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#79 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#80 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#81 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#82 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#83 D:\\roamio_deals_web\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#84 D:\\roamio_deals_web\\public\\index.php(72): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#85 D:\\roamio_deals_web\\server.php(21): require_once('D:\\\\roamio_deals...')
+#86 {main}
+"} 
