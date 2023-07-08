@@ -155,12 +155,12 @@ public function ActivityExp(Request $request) {
     }
     
 
-  
-  $user_id = $request->id;
 
-  $terms = DB::table('bravo_terms')->where('attr_id', '22')->get();
 
-  $datas = [];
+$user_id = $request->id;
+
+$terms = DB::table('bravo_terms')->where('attr_id', '20')->get();
+$data = [];
 
 foreach ($terms as $parent) {
     $name = $parent->name;
@@ -170,7 +170,6 @@ foreach ($terms as $parent) {
     foreach ($childData as $child) {
         $id = $child->target_id;
         $hotel = DB::table('bravo_events')->where('id', $id)->first();
-       
         
         $wishlist = DB::table('user_wishlist')
             ->where('object_id', $hotel->id)
@@ -188,18 +187,17 @@ foreach ($terms as $parent) {
         $hotels[] = $hotel;
     }
 
-   
-    // $data[] = [
-    //     'id' => $parent->id,
-    //     'parent_name' => $name,
-    //     'events' => $hotels,
-    // ];
-
-   
+    $data[] = [
+        'id' => $parent->id,
+        'parent_name' => $name,
+        'events' => $hotels,
+    ];
 }
-dd($datas);
 
-return view('Event::frontend.explore-activity',compact('fetch','datas'));
+
+ 
+
+return view('Event::frontend.explore-activity',compact('fetch','data'));
 }
 
 }

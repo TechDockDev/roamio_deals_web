@@ -21,7 +21,7 @@ use Session;
 class ActivityDataController extends Controller
 {
     
-  public function search(request $request){
+public function search(request $request){
           
 $limit = $request->limit;
 $page = $request->page;
@@ -48,18 +48,19 @@ foreach ($posts as $p) {
     $data[] = $p;
 }
 
-if (!empty($data)) {
+   if (!empty($data)) {
     return response()->json(['message' => "success", 'data' => $data, 'status' => 200]);
-} else {
+   } else {
     return response()->json(['message' => "fail", 'data' => [], 'status' => 0]);
-}
+  }
       
   }
     
     
   public function attrtermsget(request $request)
     {
-       $user_id = $request->id;
+
+$user_id = $request->id;
 
 $terms = DB::table('bravo_terms')->where('attr_id', '20')->get();
 $data = [];

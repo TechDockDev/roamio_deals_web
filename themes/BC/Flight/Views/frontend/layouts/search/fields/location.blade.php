@@ -9,7 +9,7 @@
     position: relative;
     top: 10px;
     font-size: 18px;
-    "><a href="{{url('explore-staycation')}}">StayCation</a></label>
+    "><a  style="text-decoration:none;" href="{{url('explore-staycation')}}">StayCation</a></label>
 	</div>
   </div>
 
