@@ -33,7 +33,9 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="review-sumary">
+                        
                             @if(isset($review_score['rate_score']))
+                       
                                 @foreach($review_score['rate_score'] as $item)
                                     <div class="item">
                                         <div class="label">

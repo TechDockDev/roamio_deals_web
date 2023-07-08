@@ -7,7 +7,7 @@
                 </div>
             @endif
             <div class="form-head">
-                <div class="price">
+                {{-- <div class="price">
                     <span class="label">
                         {{__("from")}}
                     </span>
@@ -15,7 +15,7 @@
                         <span class="onsale">{{ $row->display_sale_price }}</span>
                         <span class="text-lg">{{ $row->display_price }}</span>
                     </span>
-                </div>
+                </div> --}}
             </div>
             <div class="nav-enquiry" v-if="is_form_enquiry_and_book">
                 <div class="enquiry-item active" >

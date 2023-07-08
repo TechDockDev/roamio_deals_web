@@ -38,10 +38,10 @@
 
                 
                         <div class="review-sumary">
-
+                             {{-- {{ dd($review_score) }}   --}}
                          
                             @if(!empty($review_score['score_total']))
-                                @foreach($review_score['rate'] as $item)
+                                @foreach($review_score['rate_score'] as $item)
                                     <div class="item">
                                         <div class="label">
                                             {{$item['title']}}
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">{{$userInfo->getDisplayName()}}</h4>
-                                    <div class="date">{{display_datetime($item->created_at)}}</div>
+                                    <div class="date" style="position: relative; right:-645px;" >{{display_datetime($item->created_at)}}</div>
                                 </div>
                             </div>
                         </div>
