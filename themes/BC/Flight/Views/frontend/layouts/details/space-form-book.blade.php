@@ -2,22 +2,22 @@
     <div class="bravo_single_book_wrap">
         <div id="bravo_flight_book_app" class="bravo_single_book " v-cloak>
             <div class="border border-color-7 rounded mb-5">
-                <div class="border-bottom">
+                {{-- <div class="border-bottom">
                     <div class="p-4">
                         <span class="font-size-14">{{ __("From") }}</span>
                         <span class="font-size-24 text-gray-6 font-weight-bold ml-1">
                         {{ $row->display_price }}
                     </span>
                     </div>
-                </div>
-                <div class="nav-enquiry" v-if="is_form_enquiry_and_book">
+                </div> --}}
+                {{-- <div class="nav-enquiry" v-if="is_form_enquiry_and_book">
                     <div class="enquiry-item active" >
                         <span>{{ __("Book") }}</span>
                     </div>
                     <div class="enquiry-item" data-toggle="modal" data-target="#enquiry_form_modal">
                         <span>{{ __("Enquiry") }}</span>
                     </div>
-                </div>
+                </div> --}}
                 <div class="form-book" :class="{'d-none':enquiry_type!='book'}">
                     <div class="p-4">
                         <span class="d-block text-gray-1 font-weight-normal mb-0 text-left">Date</span>

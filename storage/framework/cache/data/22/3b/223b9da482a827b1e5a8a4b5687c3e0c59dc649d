@@ -1,4 +1,4 @@
-9999999999s:19030:"a,
+9999999999s:19010:"a,
     .bravo-news .btn-readmore,
     .bravo_wrap .bravo_header .content .header-left .bravo-menu ul li:hover > a,
     .bravo_wrap .bravo_search_tour .bravo_form_search .bravo_form .field-icon,
@@ -214,7 +214,7 @@
     .bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .featured,
     .bravo_wrap .page-template-content .bravo-list-tour .item-tour .featured,
     .bravo_wrap .bravo_search_hotel .bravo_filter .filter-title:before {
-        background: #5191fa;
+        
     }
     .bravo_wrap .page-template-content .bravo-list-tour.box_shadow .list-item .item .header-thumb .tour-book-now,
     .bravo_wrap .bravo_search_hotel .bravo-list-item .list-item .item-loop .sale_info,
