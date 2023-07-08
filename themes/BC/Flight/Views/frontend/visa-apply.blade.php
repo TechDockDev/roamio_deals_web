@@ -786,6 +786,7 @@
 
                @if(auth()->user())
 
+
                <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed 
                </button>
 
@@ -808,8 +809,6 @@
 </form>
 
 
-
-
   <script>
 
   var input = document.getElementById("travelDateInput");
@@ -828,6 +827,7 @@
   </script>
 
 <script>
+
   var cards = document.querySelectorAll('.card');
   var radios = document.querySelectorAll('.form-check-input');
 
