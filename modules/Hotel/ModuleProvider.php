@@ -72,16 +72,17 @@ class ModuleProvider extends ModuleServiceProvider
                         'title'      => __('Recovery'),
                         'permission' => 'hotel_view',
                     ],
+                    
                     // 'daily'=>[
 
                     //      'url' =>route('hotel.admin.dailyhotel'),
                     //      'title'=>__('Daily deals'),
                     // ],
-                    'Best'=>[
-                         'url' =>route('hotel.admin.besthotel'),
-                         'title'=>__('Daily and Best deals'),
+                    // 'Best'=>[
+                    //      'url' =>route('hotel.admin.besthotel'),
+                    //      'title'=>__('Daily and Best deals'),
 
-                    ],
+                    // ],
 
                     'Banner'=>[
                         

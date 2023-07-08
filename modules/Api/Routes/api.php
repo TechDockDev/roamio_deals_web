@@ -246,6 +246,8 @@ foreach ($hotels as $hotel) {
 return response()->json(['message' => 'Hotels retrieved successfully', 'data' => $hotelsWithImages]);
 });
 
+
+
 Route::get('searchactivity',function(request $request){
  
  $searchTerm = $request->hotel;
