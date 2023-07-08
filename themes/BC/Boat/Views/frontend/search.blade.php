@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
 @endpush
 @section('content')
+
     <div class="bravo_search_boat">
         <div class="bravo_banner" @if($bg = setting_item("boat_page_search_banner")) style="background-image: url({{get_file_url($bg,'full')}})" @endif >
             <div class="container">

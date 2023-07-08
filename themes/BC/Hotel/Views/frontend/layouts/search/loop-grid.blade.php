@@ -94,7 +94,7 @@
     <div class="info">
         <div class="g-price">
             <div class="prefix">
-                <span class="fr_text">{{__("from")}}</span>
+                <span class="fr_text" style="color: #FF3500;">{{__("from")}}</span>
             </div>
             <div class="price">
                 <span class="text-price btn btn-light Daily-btn text-white">{{ $row->display_price }} <span class="unit  text-white">{{__("/night")}}</span></span>

@@ -217,7 +217,7 @@ $style_typo = json_decode(setting_item_with_lang('style_typo',false,"{}"),true);
     .bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .featured,
     .bravo_wrap .page-template-content .bravo-list-tour .item-tour .featured,
     .bravo_wrap .bravo_search_hotel .bravo_filter .filter-title:before {
-        background: {{$main_color}};
+        {{-- background: red; --}}
     }
     .bravo_wrap .page-template-content .bravo-list-tour.box_shadow .list-item .item .header-thumb .tour-book-now,
     .bravo_wrap .bravo_search_hotel .bravo-list-item .list-item .item-loop .sale_info,

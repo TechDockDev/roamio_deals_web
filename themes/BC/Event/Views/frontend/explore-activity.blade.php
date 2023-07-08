@@ -225,7 +225,7 @@ p {
     <div class="row">
      <h4 class="py-2 mx-3">Categories</h4> 
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-md-2">
             <div class="card" style="border-radius:10px;">
                 <img src="{{asset('images\benner-img.png')}}" alt="" srcset="" style="width:100%;height:150px; border-radius:10px;">
@@ -256,7 +256,21 @@ p {
                 <img src="{{asset('images\benner-img.png')}}" alt="" srcset="" style="width:100%; height:150px; border-radius:10px;">
             </div>
             </div>    
-    </div>
+    </div> --}}
+    <div class="row"> 
+      @foreach($fetch as $cat)
+       <div class="col-md-3">
+           <div class="column Top Trending In Dubai">
+              <div class="card1" style="position: relative;">
+                  <div class="categories1" style="position: relative;">
+                      <img src="{{$cat->banner_image }}" alt="" srcset="" style="height:200px; width:100%; border-radius:10px;">
+                      <h2 class="heading" style="position: absolute; top: 76%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 100%; font-weight: 900;">{{ $cat->name }}</h2>
+                  </div>
+              </div>
+           </div>
+      </div>
+      @endforeach
+  </div>
     
    </div>
 

@@ -17,7 +17,7 @@
             <input type="hidden" value="{{Request::query('end',date("d/m/Y",strtotime("+1 day")))}}" name="end">
             <input type="hidden" name="date" value="{{Request::query('date')}}">
         @endif
-        <div class="filter-title">
+        <div class="filter-title mx-2">
             {{__("FILTER BY")}}
         </div>
         <div class="g-filter-item">
@@ -75,7 +75,7 @@
                             @endforeach
                         </ul>
                         @if(count($item->terms) > 3 and empty($selected))
-                            <button type="button" class="btn btn-link btn-more-item">{{__("More")}} <i class="fa fa-caret-down"></i></button>
+                            <button type="button" class="btn btn-link btn-more-item" style="color:#FF3500;">{{__("More")}} <i class="fa fa-caret-down"></i></button>
                         @endif
                     </div>
                 </div>
