@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @push('css')
 <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('libs/fotorama/fotorama.css') }}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <style>
   .accordion {
@@ -17,6 +18,18 @@
     font-size: 15px;
     transition: 0.4s;
   }
+   
+   .form-control[type=file]:not(:disabled):not([readonly]) {
+    cursor: pointer;
+    padding: 8px;
+    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+
+
+   }
+.card{
+
+  cursor: pointer;
+}
 
   .active,
   .accordion:hover {
@@ -50,7 +63,7 @@
 
   .br-wizard {
     margin-top: -100px;
-    height: 120%;
+    height: 203%;
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -448,7 +461,7 @@
   }
 
   .br-wizard .wizard-form .wizard-panel[active] {
-    height: 100%;
+    height: 60%;
     left: 0 !important;
     opacity: 1;
     transition-delay: 0s;
@@ -473,13 +486,15 @@
   }
 
   .br-wizard .wizard-form .wizard-panel .wizard-panel-btn {
+   top: -13px;
     align-self: flex-end;
     background-color: var(--background-alternative);
     border-top: 1px solid var(--border-color);
     height: fit-content;
-    margin-top: 1px;
+    margin-top: 29px;
     padding: var(--spacing-scale-2x) 1.5%;
     width: 100%;
+    position: relative;
   }
 
   .br-wizard .wizard-form .wizard-panel .wizard-btn-next,
@@ -558,20 +573,63 @@
     background-color: var(--color);
     color: var(--active);
   }
-
- 
-
   .br-button {
     padding: 10px;
     border-radius: 12px;
 
   }
+
+
 </style>
+
+<style>
+  .custom-file-input-placeholder {
+    position: relative;
+    overflow: hidden;
+  }
+
+ .custom-file-input {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    margin: 0;
+    opacity: 0;
+    bottom: -11px;
+}
+
+  .custom-file-input-placeholder input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    font-size: 100px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .custom-file-input-placeholder input[type="text"] {
+    width: 100%;
+  }
+
+  .showFileInput {
+    margin-top: -33px;
+}
+
+.imageClass{
+
+  position: relative;
+    float: right;
+    top: -37px;
+    left: -10px;
+}
+</style>
+
 @endpush
 @section('content')
 
-
-
+  <form>
 
 <div class="container">
 
@@ -582,60 +640,79 @@
     <div class="wizard-sample-1 mt-5 pt-5">
       <div class="br-wizard" collapsed="collapsed" step="1">
         <div class="wizard-progress">
-          <button class="wizard-progress-btn" type="button" title="Dados Pessoais"><span class="info">Visa Application</span></button>
-          <button class="wizard-progress-btn" type="button" title="Validar Dados" active="active"><span class="info">Visa Type</span></button>
-          <button class="wizard-progress-btn" type="button" title="Habilitar Cadastro" active="active"><span class="info">Upload Document</span></button>
-
+          <button class="wizard-progress-btn"  title="Dados Pessoais"><span class="info">Visa Application</span></button>
+          <button class="wizard-progress-btn"  title="Validar Dados" active="active"><span class="info">Visa Type</span></button>
+          <button class="wizard-progress-btn"  title="Habilitar Cadastro" active="active"><span class="info">Upload Document</span></button>
         </div>
+        
         <div class="wizard-form">
           <div class="wizard-panel" active="active">
             <div class="wizard-panel-content" style="margin-top:50px;">
               <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nationality">
+                <div class="form-group">
+                  
+                  <select id="nationalitySelect" class="form-control" required>
+                      <option>--Nationality--</option>
+                      <option>India</option>
+                      <option>Bangladesh</option>
+                      <option>Sri Lanka</option>
+                      <option>Malaysia</option>
+                      <option>Singapore</option>
+                      <option>Uzbekistan</option>
+                      <option>Afghanistan</option>
+                      <option>Phillipines</option>
+                      <option>Bankok</option>
+                      <option>Britain</option>
+                   </select>
+
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Travel Dates">
+              <input type="text" class="form-control" id="travelDateInput" aria-describedby="emailHelp" placeholder="Travel Dates" pattern="\d{2}/\d{2}/\d{4}">
+
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
+
                   <div class="form-group">
-                    <select class="form-control">
+                    <select id="rangeSelect" class="form-control" required>
                       <option>--Number of Traveller (Adults)--</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
+                       <option value="0">0</option>
+                      <option value="1">1 </option>
+                      <option value="2">2 </option>
+                      <option value="3">3 </option>
+                      <option value="4">4 </option>
+                      <option value="5">5 </option>
+                      <option value="6">6 </option>
+                      <option value="7">7 </option>
+                      <option value="8">8 </option>
+                      <option value="9">9 </option>
+                      <option value="10">10 </option>
 
                     </select>
                   </div>
+
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <div class="form-group">
-                      <select class="form-control">
+                      <select id="childSelect" class="form-control" required>
                         <option>--Number of Traveller (Childs)--</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
+                        <option value="0">0</option>
+                        <option value="1">1 </option>
+                        <option value="2">2 </option>
+                        <option value="3">3 </option>
+                        <option value="4">4 </option>
+                        <option value="5">5 </option>
+                        <option value="6">6 </option>
+                        <option value="7">7 </option>
+                        <option value="8">8 </option>
+                        <option value="9">9 </option>
+                        <option value="10">10 </option>
                       </select>
                     </div>
                   </div>
@@ -647,8 +724,8 @@
             <div class="wizard-panel-btn" style="top: -90px; position:relative;">
               <button class="br-button wizard-btn-canc" type="button">Cancel
               </button>
-              <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Next
-              </button>
+          <button class="br-button primary nextButtonform wizard-btn-next" onclick="printDivs()" type="button" style="background:#FF3500;display:none;">Next</button>
+
             </div>
           </div>
           <div class="wizard-panel">
@@ -656,28 +733,26 @@
 
 
               @foreach($visadata as $visa)
-              <button class="accordion">{{$visa->entry}}</button>
+              <button type="button" class="accordion">{{$visa->entry}}</button>
               <div class="panel" style="display: flex; flex-direction: column;">
 
                 <div class="container" style="margin-top:10px; margin-bottom:10px;">
                   <div class="row">
-                    @foreach ($visa->visa_entry_details as $item)
-                    <div class="col-4">
-                      <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
-                      
-                        <div style="padding:10px;">
-                        <div style="display: flex; justify-content: flex-end;">
-                    <input type="radio" class="form-check-input" style=" height: 20px; width: 20px; order: 1;" id="check{{$item->id}}" name="selected_option" value="{{$item->id}}">
-                </div>
-                          <h5>{{$item->days}}</h5>
-                          <h6>{{$item->title}}</h6>
-                           <p>{!! $item->discription !!}</p>
-
-                          <h4>{{$item->price}}</h4>
-                        </div>
-                      </div>
-                    </div>
-                    @endforeach
+                  @foreach ($visa->visa_entry_details as $item)
+<div class="col-4">
+  <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
+    <div style="padding:10px;">
+      <div style="display: flex; justify-content: flex-end;">
+        <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1;" id="check{{$item->id}}" name="selected_option" value="{{$item->id}}">
+      </div>
+      <h5>{{$item->days}}</h5>
+      <h6>{{$item->title}}</h6>
+      <p>{!! $item->discription !!}</p>
+      <h4>{{$item->price}}</h4>
+    </div>
+  </div>
+</div>
+@endforeach
                   </div>
                 </div>
 
@@ -692,111 +767,261 @@
               </button>
 
               <button style="left: -8px;
-    position: relative;" class="br-button secondary wizard-btn-prev" type="button">previous
+                 position: relative;" class="br-button secondary wizard-btn-prev" type="button">previous
               </button>
             </div>
           </div>
-          <div class="wizard-panel">
-            <div class="wizard-panel-content">
-              <div class="h4">Traveler 1</div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contact Number">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alternate Number">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Passport Number">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Place of Issue">
-                  </div>
-                </div>
-              </div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="br-upload">
-                      <label class="upload-label" for="single-file"><span></span></label>
-                      <input class="upload-input" id="single-file" type="file" accept=".pdf, .docx, image/jpeg" />
-                      <div class="upload-list"></div>
-                    </div>
-                  </div>
-                </div>
+         <div class="wizard-panel">
 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="br-upload">
-                      <label class="upload-label" for="single-file"><span></span></label>
-                      <input class="upload-input" id="single-file" type="file" accept=".pdf, .docx, image/jpeg" />
-                      <div class="upload-list"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="br-upload">
-                      <label class="upload-label" for="single-file"><span></span></label>
-                      <input class="upload-input" id="single-file" type="file" accept=".pdf, .docx, image/jpeg" />
-                      <div class="upload-list"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="wizard-panel-btn">
-              <button class="br-button wizard-btn-canc" type="button">Cancel
-              </button>
-              <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed to next traveller details
+          <div class="wizard-panel-content" id="userRegisterForm">
+
+              <div id="divContainer"></div>
+           
+           </div>
+                
+             <div class="wizard-panel-btn">
+              <a href="{{url('visa-page')}}" class="btn btn-danger br-button wizard-btn-canc" type="button">Cancel
+              </a>
+
+               @if(auth()->user())
+
+
+               <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed 
+               </button>
+
+               @else
+          
+            <button data-toggle="modal" data-target="#login" class="br-button primary wizard-btn" type="button" style="background:#FF3500;">Proceed to Booking
               </button>
 
+              @endif
 
-         
             </div>
           </div>
 
         </div>
+
       </div>
     </div>
   </div>
 </div>
+</form>
+
+
+  <script>
+
+  var input = document.getElementById("travelDateInput");
+
+  input.addEventListener("focus", function() {
+  input.setAttribute("data-placeholder", input.getAttribute("placeholder"));
+  input.removeAttribute("placeholder");
+  });
+
+  input.addEventListener("blur", function() {
+  input.setAttribute("placeholder", input.getAttribute("data-placeholder"));
+  input.removeAttribute("data-placeholder");
+  });
+
+
+  </script>
+
+<script>
+
+  var cards = document.querySelectorAll('.card');
+  var radios = document.querySelectorAll('.form-check-input');
+
+  cards.forEach(function(card, index) {
+    card.addEventListener('click', function() {
+      radios.forEach(function(radio) {
+        radio.checked = false;
+      });
+      radios[index].checked = true;
+    });
+  });
+</script>
+
+<script>
+   function validateForm() {
+    var adultSelect = document.getElementById("rangeSelect");
+    var adultCount = parseInt(adultSelect.value);
+
+    var childSelect = document.getElementById("childSelect");
+    var childCount = parseInt(childSelect.value);
+
+    var nextButton = document.querySelector('.wizard-btn-next');
+
+    if (adultCount > 0 || childCount > 0) {
+      nextButton.style.display = 'block';
+    } else {
+      nextButton.style.display = 'none';
+    }
+  }
+
+  // Call validateForm() whenever there is a change in any of the form fields
+  document.getElementById("rangeSelect").addEventListener('change', validateForm);
+  document.getElementById("childSelect").addEventListener('change', validateForm);
+
+  // Call validateForm() initially to check the form fields on page load
+  validateForm();
+</script>
+
+
+  <script>
+
+function printDivs() {
+  var select = document.getElementById("rangeSelect");
+  var adultSelect = document.getElementById("rangeSelect");
+  var adultCount = parseInt(adultSelect.value);
+
+  var childSelect = document.getElementById("childSelect");
+  var childCount = parseInt(childSelect.value);
+
+  var totalCount = adultCount + childCount;
+
+  var divContainer = document.getElementById("divContainer");
+  divContainer.innerHTML = ""; // Clear the container before adding new divs
+
+  for (var i = 1; i <= totalCount; i++) {
+    // Generate divs for each traveler
+    var div = document.createElement("div");
+    div.innerHTML = `
+      <div class="h4">Traveler ${i}</div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
+          </div>
+        </div>
+          
+
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="email" class="form-control" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" id="alternate${i}" aria-describedby="emailHelp" placeholder="Alternate Number">
+          </div>
+        </div>
+
+       </div>
+
+
+      <div class="row">
+
+       <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" id="passportNumber${i}" aria-describedby="emailHelp" placeholder="Passport Number">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control passportExpiryDate" id="passportExpiryDate${i}" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
+          </div>
+        </div>
+       
+      </div>
+          <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="placeOfIssue${i}" aria-describedby="emailHelp" placeholder="Place of Issue">
+          </div>
+        </div>
+       
+       <div class="col-md-6">
+          <div class="form-group">
+            <input type="file" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
+             <input type="text" class="form-control showFileInput" placeholder="Passport first page Photo" >
+             <img src = {{asset('/images/btn.svg')}} class="imageClass">
+          </div>
+         </div>
+        </div>
+
+   <div class="row">
+     <div class="col-md-6">
+      <div class="form-group">
+      <input type="file" class="custom-file-input" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
+    <input type="text" class="form-control showFileInput" placeholder="Passport second page Photo" >
+    <img src = {{asset('/images/btn.svg')}} class="imageClass">
+     
+    </div>
+    </div>
+    <div class="col-md-6">
+     <div class="form-group">
+      <input type="file" class="custom-file-input" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
+       <input type="text" class="form-control showFileInput" placeholder="Passport Size Photo" >
+         <img src = {{asset('/images/btn.svg')}} class="imageClass">
+      
+    </div>
+    </div>
+    </div>
+
+    `;
+
+    divContainer.appendChild(div);
+
+    $('#passportExpiryDate' + i).datepicker({
+      format: 'dd/mm/yyyy',
+      todayHighlight: true,
+      autoclose: true,
+      placeholder: 'Date of Booking'
+    });
+   
+   $('#DOB' + i).datepicker({
+      format: 'dd/mm/yyyy',
+      todayHighlight: true,
+      autoclose: true,
+      placeholder: 'Date of Booking'
+    });
+
+  }
+}
+
+  </script>
+
+  <script>
+  function handleFileInputChange(event, inputId) {
+    var input = event.target;
+    var fileName = input.files[0].name;
+
+    var inputText = input.parentNode.querySelector('input[type="text"]');
+    inputText.value = fileName;
+  }
+</script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src=https://www.gov.br/ds/assets/govbr-ds-dev-core/dist/core-init.js></script>
@@ -815,6 +1040,36 @@
       }
     });
   }
+</script>
+<script>
+// JavaScript/jQuery
+// JavaScript/jQuery
+$(document).ready(function() {
+  // Listen for changes in the number of travelers (adults) dropdown
+  $('#number-of-travellers').change(function() {
+    var numberOfTravelers = parseInt($(this).val());
+
+    // Clear existing traveler forms
+    $('#traveller-details-container').empty();
+
+    // Generate traveler forms for each traveler
+    for (var i = 1; i <= numberOfTravelers; i++) {
+      // Clone the userRegisterForm
+      var userRegisterFormClone = $('#userRegisterForm').clone();
+
+      // Update the ID of the cloned form to avoid duplication
+      userRegisterFormClone.attr('id', 'userRegisterForm-' + i);
+
+      // Update the traveler number in the header
+      userRegisterFormClone.find('.h4').text('Traveler ' + i);
+
+      // Append the cloned form to the container
+      $('#traveller-details-container').append(userRegisterFormClone);
+    }
+  });
+});
+
+
 </script>
 
 @endsection
