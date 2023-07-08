@@ -5,13 +5,13 @@
     <div class="col-lg-9 col-md-12">
         <div class="bravo-list-item">
             <div class="topbar-search">
-                <h2 class="text">
+                <h6 class="text">
                     @if($rows->total() > 1)
                         {{ __(":count boats found",['count'=>$rows->total()]) }}
                     @else
                         {{ __(":count boat found",['count'=>$rows->total()]) }}
                     @endif
-                </h2>
+                </h6>
                 <div class="control">
                     @include('Boat::frontend.layouts.search.orderby')
                 </div>

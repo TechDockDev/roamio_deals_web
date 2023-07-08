@@ -18,7 +18,7 @@
                     $translate = $item->translate();
                 @endphp
                 <div class="filter-item">
-                    <div class="filter-title"><strong>{{$translate->name}}</strong></div>
+                    <div class="filter-title  mx-2"  ><strong>{{$translate->name}}</strong></div>
                     <ul class="filter-items row">
                         @foreach($item->terms as $term)
                             @php $translate = $term->translate(); @endphp

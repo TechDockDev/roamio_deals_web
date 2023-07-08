@@ -159,6 +159,7 @@ class ListHotel extends BaseBlock
             
         }
 
+     
 
         //   fetch for daily 
 

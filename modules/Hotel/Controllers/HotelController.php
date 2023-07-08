@@ -301,6 +301,8 @@ class HotelController extends Controller
 
     $posts = DB::table('bravo_hotels')->take(3)->get();
 
+  
+
 
     // $posts = DB::table('bravo_hotels')
     // ->join('bravo_hotel_rooms', 'bravo_hotels.id', '=', 'bravo_hotel_rooms.parent_id')

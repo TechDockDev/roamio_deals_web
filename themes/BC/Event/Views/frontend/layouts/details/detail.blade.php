@@ -57,7 +57,7 @@
                     <div class="head">
                         <div class="left">
                             <span class="head-rating">{{$review_score['score_text']}}</span>
-                            <span class="text-rating">{{__("from :number reviews",['number'=>$review_score['total_review']])}}</span>
+                            <span class="text-rating" style="color:#FF3500;">{{__("from :number reviews",['number'=>$review_score['total_review']])}}</span>
                         </div>
                         <div class="score">
                             {{$review_score['score_total']}}<span>/5</span>

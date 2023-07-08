@@ -3,7 +3,7 @@
         <div class="left">
             <div class="g-price">
                 <div class="prefix">
-                    <span class="fr_text">{{__("from")}}</span>
+                    <span class="fr_text" style="color: #FF3500;">{{__("from")}}</span>
                 </div>
                 <div class="price">
                     <span class="onsale">{{ $row->display_sale_price }}</span>

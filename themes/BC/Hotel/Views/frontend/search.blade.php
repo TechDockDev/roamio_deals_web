@@ -5,14 +5,21 @@
 @endpush
 @section('content')
     <div class="bravo_search_hotel">
-        <div class="bravo_banner" @if($bg = setting_item("hotel_page_search_banner")) style="background-image: url({{get_file_url($bg,'full')}})" @endif >
+        <div class="container mt-3 pt-3">
+          
+                <h4 class="mx-2">Results for Staycation</h4>
+         
+        </div>
+       
+       
+        {{-- <div class="bravo_banner" @if($bg = setting_item("hotel_page_search_banner")) style="background-image: url({{get_file_url($bg,'full')}})" @endif >
             <div class="container">
                 <h1>
                     {{setting_item_with_lang("hotel_page_search_title")}}
                 </h1>
             </div>
-        </div>
-        <div class="bravo_form_search">
+        </div> --}}
+        {{-- <div class="bravo_form_search">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
@@ -20,8 +27,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
+        </div> --}}
+        <div class="container mt-3">
             @include('Hotel::frontend.layouts.search.list-item')
         </div>
     </div>

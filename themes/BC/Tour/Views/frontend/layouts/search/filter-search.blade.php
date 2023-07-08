@@ -43,9 +43,9 @@
                            data-from="{{$pri_from}}"
                            data-to="{{$pri_to}}"
                            readonly="" value="{{$price_range}}">
-                    <button type="submit" class="btn btn-link btn-apply-price-range">{{__("APPLY")}}</button>
+                    <button type="submit" class="btn btn-link btn-apply-price-range" style="color:#FF3500;">{{__("APPLY")}}</button>
                 </div>
-            </div>
+         </div>
         </div>
         <div class="g-filter-item">
             <div class="item-title">
@@ -108,7 +108,7 @@
                     ?>
                 </ul>
                 @if(count($tour_category) > 3 and empty($current_category_ids))
-                    <button type="button" class="btn btn-link btn-more-item">{{__("More")}} <i class="fa fa-caret-down"></i></button>
+                    <button type="button" class="btn btn-link btn-more-item" style="color:#FF3500;">{{__("More")}} <i class="fa fa-caret-down"></i></button>
                 @endif
             </div>
         </div>
@@ -140,7 +140,7 @@
                             @endforeach
                         </ul>
                         @if(count($item->terms) > 3 and empty($selected))
-                            <button type="button" class="btn btn-link btn-more-item">{{__("More")}} <i class="fa fa-caret-down"></i></button>
+                            <button type="button" class="btn btn-link btn-more-item" style="color:#FF3500;">{{__("More")}} <i class="fa fa-caret-down"></i></button>
                         @endif
                     </div>
                 </div>

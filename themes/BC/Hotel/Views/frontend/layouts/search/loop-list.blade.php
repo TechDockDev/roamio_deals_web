@@ -86,17 +86,17 @@
                 <div class="head">
                     <div class="left">
                         <span class="head-rating">{{$reviewData['review_text']}}</span>
-                        <span class="text-rating">{{__(":number reviews",['number'=>$reviewData['total_review']])}}</span>
+                        <span class="text-rating" style="color:#FF3500;">{{__(":number reviews",['number'=>$reviewData['total_review']])}}</span>
                     </div>
-                    <div class="score">
-                        {{$reviewData['score_total']}}<span>/5</span>
+                    <div class="score" style="background:#FF3500;">
+                        {{$reviewData['score_total']}}<span style="background:#FF3500;">/5</span>
                     </div>
                 </div>
             </div>
         @endif
         <div class="g-price">
             <div class="prefix">
-                <span class="fr_text">{{__("from")}}</span>
+                <span class="fr_text" style="color: #FF3500;">{{__("from")}}</span>
             </div>
             <div class="price">
                 <span class="text-price">{{ $row->display_price }} <span class="unit">{{__("/night")}}</span></span>
