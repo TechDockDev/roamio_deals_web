@@ -18,6 +18,18 @@
     font-size: 15px;
     transition: 0.4s;
   }
+   
+   .form-control[type=file]:not(:disabled):not([readonly]) {
+    cursor: pointer;
+    padding: 8px;
+    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+
+
+   }
+.card{
+
+  cursor: pointer;
+}
 
   .active,
   .accordion:hover {
@@ -51,7 +63,7 @@
 
   .br-wizard {
     margin-top: -100px;
-    height: 120%;
+    height: 203%;
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -449,7 +461,7 @@
   }
 
   .br-wizard .wizard-form .wizard-panel[active] {
-    height: 100%;
+    height: 60%;
     left: 0 !important;
     opacity: 1;
     transition-delay: 0s;
@@ -474,13 +486,15 @@
   }
 
   .br-wizard .wizard-form .wizard-panel .wizard-panel-btn {
+   top: -13px;
     align-self: flex-end;
     background-color: var(--background-alternative);
     border-top: 1px solid var(--border-color);
     height: fit-content;
-    margin-top: 1px;
+    margin-top: 29px;
     padding: var(--spacing-scale-2x) 1.5%;
     width: 100%;
+    position: relative;
   }
 
   .br-wizard .wizard-form .wizard-panel .wizard-btn-next,
@@ -564,7 +578,54 @@
     border-radius: 12px;
 
   }
+
+
 </style>
+
+<style>
+  .custom-file-input-placeholder {
+    position: relative;
+    overflow: hidden;
+  }
+
+ .custom-file-input {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    margin: 0;
+    opacity: 0;
+    bottom: -11px;
+}
+
+  .custom-file-input-placeholder input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    font-size: 100px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .custom-file-input-placeholder input[type="text"] {
+    width: 100%;
+  }
+
+  .showFileInput {
+    margin-top: -33px;
+}
+
+.imageClass{
+
+  position: relative;
+    float: right;
+    top: -37px;
+    left: -10px;
+}
+</style>
+
 @endpush
 @section('content')
 
@@ -677,23 +738,21 @@
 
                 <div class="container" style="margin-top:10px; margin-bottom:10px;">
                   <div class="row">
-                    @foreach ($visa->visa_entry_details as $item)
-                    <div class="col-4">
-                      <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
-                      
-                        <div style="padding:10px;">
-                        <div style="display: flex; justify-content: flex-end;">
-                    <input type="radio" class="form-check-input" style=" height: 20px; width: 20px; order: 1;" id="check{{$item->id}}" name="selected_option" value="{{$item->id}}">
-                </div>
-                          <h5>{{$item->days}}</h5>
-                          <h6>{{$item->title}}</h6>
-                           <p>{!! $item->discription !!}</p>
-
-                          <h4>{{$item->price}}</h4>
-                        </div>
-                      </div>
-                    </div>
-                    @endforeach
+                  @foreach ($visa->visa_entry_details as $item)
+<div class="col-4">
+  <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
+    <div style="padding:10px;">
+      <div style="display: flex; justify-content: flex-end;">
+        <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1;" id="check{{$item->id}}" name="selected_option" value="{{$item->id}}">
+      </div>
+      <h5>{{$item->days}}</h5>
+      <h6>{{$item->title}}</h6>
+      <p>{!! $item->discription !!}</p>
+      <h4>{{$item->price}}</h4>
+    </div>
+  </div>
+</div>
+@endforeach
                   </div>
                 </div>
 
@@ -727,12 +786,12 @@
 
                @if(auth()->user())
 
-               <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed to next traveller details
+               <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed 
                </button>
 
                @else
           
-            <button data-toggle="modal" data-target="#login" class="br-button primary wizard-btn" type="button" style="background:#FF3500;">login
+            <button data-toggle="modal" data-target="#login" class="br-button primary wizard-btn" type="button" style="background:#FF3500;">Proceed to Booking
               </button>
 
               @endif
@@ -747,6 +806,8 @@
   </div>
 </div>
 </form>
+
+
 
 
   <script>
@@ -767,9 +828,16 @@
   </script>
 
 <script>
-  document.querySelector('.card').addEventListener('click', function() {
-    var radio = document.querySelector('.form-check-input');
-    radio.checked = true;
+  var cards = document.querySelectorAll('.card');
+  var radios = document.querySelectorAll('.form-check-input');
+
+  cards.forEach(function(card, index) {
+    card.addEventListener('click', function() {
+      radios.forEach(function(radio) {
+        radio.checked = false;
+      });
+      radios[index].checked = true;
+    });
   });
 </script>
 
@@ -801,7 +869,7 @@
 
   <script>
 
-    function printDivs() {
+function printDivs() {
   var select = document.getElementById("rangeSelect");
   var adultSelect = document.getElementById("rangeSelect");
   var adultCount = parseInt(adultSelect.value);
@@ -817,67 +885,142 @@
   for (var i = 1; i <= totalCount; i++) {
     // Generate divs for each traveler
     var div = document.createElement("div");
-        div.innerHTML = `
-        
-            <div class="h4">Traveler ${i}</div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contact Number">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alternate Number">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Passport Number">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Place of Issue">
-                </div>
-              </div>
-            </div>
-          
-        `;
+    div.innerHTML = `
+      <div class="h4">Traveler ${i}</div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
+          </div>
+        </div>
 
-        divContainer.appendChild(div);
-      }
-    }
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
+          </div>
+        </div>
+          
+
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="email" class="form-control" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" id="alternate${i}" aria-describedby="emailHelp" placeholder="Alternate Number">
+          </div>
+        </div>
+
+       </div>
+
+
+      <div class="row">
+
+       <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" id="passportNumber${i}" aria-describedby="emailHelp" placeholder="Passport Number">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control passportExpiryDate" id="passportExpiryDate${i}" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
+          </div>
+        </div>
+       
+      </div>
+          <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="placeOfIssue${i}" aria-describedby="emailHelp" placeholder="Place of Issue">
+          </div>
+        </div>
+       
+       <div class="col-md-6">
+          <div class="form-group">
+            <input type="file" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
+             <input type="text" class="form-control showFileInput" placeholder="Passport first page Photo" >
+             <img src = {{asset('/images/btn.svg')}} class="imageClass">
+          </div>
+         </div>
+        </div>
+
+   <div class="row">
+     <div class="col-md-6">
+      <div class="form-group">
+      <input type="file" class="custom-file-input" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
+    <input type="text" class="form-control showFileInput" placeholder="Passport second page Photo" >
+    <img src = {{asset('/images/btn.svg')}} class="imageClass">
+     
+    </div>
+    </div>
+    <div class="col-md-6">
+     <div class="form-group">
+      <input type="file" class="custom-file-input" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
+       <input type="text" class="form-control showFileInput" placeholder="Passport Size Photo" >
+         <img src = {{asset('/images/btn.svg')}} class="imageClass">
+      
+    </div>
+    </div>
+    </div>
+
+    `;
+
+    divContainer.appendChild(div);
+
+    $('#passportExpiryDate' + i).datepicker({
+      format: 'dd/mm/yyyy',
+      todayHighlight: true,
+      autoclose: true,
+      placeholder: 'Date of Booking'
+    });
+   
+   $('#DOB' + i).datepicker({
+      format: 'dd/mm/yyyy',
+      todayHighlight: true,
+      autoclose: true,
+      placeholder: 'Date of Booking'
+    });
+
+  }
+}
+
   </script>
 
+  <script>
+  function handleFileInputChange(event, inputId) {
+    var input = event.target;
+    var fileName = input.files[0].name;
 
-
+    var inputText = input.parentNode.querySelector('input[type="text"]');
+    inputText.value = fileName;
+  }
+</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

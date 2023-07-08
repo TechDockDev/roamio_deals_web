@@ -80,9 +80,18 @@
                 format: 'dd/mm/yyyy',
                 todayHighlight: true,
                 autoclose: true,
-                placeholder: 'Date of Booking'
+                placeholder:'Date of Booking'
             });
+
+
         });
+
+
+
+
+
+
+
     </script>
 
 </body>
