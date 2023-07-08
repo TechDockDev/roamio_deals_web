@@ -1,15 +1,7 @@
 <div class="bravo-more-book-mobile">
     <div class="container">
         <div class="left">
-            <div class="g-price">
-                <div class="prefix">
-                    <span class="fr_text"><?php echo e(__("from")); ?></span>
-                </div>
-                <div class="price">
-                    <span class="onsale"><?php echo e($row->display_sale_price); ?></span>
-                    <span class="text-price"><?php echo e($row->display_price); ?></span>
-                </div>
-            </div>
+            
 
             <?php if(setting_item('event_enable_review')): ?>
             <?php

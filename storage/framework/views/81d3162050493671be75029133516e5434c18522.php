@@ -42,10 +42,10 @@
 
                 
                         <div class="review-sumary">
-
+                             
                          
                             <?php if(!empty($review_score['score_total'])): ?>
-                                <?php $__currentLoopData = $review_score['rate']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__currentLoopData = $review_score['rate_score']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="item">
                                         <div class="label">
                                             <?php echo e($item['title']); ?>
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading"><?php echo e($userInfo->getDisplayName()); ?></h4>
-                                    <div class="date"><?php echo e(display_datetime($item->created_at)); ?></div>
+                                    <div class="date" style="position: relative; right:-645px;" ><?php echo e(display_datetime($item->created_at)); ?></div>
                                 </div>
                             </div>
                         </div>

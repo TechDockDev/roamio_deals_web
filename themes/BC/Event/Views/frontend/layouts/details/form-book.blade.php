@@ -1,12 +1,36 @@
+<style>
+    .text-item{
+    color:#FF3500;
+    font-size:19px; 
+    }
+    .text-item2{
+   text-decoration: line-through;
+    }
+    .inbtn{
+       border-radius: 17px;
+       width: 25px;
+       border: 1px solid #FF3500;
+    }
+    .card-btn{
+       background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+       color:white;
+    
+    }
+    .btn-text{
+       color:#FF3500;   
+    }
+   </style>
+
+
 <div class="bravo_single_book_wrap @if(setting_item('event_enable_inbox')) has-vendor-box @endif">
-    <div class="bravo_single_book">
+    <div class="bravo_single_book"  style="border:#FF3500;">
         <div id="bravo_event_book_app" v-cloak>
-            @if($row->discount_percent)
+            {{-- @if($row->discount_percent)
                 <div class="tour-sale-box">
                     <span class="sale_class box_sale sale_small">{{$row->discount_percent}}</span>
                 </div>
-            @endif
-            <div class="form-head">
+            @endif --}}
+            {{-- <div class="form-head">
                 <div class="price">
                     <span class="label">
                         {{__("from")}}
@@ -16,16 +40,16 @@
                         <span class="text-lg">{{ $row->display_price }}</span>
                     </span>
                 </div>
-            </div>
-            <div class="nav-enquiry" v-if="is_form_enquiry_and_book">
+            </div> --}}
+            {{-- <div class="nav-enquiry" v-if="is_form_enquiry_and_book">
                 <div class="enquiry-item active" >
                     <span>{{ __("Book") }}</span>
                 </div>
                 <div class="enquiry-item" data-toggle="modal" data-target="#enquiry_form_modal">
                     <span>{{ __("Enquiry") }}</span>
                 </div>
-            </div>
-            <div class="form-book" :class="{'d-none':enquiry_type!='book'}">
+            </div> --}}
+            {{-- <div class="form-book" :class="{'d-none':enquiry_type!='book'}">
                 <div class="form-content">
                     <div class="form-group form-date-field form-date-search clearfix " data-format="{{get_moment_date_format()}}">
                         <div class="date-wrapper clearfix" @click="openStartDate">
@@ -110,7 +134,54 @@
                     </a>
                     <div class="alert-text mt10" v-show="message.content" v-html="message.content" :class="{'danger':!message.type,'success':message.type}"></div>
                 </div>
+            </div> --}}
+                <div class="card mb-3">
+                <div class="card-body ">
+                    <p class="card-title">Cheers at The View for 1 adult</p>
+                    <p class="card-text">
+                        <span class="text-item2">50 AED</span>
+                        <span class="text-item">30</span>
+                        <br>
+                        <span class="text-black">34.000</span>
+                        <small>AED / night</small>
+                    </p>
+                    <p>
+                        <div class="container">
+                            <button data-decrease class="inbtn">-</button>
+                            <input data-value type="text" value="1" disabled style="width: 21px; border:none;">
+                            <button data-increase class="inbtn">+</button>
+                            <small>Number of Room</small>
+                        </div>
+                    </p>
+                </div>
             </div>
+
+            <div class="card mb-3">
+                <div class="card-body ">
+                    <p class="card-title">Cheers at The View for 1 adult</p>
+                    <p class="card-text">
+                        <span class="text-item2">50 AED</span>
+                        <span class="text-item">30</span>
+                        <br>
+                        <span class="text-black">34.000</span>
+                        <small>AED / night</small>
+                    </p>
+                    <p>
+                        <div class="container">
+                            <button data-decrease class="inbtn">-</button>
+                            <input data-value type="text" value="1" disabled style="width: 21px; border:none;">
+                            <button data-increase class="inbtn">+</button>
+                            <small>Number of Room</small>
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <button class="btn btn-light btn-text w-100 mb-3">Quick Checkout</button>
+            <button class="btn btn-light w-100 card-btn mb-3">Add to Cart</button> 
+          
+
+     
+           
             <div class="form-send-enquiry" v-show="enquiry_type=='enquiry'">
                 <button class="btn btn-primary" data-toggle="modal" data-target="#enquiry_form_modal">
                     {{ __("Contact Now") }}

@@ -1,11 +1,19 @@
-<?php
-/**
- * @var $translation \Modules\Event\Models\EventTranslation
- * @var $row \Modules\Event\Models\Event
- */
-?>
 
-
+<style>
+    .cancellation-btn {
+    padding: 6px 6px;
+    font-size: 12px;
+}
+.Offer-btn {
+    padding: 6px 6px;
+    font-size: 12px;
+    background: #FFF3E3;
+    color: #FF3500;
+}
+.star-item{
+    color: #FF3500; 
+}
+ </style>
 
 
 
@@ -41,16 +49,39 @@
     </div>
 @endif
 
- <div class="g-header">
+ <div class="g-header mt-3 pt-3">
     <div class="left">
-        <h1>{{$translation->title}}</h1>
+        <h3>{{$translation->title}}</h3>
         @if($translation->address)
             <p class="address"><i class="fa fa-map-marker"></i>
                 {{$translation->address}}
             </p>
         @endif
+
+    
+            <p>
+                <i class="fa fa-star star-item"></i>
+                <i class="fa fa-star star-item"></i>
+                <i class="fa fa-star star-item"></i>
+                <i class="fa fa-star star-item"></i>
+                <i class="fa fa-star star-item"></i>
+                <span> (4) Excellent</span>
+
+            </p>
+            <p><button class="btn btn-light mt-2 cancellation-btn">Free cancellation (24 Hours Prior)</button> 
+                <span>
+                    <button class="btn btn-light mt-2 cancellation-btn">Instant confirmation</button>
+                </span>
+            </p>
+            <p><button class="btn btn-light mt-2 Offer-btn">Free cancellation (24 Hours Prior)</button> 
+                <span>
+                    <button class="btn btn-light mt-2 Offer-btn">Instant confirmation</button>
+                </span>
+            </p>
+      
+
     </div>
-    <div class="right">
+    {{-- <div class="right">
         @if($row->getReviewEnable())
             @if($review_score)
                 <div class="review-score">
@@ -69,10 +100,10 @@
                 </div>
             @endif
         @endif
-    </div>
+    </div> --}}
 </div>
 
-@if(!empty($row->duration)  or !empty($row->location->name))
+{{-- @if(!empty($row->duration)  or !empty($row->location->name))
     <div class="g-event-feature">
         <div class="row">
             <div class="col-xs-6 col-lg-3 col-md-6">
@@ -136,7 +167,7 @@
             @endif
         </div>
     </div>
-@endif
+@endif --}}
 
 @if($translation->content)
     <div class="g-overview">

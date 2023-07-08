@@ -1,11 +1,19 @@
-<?php
-/**
- * @var $translation \Modules\Event\Models\EventTranslation
- * @var $row \Modules\Event\Models\Event
- */
-?>
 
-
+<style>
+    .cancellation-btn {
+    padding: 6px 6px;
+    font-size: 12px;
+}
+.Offer-btn {
+    padding: 6px 6px;
+    font-size: 12px;
+    background: #FFF3E3;
+    color: #FF3500;
+}
+.star-item{
+    color: #FF3500; 
+}
+ </style>
 
 
 
@@ -41,108 +49,43 @@
     </div>
 <?php endif; ?>
 
- <div class="g-header">
+ <div class="g-header mt-3 pt-3">
     <div class="left">
-        <h1><?php echo e($translation->title); ?></h1>
+        <h3><?php echo e($translation->title); ?></h3>
         <?php if($translation->address): ?>
             <p class="address"><i class="fa fa-map-marker"></i>
                 <?php echo e($translation->address); ?>
 
             </p>
         <?php endif; ?>
-    </div>
-    <div class="right">
-        <?php if($row->getReviewEnable()): ?>
-            <?php if($review_score): ?>
-                <div class="review-score">
-                    <div class="head">
-                        <div class="left">
-                            <span class="head-rating"><?php echo e($review_score['score_text']); ?></span>
-                            <span class="text-rating" style="color:#FF3500;"><?php echo e(__("from :number reviews",['number'=>$review_score['total_review']])); ?></span>
-                        </div>
-                        <div class="score">
-                            <?php echo e($review_score['score_total']); ?><span>/5</span>
-                        </div>
-                    </div>
-                    <div class="foot">
-                        <?php echo e(__(":number% of guests recommend",['number'=>$row->recommend_percent])); ?>
 
-                    </div>
-                </div>
-            <?php endif; ?>
-        <?php endif; ?>
+    
+            <p>
+                <i class="fa fa-star star-item"></i>
+                <i class="fa fa-star star-item"></i>
+                <i class="fa fa-star star-item"></i>
+                <i class="fa fa-star star-item"></i>
+                <i class="fa fa-star star-item"></i>
+                <span> (4) Excellent</span>
+
+            </p>
+            <p><button class="btn btn-light mt-2 cancellation-btn">Free cancellation (24 Hours Prior)</button> 
+                <span>
+                    <button class="btn btn-light mt-2 cancellation-btn">Instant confirmation</button>
+                </span>
+            </p>
+            <p><button class="btn btn-light mt-2 Offer-btn">Free cancellation (24 Hours Prior)</button> 
+                <span>
+                    <button class="btn btn-light mt-2 Offer-btn">Instant confirmation</button>
+                </span>
+            </p>
+      
+
     </div>
+    
 </div>
 
-<?php if(!empty($row->duration)  or !empty($row->location->name)): ?>
-    <div class="g-event-feature">
-        <div class="row">
-            <div class="col-xs-6 col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="icon">
-                        <i class="icofont-heart-beat"></i>
-                    </div>
-                    <div class="info">
-                        <h4 class="name"><?php echo e(__("Wishlist")); ?></h4>
-                        <p class="value">
-                            <?php echo e(__("People interest: :number",['number'=>$row->getNumberWishlistInService()])); ?>
 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <?php if($row->start_time): ?>
-                <div class="col-xs-6 col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="icon">
-                            <i class="icofont-wall-clock"></i>
-                        </div>
-                        <div class="info">
-                            <h4 class="name"><?php echo e(__("Start Time")); ?></h4>
-                            <p class="value">
-                                <?php echo e($row->start_time); ?>
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <?php if($row->duration): ?>
-                <div class="col-xs-6 col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="icon">
-                            <i class="icofont-infinite"></i>
-                        </div>
-                        <div class="info">
-                            <h4 class="name"><?php echo e(__("Duration")); ?></h4>
-                            <p class="value">
-                                <?php echo e(duration_format($row->duration)); ?>
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <?php if(!empty($row->location->name)): ?>
-                <?php $location =  $row->location->translate() ?>
-                <div class="col-xs-6 col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="icon">
-                            <i class="icofont-island-alt"></i>
-                        </div>
-                        <div class="info">
-                            <h4 class="name"><?php echo e(__("Location")); ?></h4>
-                            <p class="value">
-                                <?php echo e($location->name ?? ''); ?>
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            <?php endif; ?>
-        </div>
-    </div>
-<?php endif; ?>
 
 <?php if($translation->content): ?>
     <div class="g-overview">
