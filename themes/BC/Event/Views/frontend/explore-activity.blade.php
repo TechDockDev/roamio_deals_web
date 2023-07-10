@@ -270,7 +270,6 @@ p {
     <h4  class="title mx-3" style="margin-top:43px;">{{$datas['parent_name']}}</h4> 
    </div>
    <div class="row">
-
        @foreach($datas['events'] as $dt)
         <div class="col-md-4">
             <div class="card"  style="border-radius: 10px;">
@@ -304,101 +303,86 @@ p {
 @endforeach
 
 
- 
- 
- <div class="container">
-    <div class="row">
-        <h4  class="title mx-3">Explore the peak of Dubai</h4>
-    </div>
-	<div class="row">  
-		<div id="filtering">
-			<button class="bttn active" onclick="geeksportal('all')">Show all</button>
-			<button class="bttn" onclick="geeksportal('Top Trending In Dubai')">Dubai</button>
-			<button class="bttn" onclick="geeksportal('Top Discount')">Fujairah</button>
-			<button class="bttn" onclick="geeksportal('Top Rated')">Ajman</button>
-			<button class="bttn" onclick="geeksportal('Top Selling')">Umm Al quwain</button>
-			<button class="bttn" onclick="geeksportal('Top Selling')">Ras al khaimah</button>
-            <button class="bttn" onclick="geeksportal('Top Selling')">Abu dhabi</button>
-            <button class="bttn" onclick="geeksportal('Top Selling')">Sharjah</button>
-		</div>
-	</div>
+<div class="container-fluid mb-5 w-100" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
+    <div class="row d-flex justify-content-center p-4"> 
+        <div class="col-md-6">
+            <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
+            <p class="card-text text-white pt-3">At XYZ Hotel, our top priority is customer satisfaction. We take great pride in providing exceptional service and creating memorable experiences for our guests. Don't just take our word for it - here's what some of our happy customers have to say.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="card-text pt-2 text-white p-1">13M +</h3>
+                    <p class="card-text text-white">Happy Customers</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="card-text pt-2 text-white p-1">5.0 <i class="fa fa-star"></i></h3>
+                    <p class="card-text text-white">Overall Rating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 p-4">
+            <div id="slideshow-wrap">
+                <input type="radio" id="button-1" name="controls" checked="checked"/>
+                <input type="radio" id="button-2" name="controls"/>
+                <input type="radio" id="button-3" name="controls"/>
+                <input type="radio" id="button-4" name="controls"/>
+                <input type="radio" id="button-5" name="controls"/>
 
-    <div class="row">
-        <h5  class="title  mx-3">Categories</h5>
-    </div>
-    
-
-	<div class="row"> 
-    <div class="col-md-3">
-        <div class="column Top Trending In Dubai">
-			<div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
+                <div id="slideshow-inner">
+                    @if(!empty($user_review))
+                    <div id="testimonial-carousel" class="carousel slide bravo-testimonial" data-ride="carousel">
+                        <div class="container">
+                            <div class="carousel-inner">
+                                @php $active = true; @endphp
+                                @foreach(array_chunk($user_review, 3) as $chunk)
+                                    <div class="carousel-item {{$active ? 'active' : ''}}">
+                                        <div class="row">
+                                            @foreach($chunk as $item)
+                                                <div class="col-md-12">
+                                                    <div class="item has-matchHeight">
+                                                        <div class="author">
+                                                            @if(!empty($item->user->images))
+                                                                <img src="/image/{{$item->user->images}}" alt="{{$item->user->first_name}}" style="height:100px; width:100px; border-radius:100px;">
+                                                            @else
+                                                                <img src="/default-image.jpg" alt="Default Image">
+                                                            @endif
+                                                            <div class="author-meta">
+                                                                @if(!empty($item->user->first_name) && !empty($item->user->last_name))
+                                                                    <h4>{{$item->user->first_name}} {{$item->user->last_name}}</h4>
+                                                                @endif
+                                                                @if(!empty($item->rate_number))
+                                                                    <div class="star">
+                                                                        @for($i = 0; $i < $item->rate_number; $i++)
+                                                                            <i class="fa fa-star" style="color:#FF3500;"></i>
+                                                                        @endfor
+                                                                    </div>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                        <p>
+                                                            {{$item->content}}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    @php $active = false; @endphp
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-		</div>
-    </div>
-    <div class="col-md-3">
-        <div class="column Top Discount">
-			<div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-		</div>
-    </div>
-    <div class="col-md-3">
-        <div class="column Top Rated">
-			<div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-		</div>
-    </div>
-    <div class="col-md-3">
-        <div class="column Top Selling">
-			<div class="card"  style="border-radius: 10px;">
-                <div class="Daily-Deals">
-                <span class="fa fa-heart fa-3x fass"></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Burj Khalifa Observation Deck</h5>
-                  <p class="card-text">
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Al Ain</p></span>
-                    <p><span class="btn btn-light Daily-btn">4.2 </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">1,800</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">23% OFF</span></p>
-                </div>
-              </div>
-		</div>
+            </div>
+        </div>
     </div>
 </div>
-</div>
+
+
+
+ 
+ 
+
 
 
        

@@ -9,6 +9,8 @@ use Modules\Location\Models\LocationCategory;
 use Modules\Review\Models\Review;
 use Modules\Core\Models\Attributes;
 use DB;
+use Modules\Hotel\Controllers\Event;
+
 use Modules\User\Models\UserWishList;
 
 use Carbon\Carbon;
@@ -292,6 +294,9 @@ class HotelController extends Controller
  }
 
 
+
+
+
  public function staycationexplore(){
 
 
@@ -337,11 +342,127 @@ class HotelController extends Controller
      $datas[] = $p;
      }
  
+   return view('Hotel::staycationExplore' ,compact('datas'));
+  
+ }
+
+
+public function deals(Request  $request) {
+
+ $terms = DB::table('bravo_terms')->where('attr_id', '18')->get();
+ $dataff = [];
+
+foreach ($terms as $parent) {
+$name = $parent->name;
+$childData = DB::table('bravo_hotel_term')->where('term_id', $parent->id)->distinct()->take(3)->get();
+$hotels = [];
+
+foreach ($childData as $child) {
+    $id = $child->target_id;
+    $hotelsData = DB::table('bravo_hotels')->where('id', $id)->take(3)->get();
+    
+    foreach ($hotelsData as $hotel) {
+        $wishlist = DB::table('user_wishlist')
+            ->where('object_id', $hotel->id)
+            // ->where('user_id', $user_id)
+            ->where('object_model', 'hotel')
+            ->select('id')
+            ->first();
+        
+        $conditionwishlist = $wishlist ? true : false;
+        $bannerId = $hotel->banner_image_id;
+        $bannerimage = DB::table('media_files')->where('id', $bannerId)->first();
+        $hotel->banner_image = "uploads/$bannerimage->file_path";
+        $hotel->wishlist = $conditionwishlist;
+        $hotels[] = $hotel;
+    }
+}
+
+$dataff[] = [
+    'id' => $parent->id,
+    'parent_name' => $name,
+    'hotels' => $hotels,
+];
+}
+
+$datacat = DB::table('bravo_terms')->where('attr_id','22')->get();   
+$fetch = []; 
+
+
+foreach($datacat as $dd)
+{
+   $image = DB::table('media_files')->where('id',$dd->image_id)->first();
+   $dd->banner_image ='/uploads/'. $image->file_path;
+   $fetch[] = $dd;    
+}
+
+
+
+$user_id = $request->id;
+
+$terms = DB::table('bravo_terms')->where('attr_id', '20')->get();
+$data = [];
+
+foreach ($terms as $parent) {
+$name = $parent->name;
+
+$childData = DB::table('bravo_event_term')->where('term_id', $parent->id)->distinct()->get();
+$hotels = [];
+
+foreach ($childData as $child) {
+    $id = $child->target_id;
+
+    $hotel = DB::table('bravo_events')->where('id', $id)->first();
+    
+    $wishlist = DB::table('user_wishlist')
+        ->where('object_id', $hotel->id)
+        ->where('user_id', $user_id)
+        ->where('object_model', 'event')
+        ->select('id')
+      
+        ->first();
+    
+    $conditionwishlist = $wishlist ?true : false;
+
+    $bannerId = $hotel->banner_image_id;
+    $bannerimage = DB::table('media_files')->where('id', $bannerId)->first();
+    $hotel->banner_image = "uploads/$bannerimage->file_path";
+    $hotel->wishlist = $conditionwishlist;
+    $hotels[] = $hotel;
+}
+
+$data[] = [
+    'id' => $parent->id,
+    'parent_name' => $name,
+    'events' => $hotels,
+];
+}
+
+
+
+
 
    
-
-   return view('Hotel::staycationExplore' ,compact('datas'));
-
+return view ('Hotel::frontend.Deals',compact('dataff','data'));
  }
+
+ public function hasWishList()
+ {
+     return $this->hasOne($this->userWishListClass, 'object_id', 'id')->where('object_model', $this->type)->where('user_id', Auth::id() ?? 0);
+ }
+
+ public function isWishList()
+ {
+     if (Auth::check()) {
+         if (!empty($this->hasWishList) and !empty($this->hasWishList->id)) {
+             return 'active';
+         }
+     }
+     return '';
+ }
+
+
+
+ 
 
 }
