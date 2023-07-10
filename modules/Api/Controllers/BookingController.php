@@ -277,7 +277,7 @@ return response()->json(['message' => "Visa get successfully", 'data' => $visada
             $passportphoto = date('mdYHis').uniqid().'.'.$request->passport_size_photo->extension();
             $request->passport_size_photo->move(public_path('visa'),$passportphoto);
          
-        $data = DB::table('visa_booking_detail')->insertGetId([
+            $data = DB::table('visa_booking_detail')->insertGetId([
              
              'user_id' =>$request->user_id,
              'entry_id' =>$request->entry_id,

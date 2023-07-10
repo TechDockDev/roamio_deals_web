@@ -153,4 +153,68 @@ public function VishStatus(){
     return view ('Flight::frontend.visa-apply',compact('visadata'));
    }
 
+    public function visasubmit(request $request)
+   {  
+
+
+$passport_first_page = $request->allFiles()['passport_first_page'];
+$passport_second_page = $request->allFiles()['passport_second_page'];
+$passport_size_photo = $request->allFiles()['passport_size_photo'];
+
+       
+    foreach ($request->firstname as $key => $firstname) {
+
+    $passportfirst = null;
+    if (isset($passport_first_page[$key]) && $passport_first_page[$key] !== null) {
+        $passportfirst = date('mdYHis').uniqid().'.'.$passport_first_page[$key]->getClientOriginalExtension();
+        $passport_first_page[$key]->move(public_path('visa'), $passportfirst);
+    }
+
+    // Upload passport second page
+    $passportsecond = null;
+    if (isset($passport_second_page[$key]) && $passport_second_page[$key] !== null) {
+        $passportsecond = date('mdYHis').uniqid().'.'.$passport_second_page[$key]->getClientOriginalExtension();
+        $passport_second_page[$key]->move(public_path('visa'), $passportsecond);
+    }
+
+    // Upload passport size photo
+    $passportphoto = null;
+    if (isset($passport_size_photo[$key]) && $passport_size_photo[$key] !== null) {
+        $passportphoto = date('mdYHis').uniqid().'.'.$passport_size_photo[$key]->getClientOriginalExtension();
+        $passport_size_photo[$key]->move(public_path('visa'), $passportphoto);
+    }
+    
+
+    $data = DB::table('visa_booking_detail')->insert([
+        'user_id' => auth()->user()->id,
+        'entry_id' => $request->entry_id,
+        'entry_detail_id' => $request->entry_detail_id,
+        'nationality' => $request->nationality,
+        'email' => $request->email[$key],
+        'alternate_number' => $request->alternate_number[$key],
+        'traveldate' => $request->traveldate,
+        'place_issues' => $request->place_issues[$key],
+        'firstname' => $firstname,
+        'lastname' => $request->lastname[$key],
+        'dob' => $request->dob[$key],
+        'child' => $request->child,
+        'adult' => $request->adult,
+        'passport_no' => $request->passportnumber[$key],
+        'passport_expiry' => $request->passport_expiry[$key],
+        'contact_no' => $request->contact[$key],
+         'passport_first_page' => $passportfirst !== null ? '/visa/'.$passportfirst : null,
+        'passport_second_page' => $passportsecond !== null ? '/visa/'.$passportsecond : null,
+        'passport_size_photo' => $passportphoto !== null ? '/visa/'.$passportphoto : null,
+        'payment_status' => 'unpaid',
+        'visa_status' => 'pending'
+    ]);
+}
+
+return response()->json(['message' => 'Data submitted successfully']);
+
+
+     
+
+   }
+
 }

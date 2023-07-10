@@ -629,7 +629,9 @@
 @endpush
 @section('content')
 
-  <form>
+  <form action="{{ url('visa_booking') }}" enctype="multipart/form-data" method="post">
+
+    @csrf
 
 <div class="container">
 
@@ -652,7 +654,7 @@
                 <div class="col-md-6">
                 <div class="form-group">
                   
-                  <select id="nationalitySelect" class="form-control" required>
+                  <select id="nationalitySelect" name="nationality" class="form-control" required>
                       <option>--Nationality--</option>
                       <option>India</option>
                       <option>Bangladesh</option>
@@ -670,7 +672,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-              <input type="text" class="form-control" id="travelDateInput" aria-describedby="emailHelp" placeholder="Travel Dates" pattern="\d{2}/\d{2}/\d{4}">
+              <input type="text" name="traveldate" class="form-control" id="travelDateInput" aria-describedby="emailHelp" placeholder="Travel Dates" pattern="\d{2}/\d{2}/\d{4}">
 
                   </div>
                 </div>
@@ -679,7 +681,7 @@
                 <div class="col-md-6">
 
                   <div class="form-group">
-                    <select id="rangeSelect" class="form-control" required>
+                    <select id="rangeSelect" name="adult" class="form-control" required>
                       <option>--Number of Traveller (Adults)--</option>
                        <option value="0">0</option>
                       <option value="1">1 </option>
@@ -700,7 +702,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <div class="form-group">
-                      <select id="childSelect" class="form-control" required>
+                      <select id="childSelect" name="child" class="form-control" required>
                         <option>--Number of Traveller (Childs)--</option>
                         <option value="0">0</option>
                         <option value="1">1 </option>
@@ -733,6 +735,10 @@
 
 
               @foreach($visadata as $visa)
+
+                    <input type="hidden" style="height: 20px; width: 20px; order: 1;" id="check{{$visa->id}}" name="entry_id" value="{{$visa->id}}">
+
+
               <button type="button" class="accordion">{{$visa->entry}}</button>
               <div class="panel" style="display: flex; flex-direction: column;">
 
@@ -743,7 +749,7 @@
   <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
     <div style="padding:10px;">
       <div style="display: flex; justify-content: flex-end;">
-        <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1;" id="check{{$item->id}}" name="selected_option" value="{{$item->id}}">
+        <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1;" id="check{{$item->id}}" name="entry_detail_id" value="{{$item->id}}">
       </div>
       <h5>{{$item->days}}</h5>
       <h6>{{$item->title}}</h6>
@@ -787,7 +793,7 @@
                @if(auth()->user())
 
 
-               <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Proceed 
+               <button class="br-button primary wizard-btn-next" type="submit" style="background:#FF3500;">Proceed 
                </button>
 
                @else
@@ -890,13 +896,13 @@ function printDivs() {
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <input type="text" class="form-control" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
+            <input type="text" class="form-control" name="firstname[]" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
-            <input type="text" class="form-control" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
+            <input type="text" class="form-control" name="lastname[]" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
           </div>
         </div>
           
@@ -908,13 +914,13 @@ function printDivs() {
 
         <div class="col-md-6">
           <div class="form-group">
-            <input type="text" class="form-control" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
+            <input type="text" class="form-control" name="dob[]" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
-            <input type="email" class="form-control" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
+            <input type="email" class="form-control" name="email[]" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
           </div>
         </div>
 
@@ -925,13 +931,13 @@ function printDivs() {
 
         <div class="col-md-6">
           <div class="form-group">
-            <input type="number" class="form-control" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
+            <input type="number" class="form-control" name="contact[]" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
-            <input type="number" class="form-control" id="alternate${i}" aria-describedby="emailHelp" placeholder="Alternate Number">
+            <input type="number" class="form-control" name="alternate_number[]" id="alternate${i}" aria-describedby="emailHelp" placeholder="Alternate Number">
           </div>
         </div>
 
@@ -942,13 +948,13 @@ function printDivs() {
 
        <div class="col-md-6">
           <div class="form-group">
-            <input type="number" class="form-control" id="passportNumber${i}" aria-describedby="emailHelp" placeholder="Passport Number">
+            <input type="number" class="form-control" name="passportnumber[]" id="passportNumber${i}" aria-describedby="emailHelp" placeholder="Passport Number">
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
-            <input type="text" class="form-control passportExpiryDate" id="passportExpiryDate${i}" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
+            <input type="text" class="form-control passportExpiryDate" name="passport_expiry[]" id="passportExpiryDate${i}" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
           </div>
         </div>
        
@@ -957,13 +963,13 @@ function printDivs() {
 
         <div class="col-md-6">
           <div class="form-group">
-            <input type="text" class="form-control" id="placeOfIssue${i}" aria-describedby="emailHelp" placeholder="Place of Issue">
+            <input type="text" class="form-control" name="place_issues[]" id="placeOfIssue${i}" aria-describedby="emailHelp" placeholder="Place of Issue">
           </div>
         </div>
        
        <div class="col-md-6">
           <div class="form-group">
-            <input type="file" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
+            <input type="file" name="passport_first_page[]" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
              <input type="text" class="form-control showFileInput" placeholder="Passport first page Photo" >
              <img src = {{asset('/images/btn.svg')}} class="imageClass">
           </div>
@@ -973,7 +979,7 @@ function printDivs() {
    <div class="row">
      <div class="col-md-6">
       <div class="form-group">
-      <input type="file" class="custom-file-input" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
+      <input type="file" class="custom-file-input" name="passport_second_page[]" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
     <input type="text" class="form-control showFileInput" placeholder="Passport second page Photo" >
     <img src = {{asset('/images/btn.svg')}} class="imageClass">
      
@@ -981,7 +987,7 @@ function printDivs() {
     </div>
     <div class="col-md-6">
      <div class="form-group">
-      <input type="file" class="custom-file-input" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
+      <input type="file" class="custom-file-input" name="passport_size_photo[]" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
        <input type="text" class="form-control showFileInput" placeholder="Passport Size Photo" >
          <img src = {{asset('/images/btn.svg')}} class="imageClass">
       
