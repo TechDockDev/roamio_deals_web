@@ -132,7 +132,7 @@ if (!empty($menus))
             unset($menus[$k]);
             continue;
         }
-        $menus[$k]['class'] = $currentUrl == url($menuItem['url']) ? 'active' : '';
+        // $menus[$k]['class'] = $currentUrl == url($menuItem['url']) ? 'active' : '';
         if (!empty($menuItem['children'])) {
             $menus[$k]['class'] .= ' has-children';
             foreach ($menuItem['children'] as $k2 => $menuItem2) {
@@ -163,18 +163,20 @@ if (!empty($menus))
     </div>
     <div class="user-profile-plan">
         @if( !Auth::user()->hasPermission("dashboard_vendor_access") and setting_item('vendor_enable'))
-            <a href=" {{ route("user.upgrade_vendor") }}">{{ __("Become a vendor") }}</a>
+            <a href=" {{ route('user.upgrade_vendor') }}">{{ __("Become a vendor") }}</a>
         @endif
     </div>
     <div class="sidebar-menu">
         <ul class="main-menu">
             @foreach($menus as $menuItem)
-                <li class="{{$menuItem['class']}}" position="{{$menuItem['position'] ?? ""}}">
-                    <a href="{{ url($menuItem['url']) }}">
+
+
+                <li class="{{$menuItem['class'] ?? ''}}" position="{{$menuItem['position'] ?? ''}}">
+                    <a href="{{ url($menuItem['url'] ?? '') }}">
                         @if(!empty($menuItem['icon']))
                             <span class="icon text-center"><i class="{{$menuItem['icon']}}"></i></span>
                         @endif
-                        {!! clean($menuItem['title']) !!}
+                        {!! clean($menuItem['title'] ?? '') !!}
 
                     </a>
                     @if(!empty($menuItem['children']))

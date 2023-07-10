@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @push('css')
     <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('libs/fotorama/fotorama.css') }}"/>
   
 
     <!-- Latest compiled and minified CSS -->
@@ -15,7 +15,7 @@
         .background{
         background:#FFF5E9;   
         }
-        .UAE-Img{
+      .UAE-Img{
             margin-top:30px;
             height: 48px;
             width: 17%; 
@@ -68,6 +68,7 @@
                         Check Visa Status
                     </div> </a>
                 </div>
+                @if(auth()->user())
                 <div class="col-md-4 py-4">
                    <a href="{{ url('visa-apply')}}" style="text-decoration: none;"><img src="{{ asset('images\info-circle_1.svg')}}" alt="">
                     <div class="card-body">
@@ -75,6 +76,19 @@
                     </div>
                 </a>
                 </div>
+                @else
+              
+                <div class="col-md-4 py-4">
+                   <a href="#" data-toggle="modal" data-target="#login" style="text-decoration: none;"><img src="{{ asset('images\info-circle_1.svg')}}" alt="">
+                    <div class="card-body">
+                        Apply UAE Visa
+                    </div>
+                </a>
+                </div>
+
+
+
+                @endif
                 <div class="col-md-4 py-4">
                     <a href="{{ url('visa-status')}}" style="text-decoration: none;"><img src="{{ asset('images\hand-index-thumb_3.svg')}}" alt="">
                     <div class="card-body">
@@ -230,10 +244,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
 
         </div>
     </div>

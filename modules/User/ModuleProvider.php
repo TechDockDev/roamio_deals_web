@@ -43,75 +43,75 @@ class ModuleProvider extends ModuleServiceProvider
         $noti_upgrade = VendorRequest::where('status', 'pending')->count();
         $noti = $noti_verify;
 
-        // $options = [
-        //     "position"=>100,
-        //     'url'        => route('user.admin.index'),
-        //     'title'      => __('Users :count',['count'=>$noti ? sprintf('<span class="badge badge-warning">%d</span>',$noti) : '']),
-        //     'icon'       => 'icon ion-ios-contacts',
-        //     'permission' => 'user_view',
-        //     'children'   => [
-        //         'user'=>[
-        //             'url'   => route('user.admin.index'),
-        //             'title' => __('All Users'),
-        //             'icon'  => 'fa fa-user',
-        //         ],
-        //         'role'=>[
-        //             'url'        => route('user.admin.role.index'),
-        //             'title'      => __('Role Manager'),
-        //             'permission' => 'role_view',
-        //             'icon'       => 'fa fa-lock',
-        //         ],
-        //         'subscriber'=>[
-        //             'url'        => route('user.admin.subscriber.index'),
-        //             'title'      => __('Subscribers'),
-        //             'permission' => 'newsletter_manage',
-        //         ],
-        //         'userUpgradeRequest'=>[
-        //             'url'        => route('user.admin.upgrade'),
-        //             'title'      => __('Upgrade Request :count',['count'=>$noti_upgrade ? sprintf('<span class="badge badge-warning">%d</span>',$noti_upgrade) : '']),
-        //             'permission' => 'user_view',
-        //         ],
-        //     ]
-        // ];
+        $options = [
+            "position"=>100,
+            'url'        => route('user.admin.index'),
+            'title'      => __('Users :count',['count'=>$noti ? sprintf('<span class="badge badge-warning">%d</span>',$noti) : '']),
+            'icon'       => 'icon ion-ios-contacts',
+            'permission' => 'user_view',
+            'children'   => [
+                'user'=>[
+                    'url'   => route('user.admin.index'),
+                    'title' => __('All Users'),
+                    'icon'  => 'fa fa-user',
+                ],
+                'role'=>[
+                    'url'        => route('user.admin.role.index'),
+                    'title'      => __('Role Manager'),
+                    'permission' => 'role_view',
+                    'icon'       => 'fa fa-lock',
+                ],
+                'subscriber'=>[
+                    'url'        => route('user.admin.subscriber.index'),
+                    'title'      => __('Subscribers'),
+                    'permission' => 'newsletter_manage',
+                ],
+                'userUpgradeRequest'=>[
+                    'url'        => route('user.admin.upgrade'),
+                    'title'      => __('Upgrade Request :count',['count'=>$noti_upgrade ? sprintf('<span class="badge badge-warning">%d</span>',$noti_upgrade) : '']),
+                    'permission' => 'user_view',
+                ],
+            ]
+        ];
 
-        // $is_disable_verification_feature = setting_item('user_disable_verification_feature');
-        // if(empty($is_disable_verification_feature)){
-        //     $options['children']['user_verification'] = [
-        //         'url'        => route('user.admin.verification.index'),
-        //         'title'      => __('Verification Request :count',['count'=>$noti_verify ? sprintf('<span class="badge badge-warning">%d</span>',$noti_verify) : '']),
-        //         'permission' => 'user_view',
-        //     ];
-        // }
+        $is_disable_verification_feature = setting_item('user_disable_verification_feature');
+        if(empty($is_disable_verification_feature)){
+            $options['children']['user_verification'] = [
+                'url'        => route('user.admin.verification.index'),
+                'title'      => __('Verification Request :count',['count'=>$noti_verify ? sprintf('<span class="badge badge-warning">%d</span>',$noti_verify) : '']),
+                'permission' => 'user_view',
+            ];
+        }
 
 
-        // $count = PlanPayment::query()->where('object_model','plan')->where('status','processing')->count();
-        // return [
-        //     'users'=> $options,
-        //     'plan'=>[
-        //         "position"=>50,
-        //         'url'        => route('user.admin.plan.index'),
-        //         'title'      => __('User Plans :count',['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
-        //         'icon'       => 'fa fa-list-alt',
-        //         'permission' => 'dashboard_access',
-        //         'children'   => [
-        //             'user-plan'=>[
-        //                 'url'   => route('user.admin.plan.index'),
-        //                 'title' => __('User Plans'),
-        //                 'permission' => 'dashboard_access',
-        //             ],
-        //             'plan-report'=>[
-        //                 'url'        => route('user.admin.plan_report.index'),
-        //                 'title'      => __('Plan Report'),
-        //                 'permission' => 'dashboard_access',
-        //             ],
-        //             'plan-request'=>[
-        //                 'url'        => route('user.admin.plan_request.index'),
-        //                 'title'      => __('Plan Request :count',['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
-        //                 'permission' => 'dashboard_access',
-        //             ],
-        //         ]
-        //     ]
-        // ];
+        $count = PlanPayment::query()->where('object_model','plan')->where('status','processing')->count();
+        return [
+            'users'=> $options,
+            'plan'=>[
+                "position"=>50,
+                'url'        => route('user.admin.plan.index'),
+                'title'      => __('User Plans :count',['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
+                'icon'       => 'fa fa-list-alt',
+                'permission' => 'dashboard_access',
+                'children'   => [
+                    'user-plan'=>[
+                        'url'   => route('user.admin.plan.index'),
+                        'title' => __('User Plans'),
+                        'permission' => 'dashboard_access',
+                    ],
+                    'plan-report'=>[
+                        'url'        => route('user.admin.plan_report.index'),
+                        'title'      => __('Plan Report'),
+                        'permission' => 'dashboard_access',
+                    ],
+                    'plan-request'=>[
+                        'url'        => route('user.admin.plan_request.index'),
+                        'title'      => __('Plan Request :count',['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
+                        'permission' => 'dashboard_access',
+                    ],
+                ]
+            ]
+        ];
     }
     public static function getUserMenu()
     {
