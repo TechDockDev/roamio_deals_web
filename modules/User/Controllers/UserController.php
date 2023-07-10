@@ -88,6 +88,7 @@ class UserController extends FrontendController
     }
 
     public function profileUpdate(Request $request){
+
         if(is_demo_mode()){
             return back()->with('error',"Demo mode: disabled");
         }
@@ -120,7 +121,14 @@ class UserController extends FrontendController
         $input = $request->except('bio');
         $user->fill($input);
         $user->bio = clean($request->input('bio'));
-        $user->birthday = date("Y-m-d", strtotime($user->birthday));
+        $user->name = $request->input('user_name');
+        // $user->address =$request->input('address');
+        // $user->address2 = $request->input('address2');
+        // $user->city = $request->input('city');
+        // $user->state = $request->input('state');
+        // $user->country = $request->input('country');
+        $user->avatar_id = $request->input('avatar_id');
+        $user->dob = date("Y-m-d", strtotime($user->dob));
         $user->user_name = Str::slug( $request->input('user_name') ,"_");
         $user->save();
         return redirect()->back()->with('success', __('Update successfully'));
