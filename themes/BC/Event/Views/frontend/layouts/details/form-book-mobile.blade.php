@@ -1,7 +1,7 @@
 <div class="bravo-more-book-mobile">
     <div class="container">
         <div class="left">
-            <div class="g-price">
+            {{-- <div class="g-price">
                 <div class="prefix">
                     <span class="fr_text">{{__("from")}}</span>
                 </div>
@@ -9,7 +9,7 @@
                     <span class="onsale">{{ $row->display_sale_price }}</span>
                     <span class="text-price">{{ $row->display_price }}</span>
                 </div>
-            </div>
+            </div> --}}
 
             @if(setting_item('event_enable_review'))
             <?php
