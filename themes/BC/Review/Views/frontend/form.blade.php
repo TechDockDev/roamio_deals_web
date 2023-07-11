@@ -38,10 +38,10 @@
 
                 
                         <div class="review-sumary">
-                             {{-- {{ dd($review_score) }}   --}}
+                        {{-- {{ dd($review_score) }}; --}}
                          
                             @if(!empty($review_score['score_total']))
-                                @foreach($review_score['rate_score'] as $item)
+                                @foreach($review_score['rate'] as $item)
                                     <div class="item">
                                         <div class="label">
                                             {{$item['title']}}
@@ -54,13 +54,7 @@
                                 @endforeach
                             @endif
                         </div>
-                         
-                        
-                        
-                        
-                        
-
-                       
+             
                     </div>
                     
                 </div>

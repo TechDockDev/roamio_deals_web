@@ -42,10 +42,10 @@
 
                 
                         <div class="review-sumary">
-                             
+                        
                          
                             <?php if(!empty($review_score['score_total'])): ?>
-                                <?php $__currentLoopData = $review_score['rate_score']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__currentLoopData = $review_score['rate']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="item">
                                         <div class="label">
                                             <?php echo e($item['title']); ?>
@@ -59,13 +59,7 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php endif; ?>
                         </div>
-                         
-                        
-                        
-                        
-                        
-
-                       
+             
                     </div>
                     
                 </div>

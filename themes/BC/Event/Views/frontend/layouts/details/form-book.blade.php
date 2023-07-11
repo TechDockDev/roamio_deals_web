@@ -190,4 +190,38 @@
         </div>
     </div>
 </div>
+
 @include("Booking::frontend.global.enquiry-form",['service_type'=>'event'])
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script>
+    // Get the input element
+    const roomInput = document.getElementById('roomInput');
+  
+    // Get the increase and decrease buttons
+    const increaseButton = document.querySelector('[data-increase]');
+    const decreaseButton = document.querySelector('[data-decrease]');
+  
+    // Add event listeners to the buttons
+    increaseButton.addEventListener('click', () => {
+        incrementValue(1);
+    });
+  
+    decreaseButton.addEventListener('click', () => {
+        incrementValue(-1);
+    });
+  
+    // Function to increment the value
+    function incrementValue(value) {
+        let currentValue = parseInt(roomInput.value);
+        if (!isNaN(currentValue)) {
+            currentValue += value;
+            if (currentValue < 1) {
+                currentValue = 1; // Prevent negative values
+            }
+            roomInput.value = currentValue;
+        }
+    }
+</script>
