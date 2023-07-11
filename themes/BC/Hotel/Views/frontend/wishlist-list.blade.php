@@ -130,8 +130,8 @@ padding: 4px 4px;
         
  </div>
  
- <div class="bravo-list-news">
-    <div class="container">
+     <div class="bravo-list-news">
+     <div class="container">
         <div class="row">
         <div class="col-md-6">
               <div class="card1">
@@ -174,7 +174,8 @@ padding: 4px 4px;
       </div>
       </div>
     </div>
-    <div class="container mt-5 pt-5 mb-5">
+    
+     <div class="container mt-5 pt-5 mb-5">
         <div class="row">
             <div class="col-md-4 text-center">
                 <div class="card1">

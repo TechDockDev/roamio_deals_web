@@ -1,4 +1,5 @@
-@if(setting_item($row->type."_enable_review"))
+  
+  @if(setting_item($row->type."_enable_review"))
     <div class="bravo-reviews" id="bravo-reviews">
         <h3>{{__("Reviews & FeedBack")}}</h3>
         @if($review_score)
@@ -32,11 +33,9 @@
                         </div>
                     </div>
                     <div class="col-lg-7">
-                        <div class="review-sumary">
-                        
-                            @if(isset($review_score['rate_score']))
-                       
-                                @foreach($review_score['rate_score'] as $item)
+                        <div class="review-summary">
+                            @if(isset($review_score['rate']))
+                                @foreach($review_score['rate'] as $item)
                                     <div class="item">
                                         <div class="label">
                                             {{ $item['title'] }}
@@ -50,6 +49,7 @@
                             @endif
                         </div>
                     </div>
+                    
                     
                 </div>
             </div>
