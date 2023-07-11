@@ -516,10 +516,12 @@ fass:hover{
    </div>
    <div class="row">
        @foreach($datas['events'] as $dt)
+
+      
         <div class="col-md-4">
             <div class="card"  style="border-radius: 10px;">
                 <div class="Daily-Deals1" style="position: relative;">
-                    <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;">
+                   <a href = "{{url('/event/'.$dt->slug)}}"> <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
                   <span class="fa fa-heart fa-3x fass" style=" 
                  
                     right: 10px;

@@ -8,7 +8,7 @@
     <form action="{{route('user.profile.update')}}" method="post" class="input-has-icon">
         @csrf
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-title">
                     <strong>{{__("Personal Information")}}</strong>
                 </div>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="form-group">
                     <label>{{__("Birthday")}}</label>
-                    <input type="text" value="{{ old('birthday',$dataUser->birthday? display_date($dataUser->birthday) :'') }}" name="birthday" placeholder="{{__("Birthday")}}" class="form-control date-picker">
+                    <input type="text" value="{{ old('birthday',$dataUser->birthday? display_date($dataUser->birthday) :'') }}" name="dob" placeholder="{{__("Birthday")}}" class="form-control date-picker">
                     <i class="fa fa-birthday-cake input-icon"></i>
                 </div>
                 <div class="form-group">
@@ -75,11 +75,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+          <!--   <div class="col-md-6">
                 <div class="form-title">
                     <strong>{{__("Location Information")}}</strong>
-                </div>
-                <div class="form-group">
+                </div> -->
+               <!--  <div class="form-group">
                     <label>{{__("Address Line 1")}}</label>
                     <input type="text" value="{{old('address',$dataUser->address)}}" name="address" placeholder="{{__("Address")}}" class="form-control">
                     <i class="fa fa-location-arrow input-icon"></i>
@@ -88,8 +88,8 @@
                     <label>{{__("Address Line 2")}}</label>
                     <input type="text" value="{{old('address2',$dataUser->address2)}}" name="address2" placeholder="{{__("Address2")}}" class="form-control">
                     <i class="fa fa-location-arrow input-icon"></i>
-                </div>
-                <div class="form-group">
+                </div> -->
+               <!--  <div class="form-group">
                     <label>{{__("City")}}</label>
                     <input type="text" value="{{old('city',$dataUser->city)}}" name="city" placeholder="{{__("City")}}" class="form-control">
                     <i class="fa fa-street-view input-icon"></i>
@@ -108,13 +108,13 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="form-group">
+ -->               <!--  <div class="form-group">
                     <label>{{__("Zip Code")}}</label>
                     <input type="text" value="{{old('zip_code',$dataUser->zip_code)}}" name="zip_code" placeholder="{{__("Zip Code")}}" class="form-control">
                     <i class="fa fa-map-pin input-icon"></i>
-                </div>
+                </div> -->
 
-            </div>
+            <!-- </div> -->
             <div class="col-md-12">
                 <hr>
                 <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> {{__('Save Changes')}}</button>

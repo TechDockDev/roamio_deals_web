@@ -81,7 +81,9 @@
                                 <?php if(is_vendor()): ?>
                                 <!--<li class="menu-hr"><a href="<?php echo e(route('vendor.dashboard')); ?>" class="menu-hr"><i class="icon ion-md-analytics"></i> <?php echo e(__("Vendor Dashboard")); ?></a></li>-->
                                 <?php endif; ?>
-                                
+                            <li class="<?php if(is_vendor()): ?> menu-hr <?php endif; ?>">
+                                    <a href="<?php echo e(route('user.profile.index')); ?>"><i class="icon ion-md-construct"></i> <?php echo e(__("My profile")); ?></a>
+                                </li> 
                                 <?php if(setting_item('inbox_enable')): ?>
                                 <li class="menu-hr">
                                     <a href="<?php echo e(route('user.chat')); ?>"><i class="fa fa-comments"></i> <?php echo e(__("Messages")); ?>
@@ -157,6 +159,10 @@
                                     <?php if(Auth::user()->hasPermission('dashboard_access')): ?>
                                         <li class="menu-hr"><a href="<?php echo e(route('admin.index')); ?>"><i class="icon ion-ios-ribbon"></i> <?php echo e(__("Admin Dashboard")); ?></a></li>
                                     <?php endif; ?>
+                                      <a href="<?php echo e(route('user.profile.index')); ?>">
+                            <i class="icon ion-md-construct"></i> <?php echo e(__("My profile")); ?>
+
+                                </a>
                                     <li class="menu-hr">
                                         <a  href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> <?php echo e(__('Logout')); ?></a>
                                     </li>

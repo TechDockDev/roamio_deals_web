@@ -80,9 +80,9 @@
                                 @if(is_vendor())
                                 <!--<li class="menu-hr"><a href="{{route('vendor.dashboard')}}" class="menu-hr"><i class="icon ion-md-analytics"></i> {{__("Vendor Dashboard")}}</a></li>-->
                                 @endif
-                                {{-- <li class="@if(is_vendor()) menu-hr @endif">
+                            <li class="@if(is_vendor()) menu-hr @endif">
                                     <a href="{{route('user.profile.index')}}"><i class="icon ion-md-construct"></i> {{__("My profile")}}</a>
-                                </li> --}}
+                                </li> 
                                 @if(setting_item('inbox_enable'))
                                 <li class="menu-hr">
                                     <a href="{{route('user.chat')}}"><i class="fa fa-comments"></i> {{__("Messages")}}
@@ -158,6 +158,9 @@
                                     @if(Auth::user()->hasPermission('dashboard_access'))
                                         <li class="menu-hr"><a href="{{route('admin.index')}}"><i class="icon ion-ios-ribbon"></i> {{__("Admin Dashboard")}}</a></li>
                                     @endif
+                                      <a href="{{route('user.profile.index')}}">
+                            <i class="icon ion-md-construct"></i> {{__("My profile")}}
+                                </a>
                                     <li class="menu-hr">
                                         <a  href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> {{__('Logout')}}</a>
                                     </li>

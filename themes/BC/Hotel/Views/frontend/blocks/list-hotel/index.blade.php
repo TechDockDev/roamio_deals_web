@@ -156,7 +156,7 @@ p {
                 top: 10px;
                 right: 10px;
                 color: white;
-                text-shadow: 1px 1px 2px black;
+                text-shadow: 1px 1px 27px black;
                 /* float: right; */
                 left: 270px;
                 height: 30px;
