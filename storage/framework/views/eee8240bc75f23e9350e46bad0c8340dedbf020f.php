@@ -1,9 +1,9 @@
 
-@extends('layouts.app')
-@push('css')
-    <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
+
+<?php $__env->startPush('css'); ?>
+    <link href="<?php echo e(asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version'))); ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css")); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/fotorama/fotorama.css")); ?>"/>
     <style>
 .categories{
   background-size: cover;
@@ -76,8 +76,8 @@ padding: 4px 4px;
 
 
 </style>
-@endpush
-@php
+<?php $__env->stopPush(); ?>
+<?php
 $review = DB::table('bravo_review')->limit(10)->get();
 $reviews = DB::table('bravo_review')->first();
 
@@ -91,8 +91,8 @@ foreach ($review as $rr) {
     $user_review[] = $rr;
 }
 $totalUsers = count($user_review);
-@endphp
-@section('content')
+?>
+<?php $__env->startSection('content'); ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   
@@ -480,7 +480,7 @@ fass:hover{
   <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <img src="{{asset('images\benner-img.png')}}" alt="" srcset="" style="width:100%;">
+            <img src="<?php echo e(asset('images\benner-img.png')); ?>" alt="" srcset="" style="width:100%;">
         </div>
        
     </div>
@@ -492,34 +492,34 @@ fass:hover{
     </div>
     
     <div class="row"> 
-      @foreach($fetch as $cat)
+      <?php $__currentLoopData = $fetch; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
        <div class="col-md-3">
            <div class="column Top Trending In Dubai">
               <div class="card1" style="position: relative;">
                   <div class="categories1" style="position: relative;">
-                      <img src="{{$cat->banner_image }}" alt="" srcset="" style="height:200px; width:100%; border-radius:10px;">
-                      <h2 class="heading" style="position: absolute; top: 76%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 100%; font-weight: 900;">{{ $cat->name }}</h2>
+                      <img src="<?php echo e($cat->banner_image); ?>" alt="" srcset="" style="height:200px; width:100%; border-radius:10px;">
+                      <h2 class="heading" style="position: absolute; top: 76%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 100%; font-weight: 900;"><?php echo e($cat->name); ?></h2>
                   </div>
               </div>
            </div>
       </div>
-      @endforeach
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </div>
     
 </div>
 
-@foreach($data as $datas)
+<?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
 <div class="container mt-5">
    <div class="row">
-    <h4  class="title mx-3" style="margin-top:43px;">{{$datas['parent_name']}}</h4> 
+    <h4  class="title mx-3" style="margin-top:43px;"><?php echo e($datas['parent_name']); ?></h4> 
    </div>
    <div class="row">
-       @foreach($datas['events'] as $dt)
+       <?php $__currentLoopData = $datas['events']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dt): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="col-md-4">
             <div class="card"  style="border-radius: 10px;">
                 <div class="Daily-Deals1" style="position: relative;">
-                    <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;">
+                    <img src="<?php echo e($dt->banner_image); ?>" style="height:200px; width:100%; border-radius: 10px;">
                   <span class="fa fa-heart fa-3x fass" style=" 
                  
                     right: 10px;
@@ -531,21 +531,21 @@ fass:hover{
                 </span>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">{{ $dt->title}}</h5>
+                  <h5 class="card-title"><?php echo e($dt->title); ?></h5>
                   <p class="card-text">
                     <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    {{ $dt->address}}</p></span>
-                    <p><span class="btn btn-light Daily-btn">{{$dt->review_score}} </span> (4) </span><span> Excellent </span></p>
-                  <p><span style="font-size:25px; color:black;">{{$dt->price}}</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">{{$dt->discount}}% OFF</span></p>
+                    <?php echo e($dt->address); ?></p></span>
+                    <p><span class="btn btn-light Daily-btn"><?php echo e($dt->review_score); ?> </span> (4) </span><span> Excellent </span></p>
+                  <p><span style="font-size:25px; color:black;"><?php echo e($dt->price); ?></span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn"><?php echo e($dt->discount); ?>% OFF</span></p>
                 </div>
               </div>
         </div>
 
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 </div>
 
-@endforeach
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
 
@@ -555,14 +555,14 @@ fass:hover{
    
       <div class="col-md-6">
         <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-        <p class="card-text text-white pt-3">{{ $reviews->title}} </p>
+        <p class="card-text text-white pt-3"><?php echo e($reviews->title); ?> </p>
         <div class="row">
           <div class="col-md-6">
-            <h3 class="card-text pt-2 text-white p-1">{{ $totalUsers}} +</h3>
+            <h3 class="card-text pt-2 text-white p-1"><?php echo e($totalUsers); ?> +</h3>
             <p class="card-text text-white">Happy Customers</p>
           </div>
           <div class="col-md-6">
-            <h3 class="card-text pt-2 text-white p-1">{{ $reviews->rate_number}} <i class="fa fa-star"></i></h3>
+            <h3 class="card-text pt-2 text-white p-1"><?php echo e($reviews->rate_number); ?> <i class="fa fa-star"></i></h3>
             <p class="card-text text-white">Overall Rating</p>
           </div>
         </div>
@@ -572,43 +572,44 @@ fass:hover{
           <div class="dp-wrap">
             <div id="dp-slider">
 
-              @foreach($user_review  as $item)
+              <?php $__currentLoopData = $user_review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             
                <div class="dp_item" data-class="1" data-position="1">
                 <div class="row">
                   <div class="col-md-12">
                     <p class="card-text text-dark p-3 text-item-p">
-                      {{ $item->content}} 
+                      <?php echo e($item->content); ?> 
                     </p>
                   </div>
                   <div class="col-md-12 mb-4">
                     <div class="row">
                       <div class="col-md-4 offset-md-1">
-                        @if(!empty($item->user->images))
-                        <img class="img-fluid dpimg" src="/image/{{$item->user->images}}" height="10%" alt="investing" style="border-radius:100%; height:100px; width:100px;">
-                        @endif
+                        <?php if(!empty($item->user->images)): ?>
+                        <img class="img-fluid dpimg" src="/image/<?php echo e($item->user->images); ?>" height="10%" alt="investing" style="border-radius:100%; height:100px; width:100px;">
+                        <?php endif; ?>
                       </div>
                       <div class="col-md-5">
-                        @if(!empty($item->user->first_name) && !empty($item->user->last_name))
+                        <?php if(!empty($item->user->first_name) && !empty($item->user->last_name)): ?>
                         <h6 class="text-dark sell-item">
-                       {{$item->user->first_name}} {{$item->user->last_name}}
+                       <?php echo e($item->user->first_name); ?> <?php echo e($item->user->last_name); ?>
+
                         </h6>
-                        @endif
+                        <?php endif; ?>
                         <p class="text-dark">
-                          @if(!empty($item->rate_number))
+                          <?php if(!empty($item->rate_number)): ?>
                           <div class="star">
-                              @for($i = 0; $i < $item->rate_number; $i++)
+                              <?php for($i = 0; $i < $item->rate_number; $i++): ?>
                                   <i class="fa fa-star" style="color:#FE9000;"></i>
-                              @endfor
+                              <?php endfor; ?>
                           </div>
-                      @endif
+                      <?php endif; ?>
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              @endforeach
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             
             </div>
             <ul id="dp-dots" style="display:none;">
@@ -831,4 +832,5 @@ for (var i = 0; i < btns.length; i++) {
    </script>
    
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Event/Views/frontend/explore-activity.blade.php ENDPATH**/ ?>

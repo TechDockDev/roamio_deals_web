@@ -301,6 +301,9 @@ fass:hover{
 
 <?php
 $review = DB::table('bravo_review')->limit(10)->get();
+$reviews = DB::table('bravo_review')->first();
+
+
 
 $user_review = [];
 
@@ -309,22 +312,14 @@ foreach ($review as $rr) {
     $rr->user = $user;
     $user_review[] = $rr;
 }
+$totalUsers = count($user_review);
 ?>
 <?php $__env->startSection('content'); ?>
  <div class="container">
     <div class="row mt-3 pt-3">
       <h3 class="text-center">Explore UAE <span style="color:#FF3500;"> Deals! </span></h3>
    </div>
-      <div class="row d-flex justify-content-center mt-2">
-        <div class="col-md-4">
-            <p class=" btn-btn light text-center" style="background:#FFF3E3; border-radius:10px;">
-                 <span  style=" color:#FF3500;">
-                     <img src="<?php echo e(asset('images/Juggler.svg')); ?> " class="ican-img" >Activity</span>
-                 <span><img src="<?php echo e(asset('images/Vector_44.svg')); ?>"  class="ican-img">Staycation </span>
-                </p>  
-        </div>
-     
-     </div>
+      
    <div class="row mt-3 pt-2">
          <img src="<?php echo e(asset('images\benner-img_3.png')); ?>">
     </div> 
@@ -435,20 +430,19 @@ foreach ($review as $rr) {
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 
-
-
-    <div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
+      <div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
         <div class="row d-flex justify-content-center p-4">
+       
           <div class="col-md-6">
             <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-            <p class="card-text text-white pt-3">At XYZ Hotel, our top priority is customer satisfaction. We take great pride in providing exceptional service and creating memorable experiences for our guests. Don't just take our word for it - here's what some of our happy customers have to say.</p>
+            <p class="card-text text-white pt-3"><?php echo e($reviews->title); ?> </p>
             <div class="row">
               <div class="col-md-6">
-                <h3 class="card-text pt-2 text-white p-1">13M +</h3>
+                <h3 class="card-text pt-2 text-white p-1"><?php echo e($totalUsers); ?> +</h3>
                 <p class="card-text text-white">Happy Customers</p>
               </div>
               <div class="col-md-6">
-                <h3 class="card-text pt-2 text-white p-1">5.0 <i class="fa fa-star"></i></h3>
+                <h3 class="card-text pt-2 text-white p-1"><?php echo e($reviews->rate_number); ?> <i class="fa fa-star"></i></h3>
                 <p class="card-text text-white">Overall Rating</p>
               </div>
             </div>
@@ -457,68 +451,48 @@ foreach ($review as $rr) {
             <div id="slider" style="height: 400px;">
               <div class="dp-wrap">
                 <div id="dp-slider">
-                  <div class="dp_item" data-class="1" data-position="1">
+
+                  <?php $__currentLoopData = $user_review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                
+                   <div class="dp_item" data-class="1" data-position="1">
                     <div class="row">
                       <div class="col-md-12">
                         <p class="card-text text-dark p-3 text-item-p">
-                          Lorem ipsum dolor sit amet, dolor consectetur piscing elit. Pellsque vestibulum nisi diam, feugiat turpis egestas. Lorem ipsum dolor amet, dolor consectetur piscing elit. Pellsque vestibulum nisi diam, et feugiat turpis egestas. Lorem ipsum dolor amet, dolor.vestibulum nisi diam, et feugiat turpis egestas. Lorem ipsum.
+                          <?php echo e($item->content); ?> 
                         </p>
                       </div>
                       <div class="col-md-12 mb-4">
                         <div class="row">
                           <div class="col-md-4 offset-md-1">
-                            <img class="img-fluid dpimg" src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_640.png" height="10%" alt="investing">
+                            <?php if(!empty($item->user->images)): ?>
+                            <img class="img-fluid dpimg" src="/image/<?php echo e($item->user->images); ?>" height="10%" alt="investing" style="border-radius:100%; height:100px; width:100px;">
+                            <?php endif; ?>
                           </div>
                           <div class="col-md-5">
-                            <h6 class="text-dark sell-item">Annette Black</h6>
-                            <p class="text-dark">Seller, CA</p>
+                            <?php if(!empty($item->user->first_name) && !empty($item->user->last_name)): ?>
+                            <h6 class="text-dark sell-item">
+                           <?php echo e($item->user->first_name); ?> <?php echo e($item->user->last_name); ?>
+
+                            </h6>
+                            <?php endif; ?>
+                            <p class="text-dark">
+                              <?php if(!empty($item->rate_number)): ?>
+                              <div class="star">
+                                  <?php for($i = 0; $i < $item->rate_number; $i++): ?>
+                                      <i class="fa fa-star" style="color:#FE9000;"></i>
+                                  <?php endfor; ?>
+                              </div>
+                          <?php endif; ?>
+                            </p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="dp_item" data-class="2" data-position="2">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <p class="card-text text-dark p-3 text-item-p">
-                          Lorem ipsum dolor sit amet, dolor consectetur piscing elit. Pellsque vestibulum nisi diam, feugiat turpis egestas. Lorem ipsum dolor amet, dolor consectetur piscing elit. Pellsque vestibulum nisi diam, et feugiat turpis egestas. Lorem ipsum dolor amet, dolor.vestibulum nisi diam, et feugiat turpis egestas. Lorem ipsum.
-                        </p>
-                      </div>
-                      <div class="col-md-12 mb-4">
-                        <div class="row">
-                          <div class="col-md-4 offset-md-1">
-                            <img class="img-fluid dpimg" src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_640.png" height="10%" alt="investing">
-                          </div>
-                          <div class="col-md-5">
-                            <h6 class="text-dark sell-item">Annette Black</h6>
-                            <p class="text-dark">Seller, CA</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="dp_item" data-class="3" data-position="3">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <p class="card-text text-dark p-3 text-item-p">
-                          Lorem ipsum dolor sit amet, dolor consectetur piscing elit. Pellsque vestibulum nisi diam, feugiat turpis egestas. Lorem ipsum dolor amet, dolor consectetur piscing elit. Pellsque vestibulum nisi diam, et feugiat turpis egestas. Lorem ipsum dolor amet, dolor.vestibulum nisi diam, et feugiat turpis egestas. Lorem ipsum.
-                        </p>
-                      </div>
-                      <div class="col-md-12 mb-4">
-                        <div class="row">
-                          <div class="col-md-4 offset-md-1">
-                            <img class="img-fluid dpimg" src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_640.png" height="10%" alt="investing">
-                          </div>
-                          <div class="col-md-5">
-                            <h6 class="text-dark sell-item">Annette Black</h6>
-                            <p class="text-dark">Seller, CA</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                
                 </div>
-                <ul id="dp-dots">
+                <ul id="dp-dots" style="display:none;">
                   <li data-class="slide1"></li>
                   <li data-class="slide2"></li>
                   <li data-class="slide3"></li>
@@ -530,11 +504,8 @@ foreach ($review as $rr) {
               </div>
             </div>
           </div>
-        </div>
       </div>
-      
-
- 
+      </div>
        <div class="container">
            <div class="row">
            <div class="col-md-6">
@@ -576,9 +547,7 @@ foreach ($review as $rr) {
                  </div>
            </div>
          </div>
-     </div>
-      
-       
+      </div>
         <div class="container mt-5 pt-5 mb-5">
            <div class="row">
                <div class="col-md-4 text-center">
@@ -604,10 +573,7 @@ foreach ($review as $rr) {
                </div>
            </div>
        </div>
-       
-
-    
-
+      
        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       
        <script>
