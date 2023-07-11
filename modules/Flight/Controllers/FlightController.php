@@ -210,11 +210,21 @@ $passport_size_photo = $request->allFiles()['passport_size_photo'];
     ]);
 }
 
-return response()->json(['message' => 'Data submitted successfully']);
+return redirect('confirm-visa');
 
 
      
 
    }
+
+
+public function visaConfirm(request $request)
+{
+   
+   return view('Flight::frontend.visaconfirmation');
+
+}
+
+
 
 }

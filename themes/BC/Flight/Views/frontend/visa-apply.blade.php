@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @push('css')
-<link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{ asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('libs/fotorama/fotorama.css') }}" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 
 <style>
   .accordion {
@@ -17,6 +14,7 @@
     outline: none;
     font-size: 15px;
     transition: 0.4s;
+    border-radius:12px;
   }
    
    .form-control[type=file]:not(:disabled):not([readonly]) {
@@ -62,8 +60,7 @@
   }
 
   .br-wizard {
-    margin-top: -100px;
-    height: 203%;
+  
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -99,145 +96,14 @@
     top: 50%;
   }
 
-  .br-wizard[vertical] .wizard-progress .wizard-progress-btn::after {
-    height: calc(100% - 34px);
-    left: calc(100% - 33px);
-    position: absolute;
-    top: calc(-50% + 18px);
-    width: 1px;
-  }
-
-  .br-wizard[vertical] .wizard-progress .wizard-progress-btn[active]::after {
-    width: 1px;
-  }
-
-  .br-wizard[vertical][scroll] .wizard-progress {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  .br-wizard[vertical][scroll] .wizard-progress .wizard-progress-btn {
-    min-height: 100px;
-  }
-
-  .br-wizard[vertical] .wizard-form {
-    float: left;
-    height: 100%;
-    width: calc(100% - 260px);
-  }
-
-  .br-wizard[vertical] .wizard-form .wizard-panel .wizard-panel-content {
-    border-top: 0;
-  }
-
   @media (max-width: 991px) {
-    .br-wizard .wizard-progress {
-      max-height: 100px;
-      min-height: 100px;
-      overflow-y: hidden;
-      padding-top: var(--spacing-scale-3x);
-      position: relative;
-      transition-delay: 0s;
-      transition-duration: 0.25s;
-      transition-property: all;
-      transition-timing-function: linear;
-    }
-
-    .br-wizard .wizard-progress .wizard-progress-btn .info {
-      font-size: var(--font-size-scale-down-02, 9.716px);
-      line-height: 1em;
-      text-align: center;
-    }
-
-    .br-wizard .wizard-progress::after {
-      background-color: transparent;
-      bottom: 2px;
-      color: var(--interactive);
-      content: "\f7a4";
-      display: block;
-      font-family: "Font Awesome 5 Free", sans-serif;
-      font-size: var(--switch-icon-size);
-      font-weight: var(--font-weight-black);
-      height: 1em;
-      left: 50%;
-      margin-left: -0.5em;
-      position: absolute;
-      top: unset;
-      transition-delay: 0s;
-      transition-duration: 0.25s;
-      transition-property: all;
-      transition-timing-function: linear;
-      width: auto;
-    }
-
+ 
+/*
     .br-wizard .wizard-form {
       height: calc(100% - 100px);
-    }
+    }*/
 
-    .br-wizard .wizard-form .wizard-panel {
-      border-top: 0;
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 0;
-      max-height: 100%;
-    }
-
-    .br-wizard .wizard-form .wizard-panel .wizard-panel-content {
-      height: auto;
-      max-height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-      padding: var(--spacing-scale-half) var(--spacing-scale-base);
-      transition-delay: 0s;
-      transition-duration: 0.25s;
-      transition-property: all;
-      transition-timing-function: linear;
-    }
-
-    .br-wizard .wizard-form .wizard-panel .wizard-panel-content::-webkit-scrollbar {
-      height: var(--spacing-scale-base);
-      width: var(--spacing-scale-base);
-    }
-
-    .br-wizard .wizard-form .wizard-panel .wizard-panel-content::-webkit-scrollbar-track {
-      background: var(--gray-10);
-    }
-
-    .br-wizard .wizard-form .wizard-panel .wizard-panel-content::-webkit-scrollbar-thumb {
-      background: var(--gray-30);
-    }
-
-    .br-wizard .wizard-form .wizard-panel .wizard-panel-btn {
-      align-items: flex-end;
-      background-color: var(--background-alternative);
-      display: flex;
-      flex-wrap: wrap;
-      height: fit-content;
-      justify-content: center;
-      padding: 0 !important;
-      position: absolute;
-      width: calc(100% - var(--spacing-scale-half));
-    }
-
-    .br-wizard .wizard-form .wizard-panel .wizard-panel-btn .br-button {
-      float: none;
-      /* margin: var(--spacing-scale-base) 5%; */
-      width: 90%;
-    }
-
-    .br-wizard .wizard-form .wizard-panel .wizard-panel-btn .wizard-btn-next,
-    .br-wizard .wizard-form .wizard-panel .wizard-panel-btn .wizard-btn {
-      order: 1;
-    }
-
-    .br-wizard[collapsed] .wizard-progress {
-      max-height: 64px;
-      min-height: 64px;
-      overflow-y: hidden;
-      padding-bottom: var(--spacing-scale-3x);
-      padding-top: var(--spacing-scale-3x);
-    }
-
+  
     .br-wizard[collapsed] .wizard-progress::after {
       margin-top: var(--spacing-scale-4xh);
     }
@@ -250,9 +116,9 @@
       display: none;
     }
 
-    .br-wizard[collapsed] .wizard-form {
+   /* .br-wizard[collapsed] .wizard-form {
       height: calc(100% - 64px);
-    }
+    }*/
 
     .br-wizard[collapsed] .wizard-form .wizard-panel .wizard-panel-content {
       overflow-x: hidden;
@@ -286,7 +152,7 @@
       right: 54px;
     }
 
-    .br-wizard[vertical] .wizard-form {
+   /* .br-wizard[vertical] .wizard-form {
       height: 100%;
       max-width: calc(100% - 110px);
       min-width: calc(100% - 110px);
@@ -299,7 +165,7 @@
     .br-wizard[vertical] .wizard-form .wizard-panel {
       height: 100%;
       max-height: 100%;
-    }
+    }*/
 
     .br-wizard[vertical][collapsed] .wizard-progress {
       max-width: 60px;
@@ -326,7 +192,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     grid-template-rows: none;
-    min-height: 164px;
+    min-height: 100px;
     position: relative;
     top: 25px;
     padding-top: var(--spacing-scale-7x);
@@ -404,7 +270,24 @@
     z-index: 3;
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn::after {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.br-wizard .wizard-progress .wizard-progress-btn::after {
     background-color: #FF3500 !important;
     content: "";
     display: block;
@@ -442,34 +325,45 @@
   }
 
   .br-wizard .wizard-form {
-    color: var(--color);
-    height: calc(100% - 164px);
+    /*color: var(--color);
+    height: calc(100% - 164px);*/
     position: relative;
   }
 
   .br-wizard .wizard-form .wizard-panel {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    left: 1%;
-    margin-bottom: var(--spacing-scale-4x);
+
     opacity: 0;
-    position: absolute;
-    top: 0;
+   
     visibility: hidden;
     width: 100%;
   }
 
   .br-wizard .wizard-form .wizard-panel[active] {
-    height: 60%;
-    left: 0 !important;
+
+
     opacity: 1;
-    transition-delay: 0s;
-    transition-duration: 0.5s;
-    transition-property: all;
-    transition-timing-function: linear;
+  
     visibility: visible;
   }
+
+ #userRegisterForm{
+
+  margin-top: -500px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   .br-wizard .wizard-form .wizard-panel .wizard-panel-content {
     border-top: 1px solid var(--border-color);
@@ -508,71 +402,7 @@
     float: left;
   }
 
-  .br-wizard.inverted,
-  .br-wizard.dark-mode {
-    --color: var(--color-dark);
-    --color-rgb: var(--color-dark-rgb);
-    --text-color: var(--color);
-    --interactive: var(--interactive-dark);
-    --interactive-rgb: var(--interactive-dark-rgb);
-    --visited: var(--visited-dark);
-    --hover: var(--hover-dark);
-    --pressed: var(--pressed-dark);
-    --focus-color: var(--focus-color-dark);
-    --focus: var(--focus-color);
-  }
-
-  .br-wizard.inverted .br-button.primary,
-  .br-wizard.inverted .br-button[primary],
-  .br-wizard.inverted .br-button.is-primary,
-  .br-wizard.dark-mode .br-button.primary,
-  .br-wizard.dark-mode .br-button[primary],
-  .br-wizard.dark-mode .br-button.is-primary {
-    --color: var(--color-light);
-    --color-rgb: var(--color-light-rgb);
-    --text-color: var(--color);
-    --interactive: var(--interactive-light);
-    --interactive-rgb: var(--interactive-light-rgb);
-    --visited: var(--visited-light);
-    --hover: var(--hover-light);
-    --pressed: var(--pressed-light);
-    --focus-color: var(--focus-color-light);
-    --focus: var(--focus-color);
-    --interactive-rgb: var(--background-dark-rgb);
-    background-color: var(--interactive-dark);
-    color: var(--background-dark);
-  }
-
-  .br-wizard.inverted .br-button.secondary,
-  .br-wizard.inverted .br-button[secondary],
-  .br-wizard.inverted .br-button.is-secondary,
-  .br-wizard.dark-mode .br-button.secondary,
-  .br-wizard.dark-mode .br-button[secondary],
-  .br-wizard.dark-mode .br-button.is-secondary {
-    background-color: var(--background-dark);
-  }
-
-  .br-wizard.inverted .wizard-progress,
-  .br-wizard.dark-mode .wizard-progress {
-    background-color: transparent;
-  }
-
-  .br-wizard.inverted .wizard-panel .wizard-panel-btn,
-  .br-wizard.dark-mode .wizard-panel .wizard-panel-btn {
-    background-color: transparent;
-  }
-
-  .br-wizard.inverted .wizard-progress-btn[active],
-  .br-wizard.dark-mode .wizard-progress-btn[active] {
-    color: var(--color);
-  }
-
-  .br-wizard.inverted .wizard-progress-btn[active]::before,
-  .br-wizard.dark-mode .wizard-progress-btn[active]::before {
-    --interactive-rgb: var(--active-rgb);
-    background-color: var(--color);
-    color: var(--active);
-  }
+  
   .br-button {
     padding: 10px;
     border-radius: 12px;
@@ -629,27 +459,29 @@
 @endpush
 @section('content')
 
-  <form action="{{ url('visa_booking') }}" enctype="multipart/form-data" method="post">
 
-    @csrf
-
-<div class="container">
+<div class="container" >
 
   <div class="row d-flex justify-content-center">
     <h4 class="text-center py-5">UAE Visa Application</h4>
   </div>
+
+
   <div class="row">
-    <div class="wizard-sample-1 mt-5 pt-5">
+    <div class="">
       <div class="br-wizard" collapsed="collapsed" step="1">
         <div class="wizard-progress">
           <button class="wizard-progress-btn"  title="Dados Pessoais"><span class="info">Visa Application</span></button>
           <button class="wizard-progress-btn"  title="Validar Dados" active="active"><span class="info">Visa Type</span></button>
           <button class="wizard-progress-btn"  title="Habilitar Cadastro" active="active"><span class="info">Upload Document</span></button>
         </div>
-        
+         
+        <form action="{{ url('visa_booking') }}" enctype="multipart/form-data" method="post">
+             @csrf
+
         <div class="wizard-form">
           <div class="wizard-panel" active="active">
-            <div class="wizard-panel-content" style="margin-top:50px;">
+            <div >
               <div class="row">
                 <div class="col-md-6">
                 <div class="form-group">
@@ -723,15 +555,18 @@
             </div>
 
 
-            <div class="wizard-panel-btn" style="top: -90px; position:relative;">
+            <div class="wizard-panel-btn" >
               <button class="br-button wizard-btn-canc" type="button">Cancel
               </button>
           <button class="br-button primary nextButtonform wizard-btn-next" onclick="printDivs()" type="button" style="background:#FF3500;display:none;">Next</button>
 
             </div>
           </div>
+
+
+
           <div class="wizard-panel">
-            <div class="wizard-panel-content">
+            <div class="">
 
 
               @foreach($visadata as $visa)
@@ -780,7 +615,7 @@
 
          <div class="wizard-panel">
 
-          <div class="wizard-panel-content" id="userRegisterForm">
+          <div class="" id="userRegisterForm">
 
               <div id="divContainer"></div>
            
@@ -808,274 +643,17 @@
 
         </div>
 
+        </form>
+
+
       </div>
     </div>
   </div>
 </div>
-</form>
 
 
-  <script>
+<br><br><br><br>
 
-  var input = document.getElementById("travelDateInput");
-
-  input.addEventListener("focus", function() {
-  input.setAttribute("data-placeholder", input.getAttribute("placeholder"));
-  input.removeAttribute("placeholder");
-  });
-
-  input.addEventListener("blur", function() {
-  input.setAttribute("placeholder", input.getAttribute("data-placeholder"));
-  input.removeAttribute("data-placeholder");
-  });
-
-
-  </script>
-
-<script>
-
-  var cards = document.querySelectorAll('.card');
-  var radios = document.querySelectorAll('.form-check-input');
-
-  cards.forEach(function(card, index) {
-    card.addEventListener('click', function() {
-      radios.forEach(function(radio) {
-        radio.checked = false;
-      });
-      radios[index].checked = true;
-    });
-  });
-</script>
-
-<script>
-   function validateForm() {
-    var adultSelect = document.getElementById("rangeSelect");
-    var adultCount = parseInt(adultSelect.value);
-
-    var childSelect = document.getElementById("childSelect");
-    var childCount = parseInt(childSelect.value);
-
-    var nextButton = document.querySelector('.wizard-btn-next');
-
-    if (adultCount > 0 || childCount > 0) {
-      nextButton.style.display = 'block';
-    } else {
-      nextButton.style.display = 'none';
-    }
-  }
-
-  // Call validateForm() whenever there is a change in any of the form fields
-  document.getElementById("rangeSelect").addEventListener('change', validateForm);
-  document.getElementById("childSelect").addEventListener('change', validateForm);
-
-  // Call validateForm() initially to check the form fields on page load
-  validateForm();
-</script>
-
-
-  <script>
-
-function printDivs() {
-  var select = document.getElementById("rangeSelect");
-  var adultSelect = document.getElementById("rangeSelect");
-  var adultCount = parseInt(adultSelect.value);
-
-  var childSelect = document.getElementById("childSelect");
-  var childCount = parseInt(childSelect.value);
-
-  var totalCount = adultCount + childCount;
-
-  var divContainer = document.getElementById("divContainer");
-  divContainer.innerHTML = ""; // Clear the container before adding new divs
-
-  for (var i = 1; i <= totalCount; i++) {
-    // Generate divs for each traveler
-    var div = document.createElement("div");
-    div.innerHTML = `
-      <div class="h4">Traveler ${i}</div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="firstname[]" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="lastname[]" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
-          </div>
-        </div>
-          
-
-      </div>
-
-
-      <div class="row">
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="dob[]" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="email" class="form-control" name="email[]" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="row">
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="number" class="form-control" name="contact[]" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="number" class="form-control" name="alternate_number[]" id="alternate${i}" aria-describedby="emailHelp" placeholder="Alternate Number">
-          </div>
-        </div>
-
-       </div>
-
-
-      <div class="row">
-
-       <div class="col-md-6">
-          <div class="form-group">
-            <input type="number" class="form-control" name="passportnumber[]" id="passportNumber${i}" aria-describedby="emailHelp" placeholder="Passport Number">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control passportExpiryDate" name="passport_expiry[]" id="passportExpiryDate${i}" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
-          </div>
-        </div>
-       
-      </div>
-          <div class="row">
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="place_issues[]" id="placeOfIssue${i}" aria-describedby="emailHelp" placeholder="Place of Issue">
-          </div>
-        </div>
-       
-       <div class="col-md-6">
-          <div class="form-group">
-            <input type="file" name="passport_first_page[]" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
-             <input type="text" class="form-control showFileInput" placeholder="Passport first page Photo" >
-             <img src = {{asset('/images/btn.svg')}} class="imageClass">
-          </div>
-         </div>
-        </div>
-
-   <div class="row">
-     <div class="col-md-6">
-      <div class="form-group">
-      <input type="file" class="custom-file-input" name="passport_second_page[]" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
-    <input type="text" class="form-control showFileInput" placeholder="Passport second page Photo" >
-    <img src = {{asset('/images/btn.svg')}} class="imageClass">
-     
-    </div>
-    </div>
-    <div class="col-md-6">
-     <div class="form-group">
-      <input type="file" class="custom-file-input" name="passport_size_photo[]" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
-       <input type="text" class="form-control showFileInput" placeholder="Passport Size Photo" >
-         <img src = {{asset('/images/btn.svg')}} class="imageClass">
-      
-    </div>
-    </div>
-    </div>
-
-    `;
-
-    divContainer.appendChild(div);
-
-    $('#passportExpiryDate' + i).datepicker({
-      format: 'dd/mm/yyyy',
-      todayHighlight: true,
-      autoclose: true,
-      placeholder: 'Date of Booking'
-    });
-   
-   $('#DOB' + i).datepicker({
-      format: 'dd/mm/yyyy',
-      todayHighlight: true,
-      autoclose: true,
-      placeholder: 'Date of Booking'
-    });
-
-  }
-}
-
-  </script>
-
-  <script>
-  function handleFileInputChange(event, inputId) {
-    var input = event.target;
-    var fileName = input.files[0].name;
-
-    var inputText = input.parentNode.querySelector('input[type="text"]');
-    inputText.value = fileName;
-  }
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src=https://www.gov.br/ds/assets/govbr-ds-dev-core/dist/core-init.js></script>
-<script>
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-</script>
-<script>
-// JavaScript/jQuery
-// JavaScript/jQuery
-$(document).ready(function() {
-  // Listen for changes in the number of travelers (adults) dropdown
-  $('#number-of-travellers').change(function() {
-    var numberOfTravelers = parseInt($(this).val());
-
-    // Clear existing traveler forms
-    $('#traveller-details-container').empty();
-
-    // Generate traveler forms for each traveler
-    for (var i = 1; i <= numberOfTravelers; i++) {
-      // Clone the userRegisterForm
-      var userRegisterFormClone = $('#userRegisterForm').clone();
-
-      // Update the ID of the cloned form to avoid duplication
-      userRegisterFormClone.attr('id', 'userRegisterForm-' + i);
-
-      // Update the traveler number in the header
-      userRegisterFormClone.find('.h4').text('Traveler ' + i);
-
-      // Append the cloned form to the container
-      $('#traveller-details-container').append(userRegisterFormClone);
-    }
-  });
-});
-
-
-</script>
 
 @endsection
+

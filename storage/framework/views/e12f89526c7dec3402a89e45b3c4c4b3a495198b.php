@@ -383,4 +383,4 @@ $style_typo = json_decode(setting_item_with_lang('style_typo',false,"{}"),true);
 
     <?php echo (setting_item('style_custom_css')); ?>
 
-    <?php echo (setting_item_with_lang_raw('style_custom_css')); ?><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\modules/Layout/parts/custom-css.blade.php ENDPATH**/ ?>
+    <?php echo (setting_item_with_lang_raw('style_custom_css')); ?><?php /**PATH D:\roamio_deals_web\modules/Layout/parts/custom-css.blade.php ENDPATH**/ ?>
