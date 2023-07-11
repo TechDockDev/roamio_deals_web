@@ -40,6 +40,8 @@ Route::get('visa-status',"FlightController@VishStatus");
 
 Route::get('visa-apply',"FlightController@visaApply");
 
+Route::get('confirm-visa',"FlightController@visaConfirm");
+
 
    
 

@@ -76,10 +76,11 @@ class SettingClass extends BaseSettingsClass
                     'plan_update_payment_user_subject',
                     'plan_update_payment_user_content',
                 ],
-                'html_keys'=>[
+                'html_keys' => [
 
-                ]
-            ];
+            ]
+        ] // <-- Missing semicolon here
+    ];
             
 }
 }
