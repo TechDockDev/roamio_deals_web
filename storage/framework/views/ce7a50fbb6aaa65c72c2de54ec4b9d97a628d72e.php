@@ -8,13 +8,13 @@ $minValue = 0;
     top: 20px;
     position: relative;"> 
 
-    <label style="position: relative;
+   <a href="<?php echo e(url('deals')); ?>" ><label style="position: relative;
     bottom: -40px;
     left: 30px;
     top: 57px;
     font-size: 18px;
 
-">Deals</label>
+">Deals</label></a>
 	
 	</div>
 

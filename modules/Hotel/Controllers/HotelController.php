@@ -299,22 +299,90 @@ class HotelController extends Controller
 
  public function staycationexplore(){
 
+$user_id = auth()->user()->id;
+$terms = DB::table('bravo_terms')->where('id', '113')->get();
+$budget = "";
+
+foreach ($terms as $parent) {
+    $name = $parent->name;
+    $childData = DB::table('bravo_hotel_term')->where('term_id', $parent->id)->distinct()->get();
+    $hotels = [];
+
+    foreach ($childData as $child) {
+        $id = $child->target_id;
+        $hotelsData = DB::table('bravo_hotels')->where('id', $id)->get();
+        
+        foreach ($hotelsData as $hotel) {
+            $wishlist = DB::table('user_wishlist')
+                ->where('object_id', $hotel->id)
+                ->where('user_id', $user_id)
+                ->where('object_model', 'hotel')
+                ->select('id')
+                ->first();
+            
+            $conditionwishlist = $wishlist ? true : false;
+            $bannerId = $hotel->banner_image_id;
+            $bannerimage = DB::table('media_files')->where('id', $bannerId)->first();
+            $hotel->banner_image = "uploads/$bannerimage->file_path";
+            $hotel->wishlist = $conditionwishlist;
+            $hotels[] = $hotel;
+        }
+    }
+
+    $budget = [
+        'id' => $parent->id,
+        'parent_name'=> $name,
+        'hotels' => $hotels,
+    ];
+}
+
+
+
+$user_id = auth()->user()->id;
+$terms = DB::table('bravo_terms')->where('id', '106')->get();
+$bestDeal = "";
+
+foreach ($terms as $parent) {
+    $name = $parent->name;
+    $childData = DB::table('bravo_hotel_term')->where('term_id', $parent->id)->distinct()->get();
+    $hotels = [];
+
+    foreach ($childData as $child) {
+        $id = $child->target_id;
+        $hotelsData = DB::table('bravo_hotels')->where('id', $id)->get();
+        
+        foreach ($hotelsData as $hotel) {
+            $wishlist = DB::table('user_wishlist')
+                ->where('object_id', $hotel->id)
+                ->where('user_id', $user_id)
+                ->where('object_model', 'hotel')
+                ->select('id')
+                ->first();
+            
+            $conditionwishlist = $wishlist ? true : false;
+            $bannerId = $hotel->banner_image_id;
+            $bannerimage = DB::table('media_files')->where('id', $bannerId)->first();
+            $hotel->banner_image = "uploads/$bannerimage->file_path";
+            $hotel->wishlist = $conditionwishlist;
+            $hotels[] = $hotel;
+        }
+    }
+
+    $bestDeal = [
+        'id' => $parent->id,
+        'parent_name'=> $name,
+        'hotels' => $hotels,
+    ];
+}
+   
+
+
+
 
     $limit = 3; // Specify the limit to 3
-//    $page = $request->page;
-//    $user_id = $request->id;
 
-    $posts = DB::table('bravo_hotels')->take(3)->get();
+    $posts = DB::table('bravo_hotels')->where('deleted_at',null)->take(6)->get();
 
-  
-
-
-    // $posts = DB::table('bravo_hotels')
-    // ->join('bravo_hotel_rooms', 'bravo_hotels.id', '=', 'bravo_hotel_rooms.parent_id')
-    // ->select('bravo_hotels.*', 'bravo_hotel_rooms.title', DB::raw('bravo_hotels.price - (bravo_hotels.price * bravo_hotels.discount_percent / 100) AS discounted_price'))
-    // ->limit($limit)
-    // ->where('bravo_hotel_rooms.parent_id', $id)
-    // ->get();
 
  
     $datas = [];
@@ -342,7 +410,7 @@ class HotelController extends Controller
      $datas[] = $p;
      }
  
-   return view('Hotel::staycationExplore' ,compact('datas'));
+   return view('Hotel::staycationExplore' ,compact('datas','bestDeal','budget'));
   
  }
 

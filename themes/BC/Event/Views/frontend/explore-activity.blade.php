@@ -472,6 +472,13 @@ fass:hover{
 } 
 
 
+ .class{
+
+   color: red !important;
+
+     }
+
+
 </style>
 
 
@@ -508,6 +515,8 @@ fass:hover{
     
 </div>
 
+
+
 @foreach($data as $datas)
 
 <div class="container mt-5">
@@ -517,20 +526,34 @@ fass:hover{
    <div class="row">
        @foreach($datas['events'] as $dt)
 
-      
         <div class="col-md-4">
             <div class="card"  style="border-radius: 10px;">
                 <div class="Daily-Deals1" style="position: relative;">
                    <a href = "{{url('/event/'.$dt->slug)}}"> <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
-                  <span class="fa fa-heart fa-3x fass" style=" 
                  
-                    right: 10px;
-                    color: white;
-                    text-shadow: 1px 1px 2px black;
-                    top: -188px;
-                    padding: 6px 6px;
-                    border-radius:30px;">
-                </span>
+            <input type ="text" class="objectidgetclass{{$dt->id}}" style="display:none;" name="object_id" value="{{$dt->id}}">
+           <input type ="text" class="objectmodalgetclass{{$dt->id}}" style="display:none;" name="object_model" value="event">
+ 
+
+
+
+                <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$dt->id}} hotelwishlistaddingheart <?php if ($dt->wishlist== true) {
+                  echo "class";
+                }   ?>" attr="{{$dt->id}}" style="position: absolute;
+                top: 10px;
+                right: 10px;
+                color: white;
+                text-shadow: 1px 1px 27px black;
+                /* float: right; */
+                left: 270px;
+                height: 30px;
+                width: 30px;
+                background: white;
+                padding: 6px 6px;
+                border-radius:30px;
+            "></span>
+
+
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">{{ $dt->title}}</h5>
@@ -696,12 +719,64 @@ fass:hover{
    </div>
        
 
-
- 
- 
-
-
    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+   <script>
+
+$('document').ready(function(){
+ 
+$('.hotelwishlistaddingheart').click(function() {
+  var id = $(this).attr('attr');
+  var object_id = $('.objectidgetclass' + id).val();
+  var object_modal = $('.objectmodalgetclass' + id).val();
+
+  var csrfToken = $('meta[name="csrf-token"]').attr('content'); // Retrieve the CSRF token from the meta tag
+
+  $.ajax({
+    url: '/user/wishlist',
+    type: 'post',
+    data: {
+      object_id: object_id,
+      object_model: object_modal
+    },
+    headers: {
+      'X-CSRF-TOKEN': csrfToken // Set the CSRF token in the request headers
+    },
+   success: function(response) {
+  if (response.class === "active") {
+    alert("Wishlist updated successfully");
+
+      $('.newhotelheartstatus' +id).addClass('class');
+    
+  
+  } else if (response.class === "inactive") {
+    
+    $('.newhotelheartstatus' +id).removeClass('class');
+  
+    
+  } else {
+
+    alert("Unexpected response status: " + response.status);
+   
+  }
+},
+    error: function(xhr, status, error) {
+      alert("AJAX request failed: " + error);
+      
+    }
+  });
+});
+
+
+
+});
+
+
+
+</script>
+
+
+
        
 
    <script>

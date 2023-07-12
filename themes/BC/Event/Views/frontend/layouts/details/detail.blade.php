@@ -68,17 +68,26 @@
                 <span> (4) Excellent</span>
 
             </p>
-            <p><button class="btn btn-light mt-2 cancellation-btn">Free cancellation (24 Hours Prior)</button> 
+
+                
+        <?php
+
+         $wdata = DB::table('bravo_terms')->where('attr_id',11)->get();
+
+
+        ?>
+
+            <p>
+                 
+                 @foreach($wdata as $zdata)
                 <span>
-                    <button class="btn btn-light mt-2 cancellation-btn">Instant confirmation</button>
+                    <button class="btn btn-light mt-2 cancellation-btn">{{$zdata->name}}</button>
                 </span>
-            </p>
-            <p><button class="btn btn-light mt-2 Offer-btn">Free cancellation (24 Hours Prior)</button> 
-                <span>
-                    <button class="btn btn-light mt-2 Offer-btn">Instant confirmation</button>
-                </span>
+                  @endforeach
+
             </p>
       
+
 
     </div>
     {{-- <div class="right">
