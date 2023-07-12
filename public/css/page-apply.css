@@ -1,3 +1,11 @@
+ 
+ .br-button{
+  
+  border: navajowhite;
+
+ }
+
+
  .accordion {
     background-color: #eee;
     color: #444;
@@ -8,7 +16,7 @@
     text-align: left;
     outline: none;
     font-size: 15px;
-    transition: 0.4s;
+/*    transition: 0.4s;*/
     border-radius:12px;
   }
    
@@ -54,14 +62,14 @@
     width: 100%;
   }
 
-  .br-wizard {
+   {
   
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
   }
 
-  .br-wizard[vertical] .wizard-progress {
+  [vertical] .wizard-progress {
     float: left;
     grid-template-columns: 1fr;
     height: 100%;
@@ -72,7 +80,7 @@
     text-align: right;
   }
 
-  .br-wizard[vertical] .wizard-progress .wizard-progress-btn {
+  [vertical] .wizard-progress .wizard-progress-btn {
     height: 100%;
     line-height: 100%;
     max-height: 100%;
@@ -82,7 +90,7 @@
     text-align: right;
   }
 
-  .br-wizard[vertical] .wizard-progress .wizard-progress-btn::before {
+  [vertical] .wizard-progress .wizard-progress-btn::before {
     left: calc(100% - 32px);
     line-height: 26px;
     margin-top: calc(var(--spacing-scale-2x) * -1);
@@ -94,38 +102,38 @@
   @media (max-width: 991px) {
  
 /*
-    .br-wizard .wizard-form {
+     .wizard-form {
       height: calc(100% - 100px);
     }*/
 
   
-    .br-wizard[collapsed] .wizard-progress::after {
+    [collapsed] .wizard-progress::after {
       margin-top: var(--spacing-scale-4xh);
     }
 
-    .br-wizard[collapsed] .wizard-progress .wizard-progress-btn {
+    [collapsed] .wizard-progress .wizard-progress-btn {
       padding-bottom: var(--spacing-scale-base);
     }
 
-    .br-wizard[collapsed] .wizard-progress .wizard-progress-btn .info {
+    [collapsed] .wizard-progress .wizard-progress-btn .info {
       display: none;
     }
 
-   /* .br-wizard[collapsed] .wizard-form {
+   /* [collapsed] .wizard-form {
       height: calc(100% - 64px);
     }*/
 
-    .br-wizard[collapsed] .wizard-form .wizard-panel .wizard-panel-content {
+    [collapsed] .wizard-form .wizard-panel .wizard-panel-content {
       overflow-x: hidden;
       overflow-y: auto;
     }
 
-    .br-wizard[vertical] .wizard-progress {
+    [vertical] .wizard-progress {
       max-height: 100%;
       max-width: 110px;
     }
 
-    .br-wizard[vertical] .wizard-progress::after {
+    [vertical] .wizard-progress::after {
       height: 1em;
       left: unset;
       margin-top: -0.5em;
@@ -135,19 +143,19 @@
       width: 1em;
     }
 
-    .br-wizard[vertical] .wizard-progress .wizard-progress-btn {
+    [vertical] .wizard-progress .wizard-progress-btn {
       line-height: 18px;
       padding-right: var(--spacing-scale-7x);
     }
 
-    .br-wizard[vertical] .wizard-progress .wizard-progress-btn .info {
+    [vertical] .wizard-progress .wizard-progress-btn .info {
       line-height: 1.6em;
       margin-top: -0.5em;
       position: absolute;
       right: 54px;
     }
 
-   /* .br-wizard[vertical] .wizard-form {
+   /* [vertical] .wizard-form {
       height: 100%;
       max-width: calc(100% - 110px);
       min-width: calc(100% - 110px);
@@ -157,32 +165,32 @@
       transition-timing-function: linear;
     }
 
-    .br-wizard[vertical] .wizard-form .wizard-panel {
+    [vertical] .wizard-form .wizard-panel {
       height: 100%;
       max-height: 100%;
     }*/
 
-    .br-wizard[vertical][collapsed] .wizard-progress {
+    [vertical][collapsed] .wizard-progress {
       max-width: 60px;
       padding-bottom: 0;
       padding-top: 0;
     }
 
-    .br-wizard[vertical][collapsed] .wizard-progress .wizard-progress-btn {
+    [vertical][collapsed] .wizard-progress .wizard-progress-btn {
       padding-right: 0;
     }
 
-    .br-wizard[vertical][collapsed] .wizard-progress .wizard-progress-btn .info {
+    [vertical][collapsed] .wizard-progress .wizard-progress-btn .info {
       display: none;
     }
 
-    .br-wizard[vertical][collapsed] .wizard-form {
+    [vertical][collapsed] .wizard-form {
       max-width: calc(100% - 60px);
       min-width: calc(100% - 60px);
     }
   }
 
-  .br-wizard .wizard-progress {
+   .wizard-progress {
     background-color: var(--background-alternative);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
@@ -194,7 +202,7 @@
     width: 100%;
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn {
+   .wizard-progress .wizard-progress-btn {
     background-color: transparent;
     border: 0;
     box-shadow: none !important;
@@ -212,36 +220,36 @@
     transition-timing-function: linear;
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn[disabled] {
+   .wizard-progress .wizard-progress-btn[disabled] {
     color: rgba(var(--interactive-rgb), var(--disabled));
     opacity: 1;
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn[disabled]::before {
+   .wizard-progress .wizard-progress-btn[disabled]::before {
     opacity: var(--disabled);
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn:focus {
+   .wizard-progress .wizard-progress-btn:focus {
     outline: none;
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn.focus-visible:not([disabled]):not(.disabled)::before,
-  .br-wizard .wizard-progress .wizard-progress-btn:focus-visible:not([disabled]):not(.disabled)::before {
+   .wizard-progress .wizard-progress-btn.focus-visible:not([disabled]):not(.disabled)::before,
+   .wizard-progress .wizard-progress-btn:focus-visible:not([disabled]):not(.disabled)::before {
     outline-color: var(--focus-color);
     outline-offset: var(--focus-offset);
     outline-style: var(--focus-style);
     outline-width: var(--focus-width);
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn:hover:not([disabled])::before {
+   .wizard-progress .wizard-progress-btn:hover:not([disabled])::before {
     background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn:active:not([disabled])::before {
+   .wizard-progress .wizard-progress-btn:active:not([disabled])::before {
     background-image: linear-gradient(rgba(var(--interactive-rgb), var(--pressed)), rgba(var(--interactive-rgb), var(--pressed)));
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn::before {
+   .wizard-progress .wizard-progress-btn::before {
     background-color: var(--background-light);
     border: 2px solid #FF3500;
     border-radius: 50%;
@@ -282,7 +290,7 @@
 
 
 
-.br-wizard .wizard-progress .wizard-progress-btn::after {
+ .wizard-progress .wizard-progress-btn::after {
     background-color: #FF3500 !important;
     content: "";
     display: block;
@@ -298,34 +306,34 @@
     z-index: 1;
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn:first-child::after {
+   .wizard-progress .wizard-progress-btn:first-child::after {
     display: none;
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn[active] {
+   .wizard-progress .wizard-progress-btn[active] {
     color: var(--active);
     font-weight: var(--font-weight-semi-bold, 600);
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn[active]::after {
+   .wizard-progress .wizard-progress-btn[active]::after {
     background-color: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
     height: 4px;
   }
 
-  .br-wizard .wizard-progress .wizard-progress-btn[active]::before {
+   .wizard-progress .wizard-progress-btn[active]::before {
     background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
     border: 2px solid #FF3500;
     color: var(--background-light);
     font-weight: var(--font-weight-bold, 700);
   }
 
-  .br-wizard .wizard-form {
+   .wizard-form {
     /*color: var(--color);
     height: calc(100% - 164px);*/
     position: relative;
   }
 
-  .br-wizard .wizard-form .wizard-panel {
+   .wizard-form .wizard-panel {
 
     opacity: 0;
    
@@ -333,7 +341,7 @@
     width: 100%;
   }
 
-  .br-wizard .wizard-form .wizard-panel[active] {
+   .wizard-form .wizard-panel[active] {
 
 
     opacity: 1;
@@ -347,40 +355,40 @@
  }
 
 
-  .br-wizard .wizard-form .wizard-panel .wizard-panel-content {
+   .wizard-form .wizard-panel .wizard-panel-content {
     border-top: 1px solid var(--border-color);
     flex-grow: 1;
     height: auto;
     max-height: calc(100% - 74px);
     overflow-x: hidden;
     overflow-y: auto;
-    padding: var(--spacing-scale-base) var(--spacing-scale-2x);
+/*    padding: var(--spacing-scale-base) var(--spacing-scale-2x);*/
   }
 
-  .br-wizard .wizard-form .wizard-panel .wizard-panel-content> :last-child {
+   .wizard-form .wizard-panel .wizard-panel-content> :last-child {
     margin-bottom: 220px;
   }
 
-  .br-wizard .wizard-form .wizard-panel .wizard-panel-btn {
+   .wizard-form .wizard-panel .wizard-panel-btn {
    top: -13px;
     align-self: flex-end;
     background-color: var(--background-alternative);
     border-top: 1px solid var(--border-color);
     height: fit-content;
     margin-top: 29px;
-    padding: var(--spacing-scale-2x) 1.5%;
+/*    padding: var(--spacing-scale-2x) 1.5%;*/
     width: 100%;
     position: relative;
   }
 
-  .br-wizard .wizard-form .wizard-panel .wizard-btn-next,
-  .br-wizard .wizard-form .wizard-panel .wizard-btn,
-  .br-wizard .wizard-form .wizard-panel .wizard-btn-prev {
+   .wizard-form .wizard-panel .wizard-btn-next,
+   .wizard-form .wizard-panel .wizard-btn,
+   .wizard-form .wizard-panel .wizard-btn-prev {
     float: right;
     margin-left: var(--spacing-scale-2x);
   }
 
-  .br-wizard .wizard-form .wizard-panel .wizard-btn-canc {
+   .wizard-form .wizard-panel .wizard-btn-canc {
     float: left;
   }
 

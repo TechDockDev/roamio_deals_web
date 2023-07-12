@@ -106,7 +106,7 @@
             <div class="wizard-panel-btn" >
               <button class="br-button wizard-btn-canc" type="button">Cancel
               </button>
-          <button class="br-button primary nextButtonform wizard-btn-next" onclick="printDivs()" type="button" style="background:#FF3500;display:none;">Next</button>
+          <button class="btn btn-primary nextButtonform wizard-btn-next" onclick="printDivs()" type="button" style="background:#FF3500;display:none;">Next</button>
 
             </div>
           </div>
@@ -132,7 +132,7 @@
   <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
     <div style="padding:10px;">
       <div style="display: flex; justify-content: flex-end;">
-        <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1;" id="check{{$item->id}}" name="entry_detail_id" value="{{$item->id}}">
+        <input type="radio" class="form-check-input" style="" id="check{{$item->id}}" name="entry_detail_id" value="{{$item->id}}">
       </div>
       <h5>{{$item->days}}</h5>
       <h6>{{$item->title}}</h6>
@@ -152,11 +152,11 @@
               <button class="br-button wizard-btn-canc" type="button">Cancel
               </button>
 
-              <button class="br-button primary wizard-btn-next" type="button" style="background:#FF3500;">Next
+              <button class="btn btn-primary  wizard-btn-next" type="button" style="background:#FF3500;">Next
               </button>
 
               <button style="left: -8px;
-                 position: relative;" class="br-button secondary wizard-btn-prev" type="button">previous
+                 position: relative; border: navajowhite;" class="br-button secondary wizard-btn-prev" type="button">previous
               </button>
             </div>
           </div>
@@ -176,7 +176,7 @@
                @if(auth()->user())
 
 
-               <button class="br-button primary wizard-btn-next" type="submit" style="background:#FF3500;">Proceed 
+               <button class="btn btn-primary wizard-btn-next" type="submit" style="background:#FF3500;">Proceed 
                </button>
 
                @else
