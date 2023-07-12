@@ -134,9 +134,15 @@ p {
   color: red !important;
 }
     
+    .class{
+
+   color: red !important;
+
+     }
 
 
 </style>
+
 
 
 
@@ -152,7 +158,15 @@ p {
              <div class="Daily-Deals1" style="position: relative;">
                 
                <a href="{{ url('/hotel/' . $hotel->slug) }}"><img src="{{ $hotel->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
-                <span class="fa fa-heart fa-3x fass" style="position: absolute;
+                     
+           <input type ="text" class="objectidgetclass{{$hotel->id}}" style="display:none;" name="object_id" value="{{$hotel->id}}">
+           <input type ="text" class="objectmodalgetclass{{$hotel->id}}" style="display:none;" name="object_model" value="hotel">
+
+               
+            
+    <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
+                  echo "class";
+                }   ?>" attr="{{$hotel->id}}" style="position: absolute;
                 top: 10px;
                 right: 10px;
                 color: white;
@@ -165,6 +179,11 @@ p {
                 padding: 6px 6px;
                 border-radius:30px;
             "></span>
+                  
+                
+
+
+
              </div>
              <div class="card-body">
                 <h5 class="card-title">{{ $hotel->title }}</h5>
@@ -262,12 +281,59 @@ p {
     </div>
 </div>
 
+<script>
+
+$('document').ready(function(){
+ 
+$('.hotelwishlistaddingheart').click(function() {
+  var id = $(this).attr('attr');
+  var object_id = $('.objectidgetclass' + id).val();
+  var object_modal = $('.objectmodalgetclass' + id).val();
+
+  var csrfToken = $('meta[name="csrf-token"]').attr('content'); // Retrieve the CSRF token from the meta tag
+
+  $.ajax({
+    url: '/user/wishlist',
+    type: 'post',
+    data: {
+      object_id: object_id,
+      object_model: object_modal
+    },
+    headers: {
+      'X-CSRF-TOKEN': csrfToken // Set the CSRF token in the request headers
+    },
+   success: function(response) {
+  if (response.class === "active") {
+    alert("Wishlist updated successfully");
+
+      $('.newhotelheartstatus' +id).addClass('class');
+    
+  
+  } else if (response.class === "inactive") {
+    
+    $('.newhotelheartstatus' +id).removeClass('class');
+  
+    
+  } else {
+
+    alert("Unexpected response status: " + response.status);
+   
+  }
+},
+    error: function(xhr, status, error) {
+      alert("AJAX request failed: " + error);
+      
+    }
+  });
+});
 
 
 
+});
 
 
 
+</script>
 
 
 
