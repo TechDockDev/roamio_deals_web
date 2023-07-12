@@ -481,11 +481,10 @@
 
         <div class="wizard-form">
           <div class="wizard-panel" active="active">
-            <div >
+            <div>
               <div class="row">
                 <div class="col-md-6">
                 <div class="form-group">
-                  
                   <select id="nationalitySelect" name="nationality" class="form-control" required>
                       <option>--Nationality--</option>
                       <option>India</option>
@@ -571,7 +570,7 @@
 
               @foreach($visadata as $visa)
 
-                    <input type="hidden" style="height: 20px; width: 20px; order: 1;" id="check{{$visa->id}}" name="entry_id" value="{{$visa->id}}">
+                <input type="hidden" style="height: 20px; width: 20px; order: 1;" id="check{{$visa->id}}" name="entry_id" value="{{$visa->id}}">
 
 
               <button type="button" class="accordion">{{$visa->entry}}</button>

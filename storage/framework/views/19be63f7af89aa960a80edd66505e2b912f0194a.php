@@ -25,7 +25,7 @@
     <link href="<?php echo e(asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version'))); ?>" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<?php echo e(asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css')); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo e(asset('libs/fotorama/fotorama.css')); ?>" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="<?php echo e(asset('libs/bootstrap/css/bootstrap.css')); ?>" rel="stylesheet">
@@ -83,6 +83,8 @@
         <?php echo setting_item_with_lang_raw('footer_scripts'); ?>
 
     <?php endif; ?>
+    <?php echo $__env->yieldContent('script'); ?>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
@@ -129,13 +131,13 @@
     var childSelect = document.getElementById("childSelect");
     var childCount = parseInt(childSelect.value);
 
-    var nextButton = document.querySelector('.wizard-btn-next');
+    // var nextButton = document.querySelector('.wizard-btn-next');
 
-    if (adultCount > 0 || childCount > 0) {
-      nextButton.style.display = 'block';
-    } else {
-      nextButton.style.display = 'none';
-    }
+    // if (adultCount > 0 || childCount > 0) {
+    //   nextButton.style.display = 'block';
+    // } else {
+    //   nextButton.style.display = 'none';
+    // }
   }
 
   // Call validateForm() whenever there is a change in any of the form fields
@@ -295,81 +297,43 @@ function printDivs() {
 
   </script>
 
-  <script>
-  function handleFileInputChange(event, inputId) {
-    var input = event.target;
-    var fileName = input.files[0].name;
-
-    var inputText = input.parentNode.querySelector('input[type="text"]');
-    inputText.value = fileName;
-  }
-</script>
+  
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src=https://www.gov.br/ds/assets/govbr-ds-dev-core/dist/core-init.js></script>
-<script>
-  var acc = document.getElementsByClassName("accordion");
-  var i;
 
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-</script>
+
 <script>
 // JavaScript/jQuery
 // JavaScript/jQuery
-$(document).ready(function() {
-  // Listen for changes in the number of travelers (adults) dropdown
-  $('#number-of-travellers').change(function() {
-    var numberOfTravelers = parseInt($(this).val());
+// $(document).ready(function() {
+//   // Listen for changes in the number of travelers (adults) dropdown
+//   $('#number-of-travellers').change(function() {
+//     var numberOfTravelers = parseInt($(this).val());
 
-    // Clear existing traveler forms
-    $('#traveller-details-container').empty();
+//     // Clear existing traveler forms
+//     $('#traveller-details-container').empty();
 
-    // Generate traveler forms for each traveler
-    for (var i = 1; i <= numberOfTravelers; i++) {
-      // Clone the userRegisterForm
-      var userRegisterFormClone = $('#userRegisterForm').clone();
+//     // Generate traveler forms for each traveler
+//     for (var i = 1; i <= numberOfTravelers; i++) {
+//       // Clone the userRegisterForm
+//       var userRegisterFormClone = $('#userRegisterForm').clone();
 
-      // Update the ID of the cloned form to avoid duplication
-      userRegisterFormClone.attr('id', 'userRegisterForm-' + i);
+//       // Update the ID of the cloned form to avoid duplication
+//       userRegisterFormClone.attr('id', 'userRegisterForm-' + i);
 
-      // Update the traveler number in the header
-      userRegisterFormClone.find('.h4').text('Traveler ' + i);
+//       // Update the traveler number in the header
+//       userRegisterFormClone.find('.h4').text('Traveler ' + i);
 
-      // Append the cloned form to the container
-      $('#traveller-details-container').append(userRegisterFormClone);
-    }
-  });
-});
+//       // Append the cloned form to the container
+//       $('#traveller-details-container').append(userRegisterFormClone);
+//     }
+//   });
+// });
 
 
 </script>
 
-    <script>
-        $(document).ready(function() {
-            $('#travelDateInput').datepicker({
-                format: 'dd/mm/yyyy',
-                todayHighlight: true,
-                autoclose: true,
-                placeholder:'Date of Booking'
-            });
-
-
-        });
-
-
-
-    </script>
+    
 
 </body>
 </html>

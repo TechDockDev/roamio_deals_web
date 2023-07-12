@@ -43,5 +43,7 @@ Route::get('visa-apply',"FlightController@visaApply");
 Route::get('confirm-visa',"FlightController@visaConfirm");
 
 
+Route::get('apply-visa-page',"FlightController@visaApplyPage");
+
    
 
