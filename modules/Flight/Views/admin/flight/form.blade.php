@@ -61,9 +61,6 @@ $entry =DB::table('visa_entry')->get();
 
  @endforeach
 
-
-
-
 @if($datachild == '[]')
 
 
