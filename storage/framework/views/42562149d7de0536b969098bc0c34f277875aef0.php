@@ -1,13 +1,13 @@
-{{-- @extends('layouts.app')
-@push('css')
- <link href="{{ asset('css/page-apply.css') }}" rel="stylesheet">
+
+<?php $__env->startPush('css'); ?>
+ <link href="<?php echo e(asset('css/page-apply.css')); ?>" rel="stylesheet">
  
 
-@endpush
-@section('content')
+<?php $__env->stopPush(); ?>
+<?php $__env->startSection('content'); ?>
 
 
-<div class="container">
+<div class="container" >
 
   <div class="row d-flex justify-content-center">
     <h4 class="text-center py-5">UAE Visa Application</h4>
@@ -23,12 +23,12 @@
           <button class="wizard-progress-btn"  title="Habilitar Cadastro" active="active"><span class="info">Upload Document</span></button>
         </div>
          
-        <form action="{{ url('visa_booking') }}" enctype="multipart/form-data" method="post">
-             @csrf
+        <form action="<?php echo e(url('visa_booking')); ?>" enctype="multipart/form-data" method="post">
+             <?php echo csrf_field(); ?>
 
         <div class="wizard-form">
           <div class="wizard-panel" style="top: 100px;
-         position: relative;" active="active">
+    position: relative;" active="active">
             <div >
               <div class="row">
                 <div class="col-md-6">
@@ -117,36 +117,36 @@
             <div class="">
 
 
-              @foreach($visadata as $visa)
+              <?php $__currentLoopData = $visadata; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $visa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-                    <input type="hidden" id="check{{$visa->id}}" name="entry_id" value="{{$visa->id}}">
+                    <input type="hidden" id="check<?php echo e($visa->id); ?>" name="entry_id" value="<?php echo e($visa->id); ?>">
 
 
-              <button type="button" class="accordion">{{$visa->entry}}</button>
+              <button type="button" class="accordion"><?php echo e($visa->entry); ?></button>
               <div class="panel" style="display: flex; flex-direction: column;">
 
                 <div class="container" style="margin-top:10px; margin-bottom:10px;">
                   <div class="row">
-                  @foreach ($visa->visa_entry_details as $item)
+                  <?php $__currentLoopData = $visa->visa_entry_details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 <div class="col-4">
   <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
     <div style="padding:10px;">
       <div style="display: flex; justify-content: flex-end;">
-        <input type="radio" class="form-check-input" style="" id="check{{$item->id}}" name="entry_detail_id" value="{{$item->id}}">
+        <input type="radio" class="form-check-input" style="" id="check<?php echo e($item->id); ?>" name="entry_detail_id" value="<?php echo e($item->id); ?>">
       </div>
-      <h5>{{$item->days}}</h5>
-      <h6>{{$item->title}}</h6>
-      <p>{!! $item->discription !!}</p>
-      <h4>{{$item->price}}</h4>
+      <h5><?php echo e($item->days); ?></h5>
+      <h6><?php echo e($item->title); ?></h6>
+      <p><?php echo $item->discription; ?></p>
+      <h4><?php echo e($item->price); ?></h4>
     </div>
   </div>
 </div>
-@endforeach
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </div>
                 </div>
 
               </div>
-              @endforeach
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
             <div class="wizard-panel-btn">
               <button class="br-button wizard-btn-canc" type="button">Cancel
@@ -170,21 +170,21 @@
            </div>
                 
              <div class="wizard-panel-btn">
-              <a href="{{url('visa-page')}}" class="btn btn-danger br-button wizard-btn-canc" type="button">Cancel
+              <a href="<?php echo e(url('visa-page')); ?>" class="btn btn-danger br-button wizard-btn-canc" type="button">Cancel
               </a>
 
-               @if(auth()->user())
+               <?php if(auth()->user()): ?>
 
 
                <button class="btn btn-primary wizard-btn-next" type="submit" style="background:#FF3500;">Proceed 
                </button>
 
-               @else
+               <?php else: ?>
           
             <button data-toggle="modal" data-target="#login" class="br-button primary wizard-btn" type="button" style="background:#FF3500;">Proceed to Booking
               </button>
 
-              @endif
+              <?php endif; ?>
 
             </div>
           </div>
@@ -203,4 +203,5 @@
 <br><br><br><br>
 
 
-@endsection --}}
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Flight/Views/frontend/visa-apply.blade.php ENDPATH**/ ?>

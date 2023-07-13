@@ -2,10 +2,31 @@
 
 
 
+ 
+
 <?php $__env->startPush('css'); ?>
-
-
 <style>
+
+
+.imageClass{
+position: relative;
+    float: right;
+    top: -38px;
+    left: -3px;
+    background: #FFF3E3;
+    padding: 1px 5px;
+    border-radius: 10px;
+}
+
+.uploadinput{
+    position: relative;
+    top: -31px;
+ } 
+
+ .inputfolter{
+    position: relative;
+    top: -73px;
+ }
      .accordion {
     background-color: #eee;
     color: #444;
@@ -34,7 +55,7 @@
 
   .active,
   .accordion:hover {
-    background-color: #ccc;
+    /* background-color: #ccc; */
   }
 
   .accordion:after {
@@ -67,6 +88,8 @@
 	 border-bottom: 1px solid #d5d0d0;
 }
  .card-header .steps {
+    position: relative;
+    left: 137px;
 	 display: flex;
 	 column-count: 3;
 	 justify-content: center;
@@ -84,8 +107,11 @@
     border: 3px solid #FF3500;
     border-radius: 25px;
     background: #fff;
-	 /* box-shadow: 0px 3px 0px 0px #FF3500; */
+    position: relative;
+    left: -89px;
 }
+	 /* box-shadow: 0px 3px 0px 0px #FF3500; */
+
  .card-header .steps .step.active span {
 	 background: #FF3500;
 	 color: white;
@@ -102,7 +128,7 @@
 	 width: 100%;
 	 height: 100%;
 	 justify-content: center;
-	 display: flex;
+	 /* display: flex; */
 	 align-items: center;
 }
  .card-body .tabs .tab {
@@ -141,7 +167,8 @@
     font-weight: 800;
     font-size: 18px;
     color: #FF3500;
-    border: 1px solid #FF3500;  
+    background:#FFF5E9; 
+    
 }
  .card-footer button:active {
 	 outline: none;
@@ -155,13 +182,38 @@
 	}
 }
  
-</style>
+.heading-step{
+    top: 37px;
+    position: relative;
+    font-size: 15px;
+    left: -158px;
+}
+/* Your CSS styles */
+@media (max-width: 576px) {
+    .card-header .steps {
+        left: 0;
+    }
 
+    .card-header .steps .step span {
+        left: -45px;
+    }
+    .card-header{
+    display:none;
+}
+}
+
+.mailchimp{
+ display:none;   
+}
+</style>
 <?php $__env->stopPush(); ?>
+
 <?php $__env->startSection('content'); ?>
 <div class="container d-flex justify-content-center">
     <div class="row">
-        <h3 class="text-center pt-5"> <span><img src="<?php echo e(asset('images/Flag_of_the_United_Arab_Emirates_1.png')); ?>"></span> UAE Visa Application</h3>
+        <h4 class="text-center pt-5">
+            <span><img src="<?php echo e(asset('images/Flag_of_the_United_Arab_Emirates_1.png')); ?>"></span> UAE Visa Application
+        </h4>
     </div>
 </div>
 
@@ -170,18 +222,24 @@
         <div class="card-header">
             <div class="steps">
                 <div class="step active">
-                   <span>1</span>
-                </div>	
+                    <span>1</span>
+                    <small class="heading-step">Visa Application</small>
+                </div>
                 <div class="step">
-                    <span>2</span>	
-                </div>	
-                <div class="step">
-                    <span>3</span>	
-                </div>	
+                    <span>2</span>
+                    <small class="heading-step">Visa Type</small>
+                </div>
+                <div class="step" style="border: none;">
+                    <span>3</span>
+                    <small class="heading-step">Upload Document</small>
+                </div>
             </div>
         </div>
+        
         <div id="cardBody" class="card-body">
             <div class="tabs w-100">
+                <form action="<?php echo e(url('visa_booking')); ?>" enctype="multipart/form-data" method="post">
+                    <?php echo csrf_field(); ?>
                 <div id="first" class="tab">
                     <div class="row">
                         <div class="col-md-6">
@@ -247,11 +305,11 @@
                     </div>
                 </div>
                 <div id="second" class="tab">
-                    
+                   
                     <?php $__currentLoopData = $visadata; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $visa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                    <input type="hidden" style="height: 20px; width: 20px; order: 1;" id="check<?php echo e($visa->id); ?>" name="entry_id" value="<?php echo e($visa->id); ?>">
                    <button type="button" class="accordion"><?php echo e($visa->entry); ?></button>
-               <div class="panel" style="display: flex; flex-direction: column;">
+                 <div class="panel" style="display: flex; flex-direction: column;">
                   <div class="container" style="margin-top:10px; margin-bottom:10px;">
                  <div class="row">
                 <?php $__currentLoopData = $visa->visa_entry_details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -259,7 +317,7 @@
                         <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
                             <div style="padding:10px;">
                                 <div style="display: flex; justify-content: flex-end;">
-                                    <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1;" id="check<?php echo e($item->id); ?>" name="entry_detail_id" value="<?php echo e($item->id); ?>">
+                                    <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1; " id="check<?php echo e($item->id); ?>" name="entry_detail_id" value="<?php echo e($item->id); ?>">
                                 </div>
                                 <h5><?php echo e($item->days); ?></h5>
                                 <h6><?php echo e($item->title); ?></h6>
@@ -276,25 +334,22 @@
 
                 </div>
                 <div id="third" class="tab">
+                 
                     <div class="row" id="userRegisterForm">
                         <div id="divContainer"></div>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
         <div class="card-footer">
-            <button id="nextBtn" class="Next" onclick="next(1)">Next</button>
+            <button id="nextBtn" class="Next nextButtonform wizard-btn-next" onclick="next(1); printDivs()">Proceed to next traveller details</button>
             <button id="prevBtn" class="Cancel" onclick="next(-1)">Cancel</button>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-
-
-
- <script>
+<script>
     var currentTab = 0;
     showTab(currentTab);
 
@@ -339,12 +394,7 @@
 
         x[n].className += " active";
     }
-
-
-
-    </script>
-
-
- <?php $__env->stopSection(); ?>
+</script>
+<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Flight/Views/frontend/visa-apply-page.blade.php ENDPATH**/ ?>

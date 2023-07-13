@@ -25,7 +25,7 @@
     <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{ asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('libs/fotorama/fotorama.css') }}" />
-{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="{{ asset('libs/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
@@ -75,8 +75,6 @@
         {!! setting_item('footer_scripts') !!}
         {!! setting_item_with_lang_raw('footer_scripts') !!}
     @endif
-    @yield('script')
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
@@ -123,13 +121,13 @@
     var childSelect = document.getElementById("childSelect");
     var childCount = parseInt(childSelect.value);
 
-    // var nextButton = document.querySelector('.wizard-btn-next');
+    var nextButton = document.querySelector('.wizard-btn-next');
 
-    // if (adultCount > 0 || childCount > 0) {
-    //   nextButton.style.display = 'block';
-    // } else {
-    //   nextButton.style.display = 'none';
-    // }
+    if (adultCount > 0 || childCount > 0) {
+      nextButton.style.display = 'block';
+    } else {
+      nextButton.style.display = 'none';
+    }
   }
 
   // Call validateForm() whenever there is a change in any of the form fields
@@ -141,66 +139,66 @@
 </script>
 
 
-  <script>
 
-function printDivs() {
-  var select = document.getElementById("rangeSelect");
-  var adultSelect = document.getElementById("rangeSelect");
-  var adultCount = parseInt(adultSelect.value);
 
-  var childSelect = document.getElementById("childSelect");
-  var childCount = parseInt(childSelect.value);
+  
+{{-- <script>
+  function printDivs() {
+    var select = document.getElementById("rangeSelect");
+    var adultSelect = document.getElementById("rangeSelect");
+    var adultCount = parseInt(adultSelect.value);
 
-  var totalCount = adultCount + childCount;
+    var childSelect = document.getElementById("childSelect");
+    var childCount = parseInt(childSelect.value);
 
-  var divContainer = document.getElementById("divContainer");
-  divContainer.innerHTML = ""; // Clear the container before adding new divs
+    var totalCount = adultCount + childCount;
 
-  for (var i = 1; i <= totalCount; i++) {
-    var travelerType = i <= adultCount ? "Adult" : "Child"; // Determine the traveler type based on the count
+    var divContainer = document.getElementById("divContainer");
+    divContainer.innerHTML = ""; // Clear the container before adding new divs
 
-    var div = document.createElement("div");
-    div.innerHTML = `
-      <div class="h4">${travelerType} traveller ${i}</div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="firstname[]" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
+   
+    var currentTraveler = 1; // Track the current traveler
+
+    alert( currentTraveler)
+
+    for (var i = 1; i <= totalCount; i++) {
+      var travelerType = i <= adultCount ? "Adult" : "Child"; // Determine the traveler type based on the count
+
+      var div = document.createElement("div");
+      div.innerHTML = `
+        <div class="h5 py-3">${travelerType} traveller ${i}</div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="firstname[]" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="lastname[]" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
+            </div>
           </div>
         </div>
 
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="lastname[]" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="date" class="form-control" name="dob[]" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
+            </div>
           </div>
-        </div>
-          
 
-      </div>
-
-
-      <div class="row">
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="dob[]" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" class="form-control" name="email[]" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
+            </div>
           </div>
         </div>
 
+        <div class="row">
         <div class="col-md-6">
-          <div class="form-group">
-            <input type="email" class="form-control" name="email[]" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="row">
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="number" class="form-control" name="contact[]" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
+          <div class="form-group"> 
+           <input type="number" class="form-control" name="contact[]" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
           </div>
         </div>
 
@@ -209,12 +207,8 @@ function printDivs() {
             <input type="number" class="form-control" name="alternate_number[]" id="alternate${i}" aria-describedby="emailHelp" placeholder="Alternate Number">
           </div>
         </div>
-
        </div>
-
-
       <div class="row">
-
        <div class="col-md-6">
           <div class="form-group">
             <input type="number" class="form-control" name="passportnumber[]" id="passportNumber${i}" aria-describedby="emailHelp" placeholder="Passport Number">
@@ -237,15 +231,15 @@ function printDivs() {
         </div>
        
        <div class="col-md-6">
-          <div class="form-group">
+          <div class="form-group uploadinput">
             <input type="file" name="passport_first_page[]" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
              <input type="text" class="form-control showFileInput" placeholder="Passport first page Photo" >
-             <img src = {{asset('/images/btn.svg')}} class="imageClass">
+             <img src ={{asset('/images/btn.svg')}} class="imageClass">
           </div>
          </div>
         </div>
 
-   <div class="row">
+   <div class="row inputfolter">
      <div class="col-md-6">
       <div class="form-group">
       <input type="file" class="custom-file-input" name="passport_second_page[]" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
@@ -258,7 +252,163 @@ function printDivs() {
      <div class="form-group">
       <input type="file" class="custom-file-input" name="passport_size_photo[]" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
        <input type="text" class="form-control showFileInput" placeholder="Passport Size Photo" >
-         <img src = {{asset('/images/btn.svg')}} class="imageClass">
+       <img src =  {{asset('/images/btn.svg')}} class="imageClass">
+      
+    </div>
+    </div>
+    </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button type="button" class="btn btn-primary next-btn">Next</button>
+          </div>
+        </div>`;
+
+      if (i > 1) {
+        div.style.display = "none"; // Hide the form for traveler 2 onwards
+      }
+
+      divContainer.appendChild(div);
+
+      // Add event listener to the next button
+      var nextBtn = div.querySelector('.next-btn');
+      nextBtn.addEventListener('click', function() {
+        
+        if (currentTraveler === i) {
+          if (isFormFilled(div.previousElementSibling)) {
+            var nextDiv = div.nextElementSibling;
+            if (nextDiv) {
+              nextDiv.style.display = "block"; // Show the next traveler's form
+              nextDiv.scrollIntoView({ behavior: 'smooth' });
+              currentTraveler++; // Move to the next traveler
+            }
+          } else {
+            alert("Please fill all fields for the current traveler before proceeding.");
+          }
+        } else {
+          alert("Please fill the form for the previous traveler first.");
+        }
+      });
+    }
+  }
+
+  function isFormFilled(formDiv) {
+    var inputs = formDiv.querySelectorAll('input');
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].value === '') {
+        return false;
+      }
+    }
+    return true;
+  }
+</script> --}}  
+<script>
+
+function printDivs() {
+  var select = document.getElementById("rangeSelect");
+  var adultSelect = document.getElementById("rangeSelect");
+  var adultCount = parseInt(adultSelect.value);
+
+  var childSelect = document.getElementById("childSelect");
+  var childCount = parseInt(childSelect.value);
+
+  var totalCount = adultCount + childCount;
+
+  var divContainer = document.getElementById("divContainer");
+  divContainer.innerHTML = ""; // Clear the container before adding new divs
+
+  for (var i = 1; i <= totalCount; i++) {
+    var travelerType = i <= adultCount ? "Adult" : "Child"; // Determine the traveler type based on the count
+
+    var div = document.createElement("div");
+    div.innerHTML = `
+      <div class="h5 py-3">${travelerType} traveller ${i}</div>
+      <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="firstname[]" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="lastname[]" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="date" class="form-control" name="dob[]" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" class="form-control" name="email[]" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-6">
+          <div class="form-group"> 
+           <input type="number" class="form-control" name="contact[]" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" name="alternate_number[]" id="alternate${i}" aria-describedby="emailHelp" placeholder="Alternate Number">
+          </div>
+        </div>
+       </div>
+      <div class="row">
+       <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" name="passportnumber[]" id="passportNumber${i}" aria-describedby="emailHelp" placeholder="Passport Number">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control passportExpiryDate" name="passport_expiry[]" id="passportExpiryDate${i}" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
+          </div>
+        </div>
+       
+      </div>
+          <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" name="place_issues[]" id="placeOfIssue${i}" aria-describedby="emailHelp" placeholder="Place of Issue">
+          </div>
+        </div>
+       
+       <div class="col-md-6">
+          <div class="form-group uploadinput">
+            <input type="file" name="passport_first_page[]" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
+             <input type="text" class="form-control showFileInput" placeholder="Passport first page Photo" >
+             <img src ={{asset('images/btn.svg')}} class="imageClass">
+          </div>
+         </div>
+        </div>
+
+   <div class="row inputfolter">
+     <div class="col-md-6">
+      <div class="form-group">
+      <input type="file" class="custom-file-input" name="passport_second_page[]" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
+    <input type="text" class="form-control showFileInput" placeholder="Passport second page Photo" >
+    <img src = {{asset('images/btn.svg')}} class="imageClass">
+     
+    </div>
+    </div>
+    <div class="col-md-6">
+     <div class="form-group">
+      <input type="file" class="custom-file-input" name="passport_size_photo[]" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
+       <input type="text" class="form-control showFileInput" placeholder="Passport Size Photo" >
+       <img src =  {{asset('images/btn.svg')}} class="imageClass">
       
     </div>
     </div>
@@ -289,7 +439,16 @@ function printDivs() {
 
   </script>
 
-  {{-- <script>
+
+
+
+
+
+
+
+
+
+  <script>
   function handleFileInputChange(event, inputId) {
     var input = event.target;
     var fileName = input.files[0].name;
@@ -297,12 +456,12 @@ function printDivs() {
     var inputText = input.parentNode.querySelector('input[type="text"]');
     inputText.value = fileName;
   }
-</script> --}}
+</script>
 
 
-{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src=https://www.gov.br/ds/assets/govbr-ds-dev-core/dist/core-init.js></script> --}}
-{{-- <script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src=https://www.gov.br/ds/assets/govbr-ds-dev-core/dist/core-init.js></script>
+<script>
   var acc = document.getElementsByClassName("accordion");
   var i;
 
@@ -317,39 +476,39 @@ function printDivs() {
       }
     });
   }
-</script> --}}
+</script>
 <script>
 // JavaScript/jQuery
 // JavaScript/jQuery
-// $(document).ready(function() {
-//   // Listen for changes in the number of travelers (adults) dropdown
-//   $('#number-of-travellers').change(function() {
-//     var numberOfTravelers = parseInt($(this).val());
+$(document).ready(function() {
+  // Listen for changes in the number of travelers (adults) dropdown
+  $('#number-of-travellers').change(function() {
+    var numberOfTravelers = parseInt($(this).val());
 
-//     // Clear existing traveler forms
-//     $('#traveller-details-container').empty();
+    // Clear existing traveler forms
+    $('#traveller-details-container').empty();
 
-//     // Generate traveler forms for each traveler
-//     for (var i = 1; i <= numberOfTravelers; i++) {
-//       // Clone the userRegisterForm
-//       var userRegisterFormClone = $('#userRegisterForm').clone();
+    // Generate traveler forms for each traveler
+    for (var i = 1; i <= numberOfTravelers; i++) {
+      // Clone the userRegisterForm
+      var userRegisterFormClone = $('#userRegisterForm').clone();
 
-//       // Update the ID of the cloned form to avoid duplication
-//       userRegisterFormClone.attr('id', 'userRegisterForm-' + i);
+      // Update the ID of the cloned form to avoid duplication
+      userRegisterFormClone.attr('id', 'userRegisterForm-' + i);
 
-//       // Update the traveler number in the header
-//       userRegisterFormClone.find('.h4').text('Traveler ' + i);
+      // Update the traveler number in the header
+      userRegisterFormClone.find('.h4').text('Traveler ' + i);
 
-//       // Append the cloned form to the container
-//       $('#traveller-details-container').append(userRegisterFormClone);
-//     }
-//   });
-// });
+      // Append the cloned form to the container
+      $('#traveller-details-container').append(userRegisterFormClone);
+    }
+  });
+});
 
 
 </script>
 
-    {{-- <script>
+    <script>
         $(document).ready(function() {
             $('#travelDateInput').datepicker({
                 format: 'dd/mm/yyyy',
@@ -363,7 +522,13 @@ function printDivs() {
 
 
 
-    </script> --}}
+
+  
+
+
+
+
+    </script>
 
 </body>
 </html>
