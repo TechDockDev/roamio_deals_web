@@ -235,119 +235,132 @@ position: relative;
                 </div>
             </div>
         </div>
-        
-        <div id="cardBody" class="card-body">
-            <div class="tabs w-100">
-                <form action="<?php echo e(url('visa_booking')); ?>" enctype="multipart/form-data" method="post">
-                    <?php echo csrf_field(); ?>
-                <div id="first" class="tab">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <select id="nationalitySelect" name="nationality" class="form-control" required>
-                                    <option>--Nationality--</option>
-                                    <option>India</option>
-                                    <option>Bangladesh</option>
-                                    <option>Sri Lanka</option>
-                                    <option>Malaysia</option>
-                                    <option>Singapore</option>
-                                    <option>Uzbekistan</option>
-                                    <option>Afghanistan</option>
-                                    <option>Phillipines</option>
-                                    <option>Bankok</option>
-                                    <option>Britain</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="traveldate" class="form-control" id="travelDateInput" aria-describedby="emailHelp" placeholder="Travel Dates" pattern="\d{2}/\d{2}/\d{4}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <select id="rangeSelect" name="adult" class="form-control" required>
-                                    <option>--Number of Travelers (Adults)--</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <select id="childSelect" name="child" class="form-control" required>
-                                    <option>--Number of Travelers (Children)--</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="second" class="tab">
-                   
-                    <?php $__currentLoopData = $visadata; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $visa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                   <input type="hidden" style="height: 20px; width: 20px; order: 1;" id="check<?php echo e($visa->id); ?>" name="entry_id" value="<?php echo e($visa->id); ?>">
-                   <button type="button" class="accordion"><?php echo e($visa->entry); ?></button>
-                 <div class="panel" style="display: flex; flex-direction: column;">
-                  <div class="container" style="margin-top:10px; margin-bottom:10px;">
-                 <div class="row">
-                <?php $__currentLoopData = $visa->visa_entry_details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="col-4">
-                        <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
-                            <div style="padding:10px;">
-                                <div style="display: flex; justify-content: flex-end;">
-                                    <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1; " id="check<?php echo e($item->id); ?>" name="entry_detail_id" value="<?php echo e($item->id); ?>">
+       
+        <form action="<?php echo e(url('visa-booking')); ?>" enctype="multipart/form-data" id="bookingvisha" method="post">
+            <?php echo csrf_field(); ?>
+            <div id="cardBody" class="card-body">
+                <div class="tabs w-100">
+                    <div id="first" class="tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="nationalitySelect" name="nationality" class="form-control" required>
+                                        <option>--Nationality--</option>
+                                        <option>India</option>
+                                        <option>Bangladesh</option>
+                                        <option>Sri Lanka</option>
+                                        <option>Malaysia</option>
+                                        <option>Singapore</option>
+                                        <option>Uzbekistan</option>
+                                        <option>Afghanistan</option>
+                                        <option>Phillipines</option>
+                                        <option>Bankok</option>
+                                        <option>Britain</option>
+                                    </select>
                                 </div>
-                                <h5><?php echo e($item->days); ?></h5>
-                                <h6><?php echo e($item->title); ?></h6>
-                                <p><?php echo $item->discription; ?></p>
-                                <h4><?php echo e($item->price); ?></h4>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="traveldate" class="form-control" id="travelDateInput" aria-describedby="emailHelp" placeholder="Travel Dates" pattern="\d{2}/\d{2}/\d{4}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="rangeSelect" name="adult" class="form-control" required>
+                                        <option>--Number of Travelers (Adults)--</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select id="childSelect" name="child" class="form-control" required>
+                                        <option>--Number of Travelers (Children)--</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div>
-        </div>
-         </div>
-           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <div id="second" class="tab">
+                        <?php $__currentLoopData = $visadata; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $visa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-                </div>
-                <div id="third" class="tab">
-                 
-                    <div class="row" id="userRegisterForm">
-                        <div id="divContainer"></div>
+                     
+
+                            <input type="hidden" style="height: 20px; width: 20px; order: 1;" id="check<?php echo e($visa->id); ?>" name="entry_id" value="<?php echo e($visa->id); ?>">
+                           
+                            <button type="button" class="accordion"><?php echo e($visa->entry); ?></button>
+                            <div class="panel" style="display: flex; flex-direction: column;">
+                                <div class="container" style="margin-top:10px; margin-bottom:10px;">
+                                    <div class="row">
+                                        <?php if($visa->visa_entry_details && count($visa->visa_entry_details) > 0): ?>
+                                        
+                                            <?php $__currentLoopData = $visa->visa_entry_details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <div class="col-4">
+                                                    <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
+                                                        <div style="padding:10px;">
+
+                                                            <div style="display: flex; justify-content: flex-end;">
+                                                                <input type="hidden" name="entry_id"  value="<?php echo e($item->entry_id); ?>">
+                                                                <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1; " id="check<?php echo e($item->id); ?>" name="entry_detail_id" value="<?php echo e($item->id); ?>">
+                                                            </div>
+                                                            <h5><?php echo e($item->days); ?></h5>
+                                                            <h6><?php echo e($item->title); ?></h6>
+                                                            <p><?php echo $item->discription; ?></p>
+                                                            <h4><?php echo e($item->price); ?></h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php else: ?>
+                                            <p>No visa entry details available for this visa.</p>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                    <div id="third" class="tab">
+                        <div class="row" id="userRegisterForm">
+                            <div id="divContainer"></div>
+                        </div>
                     </div>
                 </div>
-                </form>
             </div>
-        </div>
-        <div class="card-footer">
-            <button id="nextBtn" class="Next nextButtonform wizard-btn-next" onclick="next(1); printDivs()">Proceed to next traveller details</button>
-            <button id="prevBtn" class="Cancel" onclick="next(-1)">Cancel</button>
-        </div>
+            <div class="card-footer">
+                <button id="nextBtn" type="button" class="Next nextButtonform wizard-btn-next" onclick="next(1); printDivs()">Proceed to next traveler details</button>
+                <button id="prevBtn" type="button"  class="Cancel" onclick="next(-1)">Cancel</button>
+            </div>
+        </form>
+        
+
     </div>
 </div>
+
+
+
 
 <script>
     var currentTab = 0;
@@ -365,8 +378,10 @@ position: relative;
 
         if (n == (x.length - 1)) {
             document.getElementById("nextBtn").innerHTML = "Submit";
+            document.getElementById("nextBtn").setAttribute("type", "button"); // Change button type to button
         } else {
             document.getElementById("nextBtn").innerHTML = "Next";
+            document.getElementById("nextBtn").setAttribute("type", "button"); // Change button type to button
         }
 
         fixStepIndicator(n);
@@ -379,6 +394,7 @@ position: relative;
         currentTab = currentTab + n;
 
         if (currentTab >= x.length) {
+            submitForm(); // Call function to submit the form
             return false;
         }
 
@@ -394,7 +410,37 @@ position: relative;
 
         x[n].className += " active";
     }
+
+    function submitForm() {
+        // Submit the form using JavaScript or jQuery AJAX
+        var form = document.getElementById("bookingvisha");
+        var formData = new FormData(form);
+
+        // Perform AJAX request to submit the form
+        var xhr = new XMLHttpRequest();
+        xhr.open(form.method, form.action);
+        xhr.onreadystatechange = function () {
+
+         
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                // Form submitted successfully
+                sendSMS("Form data saved successfully!");
+
+                window.location.href = '/confirm-visa';
+            } else {
+                // Handle form submission error
+                console.log("Form submission failed");
+            }
+        };
+        xhr.send(formData);
+    }
+
+    function sendSMS(message) {
+        // Display an alert with the successful save message
+        alert("SMS: " + message);
+    }
 </script>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Flight/Views/frontend/visa-apply-page.blade.php ENDPATH**/ ?>

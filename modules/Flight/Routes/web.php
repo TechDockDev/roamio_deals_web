@@ -32,7 +32,7 @@ Route::group(['prefix'=>'user/'.config('flight.flight_route_prefix'),'middleware
     });
 });
 
-Route::post('/visa_booking','FlightController@visasubmit');
+Route::post('/visa-booking','FlightController@visasubmit');
 
 Route::get('visa-page',"FlightController@Vish");
 
