@@ -60,6 +60,13 @@
 
     <?php endif; ?>
 </head>
+
+<style>
+.main-footer{
+  background-image: url('images/footer-img1.png');
+}
+
+</style>
 <body class="frontend-page <?php echo e(!empty($row->header_style) ? "header-".$row->header_style : "header-normal"); ?> <?php echo e($body_class ?? ''); ?> <?php if(setting_item_with_lang('enable_rtl')): ?> is-rtl <?php endif; ?> <?php if(is_api()): ?> is_api <?php endif; ?>">
     <?php if(!is_demo_mode()): ?>
         <?php echo setting_item('body_scripts'); ?>
