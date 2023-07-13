@@ -91,9 +91,9 @@ text-decoration: line-through;
                     <p>
                         <div class="container">
                             <button data-decrease class="inbtn">-</button>
-                            <input data-value type="text" value="1" disabled style="width: 21px; border:none;">
+                            <input  data-value type="text" value="0" disabled style="width: 21px; border:none;">
                             <button data-increase class="inbtn">+</button>
-                            <small>Number of Room</small>
+                            <small>Quantity</small>
                         </div>
                     </p>
                 </div>
@@ -121,11 +121,16 @@ text-decoration: line-through;
 });
 
 function decrease() {
-	var value = $(this).parent().find('[data-value]').val();
-	if(value > 1) {
-		value--;
-		$(this).parent().find('[data-value]').val(value);
-	}
+  var value = $(this).parent().find('[data-value]');
+  var currentValue = parseInt(value.val());
+
+  if (currentValue > 1) {
+    currentValue--;
+  } else {
+    currentValue = 0;
+  }
+
+  value.val(currentValue);
 }
 
 function increase() {
@@ -139,7 +144,7 @@ function increase() {
 function valueChange() {
 	var value = $(this).val();
 	if(value == undefined || isNaN(value) == true || value <= 0) {
-		$(this).val(1);
+		$(this).val(0);
 	} else if(value >= 101) {
 		$(this).val(100);
 	}

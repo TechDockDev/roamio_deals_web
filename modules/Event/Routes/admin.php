@@ -37,7 +37,13 @@ Route::group(['prefix'=>'attribute'],function (){
 });
 
 Route::group(['prefix'=>'availability'],function(){
+
+    Route::get('{activity_id}/activity','AvailabilityController@packagepage');
     Route::get('/','AvailabilityController@index')->name('event.admin.availability.index');
     Route::get('/loadDates','AvailabilityController@loadDates')->name('event.admin.availability.loadDates');
     Route::post('/store','AvailabilityController@store')->name('event.admin.availability.store');
+
+     Route::post('/storePackage','AvailabilityController@packagestore');
+
+
 });

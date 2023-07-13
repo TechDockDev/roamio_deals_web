@@ -12,9 +12,14 @@
                         </p>
                     @endif
                 </div>
+
+
                 <div class="">
                     @if($row->slug)
                         <a class="btn btn-primary btn-sm" href="{{$row->getDetailUrl(request()->query('lang'))}}" target="_blank">{{__("View Activities")}}</a>
+                        &nbsp;
+          <a class="btn btn-primary btn-sm" style="background: #e2880ceb;" href="{{ url('admin/module/event/availability/' . $row->id . '/activity') }}" target="_blank">{{ __("View Packages") }}</a>
+
                     @endif
                 </div>
             </div>
