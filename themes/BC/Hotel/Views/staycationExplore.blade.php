@@ -488,22 +488,181 @@ p {
     text-align: center;
     font-size: 22px;
 }
+
+.class{
+
+   color: red !important;
+
+     }
+
    
 
 </style>
+
   <center><h3  class="title" style="margin-top: 43px;">Explore UAE <span style="color: #FE9000;">Staycation</span></h3>
   
       <div class="title">
            {{-- <img src = "{{asset('uploads/0000/1/2023/07/04/banner.jpg')}}"> --}}
         </div>
         </center>
+
+
+
+    
   
- 
+           
   
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6">
-                    <h4 class="title" style="margin-top: 43px;">Best Deals On Staycation</h4>
+                    <h4 class="title" style="margin-top: 43px;">Best Deal On Staycation</h4>
+                </div>
+                <div class="col-md-6">
+                    <a href="#" style="float: right; margin-top: 28px;"><h5>View All</h5></a>
+                </div>
+            </div>
+        
+            <div class="row">
+                @foreach ($bestDeal['hotels'] as $hotelx)
+                    <div class="col-md-4">
+                        <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
+                            <div class="Daily-Deals1" style="position: relative;">
+                                <a href="{{ url('/hotel/' . $hotelx->slug) }}"><img src="{{$hotelx->banner_image}}" style="height:200px; width:100%; border-radius: 10px;"></a>
+                                  <input type ="text" class="objectidgetclass{{$hotelx->id}}" style="display:none;" name="object_id" value="{{$hotelx->id}}">
+                                 <input type ="text" class="objectmodalgetclass{{$hotelx->id}}" style="display:none;" name="object_model" value="hotel">
+
+                                 <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotelx->id}} hotelwishlistaddingheart <?php if ($hotelx->wishlist== true) {
+                  echo "class";
+                }   ?>" attr="{{$hotelx->id}}" style="position: absolute;
+                top: 10px;
+                right: 10px;
+                color: white;
+                text-shadow: 1px 1px 27px black;
+                /* float: right; */
+                left: 270px;
+                height: 30px;
+                width: 30px;
+                background: white;
+                padding: 6px 6px;
+                border-radius:30px;
+            "></span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $hotelx->title }}</h5>
+                                <p class="card-text">
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>  {{$hotelx->address }}</span>
+                                </p>
+                                <p>
+                                    <span class="btn btn-light Daily-btn">{{$hotelx->star_rate }} <i class="fa fa-star"></i></span>
+                                    (4)
+                                    <span> Excellent </span>
+                                </p>
+                                <p>
+                                    <span style="font-size:25px; color:black;">{{ $hotelx->price }}</span>
+                                    <span style="font-size:25px;"> AED </span>
+                                    <span class="btn btn-light Daily-btn">{{ $hotelx->discount_percent }}% OFF</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+ <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="title" style="margin-top: 43px;">Budget Staycation</h4>
+                </div>
+                <div class="col-md-6">
+                    <a href="#" style="float: right; margin-top: 28px;"><h5>View All</h5></a>
+                </div>
+            </div>
+        
+            <div class="row">
+                @foreach ($budget['hotels'] as $hotelx)
+                    <div class="col-md-4">
+                        <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
+                            <div class="Daily-Deals1" style="position: relative;">
+                                <a href="{{ url('/hotel/' . $hotelx->slug) }}"><img src="{{$hotelx->banner_image}}" style="height:200px; width:100%; border-radius: 10px;"></a>
+                                <input type ="text" class="objectidgetclass{{$hotelx->id}}" style="display:none;" name="object_id" value="{{$hotelx->id}}">
+                                 <input type ="text" class="objectmodalgetclass{{$hotelx->id}}" style="display:none;" name="object_model" value="hotel">
+
+                                 <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotelx->id}} hotelwishlistaddingheart <?php if ($hotelx->wishlist== true) {
+                  echo "class";
+                }   ?>" attr="{{$hotelx->id}}" style="position: absolute;
+                top: 10px;
+                right: 10px;
+                color: white;
+                text-shadow: 1px 1px 27px black;
+                /* float: right; */
+                left: 270px;
+                height: 30px;
+                width: 30px;
+                background: white;
+                padding: 6px 6px;
+                border-radius:30px;
+            "></span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $hotelx->title }}</h5>
+                                <p class="card-text">
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i>  {{$hotelx->address }}</span>
+                                </p>
+                                <p>
+                                    <span class="btn btn-light Daily-btn">{{$hotelx->star_rate }} <i class="fa fa-star"></i></span>
+                                    (4)
+                                    <span> Excellent </span>
+                                </p>
+                                <p>
+                                    <span style="font-size:25px; color:black;">{{ $hotelx->price }}</span>
+                                    <span style="font-size:25px;"> AED </span>
+                                    <span class="btn btn-light Daily-btn">{{ $hotelx->discount_percent }}% OFF</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        
+
+
+
+<div class="container">
+    <div class="row">
+        <h4  class="title">Explore the Staycation around UAE</h4>
+    </div>
+    <div class="row">  
+        <div id="filtering">
+     <button class="bttn active" onclick="geeksportal('all')">Dubai</button>
+            <button class="bttn" onclick="geeksportal('Top Trending In Dubai')">Fujairah</button>
+            <button class="bttn" onclick="geeksportal('Top Discount')">Ajman</button>
+            <button class="bttn" onclick="geeksportal('Top Rated')">Umm Al quwain</button>
+            <button class="bttn" onclick="geeksportal('Top Selling')">Sharjah</button>
+            <button class="bttn" onclick="geeksportal('Top Rated')">Abu Dhabi</button>
+            <button class="bttn" onclick="geeksportal('Top Selling')">Ras al khaimah</button>
+
+
+        </div>
+    </div>
+
+  
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="title" style="margin-top: 43px;">Explore</h4>
                 </div>
                 <div class="col-md-6">
                     <a href="#" style="float: right; margin-top: 28px;"><h5>View All</h5></a>
@@ -516,18 +675,24 @@ p {
                         <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
                             <div class="Daily-Deals1" style="position: relative;">
                                 <a href="{{ url('/hotel/' . $hotel->slug) }}"><img src="{{ $hotel->bannerImage }}" style="height:200px; width:100%; border-radius: 10px;"></a>
-                                <span class="fa fa-heart fa-3x fass" style="position: absolute;
-                                    top: 10px;
-                                    right: 10px;
-                                    color: white;
-                                    text-shadow: 1px 1px 2px black;
-                                    left: 270px;
-                                    height: 30px;
-                                    width: 30px;
-                                    background: white;
-                                    padding: 6px 6px;
-                                    border-radius:30px;
-                                "></span>
+                                <input type ="text" class="objectidgetclass{{$hotel->id}}" style="display:none;" name="object_id" value="{{$hotelx->id}}">
+                                 <input type ="text" class="objectmodalgetclass{{$hotel->id}}" style="display:none;" name="object_model" value="hotel">
+
+                                 <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
+                  echo "class";
+                }   ?>" attr="{{$hotel->id}}" style="position: absolute;
+                top: 10px;
+                right: 10px;
+                color: white;
+                text-shadow: 1px 1px 27px black;
+                /* float: right; */
+                left: 270px;
+                height: 30px;
+                width: 30px;
+                background: white;
+                padding: 6px 6px;
+                border-radius:30px;
+            "></span>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $hotel->title }}</h5>
@@ -550,482 +715,7 @@ p {
                 @endforeach
             </div>
         </div>
-        
-
-
-
-
-<div class="container">
-    <div class="bravo-list-hotel layout_normal">
-                <div class="title">
-            StayCation
-        </div>
-        
-         <a href="" style="top: -32px;
-    position: relative;
-    left: -111px;
-    float: right;"><h5>View All</h5></a>
-    
-            <div class="sub-title">
-                Hotel highly rated for thoughtful design
-            </div>
-                <div class="list-item">
-                            <div class="row">
-                                            <div class="col-lg-3 col-md-6">
-                            <style>
-    .Daily-btn {
-    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
-    color: white;
-    padding: 4px 4px;
-}
-</style>
-
-
-
-<div class="item-loop ">
-        <div class="thumb-image ">
-        <a href="https://roamiogit.techdocklabs.com/hotel/hotel-roamio-khan">        
-                    
-                    <img src="https://roamiogit.techdocklabs.com/uploads/0000/1/2023/05/15/316127300.jpg" class="img-responsive" alt="">
-        </a>
-                <div class="service-wishlist " data-id="12" data-type="hotel">
-            <i class="fa fa-heart"></i>
-        </div>
-    </div>
-    <div class="item-title">
-        <a href="https://roamiogit.techdocklabs.com/hotel/hotel-roamio-khan">
-                            Hotel Roamio Khan
-        </a>
-            </div>
-    <div class="location">
-                                Ras al khaimah
-            </div>
-            <div class="service-review">
-        <span class="rate">
-             2.3/5  <span class="rate-text">Poor</span>
-        </span>
-        <span class="review">
-                             3 Reviews
-                    </span>
-    </div>
-        <div class="info">
-        <div class="g-price">
-            <div class="prefix">
-                <span class="fr_text">from</span>
-            </div>
-            <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">$340 <span class="unit  text-white">/night</span></span>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                                            <div class="col-lg-3 col-md-6">
-                            <style>
-    .Daily-btn {
-    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
-    color: white;
-    padding: 4px 4px;
-}
-</style>
-
-
-
-<div class="item-loop ">
-        <div class="thumb-image ">
-        <a href="https://roamiogit.techdocklabs.com/hotel/hyatt-centric-victoria">
-            
-                    <img src="https://roamiogit.techdocklabs.com/uploads/demo/space/space-3.jpg" class="img-responsive" alt="">
-                 
-                         
-        </a>
-                <div class="service-wishlist " data-id="14" data-type="hotel">
-            <i class="fa fa-heart"></i>
-        </div>
-    </div>
-    <div class="item-title">
-        <a href="https://roamiogit.techdocklabs.com/hotel/hyatt-centric-victoria">
-                            Hyatt Centric Victoria 
-        </a>
-            </div>
-    <div class="location">
-                                Sharjah
-            </div>
-            <div class="service-review">
-        <span class="rate">
-             1.5/5  <span class="rate-text">Poor</span>
-        </span>
-        <span class="review">
-                             2 Reviews
-                    </span>
-    </div>
-        <div class="info">
-        <div class="g-price">
-            <div class="prefix">
-                <span class="fr_text">from</span>
-            </div>
-            <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">$599 <span class="unit  text-white">/night</span></span>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                                            <div class="col-lg-3 col-md-6">
-                            <style>
-    .Daily-btn {
-    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
-    color: white;
-    padding: 4px 4px;
-}
-</style>
-
-
-
-<div class="item-loop ">
-        <div class="thumb-image ">
-        <a href="https://roamiogit.techdocklabs.com/hotel/jitendra-hotel">
-            
-                    <img src="https://roamiogit.techdocklabs.com/uploads/0000/1/2023/05/15/images.jpg" class="img-responsive" alt="">
-                 
-                         
-        </a>
-                <div class="service-wishlist " data-id="17" data-type="hotel">
-            <i class="fa fa-heart"></i>
-        </div>
-    </div>
-    <div class="item-title">
-        <a href="https://roamiogit.techdocklabs.com/hotel/jitendra-hotel">
-                            Jitendra Hotel
-        </a>
-            </div>
-    <div class="location">
-                                Dubai
-            </div>
-            <div class="service-review">
-        <span class="rate">
-             1.5/5  <span class="rate-text">Poor</span>
-        </span>
-        <span class="review">
-                             4 Reviews
-                    </span>
-    </div>
-        <div class="info">
-        <div class="g-price">
-            <div class="prefix">
-                <span class="fr_text">from</span>
-            </div>
-            <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">$420 <span class="unit  text-white">/night</span></span>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                                            <div class="col-lg-3 col-md-6">
-                            <style>
-    .Daily-btn {
-    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
-    color: white;
-    padding: 4px 4px;
-}
-</style>
-
-
-
-<div class="item-loop ">
-        <div class="thumb-image ">
-        <a href="https://roamiogit.techdocklabs.com/hotel/sierra-hotel">
-        
-                    
-                    <img src="https://roamiogit.techdocklabs.com/uploads/0000/1/2023/05/19/life-resort-hotel-resort-hotel-wallpaper-preview.jpeg" class="img-responsive" alt="">
-                 
-                         
-        </a>
-                <div class="service-wishlist " data-id="19" data-type="hotel">
-            <i class="fa fa-heart"></i>
-        </div>
-    </div>
-    <div class="item-title">
-        <a href="https://roamiogit.techdocklabs.com/hotel/sierra-hotel">
-                            Sierra Hotel
-        </a>
-            </div>
-    <div class="location">
-                                Dubai
-            </div>
-            <div class="service-review">
-        <span class="rate">
-             0.0/5  <span class="rate-text">Terrible</span>
-        </span>
-        <span class="review">
-                             2 Reviews
-                    </span>
-    </div>
-        <div class="info">
-        <div class="g-price">
-            <div class="prefix">
-                <span class="fr_text">from</span>
-            </div>
-            <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">$650 <span class="unit  text-white">/night</span></span>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                                    </div>
-                                </div>
-    </div>
-</div>
-
-
-
-
-<div class="container">
-    <div class="row">
-        <h4  class="title">Explore the Staycation around UAE</h4>
-    </div>
-    <div class="row">  
-        <div id="filtering">
-     <button class="bttn active" onclick="geeksportal('all')">Dubai</button>
-            <button class="bttn" onclick="geeksportal('Top Trending In Dubai')">Fujairah</button>
-            <button class="bttn" onclick="geeksportal('Top Discount')">Ajman</button>
-            <button class="bttn" onclick="geeksportal('Top Rated')">Umm Al quwain</button>
-            <button class="bttn" onclick="geeksportal('Top Selling')">Sharjah</button>
-            <button class="bttn" onclick="geeksportal('Top Rated')">Abu Dhabi</button>
-            <button class="bttn" onclick="geeksportal('Top Selling')">Ras al khaimah</button>
-
-
-        </div>
-    </div>
-
-   
-    
-       
-    
-<div class="container">
-    <div class="bravo-list-hotel layout_normal">
-                <div class="title">
-          Top Rated  StayCation
-        </div>
-         <a href="" style="top: -32px;
-    position: relative;
-    left: -111px;
-    float: right;"><h5>View All</h5></a>
-            <div class="sub-title">
-                Hotel highly rated for thoughtful design
-            </div>
-                <div class="list-item">
-                            <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                            <style>
-    .Daily-btn {
-    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
-    color: white;
-    padding: 4px 4px;
-}
-</style>
-
-
-
-<div class="item-loop ">
-        <div class="thumb-image ">
-        <a href="https://roamiogit.techdocklabs.com/hotel/hotel-roamio-khan">        
-                    
-                    <img src="https://roamiogit.techdocklabs.com/uploads/0000/1/2023/05/15/316127300.jpg" class="img-responsive" alt="">
-        </a>
-                <div class="service-wishlist " data-id="12" data-type="hotel">
-            <i class="fa fa-heart"></i>
-        </div>
-    </div>
-    <div class="item-title">
-        <a href="https://roamiogit.techdocklabs.com/hotel/hotel-roamio-khan">
-                            Hotel Roamio Khan
-        </a>
-            </div>
-    <div class="location">
-                                Ras al khaimah
-            </div>
-            <div class="service-review">
-        <span class="rate">
-             2.3/5  <span class="rate-text">Poor</span>
-        </span>
-        <span class="review">
-                             3 Reviews
-                    </span>
-    </div>
-        <div class="info">
-        <div class="g-price">
-            <div class="prefix">
-                <span class="fr_text">from</span>
-            </div>
-            <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">$340 <span class="unit  text-white">/night</span></span>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                                            <div class="col-lg-3 col-md-6">
-                            <style>
-    .Daily-btn {
-    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
-    color: white;
-    padding: 4px 4px;
-}
-</style>
-
-
-
-<div class="item-loop ">
-        <div class="thumb-image ">
-        <a href="{{url('hotel/hyatt-centric-victoria')}}">
-            
-                    
-                    <img src="{{asset('uploads/demo/space/space-3.jpg')}}" class="img-responsive" alt="">
-                 
-                         
-        </a>
-                <div class="service-wishlist " data-id="14" data-type="hotel">
-            <i class="fa fa-heart"></i>
-        </div>
-    </div>
-    <div class="item-title">
-        <a href="{{url('hotel/hyatt-centric-victoria')}}">
-                            Hyatt Centric Victoria 
-        </a>
-            </div>
-    <div class="location">
-                                Sharjah
-            </div>
-            <div class="service-review">
-        <span class="rate">
-             1.5/5  <span class="rate-text">Poor</span>
-        </span>
-        <span class="review">
-                             2 Reviews
-                    </span>
-    </div>
-        <div class="info">
-        <div class="g-price">
-            <div class="prefix">
-                <span class="fr_text">from</span>
-            </div>
-            <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">$599 <span class="unit  text-white">/night</span></span>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                                            <div class="col-lg-3 col-md-6">
-                            <style>
-    .Daily-btn {
-    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
-    color: white;
-    padding: 4px 4px;
-}
-</style>
-
-
-
-<div class="item-loop ">
-        <div class="thumb-image ">
-        <a href="{{url('hotel/jitendra-hotel')}}">
-            
-                    <img src="{{asset('uploads/0000/1/2023/05/15/images.jpg')}}" class="img-responsive" alt="">
-                 
-        </a>
-                <div class="service-wishlist " data-id="17" data-type="hotel">
-            <i class="fa fa-heart"></i>
-        </div>
-    </div>
-    <div class="item-title">
-        <a href="{{url('hotel/jitendra-hotel')}}">
-                            Jitendra Hotel
-        </a>
-            </div>
-    <div class="location">
-                                Dubai
-            </div>
-            <div class="service-review">
-        <span class="rate">
-             1.5/5  <span class="rate-text">Poor</span>
-        </span>
-        <span class="review">
-                             4 Reviews
-                    </span>
-    </div>
-        <div class="info">
-        <div class="g-price">
-            <div class="prefix">
-                <span class="fr_text">from</span>
-            </div>
-            <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">$420 <span class="unit  text-white">/night</span></span>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                                            <div class="col-lg-3 col-md-6">
-                            <style>
-    .Daily-btn {
-    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
-    color: white;
-    padding: 4px 4px;
-}
-</style>
-
-
-
-<div class="item-loop ">
-        <div class="thumb-image ">
-        <a href="{{url('hotel/sierra-hotel')}}">
-            
-                    <img src="{{asset('uploads/0000/1/2023/05/19/life-resort-hotel-resort-hotel-wallpaper-preview.jpeg')}}" class="img-responsive" alt="">
-                 
-                         
-        </a>
-                <div class="service-wishlist " data-id="19" data-type="hotel">
-            <i class="fa fa-heart"></i>
-        </div>
-    </div>
-    <div class="item-title">
-        <a href="{{url('hotel/sierra-hotel')}}">
-                            Sierra Hotel
-        </a>
-            </div>
-    <div class="location">
-                                Dubai
-            </div>
-            <div class="service-review">
-        <span class="rate">
-             0.0/5  <span class="rate-text">Terrible</span>
-        </span>
-        <span class="review">
-                             2 Reviews
-                    </span>
-    </div>
-        <div class="info">
-        <div class="g-price">
-            <div class="prefix">
-                <span class="fr_text">from</span>
-            </div>
-            <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">$650 <span class="unit  text-white">/night</span></span>
-            </div>
-        </div>
-    </div>
-</div>
-                        </div>
-                                    </div>
-                                </div>
-    </div>
-</div>
-    
-</div>
+ </div>
 
 
 <div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
@@ -1177,6 +867,63 @@ p {
        </div>
    </div>
        
+
+
+       <script>
+  
+
+  $('document').ready(function(){
+ 
+$('.hotelwishlistaddingheart').click(function() {
+  var id = $(this).attr('attr');
+  var object_id = $('.objectidgetclass' + id).val();
+  var object_modal = $('.objectmodalgetclass' + id).val();
+
+  var csrfToken = $('meta[name="csrf-token"]').attr('content'); // Retrieve the CSRF token from the meta tag
+
+  $.ajax({
+    url: '/user/wishlist',
+    type: 'post',
+    data: {
+      object_id: object_id,
+      object_model: object_modal
+    },
+    headers: {
+      'X-CSRF-TOKEN': csrfToken // Set the CSRF token in the request headers
+    },
+   success: function(response) {
+  if (response.class === "active") {
+    alert("Wishlist updated successfully");
+
+      $('.newhotelheartstatus' +id).addClass('class');
+    
+  
+  } else if (response.class === "inactive") {
+    
+    $('.newhotelheartstatus' +id).removeClass('class');
+  
+    
+  } else {
+
+    alert("Unexpected response status: " + response.status);
+   
+  }
+},
+    error: function(xhr, status, error) {
+      alert("AJAX request failed: " + error);
+      
+    }
+  });
+});
+
+
+
+});
+
+
+
+
+       </script>
 
    <script>
         geeksportal("all")

@@ -32,6 +32,7 @@ class UserWishListController extends FrontendController
         return view('User::frontend.wishList.index', $data);
     }
     public function handleWishList(Request $request){
+        
         $object_id = $request->input('object_id');
         $object_model = $request->input('object_model');
         if(empty($object_id))
@@ -60,6 +61,8 @@ class UserWishListController extends FrontendController
         $meta->save();
         return $this->sendSuccess(['class'=>"active"]);
     }
+
+
     
     public function remove(Request $request){
         $meta = $this->userWishListClass::where("object_id",$request->input('id'))

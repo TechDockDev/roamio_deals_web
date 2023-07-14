@@ -13,9 +13,6 @@ Route::get('event-cart','EventController@Cart');
 
 Route::get('explore-activity','EventController@ActivityExp');
 
-
-
-
 Route::group(['prefix'=>'user/'.env('EVENT_ROUTE_PREFIX','event'),'middleware' => ['auth','verified']],function(){
     Route::get('/','VendorEventController@indexEvent')->name('event.vendor.index');
     Route::get('/create','VendorEventController@createEvent')->name('event.vendor.create');

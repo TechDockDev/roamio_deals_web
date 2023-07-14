@@ -154,10 +154,7 @@ public function ActivityExp(Request $request) {
        $fetch[] = $dd;    
     }
     
-
-
-
-$user_id = $request->id;
+$user_id = auth()->user()->id ??  '';
 
 $terms = DB::table('bravo_terms')->where('attr_id', '20')->get();
 $data = [];

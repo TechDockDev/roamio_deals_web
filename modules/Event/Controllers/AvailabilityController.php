@@ -8,6 +8,8 @@ use Modules\Booking\Models\Booking;
 use Modules\Event\Models\Event;
 use Modules\Event\Models\EventDate;
 use Modules\FrontendController;
+use DB;
+use Session;
 
 class AvailabilityController extends FrontendController{
 
@@ -315,4 +317,45 @@ class AvailabilityController extends FrontendController{
         }
         return $this->sendSuccess([],__("Update Success"));
     }
+
+   public function packagepage(request $request)
+   {
+   
+        $get = DB::table('activity_packages')->get();
+
+     return view('Event::admin.activitypackages',compact('get'));
+
+   }
+
+    public function packagestore(request $request)
+    {
+ 
+        
+        $data = DB::table('activity_packages')->insertGetId([
+               
+                'title' =>$request->title,
+                'content'=>$request->content,
+                'image_id'=>$request->image_id,
+                'gallery'=>$request->gallery,
+                'price'=>$request->price,
+                'number'=>$request->number,
+                'discount_price'=>$request->discount_price,
+                'adults'=>$request->adults,
+                'children'=>$request->children,
+                'ical_import_url'=>$request->ical_import_url,
+                'parent_id' => $request->parent_id,
+               'status' =>$request->status
+      
+        ]);
+
+      if($data)
+      {
+        return redirect()->back()->with('pacakagestoreadded','packages added successfully');
+      }
+
+    }
+
+
+
+
 }

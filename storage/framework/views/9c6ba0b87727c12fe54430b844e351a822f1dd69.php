@@ -400,4 +400,4 @@ for (var i = 0; i < btns.length; i++) {
 }
     </script> 
   
-<?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Hotel/Views/frontend/blocks/list-hotel/index.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\roamio_deals_web\themes/BC/Hotel/Views/frontend/blocks/list-hotel/index.blade.php ENDPATH**/ ?>
