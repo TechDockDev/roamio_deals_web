@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 @push('css')
  <link href="{{ asset('css/page-apply.css') }}" rel="stylesheet">
  
@@ -7,7 +7,7 @@
 @section('content')
 
 
-<div class="container" >
+<div class="container">
 
   <div class="row d-flex justify-content-center">
     <h4 class="text-center py-5">UAE Visa Application</h4>
@@ -28,7 +28,7 @@
 
         <div class="wizard-form">
           <div class="wizard-panel" style="top: 100px;
-    position: relative;" active="active">
+         position: relative;" active="active">
             <div >
               <div class="row">
                 <div class="col-md-6">
@@ -203,5 +203,4 @@
 <br><br><br><br>
 
 
-@endsection
-
+@endsection --}}

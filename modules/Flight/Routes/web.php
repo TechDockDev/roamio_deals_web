@@ -32,7 +32,7 @@ Route::group(['prefix'=>'user/'.config('flight.flight_route_prefix'),'middleware
     });
 });
 
-Route::post('/visa_booking','FlightController@visasubmit');
+Route::post('/visa-booking','FlightController@visasubmit');
 
 Route::get('visa-page',"FlightController@Vish");
 
@@ -41,6 +41,20 @@ Route::get('visa-status',"FlightController@VishStatus");
 Route::get('visa-apply',"FlightController@visaApply");
 
 Route::get('confirm-visa',"FlightController@visaConfirm");
+
+
+Route::get('apply-visa-page',"FlightController@visaApplyPage");
+
+
+Route::post('/payment-visa', "FlightController@showPaymentForm")->name('payment.visa.form');
+
+
+
+
+Route::post('response', 'FlightController@handlePaymentResponse')->name('response');
+Route::Post('redirect',"FlightController@redirect");
+
+
 
 
    

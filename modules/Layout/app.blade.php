@@ -56,6 +56,13 @@
         {!! setting_item_with_lang_raw('head_scripts') !!}
     @endif
 </head>
+
+<style>
+.main-footer{
+  background-image: url('images/footer-img1.png');
+}
+
+</style>
 <body class="frontend-page {{ !empty($row->header_style) ? "header-".$row->header_style : "header-normal" }} {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif">
     @if(!is_demo_mode())
         {!! setting_item('body_scripts') !!}
@@ -139,66 +146,66 @@
 </script>
 
 
-  <script>
 
-function printDivs() {
-  var select = document.getElementById("rangeSelect");
-  var adultSelect = document.getElementById("rangeSelect");
-  var adultCount = parseInt(adultSelect.value);
 
-  var childSelect = document.getElementById("childSelect");
-  var childCount = parseInt(childSelect.value);
+  
+{{-- <script>
+  function printDivs() {
+    var select = document.getElementById("rangeSelect");
+    var adultSelect = document.getElementById("rangeSelect");
+    var adultCount = parseInt(adultSelect.value);
 
-  var totalCount = adultCount + childCount;
+    var childSelect = document.getElementById("childSelect");
+    var childCount = parseInt(childSelect.value);
 
-  var divContainer = document.getElementById("divContainer");
-  divContainer.innerHTML = ""; // Clear the container before adding new divs
+    var totalCount = adultCount + childCount;
 
-  for (var i = 1; i <= totalCount; i++) {
-    var travelerType = i <= adultCount ? "Adult" : "Child"; // Determine the traveler type based on the count
+    var divContainer = document.getElementById("divContainer");
+    divContainer.innerHTML = ""; // Clear the container before adding new divs
 
-    var div = document.createElement("div");
-    div.innerHTML = `
-      <div class="h4">${travelerType} traveller ${i}</div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="firstname[]" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
+   
+    var currentTraveler = 1; // Track the current traveler
+
+    alert( currentTraveler)
+
+    for (var i = 1; i <= totalCount; i++) {
+      var travelerType = i <= adultCount ? "Adult" : "Child"; // Determine the traveler type based on the count
+
+      var div = document.createElement("div");
+      div.innerHTML = `
+        <div class="h5 py-3">${travelerType} traveller ${i}</div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="firstname[]" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="lastname[]" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
+            </div>
           </div>
         </div>
 
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="lastname[]" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="date" class="form-control" name="dob[]" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
+            </div>
           </div>
-        </div>
-          
 
-      </div>
-
-
-      <div class="row">
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="text" class="form-control" name="dob[]" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" class="form-control" name="email[]" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
+            </div>
           </div>
         </div>
 
+        <div class="row">
         <div class="col-md-6">
-          <div class="form-group">
-            <input type="email" class="form-control" name="email[]" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="row">
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <input type="number" class="form-control" name="contact[]" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
+          <div class="form-group"> 
+           <input type="number" class="form-control" name="contact[]" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
           </div>
         </div>
 
@@ -207,12 +214,8 @@ function printDivs() {
             <input type="number" class="form-control" name="alternate_number[]" id="alternate${i}" aria-describedby="emailHelp" placeholder="Alternate Number">
           </div>
         </div>
-
        </div>
-
-
       <div class="row">
-
        <div class="col-md-6">
           <div class="form-group">
             <input type="number" class="form-control" name="passportnumber[]" id="passportNumber${i}" aria-describedby="emailHelp" placeholder="Passport Number">
@@ -235,15 +238,15 @@ function printDivs() {
         </div>
        
        <div class="col-md-6">
-          <div class="form-group">
+          <div class="form-group uploadinput">
             <input type="file" name="passport_first_page[]" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
              <input type="text" class="form-control showFileInput" placeholder="Passport first page Photo" >
-             <img src = {{asset('/images/btn.svg')}} class="imageClass">
+             <img src ={{asset('/images/btn.svg')}} class="imageClass">
           </div>
          </div>
         </div>
 
-   <div class="row">
+   <div class="row inputfolter">
      <div class="col-md-6">
       <div class="form-group">
       <input type="file" class="custom-file-input" name="passport_second_page[]" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
@@ -256,7 +259,163 @@ function printDivs() {
      <div class="form-group">
       <input type="file" class="custom-file-input" name="passport_size_photo[]" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
        <input type="text" class="form-control showFileInput" placeholder="Passport Size Photo" >
-         <img src = {{asset('/images/btn.svg')}} class="imageClass">
+       <img src =  {{asset('/images/btn.svg')}} class="imageClass">
+      
+    </div>
+    </div>
+    </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button type="button" class="btn btn-primary next-btn">Next</button>
+          </div>
+        </div>`;
+
+      if (i > 1) {
+        div.style.display = "none"; // Hide the form for traveler 2 onwards
+      }
+
+      divContainer.appendChild(div);
+
+      // Add event listener to the next button
+      var nextBtn = div.querySelector('.next-btn');
+      nextBtn.addEventListener('click', function() {
+        
+        if (currentTraveler === i) {
+          if (isFormFilled(div.previousElementSibling)) {
+            var nextDiv = div.nextElementSibling;
+            if (nextDiv) {
+              nextDiv.style.display = "block"; // Show the next traveler's form
+              nextDiv.scrollIntoView({ behavior: 'smooth' });
+              currentTraveler++; // Move to the next traveler
+            }
+          } else {
+            alert("Please fill all fields for the current traveler before proceeding.");
+          }
+        } else {
+          alert("Please fill the form for the previous traveler first.");
+        }
+      });
+    }
+  }
+
+  function isFormFilled(formDiv) {
+    var inputs = formDiv.querySelectorAll('input');
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].value === '') {
+        return false;
+      }
+    }
+    return true;
+  }
+</script> --}}  
+<script>
+
+function printDivs() {
+  var select = document.getElementById("rangeSelect");
+  var adultSelect = document.getElementById("rangeSelect");
+  var adultCount = parseInt(adultSelect.value);
+
+  var childSelect = document.getElementById("childSelect");
+  var childCount = parseInt(childSelect.value);
+
+  var totalCount = adultCount + childCount;
+
+  var divContainer = document.getElementById("divContainer");
+  divContainer.innerHTML = ""; // Clear the container before adding new divs
+
+  for (var i = 1; i <= totalCount; i++) {
+    var travelerType = i <= adultCount ? "Adult" : "Child"; // Determine the traveler type based on the count
+
+    var div = document.createElement("div");
+    div.innerHTML = `
+      <div class="h5 py-3">${travelerType} traveller ${i}</div>
+      <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="firstname[]" id="firstName${i}" aria-describedby="emailHelp" placeholder="First Name">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="lastname[]" id="lastName${i}" aria-describedby="emailHelp" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" name="dob[]" id="DOB${i}" aria-describedby="emailHelp" placeholder="Date of birth">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" class="form-control" name="email[]" id="email${i}" aria-describedby="emailHelp" placeholder="Email">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-6">
+          <div class="form-group"> 
+           <input type="number" class="form-control" name="contact[]" id="contact${i}" aria-describedby="emailHelp" placeholder="Contact Number">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" name="alternate_number[]" id="alternate${i}" aria-describedby="emailHelp" placeholder="Alternate Number">
+          </div>
+        </div>
+       </div>
+      <div class="row">
+       <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" class="form-control" name="passportnumber[]" id="passportNumber${i}" aria-describedby="emailHelp" placeholder="Passport Number">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control passportExpiryDate" name="passport_expiry[]" id="passportExpiryDate${i}" aria-describedby="emailHelp" placeholder="Passport Expiry Date">
+          </div>
+        </div>
+       
+      </div>
+          <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" name="place_issues[]" id="placeOfIssue${i}" aria-describedby="emailHelp" placeholder="Place of Issue">
+          </div>
+        </div>
+       
+       <div class="col-md-6">
+          <div class="form-group uploadinput">
+            <input type="file" name="passport_first_page[]" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
+             <input type="text" class="form-control showFileInput" placeholder="Passport first page Photo" >
+             <img src ={{asset('images/btn.svg')}} class="imageClass">
+          </div>
+         </div>
+        </div>
+
+   <div class="row inputfolter">
+     <div class="col-md-6">
+      <div class="form-group">
+      <input type="file" class="custom-file-input" name="passport_second_page[]" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
+    <input type="text" class="form-control showFileInput" placeholder="Passport second page Photo" >
+    <img src = {{asset('images/btn.svg')}} class="imageClass">
+     
+    </div>
+    </div>
+    <div class="col-md-6">
+     <div class="form-group">
+      <input type="file" class="custom-file-input" name="passport_size_photo[]" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
+       <input type="text" class="form-control showFileInput" placeholder="Passport Size Photo" >
+       <img src =  {{asset('images/btn.svg')}} class="imageClass">
       
     </div>
     </div>
@@ -286,6 +445,15 @@ function printDivs() {
 }
 
   </script>
+
+
+
+
+
+
+
+
+
 
   <script>
   function handleFileInputChange(event, inputId) {
@@ -358,6 +526,12 @@ $(document).ready(function() {
 
 
         });
+
+
+
+
+  
+
 
 
 
