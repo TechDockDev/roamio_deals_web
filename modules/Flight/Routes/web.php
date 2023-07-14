@@ -45,5 +45,17 @@ Route::get('confirm-visa',"FlightController@visaConfirm");
 
 Route::get('apply-visa-page',"FlightController@visaApplyPage");
 
+
+Route::post('/payment-visa', "FlightController@showPaymentForm")->name('payment.visa.form');
+
+
+
+
+Route::post('response', 'FlightController@handlePaymentResponse')->name('response');
+Route::Post('redirect',"FlightController@redirect");
+
+
+
+
    
 

@@ -10,6 +10,7 @@ use Modules\Location\Models\Location;
 use Modules\Review\Models\Review;
 use Modules\Core\Models\Attributes;
 use DB;
+use App\Helpers\Crypto;
 use Session;
 
 class FlightController extends Controller
@@ -316,4 +317,92 @@ public function  visaApplyPage(){
 }
 
 
+
+
+
+
+
+public function showPaymentForm(Request $request)
+{
+    $visaID = $request->input('visa_id');
+    $userId = $request->input('user_id');
+    $email = $request->input('email');
+    $firstname = $request->input('firstname');
+    $passport_expiry = $request->input('passport_expiry');
+    $passport_no = $request->input('passport_no');
+    $translation_id = sprintf("%.2f", rand(0, 99));
+    $order_id = sprintf("%.2f", rand(0, 99));
+    $payment_status = 'Pending';
+   
+    $merchant_id = $request->input('merchant_id');
+
+    DB::table('visa_payment_booking_cc')->insert([
+        'visa_id' => $visaID,
+        'user_id' => $userId,
+        'email' => $email,
+        'firstname' => $firstname,
+        'passport_expiry' => $passport_expiry,
+        'passport_no' => $passport_no,
+        'translation_id' => $translation_id,
+        'order_id' => $order_id,
+        'payment_status' => $payment_status,
+        'merchant_id' => $merchant_id,
+    ]);
+     $enc_key= '857876E262EA034EA5139E4C250FE758';
+    $workingKey = '49578'; // Replace with your actual working key
+    $accessCode = 'AVOG04JJ40AW48GOWA';  // Replace with your actual access code
+
+    $merchantData = 'merchant_id=' . urlencode($merchant_id) . '&order_id=' . urlencode($order_id) . '&amount=' . urlencode('0.01') . '&currency=AED';
+
+   
+
+
+    $encryptedData = Crypto::encrypt($merchantData, $workingKey);
+
+    $paymentData = [
+        'encrypted_data' => $encryptedData,
+        'access_code' => $accessCode,
+          'enc_key'  =>   $enc_key,
+        'other_data' => $request->all(),
+    ];
+
+    
+    return view('Flight::frontend.redirect', compact('encryptedData', 'accessCode','enc_key'));
+}
+
+
+
+
+
+public function visasubmits(Request $request)
+{
+    $visaID = $request->input('visa_id');
+    $userId = $request->input('user_id');
+    $email = $request->input('email');
+    $firstname = $request->input('firstname');
+    $passport_expiry = $request->input('passport_expiry');
+    $passport_no = $request->input('passport_no');
+    $merchant_id = $request->input('merchant_id');
+
+    $successCount = 0; // Track the number of successful form data saves
+
+    foreach ($request->firstname as $key => $fname) {
+        // ...
+
+        $data = DB::table('visa_booking_detail')->insert([
+            // ... (existing code)
+
+            'payment_status' => 'unpaid',
+            'visa_status' => 'pending',
+        ]);
+
+        $successCount++;
+    }
+
+    if ($successCount > 0) {
+        return redirect()->route('payment.visa.form', compact('visaID', 'userId', 'email', 'firstname', 'passport_expiry', 'passport_no', 'merchant_id'));
+    } else {
+        return redirect()->back()->with('error', 'Failed to save data.');
+    }
+}
 }
