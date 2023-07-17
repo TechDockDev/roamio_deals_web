@@ -761,7 +761,7 @@ $('.hotelwishlistaddingheart').click(function() {
   }
 },
     error: function(xhr, status, error) {
-      alert("AJAX request failed: " + error);
+     $('#login').modal('show');
       
     }
   });
