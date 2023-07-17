@@ -1,4 +1,4 @@
-<form method="post" name="redirect" action="https://secure.ccavenue.ae/transaction/transaction.do?command=initiateTransaction">
+<form method="post" name="redirect" action="https://test.ccavenue.ae/transaction/transaction.do?command=initiateTransaction">
     <?php echo csrf_field(); ?>
     <input type="hidden" name="encRequest" value="<?php echo e($encryptedData); ?>">
     <input type="hidden" name="access_code" value="<?php echo e($accessCode); ?>">

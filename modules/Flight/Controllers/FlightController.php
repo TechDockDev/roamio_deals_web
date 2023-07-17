@@ -336,7 +336,7 @@ public function showPaymentForm(Request $request)
    
     $merchant_id = $request->input('merchant_id');
 
-    DB::table('visa_payment_booking_cc')->insert([
+    $data=DB::table('visa_payment_booking_cc')->insert([
         'visa_id' => $visaID,
         'user_id' => $userId,
         'email' => $email,
@@ -348,24 +348,24 @@ public function showPaymentForm(Request $request)
         'payment_status' => $payment_status,
         'merchant_id' => $merchant_id,
     ]);
-     $enc_key= '857876E262EA034EA5139E4C250FE758';
-    $workingKey = '49578'; // Replace with your actual working key
+    
+    $enc_key= '857876E262EA034EA5139E4C250FE758';// Replace with your actual working key
     $accessCode = 'AVOG04JJ40AW48GOWA';  // Replace with your actual access code
 
     $merchantData = 'merchant_id=' . urlencode($merchant_id) . '&order_id=' . urlencode($order_id) . '&amount=' . urlencode('0.01') . '&currency=AED';
 
-   
 
 
-    $encryptedData = Crypto::encrypt($merchantData, $workingKey);
 
+    $encryptedData = Crypto::encrypt($merchantData, $merchant_id);
+    
     $paymentData = [
         'encrypted_data' => $encryptedData,
         'access_code' => $accessCode,
           'enc_key'  =>   $enc_key,
         'other_data' => $request->all(),
     ];
-
+    
     
     return view('Flight::frontend.redirect', compact('encryptedData', 'accessCode','enc_key'));
 }
