@@ -61,7 +61,7 @@ class AvailabilityController extends FrontendController{
     }
 
     public function index(Request $request,$hotel_id){
-
+                       
         $this->checkPermission('hotel_create');
 
         if(!$this->hasHotelPermission($hotel_id))
@@ -104,8 +104,10 @@ class AvailabilityController extends FrontendController{
                 'class' => 'active'
             ],
         ];
+
         $hotel = $this->currentHotel;
         $page_title = __('Room Availability');
+
 
         return view($this->indexView,compact('rows','breadcrumbs','current_month','page_title','request','hotel'));
     }
@@ -127,6 +129,9 @@ class AvailabilityController extends FrontendController{
          */
 
         $room = $this->roomClass::find($request->query('id'));
+
+       
+
         if(empty($room)){
             return $this->sendError(__('room not found'));
         }
@@ -138,9 +143,15 @@ class AvailabilityController extends FrontendController{
         $query->where('end_date','<=',date('Y-m-d H:i:s',strtotime($request->query('end'))));
 
         $rows =  $query->take(100)->get();
+
+    
+
         $allDates = [];
 
         $period = periodDate($request->input('start'),$request->input('end'),false);
+
+
+
         foreach ($period as $dt){
             $date = [
                 'id'=>rand(0,999),
@@ -161,6 +172,8 @@ class AvailabilityController extends FrontendController{
             $date['active'] = 1;
             $allDates[$dt->format('Y-m-d')] = $date;
         }
+        
+
         if(!empty($rows))
         {
             foreach ($rows as $row)
@@ -198,6 +211,8 @@ class AvailabilityController extends FrontendController{
             }
         }
         $bookings = $room->getBookingsInRange($request->query('start'),$request->query('end'));
+
+
         if(!empty($bookings))
         {
             foreach ($bookings as $booking){
@@ -207,7 +222,7 @@ class AvailabilityController extends FrontendController{
                     if(isset($allDates[$date])){
                         $allDates[$date]['number'] -= $booking->number;
                         $allDates[$date]['event'] = $allDates[$date]['title'] = format_money_main($allDates[$date]['price'] ). ' x '.$allDates[$date]['number'];
-                        if($allDates[$date]['number'] <=0 ){
+                         if($allDates[$date]['number'] <=0 ){
                             $allDates[$date]['active'] = 0;
                             $allDates[$date]['event'] = __('Full Book');
                             $allDates[$date]['title'] = __('Full Book');
@@ -218,6 +233,10 @@ class AvailabilityController extends FrontendController{
             }
         }
         $data = array_values($allDates);
+
+
+        
+
 
         return response()->json($data);
     }
