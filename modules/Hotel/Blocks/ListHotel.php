@@ -159,7 +159,11 @@ class ListHotel extends BaseBlock
             
         }
 
-     
+     if (auth()->check()) {
+    $user_id = auth()->user()->id;
+   } else {
+     $user_id = Null;
+    }
 
         //   fetch for daily 
 
@@ -181,7 +185,7 @@ class ListHotel extends BaseBlock
         foreach ($hotelsData as $hotel) {
             $wishlist = DB::table('user_wishlist')
                 ->where('object_id', $hotel->id)
-                // ->where('user_id', $user_id)
+                ->where('user_id', $user_id)
                 ->where('object_model', 'hotel')
                 ->select('id')
                 ->first();

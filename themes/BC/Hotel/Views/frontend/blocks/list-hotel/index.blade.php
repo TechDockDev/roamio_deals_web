@@ -145,7 +145,6 @@ p {
 
 
 
-
 <div class="container mt-5">
     @foreach ($datas as $dealydeal)
     <div class="row">
@@ -164,8 +163,11 @@ p {
 
                
             
-    <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
+    <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist == "true") {
                   echo "class";
+                }else{
+
+                    echo "";
                 }   ?>" attr="{{$hotel->id}}" style="position: absolute;
                 top: 10px;
                 right: 10px;
@@ -180,10 +182,6 @@ p {
                 border-radius:30px;
             "></span>
                   
-                
-
-
-
              </div>
              <div class="card-body">
                 <h5 class="card-title">{{ $hotel->title }}</h5>
@@ -244,8 +242,6 @@ p {
         </div>
     </div>
 </div>
-
-
 
 <div class="container">
     <div class="row">
@@ -321,7 +317,10 @@ $('.hotelwishlistaddingheart').click(function() {
   }
 },
     error: function(xhr, status, error) {
-      alert("AJAX request failed: " + error);
+          
+     $('#login').modal('show');
+
+      // alert("AJAX request failed: " + error);
       
     }
   });
