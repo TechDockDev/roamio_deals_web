@@ -8,7 +8,8 @@ Route::group(['prefix'=>env('EVENT_ROUTE_PREFIX','event')],function(){
 
 
 Route::get('event-activity-checkout','EventController@activitycheckout');
-Route::get('event-cart','EventController@Cart');
+
+Route::get('user-cart','EventController@Cart');
 
 
 Route::get('explore-activity','EventController@ActivityExp');

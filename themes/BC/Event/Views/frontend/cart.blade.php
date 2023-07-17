@@ -54,43 +54,42 @@
     </div>
 </div>
 <div class="container mt-3 card">
+
+    @php
+$totalAmount = 0; // Initialize the total amount variable outside the loop
+@endphp
+
+    @foreach($data as $dd)
     <div class="card mb-3 totl mt-3">
         <div class="row">
             <div class="col-md-4 text-end">
                 <img src="https://media.cntraveller.com/photos/62f51fb12148309d8a68838b/4:3/w_2664,h_1998,c_limit/25hours%20dubai-aug22-pr-%20global-Ingrid%20Rasmussen1.jpg" class="img-fluid rounded-start" alt="...">
             </div>
+
+            <input type="hidden" value="{{$dd->id}}"  id="datafetchget">
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <span>Weekday Stay for 2 adults & 2 children below 12 years</span>
-                        <span class="text-end" style="float:right;"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                        <span>{{$dd->package_name}}</span>
+                       <a href="{{url('deleteCart/'.$dd->id)}}"> <span class="text-end" style="float:right;"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
                     </h5>
-                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> <span>12 May, 13 May, 14 May (3 nights)</span></p>
-                    <p class="card-text"><small><i class="fa fa-users" aria-hidden="true"></i> <span>1 x Adult</span></small></p>
-                    <h5 class="card-text price">230.00 <span class="text">AED</span></h5>
+                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i><span>@if($dd->type == 'hotel')   Staycation @else       
+                            Activity
+                    @endif     </span></p>
+                    <p class="card-text"><small><i class="fa fa-users" aria-hidden="true"></i> <span>{{$dd->room_qty}} x Adult</span></small></p>
+                    <h5 class="card-text price  pricex{{$dd->id}}">{{$dd->room_price * $dd->room_qty}}<span class="text">AED</span></h5>
                 </div>
             </div>
         </div>
     </div>
-    <div class="card mb-3 totl mb-3">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-4 text-end">
-                <img src="https://media.cntraveller.com/photos/62f51fb12148309d8a68838b/4:3/w_2664,h_1998,c_limit/25hours%20dubai-aug22-pr-%20global-Ingrid%20Rasmussen1.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <span>Weekday Stay for 2 adults & 2 children below 12 years</span>
-                        <span class="text-end" style="float:right;"><i class="fa fa-trash" aria-hidden="true"></i></span>
-                    </h5>
-                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> <span>12 May, 13 May, 14 May (3 nights)</span></p>
-                    <p class="card-text"><small><i class="fa fa-clock-o" aria-hidden="true"></i> <span>11 AM to 10 PM</span></small></p>
-                    <p class="card-text"><small><i class="fa fa-users" aria-hidden="true"></i> <span>1 x Adult</span></small></p>
-                    <h5 class="card-text price">230.00 <span class="text">AED</span></h5>
-                </div>
-            </div>
-        </div>
-    </div>
+
+     @php
+    $itemTotal = $dd->room_price * $dd->room_qty;
+    $totalAmount += $itemTotal;
+    @endphp
+  @endforeach
+
+
     <div class="card mb-3  mb-3">
       <div class="row d-flex justify-content-center">
           <div class="col-md-5">
@@ -114,11 +113,11 @@
                     <p class="text-start">TAX</p>
                   </div>
                   <div class="col-md-6">
-                    <p class="text-start">AED 747.00</p>
-                    <p class="text-end" style="color:#FF3500">AED 747.00</p>
-                    <p class="text-end" style="color:#FF3500">-AED 5.00</p>
-                    <p class="text-end" style="color:#FF3500">-AED 125.00</p>
-                    <p class="text-end">AED 7.00</p>
+                   <p class="text-end" style="color:#FF3500">{{ $totalAmount }} AED</p>
+                    <p class="text-end" style="color:#FF3500">00</p>
+                    <p class="text-end" style="color:#FF3500">00</p>
+                    <p class="text-end" style="color:#FF3500">00</p>
+                    <p class="text-end">00</p>
                   </div>
                 </div>
                 <div class="row">
@@ -126,7 +125,7 @@
                     <p class="text-end">Sab Total</p>
                   </div>
                   <div class="col-md-6">
-                    <p class="text-end">AED 522.30</p>
+                    <p class="text-end">{{ $totalAmount }} AED</p>
                   </div>
                 </div>
 
@@ -137,4 +136,18 @@
   
 </div>
 
+@if(Session::get('successdataadded'))
+
+<script>
+
+  alert('cart item deleted successfully');
+
+</script>
+
+
+{{Session::forget('successdataadded')}}
+
+@endif
+
 @endsection
+

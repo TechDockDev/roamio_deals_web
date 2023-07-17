@@ -45,7 +45,7 @@
                     
         <div class="col-md-12">
           <a href="<?php echo e(url('hotel-wish-list')); ?>"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>WishList</p></a>
-         <a href="<?php echo e(url('event-cart')); ?>"> <p style="color: gray;
+         <a href="<?php echo e(url('user-cart')); ?>"> <p style="color: gray;
           left: 280px;
           position: relative;
           top: -53px;"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  cart </p></a>
@@ -181,10 +181,16 @@
             </div> 
         </div>
     </div>
+
+
     <div class="bravo-menu-mobile" style="display:none;">
         <div class="user-profile">
             <div class="b-close"><i class="icofont-scroll-left"></i></div>
             <div class="avatar"></div>
+            
+            
+
+
             <ul style="width:100%;">
                 <?php if(!Auth::check()): ?>
                     <li>
@@ -227,6 +233,15 @@
 
                 <?php endif; ?>
             </ul>
+
+             <a href="<?php echo e(url('hotel-wish-list')); ?>"><p style="color:gray;left: 20px; position:relative; "><span><i class="fa fa-heart" aria-hidden="true"></i></span>WishList</p></a>
+         <a href="<?php echo e(url('user-cart')); ?>"> <p style="color: gray;
+          left: 20px;
+          position: relative;
+          ;"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>  cart </p></a>
+
+
+
             <ul class="multi-lang">
                 <?php echo $__env->make('Core::frontend.currency-switcher', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </ul>
