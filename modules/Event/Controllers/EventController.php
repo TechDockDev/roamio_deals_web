@@ -140,8 +140,26 @@ public function activitycheckout(){
 
    
 public function Cart(){
-    return view('Event::frontend.cart');
+
+
+     $user_id = null;
+
+     if(auth()->check())
+     {
+    
+       $user_id = auth()->user()->id;
+     }
+
+     
+     $data = DB::table('cart')->where('user_id',$user_id)->where('status',Null)->get();
+
+
+    return view('Event::frontend.cart', compact('data'));
 }
+
+
+
+
 
 public function ActivityExp(Request $request) {
         

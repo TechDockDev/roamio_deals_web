@@ -40,3 +40,8 @@ Route::get('/clearcache',function(){
     echo "cache clear";
     
 });
+
+
+Route::post('adding-to-cart','HomeController@cartaddingfunction');
+
+Route::get('deleteCart/{cartId}','HomeController@cartDelete');
