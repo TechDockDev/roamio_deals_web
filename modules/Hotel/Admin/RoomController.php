@@ -99,8 +99,16 @@ class RoomController extends AdminController
             'translation'=>new $this->roomTranslationClass(),
             'attributes'     => $this->attributesClass::where('service', 'hotel_room')->get(),
         ];
+
+
+          
+
+
         return view('Hotel::admin.room.index', $data);
     }
+
+
+
 
     public function edit(Request $request, $hotel_id,$id)
     {

@@ -4,7 +4,9 @@
         <div class="d-flex justify-content-between mb20">
             <h1 class="title-bar">{{__("Activity package Management")}}</h1>
             <div class="title-actions">
-                <a href="" class="btn btn-warning btn-xs"><i class="fa fa-calendar"></i> {{__("Package Availability")}}</a>
+               <a href="{{ url('/admin/module/event/availability/' . request()->route('activity_id') . '/pricePackage') }}" class="btn btn-warning btn-xs">
+  <i class="fa fa-calendar"></i> {{ __("Price Availability") }}
+</a>
                <a href="{{ url('/admin/module/event/edit/' .request()->route('activity_id')) }}" class="btn btn-info btn-xs">
   <i class="fa fa-hand-o-right"></i> {{ __("Back to Activity") }}
 </a>
@@ -137,6 +139,7 @@
                 </form>
             </div>
             <div class="col-md-8">
+
                <!--  <div class="filter-div d-flex justify-content-between ">
                     <div class="col-left">
                         @if(!empty($rows))

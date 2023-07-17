@@ -39,11 +39,14 @@ Route::group(['prefix'=>'attribute'],function (){
 Route::group(['prefix'=>'availability'],function(){
 
     Route::get('{activity_id}/activity','AvailabilityController@packagepage');
+    Route::get('{activity_id}/pricePackage','AvailabilityController@pricebydate');
     Route::get('/','AvailabilityController@index')->name('event.admin.availability.index');
     Route::get('/loadDates','AvailabilityController@loadDates')->name('event.admin.availability.loadDates');
     Route::post('/store','AvailabilityController@store')->name('event.admin.availability.store');
+    Route::post('/storePackage','AvailabilityController@packagestore');
 
-     Route::post('/storePackage','AvailabilityController@packagestore');
+     Route::get('/xloadDates','AvailabilityController@xloadDates')->name('event.admin.package.availability.loadDates');
+    Route::post('/xstore','AvailabilityController@xstore')->name('event.admin.package.availability.store');
 
 
 });
