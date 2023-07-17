@@ -918,8 +918,6 @@ $('.hotelwishlistaddingheart').click(function() {
   });
 });
 
-
-
 });
 
 

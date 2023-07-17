@@ -6,6 +6,14 @@
                 <input type="number" required value="{{$row->price}}" min="1" placeholder="{{__("Price")}}" name="price" class="form-control">
             </div>
         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+                <label>{{__("Discount Price")}} <span class="text-danger">*</span></label>
+                <input type="number" required value="{{$row->discount_price}}" min="1" placeholder="{{__('discount Price')}}" name="discount_price" class="form-control">
+            </div>
+        </div>
+
+
         <div class="col-md-6">
             <div class="form-group">
                 <label>{{__("Number of room")}} <span class="text-danger">*</span></label>
