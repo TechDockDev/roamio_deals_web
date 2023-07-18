@@ -9,7 +9,7 @@
 @php
     $translation = $row->translate();
 @endphp
-<div class="item-loop {{$wrap_class ?? ''}}">
+<div class="item-loop {{$wrap_class ?? ''}} h-100">
     @if($row->is_featured == "1")
         <div class="featured">
             {{__("Featured")}}
@@ -39,7 +39,8 @@
             @endif
         </a>
         <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
-            <i class="fa fa-heart-o"></i>
+            <i class="fa fa-heart-o" style="height:30px; width:30px; border-radius:30px;background: white;
+            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: black;"></i>
         </div>
         @if($row->discount_percent)
             <div class="sale_info">{{$row->discount_percent}}</div>
@@ -65,7 +66,7 @@
     $score_total = $reviewData['score_total'];
     ?>
         <div class="service-review">
-            <span class="rate">
+            <span class="rate Daily-btn text-white">
                 @if($reviewData['total_review'] > 0) {{$score_total}}/5 @endif <span class="rate-text">{{$reviewData['review_text']}}</span>
             </span>
             <span class="review">
@@ -78,7 +79,7 @@
         </div>
     @endif
     @if(!empty($time = $row->start_time))
-        <div class="start-time">
+        <div class="start-time mt-1">
             {{ __("Start Time: :time",['time'=>$time]) }}
         </div>
     @endif

@@ -9,7 +9,7 @@
     position: relative;
     top: 10px;
     font-size: 18px;
-    "><a  style="text-decoration:none;" href="<?php echo e(url('explore-staycation')); ?>">StayCation</a></label>
+    "><a  style="text-decoration:none;  color:#FF3500; font-weight:900;" href="<?php echo e(url('explore-staycation')); ?>">StayCation</a></label>
 	</div>
   </div>
 

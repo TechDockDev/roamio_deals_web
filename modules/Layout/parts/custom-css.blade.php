@@ -1,4 +1,5 @@
-@php $main_color = setting_item('style_main_color','#5191fa');
+{{-- @php $main_color = setting_item('style_main_color','#FF3500'); --}}
+
 $style_typo = json_decode(setting_item_with_lang('style_typo',false,"{}"),true);
 @endphp
     a,
@@ -310,7 +311,7 @@ $style_typo = json_decode(setting_item_with_lang('style_typo',false,"{}"),true);
     .bravo_wrap .bravo_search_event .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-from:before,
     .bravo_wrap .bravo_search_event .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-to:before,
     .bravo_wrap .bravo_search_event .bravo_filter .g-filter-item .item-content .bravo-filter-price .irs--flat .irs-single:before {
-        border-top-color: {{$main_color}};
+        border-top-color: #FF3500 !important;
     }
 
     .bravo_wrap .bravo_search_event .bravo_filter .g-filter-item .item-content .btn-more-item {

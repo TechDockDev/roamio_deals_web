@@ -1,12 +1,12 @@
 
 <?php $__env->startSection('content'); ?>
     <?php if($row->template_id): ?>
-        <div class="page-template-content container">
+        <div class="page-template-content">
             <?php echo $row->getProcessedContent(); ?>
 
         </div>
     <?php else: ?>
-        <div class="container " style="padding-top: 40px;padding-bottom: 40px;">
+        <div class="container" style="padding-top: 40px;padding-bottom: 40px;">
             <h1><?php echo clean($translation->title); ?></h1>
             <div class="blog-content">
                 <?php echo $translation->content; ?>

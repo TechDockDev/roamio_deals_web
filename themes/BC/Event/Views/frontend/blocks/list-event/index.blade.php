@@ -248,7 +248,7 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 
 </style>
 
-@php
+{{-- @php
     $review = DB::table('bravo_review')->limit(10)->get();
 
     $user_review = [];
@@ -258,6 +258,22 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
         $rr->user = $user;
         $user_review[] = $rr;
     }
+@endphp --}}
+
+@php
+$review = DB::table('bravo_review')->limit(10)->get();
+$reviews = DB::table('bravo_review')->first();
+
+
+
+$user_review = [];
+
+foreach ($review as $rr) {
+    $user = DB::table('users')->select('first_name', 'last_name', 'images')->where('id', $rr->user_id)->first();
+    $rr->user = $user;
+    $user_review[] = $rr;
+}
+$totalUsers = count($user_review);
 @endphp
 
  
@@ -265,7 +281,7 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
     <div class="bravo-list-event layout_{{$style_list}}">
         @if($title)
         <div class="title">
-            {{$title}}
+            {{$title}} <span><a href="{{ url('/event/') }}"><span style="float:right; color:#FF3500; font-size:15px; font-weight: 900;">View All</span></a></span>
         </div>
         @endif
         @if($desc)
@@ -295,82 +311,81 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 </div>
 
 
-
-<div class="container-fluid mb-5 w-100" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
-    <div class="row d-flex justify-content-center p-4"> 
-        <div class="col-md-6">
-            <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-            <p class="card-text text-white pt-3">At XYZ Hotel, our top priority is customer satisfaction. We take great pride in providing exceptional service and creating memorable experiences for our guests. Don't just take our word for it - here's what some of our happy customers have to say.</p>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3 class="card-text pt-2 text-white p-1">13M +</h3>
-                    <p class="card-text text-white">Happy Customers</p>
-                </div>
-                <div class="col-md-6">
-                    <h3 class="card-text pt-2 text-white p-1">5.0 <i class="fa fa-star"></i></h3>
-                    <p class="card-text text-white">Overall Rating</p>
-                </div>
-            </div>
+<div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
+    <div class="row d-flex justify-content-center p-4">
+   
+      <div class="col-md-6">
+        <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
+        <p class="card-text text-white pt-3">{{ $reviews->title}} </p>
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="card-text pt-2 text-white p-1">{{ $totalUsers}} +</h3>
+            <p class="card-text text-white">Happy Customers</p>
+          </div>
+          <div class="col-md-6">
+            <h3 class="card-text pt-2 text-white p-1">{{ $reviews->rate_number}} <i class="fa fa-star"></i></h3>
+            <p class="card-text text-white">Overall Rating</p>
+          </div>
         </div>
-        <div class="col-md-6 p-4">
-            <div id="slideshow-wrap">
-                <input type="radio" id="button-1" name="controls" checked="checked"/>
-                <input type="radio" id="button-2" name="controls"/>
-                <input type="radio" id="button-3" name="controls"/>
-                <input type="radio" id="button-4" name="controls"/>
-                <input type="radio" id="button-5" name="controls"/>
+      </div>
+      <div class="col-md-4 p-4">
+        <div id="slider" style="height: 400px;">
+          <div class="dp-wrap">
+            <div id="dp-slider">
 
-                <div id="slideshow-inner">
-                    @if(!empty($user_review))
-                    <div id="testimonial-carousel" class="carousel slide bravo-testimonial" data-ride="carousel">
-                        <div class="container">
-                            <div class="carousel-inner">
-                                @php $active = true; @endphp
-                                @foreach(array_chunk($user_review, 3) as $chunk)
-                                    <div class="carousel-item {{$active ? 'active' : ''}}">
-                                        <div class="row">
-                                            @foreach($chunk as $item)
-                                                <div class="col-md-12">
-                                                    <div class="item has-matchHeight">
-                                                        <div class="author">
-                                                            @if(!empty($item->user->images))
-                                                                <img src="/image/{{$item->user->images}}" alt="{{$item->user->first_name}}" style="height:100px; width:100px; border-radius:100px;">
-                                                            @else
-                                                                <img src="/default-image.jpg" alt="Default Image">
-                                                            @endif
-                                                            <div class="author-meta">
-                                                                @if(!empty($item->user->first_name) && !empty($item->user->last_name))
-                                                                    <h4>{{$item->user->first_name}} {{$item->user->last_name}}</h4>
-                                                                @endif
-                                                                @if(!empty($item->rate_number))
-                                                                    <div class="star">
-                                                                        @for($i = 0; $i < $item->rate_number; $i++)
-                                                                            <i class="fa fa-star" style="color:#FF3500;"></i>
-                                                                        @endfor
-                                                                    </div>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                        <p>
-                                                            {{$item->content}}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                    @php $active = false; @endphp
-                                @endforeach
-                            </div>
-                        </div>
+              @foreach($user_review  as $item)
+            
+               <div class="dp_item" data-class="1" data-position="1">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="card-text text-dark p-3 text-item-p">
+                      {{ $item->content}} 
+                    </p>
+                  </div>
+                  <div class="col-md-12 mb-4">
+                    <div class="row">
+                      <div class="col-md-4 offset-md-1">
+                        @if(!empty($item->user->images))
+                        <img class="img-fluid dpimg" src="/image/{{$item->user->images}}" height="10%" alt="investing" style="border-radius:100%; height:100px; width:100px;">
+                        @endif
+                      </div>
+                      <div class="col-md-5">
+                        @if(!empty($item->user->first_name) && !empty($item->user->last_name))
+                        <h6 class="text-dark sell-item">
+                       {{$item->user->first_name}} {{$item->user->last_name}}
+                        </h6>
+                        @endif
+                        <p class="text-dark">
+                          @if(!empty($item->rate_number))
+                          <div class="star">
+                              @for($i = 0; $i < $item->rate_number; $i++)
+                                  <i class="fa fa-star" style="color:#FE9000;"></i>
+                              @endfor
+                          </div>
+                      @endif
+                        </p>
+                      </div>
                     </div>
-                    @endif
+                  </div>
                 </div>
+              </div>
+              @endforeach
+            
             </div>
+            <ul id="dp-dots" style="display:none;">
+              <li data-class="slide1"></li>
+              <li data-class="slide2"></li>
+              <li data-class="slide3"></li>
+            </ul>
+            <div class="btn" style="display:none;">
+              <button id="dp-prev" class="btn btn-light"></button>
+              <button id="dp-next" class="btn btn-light"></button>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
-
+      </div>
+  </div>
+  </div>
 
 
 <script>
@@ -384,3 +399,71 @@ function nextSlide() {
     slides[currentSlide].classList.add('show');
 }
 </script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      
+<script>
+ $(document).ready(function () {
+   function detect_active() {
+     // get active
+     var get_active = $("#dp-slider .dp_item:first-child").data("class");
+     $("#dp-dots li").removeClass("active");
+     $("#dp-dots li[data-class=" + get_active + "]").addClass("active");
+   }
+   
+   function autoplay() {
+     $("#dp-next").click();
+   }
+ 
+   $("#dp-next").click(function () {
+     var total = $(".dp_item").length;
+     $("#dp-slider .dp_item:first-child").hide().appendTo("#dp-slider").fadeIn();
+     $.each($(".dp_item"), function (index, dp_item) {
+       $(dp_item).attr("data-position", index + 1);
+     });
+     detect_active();
+   });
+ 
+   $("#dp-prev").click(function () {
+     var total = $(".dp_item").length;
+     $("#dp-slider .dp_item:last-child").hide().prependTo("#dp-slider").fadeIn();
+     $.each($(".dp_item"), function (index, dp_item) {
+       $(dp_item).attr("data-position", index + 1);
+     });
+ 
+     detect_active();
+   });
+ 
+   $("#dp-dots li").click(function () {
+     $("#dp-dots li").removeClass("active");
+     $(this).addClass("active");
+     var get_slide = $(this).attr("data-class");
+     console.log(get_slide);
+     $("#dp-slider .dp_item[data-class=" + get_slide + "]")
+       .hide()
+       .prependTo("#dp-slider")
+       .fadeIn();
+     $.each($(".dp_item"), function (index, dp_item) {
+       $(dp_item).attr("data-position", index + 1);
+     });
+   });
+ 
+   $("body").on("click", "#dp-slider .dp_item:not(:first-child)", function () {
+     var get_slide = $(this).attr("data-class");
+     console.log(get_slide);
+     $("#dp-slider .dp_item[data-class=" + get_slide + "]")
+       .hide()
+       .prependTo("#dp-slider")
+       .fadeIn();
+     $.each($(".dp_item"), function (index, dp_item) {
+       $(dp_item).attr("data-position", index + 1);
+     });
+ 
+     detect_active();
+   });
+ 
+   // Autoplay
+   setInterval(autoplay, 2000); // Change the interval time as per your requirement
+ });
+ </script>

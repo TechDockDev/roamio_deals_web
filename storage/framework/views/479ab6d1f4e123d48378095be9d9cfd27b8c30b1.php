@@ -12,7 +12,7 @@ $minValue = 0;
     bottom: -40px;
     left: 30px;
     top: 57px;
-    font-size: 18px;
+    font-size: 18px;  color:#FF3500; font-weight:900;
 
 ">Deals</label></a>
 	
@@ -25,7 +25,7 @@ $minValue = 0;
 	  <a href="<?php echo e(url('explore-activity')); ?>"><label style="left: 145%;
      position: relative;
      top: 21px;
-     font-size: 18px;">Activities</label></a>
+     font-size: 18px;  color:#FF3500; font-weight:900;">Activities</label></a>
 	</div>
 </div>
 <?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Flight/Views/frontend/layouts/search/fields/seat_type.blade.php ENDPATH**/ ?>

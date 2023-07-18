@@ -1,4 +1,4 @@
- <div class="bravo_header">
+<div class="bravo_header">
     <div class="<?php echo e($container_class ?? 'container'); ?>" 
 >
         <div class="content">
@@ -58,7 +58,7 @@
  ">
                 <?php if(!Auth::check()): ?>
                         <li class="login-item">
-                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900;"><?php echo e(__('Login')); ?></a>
+                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900; background:white; box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;"><?php echo e(__('Login')); ?></a>
                         </li>
                         <?php if(is_enable_registration()): ?>
                             <li class="signup-item">
@@ -238,5 +238,4 @@
             <?php generate_menu('primary') ?>
         </div>
     </div>
-</div>
-<?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\modules/Layout/parts/header.blade.php ENDPATH**/ ?>
+</div><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\modules/Layout/parts/header.blade.php ENDPATH**/ ?>

@@ -1,4 +1,4 @@
-<form action="{{ route("event.search") }}" class="form bravo_form" method="get">
+{{-- <form action="{{ route("event.search") }}" class="form bravo_form" method="get">
     <div class="g-field-search">
         <div class="row">
             @php $event_search_fields = setting_item_array('event_search_fields');
@@ -32,4 +32,4 @@
     <div class="g-button-submit">
         <button class="btn btn-primary btn-search" type="submit">{{__("Search")}}</button>
     </div>
-</form>
+</form> --}}
