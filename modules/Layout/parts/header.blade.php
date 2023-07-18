@@ -60,22 +60,20 @@
 
         <div class="col-md-12">
           <a href="{{url('hotel-wish-list')}}"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>WishList</p></a>
+
+            <span style="
+   top: -74px;
+    position: relative;
+    left: 275px;
+" class="badge badge-danger cartItemCount notification-icon">{{ count($cartdata) }}</span>
          <a href="{{url('user-cart')}}"> <p style="color: grey;
           left: 280px;
           position: relative;
-          top: -53px;"><span>
-
-            <span style="
-    top: -17px;
-    position: relative;
-    left: 21px;
-" class="badge badge-danger cartItemCount notification-icon">{{ count($cartdata) }}</span>
-
-
-
-
-<i class="fa fa-shopping-cart" aria-hidden="true"></i></span>&nbsp;cart</p></a>
+          top: -74px;"><span>
+             <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>&nbsp;cart</p></a>
         </div>
+
+
          
      <div style="float: right;
      right: -335px;
