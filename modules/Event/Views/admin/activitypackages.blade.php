@@ -14,13 +14,7 @@
         </div>
         @include('admin.message')
           
-          @if(Session::get('pacakagestoreadded'))
-         
-           <div style="background:green">Package added successfully</div>
-
-
-          @endif
-      
+        
         <div class="row">
             <div class="col-md-4">
 
@@ -200,4 +194,14 @@
     {{Session::forget('eventdataDeletedSuccessfully')}}
 
     @endif
+
+      @if(Session::get('pacakagestoreadded'))
+         
+         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+      Swal.fire('Package added Successfully')
+    </script>
+
+          @endif
+      
 @endsection
