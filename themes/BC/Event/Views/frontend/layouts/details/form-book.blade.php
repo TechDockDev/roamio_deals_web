@@ -136,68 +136,114 @@
                 </div>
             </div> --}}
 
-      <?php 
-
-         $events = DB::table('activity_packages')->get();
 
 
-      ?>
+    <?php
+
+    $cc = request()->slug;
+
+    $hotel = DB::table('bravo_events')->where('slug',$cc)->first();
+
+    $room = DB::table('activity_packages')->where('parent_id',$hotel->id)->get();
+  
+    ?>
+             <form id ="packagesForm">
+                        @csrf
+               
+<div class="bravo-list-hotel-related-widget">
+        <h5  style="margin-top:-23px;">Packages</h5>
+        @if(count($room) > 0)
+        @foreach($room as $rooms)
+            <div class="card mb-3">
+                <div class="card-body">
+
+                   <input type="text"  style="display:none;"  name="package_name[]" value="{{$rooms->title}}">
+
+
+                   <input type="text"  style="display:none" name = "product_id[]" value="{{$hotel->id}}">
+
+                    <input type ="text" style="display:none;" id="packagesId" name ="id[]" value="{{$rooms->id}}">
+
+                    <input type ="text" style="display:none;" id = "parentnameofpackages" name ="type[]" value="event">
+
+                <input type ="text" style="display:none;" id = "xparentnameofpackages" name ="price[]" value="{{ number_format($rooms->price - $rooms->discount_price, 2) }}">
 
 
 
 
-                @foreach($events as $ee)
-                <div class="card mb-3">
-                <div class="card-body ">
-                    <p class="card-title">{{$ee->title}}</p>
+                    <p class="card-title">{{ $rooms->title }}</p>
                     <p class="card-text">
-                        <span class="text-item2">{{$ee->discount_price}}</span>
-                        <span class="text-item">{{$ee->price}}</span>
+                        <span class="text-item2">{{ $rooms->price }} AED</span>
+                        <span class="text-item">
+    <?php
+     $originalPrice = $rooms->price;
+     $discountAmount = $rooms->discount_price;
+     $discountPercentage = ($discountAmount / $originalPrice) * 100;
+     $formattedDiscountPercentage = number_format($discountPercentage, 2);
+    ?>
+
+                    {{ $formattedDiscountPercentage }}%
+
+                        </span>
                         <br>
-                        <small>AED / night</small>
-                    </p>
-                    <p>
-                         <div class="container">
-                            <button data-decrease class="inbtn">-</button>
-                            <input data-value type="text" value="0" disabled style="width: 21px; border:none;">
-                            <button data-increase class="inbtn">+</button>
-                            <small>Quantity</small>
-                        </div>
-                    </p>
-                </div>
-            </div>
-             @endforeach
-
-
-
-           <!--  <div class="card mb-3">
-                <div class="card-body ">
-                    <p class="card-title">Cheers at The View for 1 adult</p>
-                    <p class="card-text">
-                        <span class="text-item2">50 AED</span>
-                        <span class="text-item">30</span>
-                        <br>
-                        <span class="text-black">34.000</span>
-                        <small>AED / night</small>
+                        <span class="text-black">{{ number_format($rooms->price - $rooms->discount_price, 2) }}</span>
+                        <small>AED </small>
                     </p>
                     <p>
                         <div class="container">
-                            <button data-decrease class="inbtn">-</button>
-                            <input data-value type="text" value="1" disabled style="width: 21px; border:none;">
-                            <button data-increase class="inbtn">+</button>
-                            <small>Number of Room</small>
+                            <button type="button" data-decrease class="inbtn">-</button>
+                            <input name="packageQuantity[]"  data-value type="text" value="0" style="width: 21px; border:none;">
+                            <button type="button" data-increase class="inbtn">+</button>
+                            <small>Quantity</small>
                         </div>
                     </p>
+
+
                 </div>
-            </div> -->
+            </div>
+        @endforeach
 
 
-            <button class="btn btn-light btn-text w-100 mb-3">Quick Checkout</button>
-            <button class="btn btn-light w-100 card-btn mb-3">Add to Cart</button> 
-          
+                     </form>
+    @else
+        <p>No data found.</p>
+    @endif
+    
 
+    <?php 
+      
+      if(auth()->check())
+      {
+       $user_id = auth()->user()->id;
+
+      }else{
+
+        $user_id = null;
+      }
      
-           
+      
+
+    ?>
+
+       @if($user_id == null)
+       
+        <button class="btn btn-light btn-text w-100 mb-3" data-toggle="modal" data-target="#login">Quick Checkout</button>
+
+
+        <button class="btn btn-light w-100 card-btn mb-3" data-toggle="modal" data-target="#login">Add to Cart</button> 
+          
+          @else
+
+         <button class="btn btn-light btn-text w-100 mb-3">Quick Checkout</button>
+
+
+    <button type="button" id ="cartSubmitButton" class="btn btn-light w-100 card-btn mb-3">Add to Cart</button> 
+
+
+          @endif
+
+    </div>
+    
             <div class="form-send-enquiry" v-show="enquiry_type=='enquiry'">
                 <button class="btn btn-primary" data-toggle="modal" data-target="#enquiry_form_modal">
                     {{ __("Contact Now") }}
@@ -212,6 +258,48 @@
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script>
+$(document).ready(function() {
+   
+    $("#cartSubmitButton").click(function(e) {
+        e.preventDefault(); 
+
+        $.ajax({
+            type: "POST", 
+            url: "/adding-to-cart", 
+            data: $("#packagesForm").serialize(), 
+            success: function(response) {
+              
+                if(response.status == true)
+                {
+
+                  window.location.href ="/user-cart"
+                }else if(response.status == false)
+                {
+
+                    
+                  Swal.fire(
+  'No Quantity?',
+  'Please select at least one package qunatity',
+  'question'
+)
+
+                }else{
+
+                        alert("Please sign In first for adding to cart");
+                }
+            },
+            error: function(xhr, status, error) {
+                
+                console.error("Error submitting the form:", error);
+            }
+        });
+    });
+});
+</script>
+   
+
 <script>
     $(function() {
     $('[data-decrease]').click(decrease);

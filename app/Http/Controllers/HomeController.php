@@ -8,8 +8,9 @@ use Modules\Page\Models\Page;
 use Modules\News\Models\NewsCategory;
 use Modules\News\Models\Tag;
 use Modules\News\Models\News;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use DB;
+use Session;
 
 class HomeController extends Controller
 {
@@ -44,19 +45,9 @@ class HomeController extends Controller
                 'translation'=>$translation,
                 'is_home' => true,
             ];
-
-           
-            
-          
-        
             return view('Page::frontend.detail',$data);
 
-
         }
-
-
-
-
 
         $model_News = News::where("status", "publish");
         $data = [
@@ -104,4 +95,64 @@ class HomeController extends Controller
             return $this->sendError( $e->getMessage() );
         }
     }
+
+
+  public function cartaddingfunction(request $request)
+  {
+ 
+$user_id = null;
+
+if (auth()->check()) {
+    $user_id = auth()->user()->id;
+}
+
+$cart = [];
+
+foreach ($request->id as $index => $id) {
+    $packageQuantity = $request->packageQuantity[$index];
+
+    if ($packageQuantity != "0") {
+        $cartId = DB::table('cart')->insertGetId([
+            'user_id' => $user_id,
+            'type' => $request->type[$index],
+            'room_qty' => $packageQuantity,
+            'product_id' => $request->product_id[$index],
+            'package_id' => $id,
+            'room_price' => $request->price[$index],
+            'package_name' => $request->package_name[$index],
+        ]);
+
+        $cart[] = $cartId;
+    }
+}
+
+
+   if (!empty($cart)) {
+    return response()->json(['message' => 'Data added successfully', 'status' => true]);
+   } else {
+    return response()->json(['message' => 'Oops, something error', 'status' => false]);
+   }
+
+  }
+ 
+public function cartDelete(request $request)
+{
+
+   $id = $request->cartId;
+   $delete = DB::table('cart')->where('id',$id)->delete();
+
+   if($delete)
+  {
+   
+   return redirect()->back()->with('successdataadded','dataadded successfully');
+
+  }else{
+
+   return redirect()->back()->with('faileddata','data failed'); 
+  }
+
+}
+
+
+
 }

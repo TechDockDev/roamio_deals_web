@@ -99,8 +99,16 @@ class RoomController extends AdminController
             'translation'=>new $this->roomTranslationClass(),
             'attributes'     => $this->attributesClass::where('service', 'hotel_room')->get(),
         ];
+
+
+          
+
+
         return view('Hotel::admin.room.index', $data);
     }
+
+
+
 
     public function edit(Request $request, $hotel_id,$id)
     {
@@ -153,6 +161,8 @@ class RoomController extends AdminController
 
     public function store( Request $request, $hotel_id,$id ){
 
+
+
         if(!$this->hasHotelPermission($hotel_id))
         {
             abort(403);
@@ -190,6 +200,7 @@ class RoomController extends AdminController
             'adults',
             'children',
             'status',
+            'discount_price',
             'min_day_stays',
         ];
 
@@ -214,6 +225,8 @@ class RoomController extends AdminController
             }
         }
     }
+
+
 
     public function saveTerms($row, $request)
     {

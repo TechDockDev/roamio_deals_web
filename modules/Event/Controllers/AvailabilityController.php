@@ -11,6 +11,8 @@ use Modules\FrontendController;
 use DB;
 use Session;
 
+use Carbon\Carbon;
+
 class AvailabilityController extends FrontendController{
 
     protected $eventClass;
@@ -320,8 +322,8 @@ class AvailabilityController extends FrontendController{
 
    public function packagepage(request $request)
    {
-   
-        $get = DB::table('activity_packages')->get();
+
+        $get = DB::table('activity_packages')->where('parent_id',$request->activity_id)->get();
 
      return view('Event::admin.activitypackages',compact('get'));
 
@@ -352,6 +354,166 @@ class AvailabilityController extends FrontendController{
       {
         return redirect()->back()->with('pacakagestoreadded','packages added successfully');
       }
+
+    }
+
+    public function pricebydate(request $request)
+      {
+               
+
+            if($request->query('month')){
+            $date = date_create_from_format('m-Y',$request->query('month'));
+            if(!$date){
+                $current_month = time();
+            }else{
+                $current_month = $date->getTimestamp();
+            }
+          }
+          $current_month = time();
+
+             $breadcrumbs = [
+            [
+                'name' => __('Staycation'),
+                'url'  => route('hotel.vendor.index')
+            ],
+            [
+                // 'name' => __('Hotel: :name',['name'=>$this->currentHotel->title]),
+                // 'url'  => route('hotel.vendor.edit',[$this->currentHotel->id])
+            ],
+            [
+                'name'  => __('Availability'),
+                'class' => 'active'
+            ],
+        ]; 
+
+        $rows = DB::table('activity_packages')->where('parent_id',$request->activity_id)->get();
+
+        $hotel = DB::table('bravo_events')->select('id','title')->where('id',$request->activity_id)->first();
+
+        $page_title = __('Packages Price Availability');
+
+
+        return view('Event::admin.packagesavailable',compact('page_title','current_month','rows','hotel'));
+
+
+
+      }
+
+
+public function xloadDates(Request $request){
+             
+ 
+
+
+//  $data = [];
+
+// foreach ($dd as $dds) {
+
+//     $row = [
+//         'active' => "1",
+//         'end' => $dds->end_date,
+//         'event' => $dds->price,
+//         'is_default' => true,
+//         'is_instant' => 0,
+//         'number' => $dds->number,
+//         'price' => $dds->price,
+//         'price_html' => "AED " . $dds->price,
+//         'start' => $dds->start_date,
+//         'textColor' => "#2791fe",
+//         'title' => "AED" . $dds->price,
+//         'classNames' => ["active-event"],
+//     ];
+
+//     $data[] = $row;
+//  }
+
+
+$allDates = [];
+
+
+$dd = DB::table('activity_packages_date')->where('target_id', $request->id)->where('active', '1')->get();
+
+foreach($dd as $dds)
+{
+
+$startDate  = $dds->start_date;
+$endDate = $dds->end_date;
+$first_price = $dds->price;
+
+$period = periodDate($startDate,$endDate, false);
+$ss = DB::table('activity_packages')->where('id', $request->id)->first();
+$allDates = [];
+
+foreach ($period as $dt) {
+    $date = [
+        'id' => rand(0, 999),
+        'active' => 1,
+        'price' => $dds->price,
+        'number' => "1",
+        'is_instant' => 0,
+        'is_default' => true,
+        'textColor' => '#2791fe'
+    ];
+    $date['price_html'] = $dds->price;
+    $date['title'] = $date['event'] = $date['price_html'] . ' x ' . '1';
+    $date['start'] = $date['end'] = $dt->format('Y-m-d');
+
+    $allDates[$dt->format('Y-m-d')] = $date;
+}
+
+$data = array_values($allDates);
+
+}
+ 
+  
+
+
+
+
+
+
+return response()->json($data);
+
+    }
+
+
+    public function xstore(Request $request){
+
+    
+    $matchingTasks = DB::table('activity_packages_date')->where('start_date',$request->start_date)->where('target_id',$request->target_id)
+        ->first();
+
+        if($matchingTasks)
+        {
+         
+
+          DB::table('activity_packages_date')->where('start_date',$request->start_date)->where('target_id',$request->target_id)->update([
+         'start_date' =>$request->start_date,
+         'end_date'   => $request->end_date,
+         'active' => $request->active,
+         'price' =>$request->price,
+         'number' => $request->number,
+         'target_id' => $request->target_id,
+         'event_id' =>$request->event_id,
+        ]);
+
+        }else{
+
+
+         DB::table('activity_packages_date')->insertGetId([
+         'start_date' =>$request->start_date,
+         'end_date'   => $request->end_date,
+         'active' => $request->active,
+         'price' =>$request->price,
+         'number' => $request->number,
+         'target_id' => $request->target_id,
+         'event_id' =>$request->event_id,
+        ]);
+
+
+        }
+
+        return $this->sendSuccess([],__("Update Success"));
 
     }
 

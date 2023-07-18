@@ -98,10 +98,6 @@ class HotelController extends Controller
             $data['html_class'] = 'full-page';
             return view('Hotel::frontend.search-map', $data);
         }
-   
-       
-
-
 
         
         return view('Hotel::frontend.search', $data);
@@ -151,6 +147,7 @@ class HotelController extends Controller
         ];
 
    $this->setActiveMenu($row);
+
                   
    $limit = 3; // Specify the limit to 3
    $page = $request->page;
@@ -249,6 +246,7 @@ class HotelController extends Controller
 
  public function Wishlist(Request $request){
 
+
     $query = UserWishList::query()
     ->where("user_wishlist.user_id",Auth::id())
     ->orderBy('user_wishlist.id', 'desc')
@@ -299,7 +297,14 @@ class HotelController extends Controller
 
  public function staycationexplore(){
 
-$user_id = auth()->user()->id;
+
+if (auth()->check()) {
+    $user_id = auth()->user()->id;
+} else {
+   $user_id = Null;
+}
+
+
 $terms = DB::table('bravo_terms')->where('id', '113')->get();
 $budget = "";
 
@@ -337,8 +342,12 @@ foreach ($terms as $parent) {
 }
 
 
+if (auth()->check()) {
+    $user_id = auth()->user()->id;
+} else {
+   $user_id = Null;
+}
 
-$user_id = auth()->user()->id;
 $terms = DB::table('bravo_terms')->where('id', '106')->get();
 $bestDeal = "";
 
@@ -377,8 +386,6 @@ foreach ($terms as $parent) {
    
 
 
-
-
     $limit = 3; // Specify the limit to 3
 
     $posts = DB::table('bravo_hotels')->where('deleted_at',null)->take(6)->get();
@@ -390,7 +397,7 @@ foreach ($terms as $parent) {
  foreach ($posts as $p) {
      $wishlist = DB::table('user_wishlist')
          ->where('object_id', $p->id)
-        //  ->where('user_id', $user_id)
+         ->where('user_id', $user_id)
          ->where('object_model', 'hotel')
          ->first(); // Retrieve only one result, if exists
  
@@ -417,6 +424,12 @@ foreach ($terms as $parent) {
 
 public function deals(Request  $request) {
 
+    if (auth()->check()) {
+    $user_id = auth()->user()->id;
+} else {
+   $user_id = Null;
+}
+
  $terms = DB::table('bravo_terms')->where('attr_id', '18')->get();
  $dataff = [];
 
@@ -432,7 +445,7 @@ foreach ($childData as $child) {
     foreach ($hotelsData as $hotel) {
         $wishlist = DB::table('user_wishlist')
             ->where('object_id', $hotel->id)
-            // ->where('user_id', $user_id)
+            ->where('user_id', $user_id)
             ->where('object_model', 'hotel')
             ->select('id')
             ->first();
@@ -466,7 +479,11 @@ foreach($datacat as $dd)
 
 
 
-$user_id = $request->id;
+if (auth()->check()) {
+    $user_id = auth()->user()->id;
+} else {
+   $user_id = Null;
+}
 
 $terms = DB::table('bravo_terms')->where('attr_id', '20')->get();
 $data = [];
@@ -505,10 +522,6 @@ $data[] = [
     'events' => $hotels,
 ];
 }
-
-
-
-
 
    
 return view ('Hotel::frontend.Deals',compact('dataff','data'));

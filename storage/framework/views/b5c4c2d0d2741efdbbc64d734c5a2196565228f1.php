@@ -208,7 +208,6 @@ p {
 </style>
 
 
-
 <div class="container mt-5">
     <?php $__currentLoopData = $datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dealydeal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
    
@@ -241,6 +240,9 @@ p {
             
           <span class="fa fa-heart fa-3x fass newhotelheartstatus<?php echo e($hotel->id); ?> hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
                   echo "class";
+                }else{
+
+                    echo "";
                 }   ?>" attr="<?php echo e($hotel->id); ?>" style="position: absolute;
                 top: 10px;
                 right: 10px;
@@ -544,7 +546,10 @@ $('.hotelwishlistaddingheart').click(function() {
   }
 },
     error: function(xhr, status, error) {
-      alert("AJAX request failed: " + error);
+          
+     $('#login').modal('show');
+
+      // alert("AJAX request failed: " + error);
       
     }
   });

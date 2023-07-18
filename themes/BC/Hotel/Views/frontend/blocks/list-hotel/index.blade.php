@@ -208,7 +208,6 @@ p {
 </style>
 
 
-
 <div class="container mt-5">
     @foreach ($datas as $dealydeal)
    
@@ -240,6 +239,9 @@ p {
             
           <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
                   echo "class";
+                }else{
+
+                    echo "";
                 }   ?>" attr="{{$hotel->id}}" style="position: absolute;
                 top: 10px;
                 right: 10px;
@@ -543,7 +545,10 @@ $('.hotelwishlistaddingheart').click(function() {
   }
 },
     error: function(xhr, status, error) {
-      alert("AJAX request failed: " + error);
+          
+     $('#login').modal('show');
+
+      // alert("AJAX request failed: " + error);
       
     }
   });

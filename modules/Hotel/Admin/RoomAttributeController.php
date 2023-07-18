@@ -80,6 +80,10 @@ class RoomAttributeController extends AdminController
 
     public function store(Request $request)
     {
+
+
+
+        
         $this->checkPermission('hotel_manage_attributes');
         $this->validate($request, [
             'name' => 'required'
@@ -100,6 +104,7 @@ class RoomAttributeController extends AdminController
             return redirect()->back()->with('success', __('Attribute saved'));
         }
     }
+
 
     public function editAttrBulk(Request $request)
     {

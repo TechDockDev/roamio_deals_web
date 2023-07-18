@@ -506,11 +506,6 @@ p {
         </div>
         </center>
 
-
-
-    
-  
-           
   
         <div class="container mt-5">
             <div class="row">
@@ -533,7 +528,12 @@ p {
 
                                  <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotelx->id}} hotelwishlistaddingheart <?php if ($hotelx->wishlist== true) {
                   echo "class";
-                }   ?>" attr="{{$hotelx->id}}" style="position: absolute;
+                }else{
+
+
+                }  
+
+                 ?>" attr="{{$hotelx->id}}" style="position: absolute;
                 top: 10px;
                 right: 10px;
                 color: white;
@@ -910,13 +910,13 @@ $('.hotelwishlistaddingheart').click(function() {
   }
 },
     error: function(xhr, status, error) {
-      alert("AJAX request failed: " + error);
+       // alert("AJAX request failed: " + error);
+
+       $('#login').modal('show');
       
     }
   });
 });
-
-
 
 });
 
