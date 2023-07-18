@@ -11,7 +11,7 @@
 @php
     $translation = $row->translate();
 @endphp
-<div class="item-loop {{$wrap_class ?? ''}}">
+<div class="item-loop {{$wrap_class ?? ''}} h-100" >
     @if($row->is_featured == "1")
         <div class="featured">
             {{__("Featured")}}
@@ -53,7 +53,14 @@
             </div>
         @endif
         <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
-            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart-o" style="height: 30px;
+            width: 30px;
+            background: white;
+            padding: 8px 7px;
+            border-radius: 30px;
+            color:black;
+            text-shadow: 1px 1px 27px black;
+        "></i>
         </div>
     </div>
     <div class="item-title">
@@ -79,7 +86,7 @@
     $score_total = $reviewData['score_total'];
     ?>
     <div class="service-review">
-        <span class="rate">
+        <span class="rate Daily-btn text-white mb-5">
             @if($reviewData['total_review'] > 0) {{$score_total}}/5 @endif <span class="rate-text">{{$reviewData['review_text']}}</span>
         </span>
         <span class="review">
@@ -91,13 +98,13 @@
         </span>
     </div>
     @endif
-    <div class="info">
+    <div class="info mt-4">
         <div class="g-price">
             <div class="prefix">
-                <span class="fr_text" style="color: #FF3500;">{{__("from")}}</span>
+                <span class="fr_text" style="color:black;">{{__("from")}}</span>
             </div>
             <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">{{ $row->display_price }} <span class="unit  text-white">{{__("/night")}}</span></span>
+                <span class="text-price btn btn-light Daily-btn text-white" style="padding: 0px 1px;">{{ $row->display_price }} <span class="unit  text-white">{{__("/night")}}</span></span>
             </div>
         </div>
     </div>

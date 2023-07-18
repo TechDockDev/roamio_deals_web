@@ -159,19 +159,8 @@ class ListHotel extends BaseBlock
             
         }
 
-     if (auth()->check()) {
-    $user_id = auth()->user()->id;
-   } else {
-     $user_id = Null;
-    }
-
-        //   fetch for daily 
-
-        // $user_id = $request->id;
-
       $terms = DB::table('bravo_terms')->where('attr_id', '18')->get();
-        $datas = [];
-        
+        $datas = [];   
 
    foreach ($terms as $parent) {
     $name = $parent->name;
@@ -185,7 +174,7 @@ class ListHotel extends BaseBlock
         foreach ($hotelsData as $hotel) {
             $wishlist = DB::table('user_wishlist')
                 ->where('object_id', $hotel->id)
-                ->where('user_id', $user_id)
+                // ->where('user_id', $user_id)
                 ->where('object_model', 'hotel')
                 ->select('id')
                 ->first();
@@ -206,13 +195,123 @@ class ListHotel extends BaseBlock
     ];
 }
 
+$terms = DB::table('bravo_terms')->where('attr_id', '18')->get();
+$top_discount = [];
+foreach ($terms as $parent) {
+ $name = $parent->name;
+ $childData = DB::table('bravo_hotel_term')->where('term_id', $parent->id)->distinct()->take(3)->get();
+ $hotels = [];
 
-// dd($datas);
+ foreach ($childData as $child) {
+     $id = $child->target_id;
+     $hotelsData = DB::table('bravo_hotels')->where('id', $id)
+    ->orderBy('discount_percent', 'desc')
+    ->take(3)->get();
+    
+     
+     foreach ($hotelsData as $hotel) {
+         $wishlist = DB::table('user_wishlist')
+             ->where('object_id', $hotel->id)
+             // ->where('user_id', $user_id)
+             ->where('object_model', 'hotel')
+             ->select('id')
+             ->first();
+         
+         $conditionwishlist = $wishlist ? true : false;
+         $bannerId = $hotel->banner_image_id;
+         $bannerimage = DB::table('media_files')->where('id', $bannerId)->first();
+         $hotel->banner_image = "uploads/$bannerimage->file_path";
+         $hotel->wishlist = $conditionwishlist;
+         $hotels[] = $hotel;
+     }
+ }
+
+ $top_discount[] = [
+     'id' => $parent->id,
+     'parent_name' => $name,
+     'hotels' => $hotels,
+ ];   
+} 
 
 
+$terms = DB::table('bravo_terms')->where('attr_id', '18')->get();
+$top_selling = [];
+foreach ($terms as $parent) {
+ $name = $parent->name;
+ $childData = DB::table('bravo_hotel_term')->where('term_id', $parent->id)->distinct()->take(3)->get();
+ $hotels = [];
 
-        // return view('Hotel::frontend.blocks.list-hotel.index', $data , $fetch);
-        return view('Hotel::frontend.blocks.list-hotel.index',$data, compact('fetch','datas'));
+ foreach ($childData as $child) {
+     $id = $child->target_id;
+     $hotelsData = DB::table('bravo_hotels')->where('id', $id)
+    ->orderBy('sale_price', 'desc')
+    ->take(3)->get();
+    
+     
+     foreach ($hotelsData as $hotel) {
+         $wishlist = DB::table('user_wishlist')
+             ->where('object_id', $hotel->id)
+             // ->where('user_id', $user_id)
+             ->where('object_model', 'hotel')
+             ->select('id')
+             ->first();
+         
+         $conditionwishlist = $wishlist ? true : false;
+         $bannerId = $hotel->banner_image_id;
+         $bannerimage = DB::table('media_files')->where('id', $bannerId)->first();
+         $hotel->banner_image = "uploads/$bannerimage->file_path";
+         $hotel->wishlist = $conditionwishlist;
+         $hotels[] = $hotel;
+     }
+ }
+
+ $top_selling[] = [
+     'id' => $parent->id,
+     'parent_name' => $name,
+     'hotels' => $hotels,
+ ];   
+} 
+
+
+$terms = DB::table('bravo_terms')->where('attr_id', '18')->get();
+$top_rating = [];
+foreach ($terms as $parent) {
+ $name = $parent->name;
+ $childData = DB::table('bravo_hotel_term')->where('term_id', $parent->id)->distinct()->take(3)->get();
+ $hotels = [];
+
+ foreach ($childData as $child) {
+     $id = $child->target_id;
+     $hotelsData = DB::table('bravo_hotels')->where('id', $id)
+    ->orderBy('sale_price', 'desc')
+    ->take(3)->get();
+    
+     
+     foreach ($hotelsData as $hotel) {
+         $wishlist = DB::table('user_wishlist')
+             ->where('object_id', $hotel->id)
+             // ->where('user_id', $user_id)
+             ->where('object_model', 'hotel')
+             ->select('id')
+             ->first();
+         
+         $conditionwishlist = $wishlist ? true : false;
+         $bannerId = $hotel->banner_image_id;
+         $bannerimage = DB::table('media_files')->where('id', $bannerId)->first();
+         $hotel->banner_image = "uploads/$bannerimage->file_path";
+         $hotel->wishlist = $conditionwishlist;
+         $hotels[] = $hotel;
+     }
+ }
+
+ $top_rating[] = [
+     'id' => $parent->id,
+     'parent_name' => $name,
+     'hotels' => $hotels,
+ ];   
+} 
+
+ return view('Hotel::frontend.blocks.list-hotel.index',$data, compact('fetch','datas','top_rating','top_selling','top_discount'));
     }
 
     public function contentAPI($model = []){

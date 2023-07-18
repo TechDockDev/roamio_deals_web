@@ -9,7 +9,7 @@
 <?php
     $translation = $row->translate();
 ?>
-<div class="item-loop <?php echo e($wrap_class ?? ''); ?>">
+<div class="item-loop <?php echo e($wrap_class ?? ''); ?> h-100">
     <?php if($row->is_featured == "1"): ?>
         <div class="featured">
             <?php echo e(__("Featured")); ?>
@@ -40,7 +40,8 @@
             <?php endif; ?>
         </a>
         <div class="service-wishlist <?php echo e($row->isWishList()); ?>" data-id="<?php echo e($row->id); ?>" data-type="<?php echo e($row->type); ?>">
-            <i class="fa fa-heart-o"></i>
+            <i class="fa fa-heart-o" style="height:30px; width:30px; border-radius:30px;background: white;
+            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: black;"></i>
         </div>
         <?php if($row->discount_percent): ?>
             <div class="sale_info"><?php echo e($row->discount_percent); ?></div>
@@ -68,7 +69,7 @@
     $score_total = $reviewData['score_total'];
     ?>
         <div class="service-review">
-            <span class="rate">
+            <span class="rate Daily-btn text-white">
                 <?php if($reviewData['total_review'] > 0): ?> <?php echo e($score_total); ?>/5 <?php endif; ?> <span class="rate-text"><?php echo e($reviewData['review_text']); ?></span>
             </span>
             <span class="review">
@@ -83,7 +84,7 @@
         </div>
     <?php endif; ?>
     <?php if(!empty($time = $row->start_time)): ?>
-        <div class="start-time">
+        <div class="start-time mt-1">
             <?php echo e(__("Start Time: :time",['time'=>$time])); ?>
 
         </div>

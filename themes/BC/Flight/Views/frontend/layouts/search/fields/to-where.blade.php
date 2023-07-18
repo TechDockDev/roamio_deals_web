@@ -1,1 +1,1 @@
-@include('Flight::frontend.layouts.search.fields.location',['inputName'=>'to_where'])
+@include('Flight::frontend.layouts.search.fields.location',['inputName'=>'to_where'])   

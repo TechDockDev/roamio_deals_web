@@ -70,7 +70,7 @@
                 </div>
                 @if(auth()->user())
                 <div class="col-md-4 py-4">
-                   <a href="{{ url('visa-apply')}}" style="text-decoration: none;"><img src="{{ asset('images\info-circle_1.svg')}}" alt="">
+                   <a href="{{ url('apply-visa-page')}}" style="text-decoration: none;"><img src="{{ asset('images\info-circle_1.svg')}}" alt="">
                     <div class="card-body">
                         Apply UAE Visa
                     </div>

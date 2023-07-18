@@ -1,4 +1,4 @@
- <div class="bravo_header">
+<div class="bravo_header">
     <div class="{{$container_class ?? 'container'}}" 
 >
         <div class="content">
@@ -59,17 +59,11 @@
           ?>
 
         <div class="col-md-12">
-          <a href="{{url('hotel-wish-list')}}"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>WishList</p></a>
-
-            <span style="
-   top: -74px;
-    position: relative;
-    left: 275px;
-" class="badge badge-danger cartItemCount notification-icon">{{ count($cartdata) }}</span>
-         <a href="{{url('user-cart')}}"> <p style="color: grey;
+          <a href="{{url('hotel-wish-list')}}"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>  WishList</p></a>
+         <a href="{{url('user-cart')}}"> <p style="color: gray;
           left: 280px;
           position: relative;
-          top: -74px;"><span>
+          top: -51px;"><span>
              <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>&nbsp;cart</p></a>
         </div>
 
@@ -82,7 +76,7 @@
  ">
                 @if(!Auth::check())
                         <li class="login-item">
-                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900;">{{__('Login')}}</a>
+                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900; background:white; box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">{{__('Login')}}</a>
                         </li>
                         @if(is_enable_registration())
                             <li class="signup-item">
