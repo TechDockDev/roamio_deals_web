@@ -322,8 +322,8 @@ class AvailabilityController extends FrontendController{
 
    public function packagepage(request $request)
    {
-   
-        $get = DB::table('activity_packages')->get();
+
+        $get = DB::table('activity_packages')->where('parent_id',$request->activity_id)->get();
 
      return view('Event::admin.activitypackages',compact('get'));
 

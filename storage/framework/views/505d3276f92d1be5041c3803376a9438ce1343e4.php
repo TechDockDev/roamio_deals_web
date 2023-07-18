@@ -1,1 +1,0 @@
-<?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Hotel/Views/frontend/layouts/details/hotel-banner.blade.php ENDPATH**/ ?>
