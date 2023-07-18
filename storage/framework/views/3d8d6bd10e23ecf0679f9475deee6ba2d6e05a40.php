@@ -2,7 +2,7 @@
 
 <?php $__env->startPush('css'); ?>
     <link href="<?php echo e(asset('dist/frontend/module/event/css/event.css?_ver='.config('app.asset_version'))); ?>" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css")); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css')); ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/fotorama/fotorama.css")); ?>"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -54,43 +54,43 @@
     </div>
 </div>
 <div class="container mt-3 card">
+
+    <?php
+$totalAmount = 0;
+ // Initialize the total amount variable outside the loop
+?>
+
+    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dd): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="card mb-3 totl mt-3">
         <div class="row">
             <div class="col-md-4 text-end">
                 <img src="https://media.cntraveller.com/photos/62f51fb12148309d8a68838b/4:3/w_2664,h_1998,c_limit/25hours%20dubai-aug22-pr-%20global-Ingrid%20Rasmussen1.jpg" class="img-fluid rounded-start" alt="...">
             </div>
+
+            <input type="hidden" value="<?php echo e($dd->id); ?>"  id="datafetchget">
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <span>Weekday Stay for 2 adults & 2 children below 12 years</span>
-                        <span class="text-end" style="float:right;"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                        <span><?php echo e($dd->package_name); ?></span>
+                       <a href="<?php echo e(url('deleteCart/'.$dd->id)); ?>"> <span class="text-end" style="float:right;"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
                     </h5>
-                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> <span>12 May, 13 May, 14 May (3 nights)</span></p>
-                    <p class="card-text"><small><i class="fa fa-users" aria-hidden="true"></i> <span>1 x Adult</span></small></p>
-                    <h5 class="card-text price">230.00 <span class="text">AED</span></h5>
+                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i><span><?php if($dd->type == 'hotel'): ?>   Staycation <?php else: ?>       
+                            Activity
+                    <?php endif; ?>     </span></p>
+                    <p class="card-text"><small><i class="fa fa-users" aria-hidden="true"></i> <span><?php echo e($dd->room_qty); ?> x Adult</span></small></p>
+                    <h5 class="card-text price  pricex<?php echo e($dd->id); ?>"><?php echo e($dd->room_price * $dd->room_qty); ?><span class="text">AED</span></h5>
                 </div>
             </div>
         </div>
     </div>
-    <div class="card mb-3 totl mb-3">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-4 text-end">
-                <img src="https://media.cntraveller.com/photos/62f51fb12148309d8a68838b/4:3/w_2664,h_1998,c_limit/25hours%20dubai-aug22-pr-%20global-Ingrid%20Rasmussen1.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <span>Weekday Stay for 2 adults & 2 children below 12 years</span>
-                        <span class="text-end" style="float:right;"><i class="fa fa-trash" aria-hidden="true"></i></span>
-                    </h5>
-                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> <span>12 May, 13 May, 14 May (3 nights)</span></p>
-                    <p class="card-text"><small><i class="fa fa-clock-o" aria-hidden="true"></i> <span>11 AM to 10 PM</span></small></p>
-                    <p class="card-text"><small><i class="fa fa-users" aria-hidden="true"></i> <span>1 x Adult</span></small></p>
-                    <h5 class="card-text price">230.00 <span class="text">AED</span></h5>
-                </div>
-            </div>
-        </div>
-    </div>
+
+     <?php
+    $itemTotal = $dd->room_price * $dd->room_qty;
+    $totalAmount += $itemTotal;
+    ?>
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
     <div class="card mb-3  mb-3">
       <div class="row d-flex justify-content-center">
           <div class="col-md-5">
@@ -114,11 +114,11 @@
                     <p class="text-start">TAX</p>
                   </div>
                   <div class="col-md-6">
-                    <p class="text-start">AED 747.00</p>
-                    <p class="text-end" style="color:#FF3500">AED 747.00</p>
-                    <p class="text-end" style="color:#FF3500">-AED 5.00</p>
-                    <p class="text-end" style="color:#FF3500">-AED 125.00</p>
-                    <p class="text-end">AED 7.00</p>
+                   <p class="text-end" style="color:#FF3500"><?php echo e($totalAmount); ?> AED</p>
+                    <p class="text-end" style="color:#FF3500">00</p>
+                    <p class="text-end" style="color:#FF3500">00</p>
+                    <p class="text-end" style="color:#FF3500">00</p>
+                    <p class="text-end">00</p>
                   </div>
                 </div>
                 <div class="row">
@@ -126,7 +126,7 @@
                     <p class="text-end">Sab Total</p>
                   </div>
                   <div class="col-md-6">
-                    <p class="text-end">AED 522.30</p>
+                    <p class="text-end"><?php echo e($totalAmount); ?> AED</p>
                   </div>
                 </div>
 
@@ -137,6 +137,21 @@
   
 </div>
 
+<?php if(Session::get('successdataadded')): ?>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+
+ Swal.fire('Item Deleted Successfully')
+
+</script>
+
+
+<?php echo e(Session::forget('successdataadded')); ?>
+
+
+<?php endif; ?>
+
 <?php $__env->stopSection(); ?>
+
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Event/Views/frontend/cart.blade.php ENDPATH**/ ?>
