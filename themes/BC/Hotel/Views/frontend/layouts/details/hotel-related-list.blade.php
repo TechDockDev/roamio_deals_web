@@ -166,10 +166,10 @@ $formattedDiscountPercentage = number_format($discountPercentage, 2);
 
        @if($user_id == null)
        
-        <button class="btn btn-light btn-text w-100 mb-3" data-toggle="modal" data-target="#login">Quick Checkout</button>
+        <button type="button" class="btn btn-light btn-text w-100 mb-3" data-toggle="modal" data-target="#login">Quick Checkout</button>
 
 
-        <button class="btn btn-light w-100 card-btn mb-3" data-toggle="modal" data-target="#login">Add to Cart</button> 
+        <button type="button" class="btn btn-light w-100 card-btn mb-3" data-toggle="modal" data-target="#login">Add to Cart</button> 
           
           @else
 
@@ -188,6 +188,7 @@ $formattedDiscountPercentage = number_format($discountPercentage, 2);
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script>
 $(document).ready(function() {
@@ -205,12 +206,16 @@ $(document).ready(function() {
                 if(response.status == true)
                 {
 
-                     alert("data added to cart successfully");
+                  window.location.href ="/user-cart"
 
                 }else if(response.status == false)
                 {
 
-                     alert("Please select Packages Quantity");
+                    Swal.fire(
+  'No Quantity?',
+  'Please select at least one package qunatity',
+  'question'
+)
 
                 }else{
 
@@ -230,11 +235,6 @@ $(document).ready(function() {
 });
 </script>
    
-
-
-
-
-
 
 
 <script>

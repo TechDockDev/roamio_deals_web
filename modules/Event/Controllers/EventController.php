@@ -9,6 +9,7 @@ use Modules\Location\Models\LocationCategory;
 use Modules\Review\Models\Review;
 use Modules\Core\Models\Attributes;
 use DB;
+use Session;
 
 class EventController extends Controller
 {
@@ -209,10 +210,25 @@ foreach ($terms as $parent) {
     ];
 }
 
-
- 
-
 return view('Event::frontend.explore-activity',compact('fetch','data'));
 }
+
+
+ public function deleteEventdata(request $request)
+ {
+
+     $deleteEventdata = DB::table('activity_packages')->where('id',$request->id)->delete();
+
+
+     if($deleteEventdata)
+    {
+
+        return redirect()->back()->with('eventdataDeletedSuccessfully','event data deleted');
+    }else{
+
+         return redirect()->back()->with('errorsomething','something is wrong data not deleted');
+    }
+
+ }
 
 }

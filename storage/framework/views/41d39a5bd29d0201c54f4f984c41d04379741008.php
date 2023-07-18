@@ -1,1 +1,0 @@
-<?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/Base/Template/Views/frontend/blocks/offer-block/index.blade.php ENDPATH**/ ?>

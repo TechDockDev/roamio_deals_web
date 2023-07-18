@@ -274,12 +274,16 @@ $(document).ready(function() {
                 if(response.status == true)
                 {
 
-                    alert("data added to cart successfully");
+                  window.location.href ="/user-cart"
                 }else if(response.status == false)
                 {
 
                     
-                  alert("Please select Packages Quantity");
+                  Swal.fire(
+  'No Quantity?',
+  'Please select at least one package qunatity',
+  'question'
+)
 
                 }else{
 

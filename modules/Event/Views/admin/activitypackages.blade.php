@@ -14,24 +14,19 @@
         </div>
         @include('admin.message')
           
-          @if(Session::get('pacakagestoreadded'))
-         
-           <div style="background:green">Package added successfully</div>
-
-
-          @endif
-      
+        
         <div class="row">
             <div class="col-md-4">
 
 
-                <form novalidate="" class="needs-validation" action="{{url('/admin/module/event/availability/storePackage')}}" method="post" enctype="mutipart/form-data">
+ <form method="post" action="{{url('/admin/module/event/availability/storePackage')}}"  enctype="multipart/form-data">
+        @csrf
                     <div class="panel">
                         <div class="panel-title"><strong>Add Package</strong></div>
                         <div class="panel-body">
-                            <input type="hidden" name="_token" value="2jMN4Ka9nXl6mZzbZlR4vkDtmkxvas4y4R9TbpER">                            <div class="form-group">
+                        <div class="form-group">
 
-   <input type="hidden" name="parent_id" value="{{request()->route('activity_id')}}">
+                 <input type="hidden" name="parent_id" value="{{request()->route('activity_id')}}">
     <label>Package Name <span class="text-danger">*</span></label>
     <input type="text" required="" value="" placeholder="Package Name" name="title" class="form-control" required>
 </div>
@@ -116,8 +111,8 @@
     
     <hr>
 <div class="form-group">
-	<label>Import url</label>
-	<input type="text" value="" name="ical_import_url" class="form-control">
+    <label>Import url</label>
+    <input type="text" value="" name="ical_import_url" class="form-control">
 </div>
     <div class="row">
         <div class="col-md-12">
@@ -137,59 +132,45 @@
                         </div>
                     </div>
                 </form>
+
+
+
+
             </div>
             <div class="col-md-8">
 
-               <!--  <div class="filter-div d-flex justify-content-between ">
-                    <div class="col-left">
-                        @if(!empty($rows))
-                            <form method="post" action="{{route('hotel.admin.room.bulkEdit')}}" class="filter-form filter-form-left d-flex justify-content-start">
-                                {{csrf_field()}}
-                                <select name="action" class="form-control">
-                                    <option value="">{{__(" Bulk Actions ")}}</option>
-                                    <option value="publish">{{__(" Publish ")}}</option>
-                                    <option value="draft">{{__(" Move to Draft ")}}</option>
-                                    <option value="pending">{{__("Move to Pending")}}</option>
-                                    {{--<option value="clone">{{__("Clone")}}</option>--}}
-                                    <option value="delete">{{__("Delete")}}</option>
-                                </select>
-                                <button data-confirm="{{__('Do you want to delete?')}}" class="btn-info btn btn-icon dungdt-apply-form-btn" type="button">{{__('Apply')}}</button>
-                            </form>
-                        @endif
-                    </div>
-                    <div class="col-right">
-                        <p><i></i></p>
-                    </div>
-                </div> -->
-               
                 <div class="panel">
                     <div class="panel-body">
-                        <form action="" class="bravo-form-item">
+                      
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
-                                        <th width="45px"><input type="checkbox" class="check-all"></th>
+                                       
                                         <th> {{ __('Package name')}}</th>
                                         <th width="100px"> {{ __('Person')}}</th>
                                         <th width="100px"> {{ __('Price')}}</th>
                                         <th width="100px"> {{ __('Status')}}</th>
+                                        <th width="100px"></th>
                                         <th width="100px"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                             @foreach($get as $gg)
                                             <tr class="active">
-                                                <td><input type="checkbox" name="ids[]" class="check-item" value="{{$gg->id}}">
-                                                </td>
+                                               
                                                 <td class="title">
-                                                  {{$gg->title}}
+                                                {{$gg->title}}
                                                 </td>
                                                 <td>{{$gg->number}}</td>
                                                 <td>{{$gg->price}}</td>
-                                                <td><span class="badge ">{{$gg->status}}</span></td>
+                                                <td><span class="badge">{{$gg->status}}</span></td>
                                                 <td>
                                                     <a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> {{__('Edit')}}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ url('delete/'.$gg->id)}}" class="btn btn-danger btn-sm"><i class="fa fa-edit"></i>{{__('Delete')}}
                                                     </a>
                                                 </td>
                                             </tr>
@@ -197,11 +178,30 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </form>
+                        
                      {{--{{$rows->appends(request()->query())->links()}}--}}   
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @if(Session::get('eventdataDeletedSuccessfully'))
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+      Swal.fire('Item Deleted Successfully')
+    </script>
+
+    {{Session::forget('eventdataDeletedSuccessfully')}}
+
+    @endif
+
+      @if(Session::get('pacakagestoreadded'))
+         
+         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+      Swal.fire('Package added Successfully')
+    </script>
+
+          @endif
+      
 @endsection

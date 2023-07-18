@@ -2,7 +2,7 @@
 
 @push('css')
     <link href="{{ asset('dist/frontend/module/event/css/event.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -56,7 +56,8 @@
 <div class="container mt-3 card">
 
     @php
-$totalAmount = 0; // Initialize the total amount variable outside the loop
+$totalAmount = 0;
+ // Initialize the total amount variable outside the loop
 @endphp
 
     @foreach($data as $dd)
@@ -137,10 +138,10 @@ $totalAmount = 0; // Initialize the total amount variable outside the loop
 </div>
 
 @if(Session::get('successdataadded'))
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
 
-  alert('cart item deleted successfully');
+ Swal.fire('Item Deleted Successfully')
 
 </script>
 

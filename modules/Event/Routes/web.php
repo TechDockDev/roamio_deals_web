@@ -7,6 +7,8 @@ Route::group(['prefix'=>env('EVENT_ROUTE_PREFIX','event')],function(){
 });
 
 
+Route::get('delete/{id}','EventController@deleteEventdata');
+
 Route::get('event-activity-checkout','EventController@activitycheckout');
 
 Route::get('user-cart','EventController@Cart');
