@@ -40,7 +40,7 @@
         </a>
         <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
             <i class="fa fa-heart-o" style="height:30px; width:30px; border-radius:30px;background: white;
-            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: black;"></i>
+            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: red;"></i>
         </div>
         @if($row->discount_percent)
             <div class="sale_info">{{$row->discount_percent}}</div>

@@ -1,8 +1,8 @@
-@extends('layouts.app')
-@push('css')
-    <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
+
+<?php $__env->startPush('css'); ?>
+    <link href="<?php echo e(asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version'))); ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css")); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/fotorama/fotorama.css")); ?>"/>
    
     <style>
  .Daily-Deals{
@@ -301,9 +301,9 @@ fass:hover{
 
 
  </style>
-@endpush
+<?php $__env->stopPush(); ?>
 
-@php
+<?php
 $review = DB::table('bravo_review')->limit(10)->get();
 $reviews = DB::table('bravo_review')->first();
 
@@ -317,45 +317,36 @@ foreach ($review as $rr) {
     $user_review[] = $rr;
 }
 $totalUsers = count($user_review);
-@endphp
-@section('content')
+?>
+<?php $__env->startSection('content'); ?>
  <div class="container">
     <div class="row mt-3 pt-3">
       <h3 class="text-center" style="font-weight:700; font-size:28px;">Explore UAE <span style="color: #FE9000;"> Deals! </span></h3>
    </div>
-      {{-- <div class="row d-flex justify-content-center mt-2">
-        <div class="col-md-4">
-            <p class=" btn-btn light text-center" style="background:#FFF3E3; border-radius:10px;">
-                 <span  style=" color:#FF3500;">
-                     <img src="{{ asset('images/Juggler.svg')}} " class="ican-img" >Activity</span>
-                 <span><img src="{{ asset('images/Vector_44.svg')}}"  class="ican-img">Staycation </span>
-                </p>  
-        </div>
-     
-     </div> --}}
+      
    <div class="row mt-3 pt-2">
-         <img src="{{ asset('images\benner-img_3.png')}}">
+         <img src="<?php echo e(asset('images\benner-img_3.png')); ?>">
     </div> 
  </div>
 
-   @if (is_array($dataff))
+   <?php if(is_array($dataff)): ?>
     <div class="container mt-5">
-        @foreach ($dataff as $dealydeal)
+        <?php $__currentLoopData = $dataff; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dealydeal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="row">
                 <h4 class="title"style="margin-top: 13px;
-                margin-bottom: 27px; font-weight:700; font-size:28px;">{{ $dealydeal['parent_name'] }}<a href="{{ url('hotel')}}"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
+                margin-bottom: 27px;"><?php echo e($dealydeal['parent_name']); ?><a href="<?php echo e(url('hotel')); ?>"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
             </div>
             <div class="row">
-                @if (isset($dealydeal['hotels']) && is_array($dealydeal['hotels']))
-                    @foreach ($dealydeal['hotels'] as $hotel)
+                <?php if(isset($dealydeal['hotels']) && is_array($dealydeal['hotels'])): ?>
+                    <?php $__currentLoopData = $dealydeal['hotels']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-md-4 mb-3">
                             <div class="card mb-3" style="border-radius: 10px;  position: relative;">
                                 <div class="Daily-Deals1" style="position: relative;">
-                                    <a href="{{ url('/hotel/' . $hotel->slug) }}"><img src="{{ $hotel->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
+                                    <a href="<?php echo e(url('/hotel/' . $hotel->slug)); ?>"><img src="<?php echo e($hotel->banner_image); ?>" style="height:200px; width:100%; border-radius: 10px;"></a>
                                    
-                                 <span class="fa fa-heart-o fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
+                                 <span class="fa fa-heart-o fa-3x fass newhotelheartstatus<?php echo e($hotel->id); ?> hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
                   echo "class";
-                }   ?>" attr="{{$hotel->id}}" style="position: absolute;
+                }   ?>" attr="<?php echo e($hotel->id); ?>" style="position: absolute;
                 top: 10px;
                 right: 10px;
                 color: red;
@@ -370,43 +361,44 @@ $totalUsers = count($user_review);
             "></span>
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $hotel->title }}</h5>
+                                    <h5 class="card-title"><?php echo e($hotel->title); ?></h5>
                                     <p class="card-text">
-                                        <span><i class="fa fa-map-marker" aria-hidden="true"></i>  {{ $hotel->address }}</span>
+                                        <span><i class="fa fa-map-marker" aria-hidden="true"></i>  <?php echo e($hotel->address); ?></span>
                                     </p>
                                     <p>
-                                        <span class="btn btn-light Daily-btn"> {{$hotel->review_score }} <i class="fa fa-star"></i></span>
-                                        {{ $hotel->star_rate }}
+                                        <span class="btn btn-light Daily-btn"> <?php echo e($hotel->review_score); ?> <i class="fa fa-star"></i></span>
+                                        <?php echo e($hotel->star_rate); ?>
+
                                         <span> Excellent </span>
                                     </p>
                                     <p>
-                                        <span style="font-size:25px; color:black;">{{ $hotel->price }}</span>
+                                        <span style="font-size:25px; color:black;"><?php echo e($hotel->price); ?></span>
                                         <span style="font-size:25px;"> AED </span>
-                                        <span class="btn btn-light Daily-btn">{{ $hotel->discount_percent }}% OFF</span>
+                                        <span class="btn btn-light Daily-btn"><?php echo e($hotel->discount_percent); ?>% OFF</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                @endif
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
             </div>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
-   @endif
+   <?php endif; ?>
 
     <div class="container">
-    @foreach($data as $datas)
+    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="row">
             <h4 class="title mx-3 mt-3 pt-3 mb-3" style="margin-top: 13px;
-            margin-bottom: 27px; font-weight:700; font-size:28px;">{{$datas['parent_name']}}<a href="{{ url('event')}}"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
+            margin-bottom: 27px;"><?php echo e($datas['parent_name']); ?><a href="<?php echo e(url('event')); ?>"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
         </div>
         <div class="row">
-            @if(is_array($datas['events']))
-                @foreach($datas['events'] as $dt)
+            <?php if(is_array($datas['events'])): ?>
+                <?php $__currentLoopData = $datas['events']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dt): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-md-4 mb-4">
                         <div class="card" style="border-radius: 10px;">
                             <div class="Daily-Deals1" style="position: relative;">
-                                <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;">
+                                <img src="<?php echo e($dt->banner_image); ?>" style="height:200px; width:100%; border-radius: 10px;">
                                 <span class="fa fa-heart-o fa-3x fass" style="
                                     right: 10px;
                                     color: red;
@@ -420,29 +412,30 @@ $totalUsers = count($user_review);
                                 </span>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ $dt->title}}</h5>
+                                <h5 class="card-title"><?php echo e($dt->title); ?></h5>
                                 <p class="card-text">
                                     <span><i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        {{ $dt->address}}
+                                        <?php echo e($dt->address); ?>
+
                                     </span>
                                 </p>
                                 <p>
-                                    <span class="btn btn-light Daily-btn">{{$dt->review_score}} </span>
+                                    <span class="btn btn-light Daily-btn"><?php echo e($dt->review_score); ?> </span>
                                     (4)
                                     <span> Excellent </span>
                                 </p>
                                 <p>
-                                    <span style="font-size:25px; color:black;">{{$dt->price}}</span>
+                                    <span style="font-size:25px; color:black;"><?php echo e($dt->price); ?></span>
                                     <span style="font-size:25px;"> AED </span>
-                                    <span class="btn btn-light Daily-btn">{{$dt->discount}}% OFF</span>
+                                    <span class="btn btn-light Daily-btn"><?php echo e($dt->discount); ?>% OFF</span>
                                 </p>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            @endif
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php endif; ?>
         </div>
-    @endforeach
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 
     <div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
@@ -450,14 +443,14 @@ $totalUsers = count($user_review);
      
         <div class="col-md-6">
           <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-          <p class="card-text text-white pt-3">{{ $reviews->title}} </p>
+          <p class="card-text text-white pt-3"><?php echo e($reviews->title); ?> </p>
           <div class="row">
             <div class="col-md-6">
-              <h3 class="card-text pt-2 text-white p-1">{{ $totalUsers}} +</h3>
+              <h3 class="card-text pt-2 text-white p-1"><?php echo e($totalUsers); ?> +</h3>
               <p class="card-text text-white">Happy Customers</p>
             </div>
             <div class="col-md-6">
-              <h3 class="card-text pt-2 text-white p-1">{{ $reviews->rate_number}} <i class="fa fa-star"></i></h3>
+              <h3 class="card-text pt-2 text-white p-1"><?php echo e($reviews->rate_number); ?> <i class="fa fa-star"></i></h3>
               <p class="card-text text-white">Overall Rating</p>
             </div>
           </div>
@@ -467,43 +460,44 @@ $totalUsers = count($user_review);
             <div class="dp-wrap">
               <div id="dp-slider">
   
-                @foreach($user_review  as $item)
+                <?php $__currentLoopData = $user_review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               
                  <div class="dp_item" data-class="1" data-position="1">
                   <div class="row">
                     <div class="col-md-12">
                       <p class="card-text text-dark p-3 text-item-p">
-                        {{ $item->content}} 
+                        <?php echo e($item->content); ?> 
                       </p>
                     </div>
                     <div class="col-md-12 mb-4">
                       <div class="row">
                         <div class="col-md-4 offset-md-1">
-                          @if(!empty($item->user->images))
-                          <img class="img-fluid dpimg" src="/image/{{$item->user->images}}" height="10%" alt="investing" style="border-radius:100%; height:100px; width:100px;">
-                          @endif
+                          <?php if(!empty($item->user->images)): ?>
+                          <img class="img-fluid dpimg" src="/image/<?php echo e($item->user->images); ?>" height="10%" alt="investing" style="border-radius:100%; height:100px; width:100px;">
+                          <?php endif; ?>
                         </div>
                         <div class="col-md-5">
-                          @if(!empty($item->user->first_name) && !empty($item->user->last_name))
+                          <?php if(!empty($item->user->first_name) && !empty($item->user->last_name)): ?>
                           <h6 class="text-dark sell-item">
-                         {{$item->user->first_name}} {{$item->user->last_name}}
+                         <?php echo e($item->user->first_name); ?> <?php echo e($item->user->last_name); ?>
+
                           </h6>
-                          @endif
+                          <?php endif; ?>
                           <p class="text-dark">
-                            @if(!empty($item->rate_number))
+                            <?php if(!empty($item->rate_number)): ?>
                             <div class="star">
-                                @for($i = 0; $i < $item->rate_number; $i++)
+                                <?php for($i = 0; $i < $item->rate_number; $i++): ?>
                                     <i class="fa fa-star" style="color:#FE9000;"></i>
-                                @endfor
+                                <?php endfor; ?>
                             </div>
-                        @endif
+                        <?php endif; ?>
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               
               </div>
               <ul id="dp-dots" style="display:none;">
@@ -566,25 +560,19 @@ $totalUsers = count($user_review);
          <div class="row">
              <div class="col-md-4 text-center">
                  <div class="card1">
-                     <img src="{{ url('images/Frame_1.svg')}}" class="card-img-top" alt="...">
-                     {{-- <div class="card-body">
-                         <h5 class="card-title">Best Price Guarantee</h5>
-                         <p class="card-text">Best Recommendations according to your Interest</p>
-                     </div> --}}
+                     <img src="<?php echo e(url('images/Frame_1.svg')); ?>" class="card-img-top" alt="...">
+                     
                  </div>
              </div>
              <div class="col-md-4 text-center">
                  <div class="card1">
-                     <img src="{{ url('images/Frame_2.png')}}" class="card-img-top" alt="...">
-                     {{-- <div class="card-body">
-                         <h5 class="card-title">Best Offer</h5>
-                         <p class="card-text">Best Recommendations according to your Interest and offers.</p>
-                     </div> --}}
+                     <img src="<?php echo e(url('images/Frame_2.png')); ?>" class="card-img-top" alt="...">
+                     
                  </div>
              </div>
              <div class="col-md-4 text-center">
                  <div class="card1">
-                     <img src="{{ ('images/Group2608634.svg')}}" class="card-img-top" alt="..." style="height:64px">
+                     <img src="<?php echo e(('images/Group2608634.svg')); ?>" class="card-img-top" alt="..." style="height:64px">
                      <div class="card-body">
                          <h5 class="card-title pt-3" style="font-weight:900">Best Offer</h5>
                          <p class="card-text">Best Recommendations according to your Interest and offers.</p>
@@ -736,4 +724,5 @@ $('.hotelwishlistaddingheart').click(function() {
 
 
         
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Hotel/Views/frontend/Deals.blade.php ENDPATH**/ ?>
