@@ -41,6 +41,9 @@ Route::get('/clearcache',function(){
     
 });
 
+Route::get('/get_dates_data', 'HomeController@getDatesData');
+Route::post('/get_dates_data', 'HomeController@getDatesData');
+
 
 Route::post('adding-to-cart','HomeController@cartaddingfunction');
 

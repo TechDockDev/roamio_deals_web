@@ -11,6 +11,7 @@ use Modules\News\Models\News;
 use Illuminate\Http\Request;
 use DB;
 use Session;
+use DateTime;
 
 class HomeController extends Controller
 {
@@ -152,6 +153,60 @@ public function cartDelete(request $request)
   }
 
 }
+
+public function getDatesData(Request $request)
+{
+
+
+
+$currentYear = date('Y');
+$currentMonth = date('m');
+
+
+$startDateString = $currentYear . '-' . $currentMonth . '-01';
+
+$lastDayOfMonth = date('t', strtotime($startDateString));
+$endDateString = $currentYear . '-' . $currentMonth . '-' . $lastDayOfMonth;
+
+
+
+$data = [
+    ['date' => '2023-07-24', 'price' => 100],
+    ['date' => '2023-07-21', 'price' => 200],
+    ['date' => '2023-07-26', 'price' => 3300],
+ ];
+
+$startDateString = $startDateString;
+$endDateString = $endDateString;
+
+$defaultPrice = 500; // Set the default price here
+
+$startDate = new DateTime($startDateString);
+$endDate = new DateTime($endDateString);
+
+$dates = [];
+
+while ($startDate <= $endDate) {
+    $dateString = $startDate->format('Y-m-d');
+    $price = null;
+    foreach ($data as $item) {
+        if ($item['date'] === $dateString) {
+            $price = $item['price'];
+            break;
+        }
+    }
+
+    $price = ($price !== null) ? $price : $defaultPrice;
+    
+    $dates[] = ['date' => $dateString, 'price' => $price];
+    
+    $startDate->modify('+1 day');
+}
+
+// Return the $dates array as a JSON response
+return response()->json($dates);
+
+    }
 
 
 
