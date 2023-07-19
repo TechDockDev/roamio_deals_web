@@ -64,12 +64,6 @@
                     left: 269px;
                  position: relative;
                  top: -60px;"><span>
-                    
-       
-            
-       
-       
-       
        
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; &nbsp;Cart <span 
                     class="badge bg-danger"
@@ -89,14 +83,11 @@
                     text-align: center;border-width: 48px;
                   "><?php echo e(count($cartdata)); ?></span> </span> </p></a>
                </div>
-
-
-         
-     <div style="float: right;
-     right: -335px;
-     position: relative;
-     top: -110px;
- ">
+       <div style="float: right;
+        right: -335px;
+        position: relative;
+        top: -110px;
+       ">
                 <?php if(!Auth::check()): ?>
                         <li class="login-item">
                             <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900; background:white; box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;"><?php echo e(__('Login')); ?></a>

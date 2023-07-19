@@ -212,7 +212,7 @@ p {
     @foreach ($datas as $dealydeal)
    
     <div class="row">
-        <h4 class="title" style="margin-top: 43px;">
+        <h4 class="title mx-1" style="margin-top: 43px; font-weight:700; font-size:28px;">
             {{ $dealydeal['parent_name'] }}
          
            
@@ -226,7 +226,7 @@ p {
    
     <div class="row">
        @foreach ($dealydeal['hotels'] as $hotel)
-     <div class="col-md-4">  <a href="{{ url('/hotel/' . $hotel->slug) }}" style="text-decoration:none;">  
+     <div class="col-md-4 mb-3">  <a href="{{ url('/hotel/' . $hotel->slug) }}" style="text-decoration:none;">  
           <div class="card mb-3 h-100" style="border-radius: 10px;position: relative; box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
              <div class="Daily-Deals1" style="position: relative;">
                 
@@ -237,7 +237,7 @@ p {
 
                
             
-          <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
+          <span class="fa fa-heart-o fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
                   echo "class";
                 }else{
 
@@ -245,7 +245,7 @@ p {
                 }   ?>" attr="{{$hotel->id}}" style="position: absolute;
                 top: 10px;
                 right: 10px;
-                color: white;
+                color: red;
                 text-shadow: 1px 1px 27px black;
                 /* float: right; */
                 left: 270px;
@@ -287,7 +287,7 @@ p {
 <div class="container">
     <div class="bravo-list-hotel layout_{{$style_list}}">
         @if($title)
-        <div class="title">
+        <div class="title mx-1" style=" font-weight:700; font-size:28px;">
             {{$title}}  <span>  <a href="{{ url('/hotel/') }}">
                 <span style="float:right; color:#FF3500; font-size:15px; font-weight: 900;">View All</span>
               </a></span>
@@ -299,7 +299,7 @@ p {
             </div>
         @endif --}}
         
-        <div class="sub-title">
+        <div class="sub-title mx-1 mb-2">
             Staycation highly rated for thoughtful design
         </div>
         <div class="list-item">
@@ -329,7 +329,7 @@ p {
 
 <div class="container">
     <div class="row">
-        <h4 class="title">Explore the peak of Dubai</h4>
+        <h4 class="title" style="font-weight:700; font-size:28px;">Explore the peak of Dubai</h4>
     </div>
     <div class="row">
         <div id="filtering">
@@ -472,7 +472,7 @@ p {
 
 <div class="container">
     <div class="row">
-        <h4 class="title">Categories</h4>
+        <h4 class="title" style="font-weight:700; font-size:28px;">Categories</h4>
     </div>
 
     <div class="row"> 
@@ -489,8 +489,7 @@ p {
      
         @endforeach
         <div class="col-md-3">
-          
-            <div class="card mt-2 w-100" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%); border-radius:10px; height:92%">
+            <div class="card mt-2 w-100" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%); border-radius:10px; height:92%;width:100%;">
                 <div class="categories1">
                     <h2 class="heading" style="position: absolute; top: 76%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 100%; font-weight: 900;">View All</h2>
                 </div>

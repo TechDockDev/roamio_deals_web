@@ -60,7 +60,7 @@
             background: white;
             padding: 8px 7px;
             border-radius: 30px;
-            color:black;
+            color:red;
             text-shadow: 1px 1px 27px black;
         "></i>
         </div>

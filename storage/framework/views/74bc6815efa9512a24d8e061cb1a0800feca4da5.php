@@ -41,7 +41,7 @@
         </a>
         <div class="service-wishlist <?php echo e($row->isWishList()); ?>" data-id="<?php echo e($row->id); ?>" data-type="<?php echo e($row->type); ?>">
             <i class="fa fa-heart-o" style="height:30px; width:30px; border-radius:30px;background: white;
-            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: black;"></i>
+            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: red;"></i>
         </div>
         <?php if($row->discount_percent): ?>
             <div class="sale_info"><?php echo e($row->discount_percent); ?></div>

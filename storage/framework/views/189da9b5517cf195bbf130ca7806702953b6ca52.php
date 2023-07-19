@@ -499,49 +499,51 @@ p {
 
 </style>
 
-  <center><h3  class="title" style="margin-top: 43px;">Explore UAE <span style="color: #FE9000;">Staycation</span></h3>
+  <center><h3  class="title py-2" style="margin-top: 43px; font-weight:700; font-size:28px;">Explore UAE <span style="color: #FE9000; font-weight:700; font-size:28px;">Staycation</span></h3></center>
   
-      <div class="title">
-           
+    <div class="container mt-5">
+      <div class="row">
+        <img src="<?php echo e(asset('images\benner-img_3.png')); ?>">
         </div>
-        </center>
+      </div>
 
-
-
-    
-  
-           
   
         <div class="container mt-5">
             <div class="row">
-                <div class="col-md-6">
-                    <h4 class="title" style="margin-top: 43px;">Best Deal On Staycation</h4>
-                </div>
-                <div class="col-md-6">
-                    <a href="#" style="float: right; margin-top: 28px;"><h5>View All</h5></a>
-                </div>
+              <h4 class="title" style="margin-top: 43px;font-weight:700; font-size:28px;  ">Best Deal On Staycation <a href="<?php echo e(url('hotel')); ?>"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
+    
             </div>
         
             <div class="row">
+
+             
                 <?php $__currentLoopData = $bestDeal['hotels']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotelx): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
+
+            
+                    <div class="col-md-4 mb-3">
+                        <div class="card mb-3 h-100" style="border-radius: 10px; position: relative;">
                             <div class="Daily-Deals1" style="position: relative;">
                                 <a href="<?php echo e(url('/hotel/' . $hotelx->slug)); ?>"><img src="<?php echo e($hotelx->banner_image); ?>" style="height:200px; width:100%; border-radius: 10px;"></a>
                                   <input type ="text" class="objectidgetclass<?php echo e($hotelx->id); ?>" style="display:none;" name="object_id" value="<?php echo e($hotelx->id); ?>">
                                  <input type ="text" class="objectmodalgetclass<?php echo e($hotelx->id); ?>" style="display:none;" name="object_model" value="hotel">
 
-                                 <span class="fa fa-heart fa-3x fass newhotelheartstatus<?php echo e($hotelx->id); ?> hotelwishlistaddingheart <?php if ($hotelx->wishlist== true) {
+                                 <span class="fa fa-heart-o fa-3x fass newhotelheartstatus<?php echo e($hotelx->id); ?> hotelwishlistaddingheart <?php if ($hotelx->wishlist== true) {
                   echo "class";
-                }   ?>" attr="<?php echo e($hotelx->id); ?>" style="position: absolute;
+                }else{
+
+
+                }  
+
+                 ?>" attr="<?php echo e($hotelx->id); ?>" style="position: absolute;
                 top: 10px;
                 right: 10px;
-                color: white;
+                color: red;
                 text-shadow: 1px 1px 27px black;
                 /* float: right; */
                 left: 270px;
                 height: 30px;
                 width: 30px;
+               
                 background: white;
                 padding: 6px 6px;
                 border-radius:30px;
@@ -553,8 +555,9 @@ p {
                                     <span><i class="fa fa-map-marker" aria-hidden="true"></i>  <?php echo e($hotelx->address); ?></span>
                                 </p>
                                 <p>
-                                    <span class="btn btn-light Daily-btn"><?php echo e($hotelx->star_rate); ?> <i class="fa fa-star"></i></span>
-                                    (4)
+                                    <span class="btn btn-light Daily-btn"><?php echo e($hotelx->review_score); ?> <i class="fa fa-star"></i></span>
+                                    <?php echo e($hotelx->star_rate); ?>
+
                                     <span> Excellent </span>
                                 </p>
                                 <p>
@@ -582,18 +585,16 @@ p {
 
  <div class="container mt-5">
             <div class="row">
-                <div class="col-md-6">
-                    <h4 class="title" style="margin-top: 43px;">Budget Staycation</h4>
+               
+                    <h4 class="title" style="margin-top: 43px; font-weight:700; font-size:28px;">Budget Staycation <a href="<?php echo e(url('hotel')); ?>"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
                 </div>
-                <div class="col-md-6">
-                    <a href="#" style="float: right; margin-top: 28px;"><h5>View All</h5></a>
-                </div>
-            </div>
+                
+          
         
             <div class="row">
                 <?php $__currentLoopData = $budget['hotels']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotelx): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
+                    <div class="col-md-4 h-100 mb-3">
+                        <div class="card mb-3" style="border-radius: 10px;  position: relative;">
                             <div class="Daily-Deals1" style="position: relative;">
                                 <a href="<?php echo e(url('/hotel/' . $hotelx->slug)); ?>"><img src="<?php echo e($hotelx->banner_image); ?>" style="height:200px; width:100%; border-radius: 10px;"></a>
                                 <input type ="text" class="objectidgetclass<?php echo e($hotelx->id); ?>" style="display:none;" name="object_id" value="<?php echo e($hotelx->id); ?>">
@@ -604,7 +605,7 @@ p {
                 }   ?>" attr="<?php echo e($hotelx->id); ?>" style="position: absolute;
                 top: 10px;
                 right: 10px;
-                color: white;
+                color: red;
                 text-shadow: 1px 1px 27px black;
                 /* float: right; */
                 left: 270px;
@@ -621,8 +622,9 @@ p {
                                     <span><i class="fa fa-map-marker" aria-hidden="true"></i>  <?php echo e($hotelx->address); ?></span>
                                 </p>
                                 <p>
-                                    <span class="btn btn-light Daily-btn"><?php echo e($hotelx->star_rate); ?> <i class="fa fa-star"></i></span>
-                                    (4)
+                                    <span class="btn btn-light Daily-btn"> <i class="fa fa-star"></i><?php echo e($hotelx->review_score); ?></span>
+                                    <?php echo e($hotelx->star_rate); ?>
+
                                     <span> Excellent </span>
                                 </p>
                                 <p>
@@ -641,38 +643,22 @@ p {
 
 
 <div class="container">
-    <div class="row">
-        <h4  class="title">Explore the Staycation around UAE</h4>
-    </div>
-    <div class="row">  
-        <div id="filtering">
-     <button class="bttn active" onclick="geeksportal('all')">Dubai</button>
-            <button class="bttn" onclick="geeksportal('Top Trending In Dubai')">Fujairah</button>
-            <button class="bttn" onclick="geeksportal('Top Discount')">Ajman</button>
-            <button class="bttn" onclick="geeksportal('Top Rated')">Umm Al quwain</button>
-            <button class="bttn" onclick="geeksportal('Top Selling')">Sharjah</button>
-            <button class="bttn" onclick="geeksportal('Top Rated')">Abu Dhabi</button>
-            <button class="bttn" onclick="geeksportal('Top Selling')">Ras al khaimah</button>
-
-
-        </div>
-    </div>
+    
+    
 
   
         <div class="container mt-5">
             <div class="row">
-                <div class="col-md-6">
-                    <h4 class="title" style="margin-top: 43px;">Explore</h4>
-                </div>
-                <div class="col-md-6">
-                    <a href="#" style="float: right; margin-top: 28px;"><h5>View All</h5></a>
-                </div>
+             
+                    <h4 class="title" style="margin-top: 43px; font-weight:700; font-size:28px;">Explore Staycation <a href="<?php echo e(url('hotel')); ?>"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
+            
+              
             </div>
         
             <div class="row">
                 <?php $__currentLoopData = $datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
+                    <div class="col-md-4 mb-3">
+                        <div class="card mb-3 h-100" style="border-radius: 10px;  position: relative;">
                             <div class="Daily-Deals1" style="position: relative;">
                                 <a href="<?php echo e(url('/hotel/' . $hotel->slug)); ?>"><img src="<?php echo e($hotel->bannerImage); ?>" style="height:200px; width:100%; border-radius: 10px;"></a>
                                 <input type ="text" class="objectidgetclass<?php echo e($hotel->id); ?>" style="display:none;" name="object_id" value="<?php echo e($hotelx->id); ?>">
@@ -683,7 +669,7 @@ p {
                 }   ?>" attr="<?php echo e($hotel->id); ?>" style="position: absolute;
                 top: 10px;
                 right: 10px;
-                color: white;
+                color: red;
                 text-shadow: 1px 1px 27px black;
                 /* float: right; */
                 left: 270px;
@@ -700,8 +686,8 @@ p {
                                     <span><i class="fa fa-map-marker" aria-hidden="true"></i>  <?php echo e($hotel->address); ?></span>
                                 </p>
                                 <p>
-                                    <span class="btn btn-light Daily-btn"><?php echo e($hotel->star_rate); ?> <i class="fa fa-star"></i></span>
-                                    (4)
+                                    <span class="btn btn-light Daily-btn"><i class="fa fa-star"></i><?php echo e($hotel->review_score); ?></span>
+                                    <?php echo e($hotel->star_rate); ?> 
                                     <span> Excellent </span>
                                 </p>
                                 <p>
@@ -806,7 +792,7 @@ p {
                        <small class="text2">Experience Better</small>
                        <h4 class="title text1">Top Staycation Around UAE</h4>
                          <div class="desc">                                                                                                                                                                                                                                             
-                        <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                        <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
                            Explore
                         </a> 
                        </div>
@@ -825,7 +811,7 @@ p {
                        <small class="text2">Experience More</small>
                        <h4 class="title text1">Top Activities Around UAE</h4>
                          <div class="desc">                                                                                                                                                                                                                                             
-                        <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                        <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
                            Explore
                         </a> 
                        </div>
@@ -840,19 +826,19 @@ p {
        <div class="row">
            <div class="col-md-4 text-center">
                <div class="card1">
-                   <img src="images/Frame_1.svg" class="card-img-top" alt="...">
+                   <img src="<?php echo e(url('images/Frame_1.svg')); ?>" class="card-img-top" alt="...">
                    
                </div>
            </div>
            <div class="col-md-4 text-center">
                <div class="card1">
-                   <img src="images/Frame_2.png" class="card-img-top" alt="...">
+                   <img src="<?php echo e(url('images/Frame_2.png')); ?>" class="card-img-top" alt="...">
                    
                </div>
            </div>
            <div class="col-md-4 text-center">
                <div class="card1">
-                   <img src="images/Group2608634.svg" class="card-img-top" alt="..." style="height:64px">
+                   <img src="<?php echo e(('images/Group2608634.svg')); ?>" class="card-img-top" alt="..." style="height:64px">
                    <div class="card-body">
                        <h5 class="card-title pt-3" style="font-weight:900">Best Offer</h5>
                        <p class="card-text">Best Recommendations according to your Interest and offers.</p>
@@ -905,13 +891,13 @@ $('.hotelwishlistaddingheart').click(function() {
   }
 },
     error: function(xhr, status, error) {
-      alert("AJAX request failed: " + error);
+       // alert("AJAX request failed: " + error);
+
+       $('#login').modal('show');
       
     }
   });
 });
-
-
 
 });
 
