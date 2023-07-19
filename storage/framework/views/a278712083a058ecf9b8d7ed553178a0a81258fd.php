@@ -43,36 +43,59 @@
             </div>
         </div>
                   
-          <?php
+        <?php
 
- $user_id = null;
-
-     if(auth()->check())
-     {
-    
-       $user_id = auth()->user()->id;
-     }
-
-     
-     $cartdata = DB::table('cart')->where('user_id',$user_id)->where('status',Null)->get();
-
-          ?>
-
-        <div class="col-md-12">
-          <a href="<?php echo e(url('hotel-wish-list')); ?>"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>  WishList</p></a>
-         <a href="<?php echo e(url('user-cart')); ?>"> <p style="color: gray;
-          left: 280px;
-          position: relative;
-          top: -51px;"><span>
-             <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>&nbsp;cart</p></a>
-        </div>
+        $user_id = null;
+       
+            if(auth()->check())
+            {
+           
+              $user_id = auth()->user()->id;
+            }
+       
+            
+            $cartdata = DB::table('cart')->where('user_id',$user_id)->where('status',Null)->get();
+       
+                 ?>
+       
+               <div class="col-md-12">
+                 <a href="<?php echo e(url('hotel-wish-list')); ?>"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>   WishList</p></a>
+                <a href="<?php echo e(url('user-cart')); ?>"> <p style="color: grey;
+                    left: 269px;
+                 position: relative;
+                 top: -60px;"><span>
+                    
+       
+            
+       
+       
+       
+       
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; &nbsp;Cart <span 
+                    class="badge bg-danger"
+                    style="width: 30px;
+                    height: 30px;
+                    padding: 15.2px 7.8px;
+                    font-size: 27px;
+                    border-radius: 26px;
+                    transform: perspective(0px) translate(-12px) rotate(0deg) scale(0.50);
+                    transform-origin: top;
+                    padding-right: 0;
+                    padding-top: 0.2px;
+                    padding-left: 0.2px;
+                    left: -39px;
+                    top:0px;
+                 position: relative;
+                    text-align: center;border-width: 48px;
+                  "><?php echo e(count($cartdata)); ?></span> </span> </p></a>
+               </div>
 
 
          
      <div style="float: right;
      right: -335px;
      position: relative;
-     top: -98px;
+     top: -110px;
  ">
                 <?php if(!Auth::check()): ?>
                         <li class="login-item">
