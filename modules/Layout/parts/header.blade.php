@@ -43,37 +43,51 @@
             </div>
         </div>
                   
-          <?php
+        <?php
 
- $user_id = null;
-
-     if(auth()->check())
-     {
-    
-       $user_id = auth()->user()->id;
-     }
-
-     
-     $cartdata = DB::table('cart')->where('user_id',$user_id)->where('status',Null)->get();
-
-          ?>
-
-        <div class="col-md-12">
-          <a href="{{url('hotel-wish-list')}}"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>  WishList</p></a>
-         <a href="{{url('user-cart')}}"> <p style="color: gray;
-          left: 280px;
-          position: relative;
-          top: -51px;"><span>
-             <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>&nbsp;cart</p></a>
-        </div>
-
-
-         
-     <div style="float: right;
-     right: -335px;
-     position: relative;
-     top: -98px;
- ">
+        $user_id = null;
+       
+            if(auth()->check())
+            {
+           
+              $user_id = auth()->user()->id;
+            }
+       
+            
+            $cartdata = DB::table('cart')->where('user_id',$user_id)->where('status',Null)->get();
+       
+                 ?>
+       
+               <div class="col-md-12">
+                 <a href="{{url('hotel-wish-list')}}"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>   WishList</p></a>
+                <a href="{{url('user-cart')}}"> <p style="color: grey;
+                    left: 269px;
+                 position: relative;
+                 top: -60px;"><span>
+       
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; &nbsp;Cart <span 
+                    class="badge bg-danger"
+                    style="width: 30px;
+                    height: 30px;
+                    padding: 15.2px 7.8px;
+                    font-size: 27px;
+                    border-radius: 26px;
+                    transform: perspective(0px) translate(-12px) rotate(0deg) scale(0.50);
+                    transform-origin: top;
+                    padding-right: 0;
+                    padding-top: 0.2px;
+                    padding-left: 0.2px;
+                    left: -39px;
+                    top:0px;
+                 position: relative;
+                    text-align: center;border-width: 48px;
+                  ">{{ count($cartdata) }}</span> </span> </p></a>
+               </div>
+       <div style="float: right;
+        right: -335px;
+        position: relative;
+        top: -110px;
+       ">
                 @if(!Auth::check())
                         <li class="login-item">
                             <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900; background:white; box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">{{__('Login')}}</a>

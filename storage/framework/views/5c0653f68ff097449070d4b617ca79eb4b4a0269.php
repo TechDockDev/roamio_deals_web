@@ -84,9 +84,18 @@ padding: 4px 4px;
 
       <?php
 
+if (auth()->check()) {
+$user_id =auth()->user()->id;
+}else{
+
+    $user_id = Null;
+}
+
+
+
 
  $wishlist = DB::table('user_wishlist')
-    ->where('user_id', auth()->user()->id)
+    ->where('user_id',$user_id)
     ->where('object_model', 'hotel')
     ->get();
 
@@ -104,7 +113,7 @@ foreach ($wishlist as $stay) {
 
 
  $xxwishlist = DB::table('user_wishlist')
-    ->where('user_id', auth()->user()->id)
+    ->where('user_id', $user_id)
     ->where('object_model','event')
     ->get();
 
@@ -176,7 +185,7 @@ foreach ($xxwishlist as $xstay) {
         </div>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 <?php else: ?>
-    <p class="text-center  mx-3">No data found.</p>
+   
 <?php endif; ?>
 
  
