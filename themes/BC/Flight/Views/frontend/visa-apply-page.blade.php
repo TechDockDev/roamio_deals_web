@@ -25,7 +25,7 @@ position: relative;
 
  .inputfolter{
     position: relative;
-    top: -73px;
+    top: -84px;
  }
      .accordion {
     background-color: #eee;
@@ -270,7 +270,7 @@ position: relative;
                                 <div class="form-group">
                                     <select id="rangeSelect" name="adult" class="form-control" required>
                                         <option>--Number of Travelers (Adults)--</option>
-                                        <option value="0">0</option>
+                                      
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -288,7 +288,7 @@ position: relative;
                                 <div class="form-group">
                                     <select id="childSelect" name="child" class="form-control" required>
                                         <option>--Number of Travelers (Children)--</option>
-                                        <option value="0">0</option>
+                                       
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -306,42 +306,36 @@ position: relative;
                     </div>
                     <div id="second" class="tab">
                         @foreach($visadata as $visa)
-
-                     
-
-                            <input type="hidden" style="height: 20px; width: 20px; order: 1;" id="check{{$visa->id}}" name="entry_id" value="{{$visa->id}}">
-                           
-                            <button type="button" class="accordion">{{$visa->entry}}</button>
-                            <div class="panel" style="display: flex; flex-direction: column;">
-                                <div class="container" style="margin-top:10px; margin-bottom:10px;">
-                                    <div class="row">
-                                        @if ($visa->visa_entry_details && count($visa->visa_entry_details) > 0)
-                                        
-                                            @foreach ($visa->visa_entry_details as $item)
-                                                <div class="col-4">
-                                                    <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
-                                                        <div style="padding:10px;">
-
-                                                            <div style="display: flex; justify-content: flex-end;">
-                                                                <input type="hidden" name="entry_id"  value="{{$item->entry_id}}">
-                                                                <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1; " id="check{{$item->id}}" name="entry_detail_id" value="{{$item->id}}">
-                                                            </div>
-                                                            <h5>{{$item->days}}</h5>
-                                                            <h6>{{$item->title}}</h6>
-                                                            <p>{!! $item->discription !!}</p>
-                                                            <h4>{{$item->price}}</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        @else
-                                            <p>No visa entry details available for this visa.</p>
-                                        @endif
+                          <input type="hidden" style="height: 20px; width: 20px; order: 1;" id="check{{$visa->id}}" name="entry_id" value="{{$visa->id}}">
+                          <button type="button" class="accordion">{{$visa->entry}}</button>
+                          <div class="panel" style="display: flex; flex-direction: column;">
+                            <div class="container" style="margin-top:10px; margin-bottom:10px;">
+                              <div class="row">
+                                @if ($visa->visa_entry_details && count($visa->visa_entry_details) > 0)
+                                  @foreach ($visa->visa_entry_details as $item)
+                                    <div class="col-4">
+                                      <div class="card" style="background: var(--light-orange, #FFF3E3); border-radius:10px;">
+                                        <div style="padding:10px;">
+                                          <div style="display: flex; justify-content: flex-end;">
+                                            <input type="hidden" name="entry_id" value="{{$item->entry_id}}">
+                                            <input type="radio" class="form-check-input" style="height: 20px; width: 20px; order: 1; " id="check{{$item->id}}" name="entry_detail_id" value="{{$item->id}}">
+                                          </div>
+                                          <h5>{{$item->days}}</h5>
+                                          <h6>{{$item->title}}</h6>
+                                          <p>{!! $item->discription !!}</p>
+                                          <h4>{{$item->price}}</h4>
+                                        </div>
+                                      </div>
                                     </div>
-                                </div>
+                                  @endforeach
+                                @else
+                                  <p>No visa entry details available for this visa.</p>
+                                @endif
+                              </div>
                             </div>
+                          </div>
                         @endforeach
-                    </div>
+                      </div>
                     <div id="third" class="tab">
                         <div class="row" id="userRegisterForm">
                             <div id="divContainer"></div>
@@ -440,5 +434,37 @@ position: relative;
         alert("SMS: " + message);
     }
 </script>
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+
+      // Find the corresponding radio button and toggle its checked state
+      var radioBtn = this.nextElementSibling.querySelector("input[type='radio']");
+      radioBtn.checked = !radioBtn.checked;
+
+      // Change the background color of the radio button when it is active
+      if (radioBtn.checked) {
+        radioBtn.style.backgroundColor = "blue";
+      } else {
+        radioBtn.style.backgroundColor = ""; // Reset to default background color
+      }
+
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+</script>
+
+
 
 @endsection

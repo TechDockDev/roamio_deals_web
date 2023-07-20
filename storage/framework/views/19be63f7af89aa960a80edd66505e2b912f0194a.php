@@ -38,7 +38,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/daterange/daterangepicker.css")); ?>" >
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap" rel="stylesheet">
+    
     <link rel='stylesheet' id='google-font-css-css'  href='https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600&display=swap' type='text/css' media='all' />
     <?php echo \App\Helpers\Assets::css(); ?>
 
@@ -157,7 +158,7 @@
 
 
   
-  
+ 
 <script>
 
 function printDivs() {
@@ -244,7 +245,9 @@ function printDivs() {
        
        <div class="col-md-6">
           <div class="form-group uploadinput">
-            <input type="file" name="passport_first_page[]" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page">
+            <input type="file" name="passport_first_page[]" class="custom-file-input" id="passportfirst${i}" onchange="handleFileInputChange(event, 'passportfirst${i}')" aria-describedby="emailHelp" placeholder="passport first page" style="top: 25px;
+    position: relative;
+">
              <input type="text" class="form-control showFileInput" placeholder="Passport first page Photo" >
              <img src =<?php echo e(asset('images/btn.svg')); ?> class="imageClass">
           </div>
@@ -254,7 +257,9 @@ function printDivs() {
    <div class="row inputfolter">
      <div class="col-md-6">
       <div class="form-group">
-      <input type="file" class="custom-file-input" name="passport_second_page[]" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')">
+      <input type="file" class="custom-file-input" name="passport_second_page[]" id="passportsecond${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportsecond${i}')" style="top: 25px;
+    position: relative;
+">
     <input type="text" class="form-control showFileInput" placeholder="Passport second page Photo" >
     <img src = <?php echo e(asset('images/btn.svg')); ?> class="imageClass">
      
@@ -262,7 +267,9 @@ function printDivs() {
     </div>
     <div class="col-md-6">
      <div class="form-group">
-      <input type="file" class="custom-file-input" name="passport_size_photo[]" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')">
+      <input type="file" class="custom-file-input" name="passport_size_photo[]" id="passportphoto${i}" aria-describedby="emailHelp" onchange="handleFileInputChange(event, 'passportphoto${i}')" style="top: 25px;
+    position: relative;
+">
        <input type="text" class="form-control showFileInput" placeholder="Passport Size Photo" >
        <img src =  <?php echo e(asset('images/btn.svg')); ?> class="imageClass">
       
@@ -317,22 +324,9 @@ function printDivs() {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src=https://www.gov.br/ds/assets/govbr-ds-dev-core/dist/core-init.js></script>
-<script>
-  var acc = document.getElementsByClassName("accordion");
-  var i;
 
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-</script>
+
+
 <script>
 // JavaScript/jQuery
 // JavaScript/jQuery

@@ -1,7 +1,7 @@
 <div class="bravo_header">
-    <div class="<?php echo e($container_class ?? 'container'); ?>" 
+    <div class="<?php echo e($container_class ?? 'container-fluid'); ?>" 
 >
-        <div class="content">
+        <div class="content ">
             <div class="header-left">
                 <a href="<?php echo e(url(app_get_locale(false,'/'))); ?>" class="bravo-logo">
                     <?php
@@ -12,7 +12,8 @@
                     ?>
                     <?php if($logo_id): ?>
                         <?php $logo = get_file_url($logo_id,'full') ?>
-                        <img src="<?php echo e($logo); ?>" style=" height: 91px;
+                        <img src="<?php echo e($logo); ?>" style="
+                        height: 62px;
                       
                         position: relative;" alt="<?php echo e(setting_item("site_title")); ?>">
                     <?php endif; ?>
@@ -24,16 +25,18 @@
             <div class="topbar-left">
                  <ul class="topbar-items">
                     <div style="position: relative !important;
-                         left: -327px !Important;
-                     top: 41px; !important">
+                         left: -305px !Important;
+                     top: 39px;!important; font-family: 'Poppins';">
                     <?php echo $__env->make('Core::frontend.currency-switcher', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    <?php echo $__env->make('Language::frontend.switcher', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    
                     </div>
         <div class="col-md-12 mx-auto">
-            <div class="input-group" style="left: -97%;
+            <div class="input-group" style=" left: -67%;
             width: 198%;
-            top: 10px;">
-                <input class="form-control border-end-0 border" type="search" id="example-search-input" placeholder="Search for destinations or activities" style="background:#F6F6F6;">
+            top: 6px;">
+                <input class="form-control border-end-0 border" type="search" id="example-search-input" placeholder="Search  Enter Tools" style="background:#F6F6F6;  font-size: 15px;
+                font-weight: 600;
+                font-family: 'Poppins' !important;">
                 <span class="input-group-append" style="margin-bottom: 0px;
               border-bottom: 1px solid #dae1e7;">
                     <button class="btn btn-outline-secondary border-start-0 border-bottom-0 border ms-n5" type="button" style="height: 39px;background:#F6F6F6;">
@@ -59,13 +62,24 @@
                  ?>
        
                <div class="col-md-12">
-                 <a href="<?php echo e(url('hotel-wish-list')); ?>"><p style="color:gray;left: 189px; position:relative; top:-17px;"><span><i class="fa fa-heart" aria-hidden="true"></i></span>   WishList</p></a>
-                <a href="<?php echo e(url('user-cart')); ?>"> <p style="color: grey;
-                    left: 269px;
-                 position: relative;
-                 top: -60px;"><span>
+                 <a href="<?php echo e(url('hotel-wish-list')); ?>">
+                    
+                    <p style="color: #CDCFD0;
+                  left: 409px;
+                    position: relative;
+                    top: -21px;
+                    font-size: 15px;
+                    font-weight: 600;
+                    font-family: 'Poppins' !important;"><span><i class="fa fa-heart-o" aria-hidden="true" style="font-size:22px;"></i></span>&nbsp;   WishList</p></a>
+                 <a href="<?php echo e(url('user-cart')); ?>"> <p style="color: #CDCFD0;
+                    left: 566px;
+    position: relative;
+    top: -67px; 
+                     font-size: 15px;
+                    font-weight: 600;
+                    font-family: 'Poppins' !important;"><span>
        
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; &nbsp;Cart <span 
+                    <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:22px;"></i>&nbsp; &nbsp;Cart <span 
                     class="badge bg-danger"
                     style="width: 30px;
                     height: 30px;
@@ -77,24 +91,33 @@
                     padding-right: 0;
                     padding-top: 0.2px;
                     padding-left: 0.2px;
-                    left: -39px;
+                    left: -48px;
                     top:0px;
                  position: relative;
                     text-align: center;border-width: 48px;
                   "><?php echo e(count($cartdata)); ?></span> </span> </p></a>
                </div>
        <div style="float: right;
-        right: -335px;
-        position: relative;
-        top: -110px;
+       right: -288px;
+       position: relative;
+       top: -122px;
+       font-size: 20px;
        ">
                 <?php if(!Auth::check()): ?>
-                        <li class="login-item">
-                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900; background:white; box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;"><?php echo e(__('Login')); ?></a>
+                        <li class="login-item" style="position: relative;
+                     
+                        left: 357px;">
+                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color: #FF3500;
+                            font-weight: 900;
+                            background: white;
+                            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+                            padding: 10px 29px;
+                            border-radius: 9px;"><?php echo e(__('Login')); ?></a>
                         </li>
                         <?php if(is_enable_registration()): ?>
-                            <li class="signup-item">
-                                <a href="#register" class="btn btn-primary" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; padding:10px;" data-toggle="modal" data-target="#register" class="signup"><?php echo e(__('Sign Up')); ?></a>
+                            <li class="signup-item" style="position: relative;
+                            left: 345px;">
+                                <a href="#register" class="btn btn-primary" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white;  border-radius: 9px;" data-toggle="modal" data-target="#register" class="signup"><?php echo e(__('Sign Up')); ?></a>
                             </li>
                         <?php endif; ?>
                     <?php else: ?>

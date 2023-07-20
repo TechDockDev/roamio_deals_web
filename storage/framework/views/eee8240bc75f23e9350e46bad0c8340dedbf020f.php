@@ -578,14 +578,18 @@ fass:hover{
    
       <div class="col-md-6">
         <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-        <p class="card-text text-white pt-3"><?php echo e($reviews->title); ?> </p>
+        <p class="card-text text-white pt-3">Experience blissful relaxation, captivating local adventures, and charming accommodations - all in one staycation destination; our guests' reviews speak volumes about the unforgettable memories and cherished experiences awaiting you!</p>
         <div class="row">
           <div class="col-md-6">
             <h3 class="card-text pt-2 text-white p-1"><?php echo e($totalUsers); ?> +</h3>
             <p class="card-text text-white">Happy Customers</p>
           </div>
           <div class="col-md-6">
-            <h3 class="card-text pt-2 text-white p-1"><?php echo e($reviews->rate_number); ?> <i class="fa fa-star"></i></h3>
+            
+            <?php
+            dump($reviews->rate_number);
+        ?> <i class="fa fa-star"></i></h3>
+        
             <p class="card-text text-white">Overall Rating</p>
           </div>
         </div>

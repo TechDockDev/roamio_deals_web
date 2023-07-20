@@ -16,7 +16,7 @@
 
 
 @if(!empty($style) and $style == "carousel" and !empty($list_slider))
-    <div class="effect">
+    <div class="effect" style="width: 95vw; margin: auto;">
         <div class="owl-carousel">
             @foreach($list_slider as $item)
                 @php $img = get_file_url($item['bg_image'],'full') @endphp
@@ -32,6 +32,7 @@
         <div class="col-lg-12" style="left: 50px;">
             <h3 class="text-heading">{{$title}}</h3>
             <div class="sub-heading">{{$sub_title}}</div>
+            <button class="btn btn-light mt-2">Explore</button>
             @if(empty($hide_form_search))
                 <div class="g-form-control">
                     <ul class="nav nav-tabs" role="tablist">

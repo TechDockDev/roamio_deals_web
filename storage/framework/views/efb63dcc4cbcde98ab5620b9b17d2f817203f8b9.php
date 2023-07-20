@@ -16,7 +16,7 @@
 
 
 <?php if(!empty($style) and $style == "carousel" and !empty($list_slider)): ?>
-    <div class="effect">
+    <div class="effect" style="width: 95vw; margin: auto;">
         <div class="owl-carousel">
             <?php $__currentLoopData = $list_slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <?php $img = get_file_url($item['bg_image'],'full') ?>
@@ -32,6 +32,7 @@
         <div class="col-lg-12" style="left: 50px;">
             <h3 class="text-heading"><?php echo e($title); ?></h3>
             <div class="sub-heading"><?php echo e($sub_title); ?></div>
+            <button class="btn btn-light mt-2">Explore</button>
             <?php if(empty($hide_form_search)): ?>
                 <div class="g-form-control">
                     <ul class="nav nav-tabs" role="tablist">
