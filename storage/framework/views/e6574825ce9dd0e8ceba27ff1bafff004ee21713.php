@@ -18,13 +18,15 @@
             <?php $__currentLoopData = $actives; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $currency): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <?php if($current != $currency['currency_main']): ?>
                     <li>
-                        <a href="<?php echo e(get_currency_switcher_url($currency['currency_main'])); ?>" class="is_login">
+                        <a href="<?php echo e(get_currency_switcher_url($currency['currency_main'])); ?>" class="is_login" >
                             <?php echo e(strtoupper($currency['currency_main'])); ?>
 
                         </a>
                     </li>
                 <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+          
         </ul>
     </li>
 <?php endif; ?>
