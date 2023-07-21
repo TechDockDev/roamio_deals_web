@@ -29,10 +29,17 @@
 @endif
 <div class="container">
     <div class="row">
+        {{-- {{$title}} --}}
+        {{-- {{$sub_title}} --}}
         <div class="col-lg-12" style="left: 50px;">
-            <h3 class="text-heading">{{$title}}</h3>
-            <div class="sub-heading">{{$sub_title}}</div>
-            <button class="btn btn-light mt-2">Explore</button>
+            <div class="row">
+             <div class="col-md-4">
+                <h4 class="text-heading"  style="font-size:45px; font-weight:600; font-family='poppins';"> {{$title}}</h4>
+                <div class="sub-heading mb-3">{{$sub_title}}</div>
+                <button class="btn btn-light">Explore</button>
+                </div>   
+            </div>
+           
             @if(empty($hide_form_search))
                 <div class="g-form-control">
                     <ul class="nav nav-tabs" role="tablist">
