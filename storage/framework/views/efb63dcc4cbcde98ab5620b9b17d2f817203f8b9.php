@@ -16,7 +16,7 @@
 
 
 <?php if(!empty($style) and $style == "carousel" and !empty($list_slider)): ?>
-    <div class="effect" style="width: 95vw; margin: auto;">
+    <div class="effect">
         <div class="owl-carousel">
             <?php $__currentLoopData = $list_slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <?php $img = get_file_url($item['bg_image'],'full') ?>

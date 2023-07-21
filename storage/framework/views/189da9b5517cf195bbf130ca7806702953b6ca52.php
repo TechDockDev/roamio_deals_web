@@ -600,7 +600,7 @@ p {
                                 <input type ="text" class="objectidgetclass<?php echo e($hotelx->id); ?>" style="display:none;" name="object_id" value="<?php echo e($hotelx->id); ?>">
                                  <input type ="text" class="objectmodalgetclass<?php echo e($hotelx->id); ?>" style="display:none;" name="object_model" value="hotel">
 
-                                 <span class="fa fa-heart fa-3x fass newhotelheartstatus<?php echo e($hotelx->id); ?> hotelwishlistaddingheart <?php if ($hotelx->wishlist== true) {
+                                 <span class="fa fa-heart-o fa-3x fass newhotelheartstatus<?php echo e($hotelx->id); ?> hotelwishlistaddingheart <?php if ($hotelx->wishlist== true) {
                   echo "class";
                 }   ?>" attr="<?php echo e($hotelx->id); ?>" style="position: absolute;
                 top: 10px;
@@ -664,7 +664,7 @@ p {
                                 <input type ="text" class="objectidgetclass<?php echo e($hotel->id); ?>" style="display:none;" name="object_id" value="<?php echo e($hotelx->id); ?>">
                                  <input type ="text" class="objectmodalgetclass<?php echo e($hotel->id); ?>" style="display:none;" name="object_model" value="hotel">
 
-                                 <span class="fa fa-heart fa-3x fass newhotelheartstatus<?php echo e($hotel->id); ?> hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
+                                 <span class="fa fa-heart-o fa-3x fass newhotelheartstatus<?php echo e($hotel->id); ?> hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
                   echo "class";
                 }   ?>" attr="<?php echo e($hotel->id); ?>" style="position: absolute;
                 top: 10px;

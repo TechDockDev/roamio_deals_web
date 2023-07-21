@@ -10,7 +10,7 @@ $minValue = 0;
 
    <a href="{{ url('deals')}}" ><label style="position: relative;
     bottom: -40px;
-    left: 30px;
+    left: 49px;
     top: 57px;
     font-size: 18px;  color:#FF3500; font-weight:900;
 
@@ -22,7 +22,7 @@ $minValue = 0;
 		<img src="{{asset('icon/Juggler.svg')}}" style="height:35px;   left: 177%;
     position: relative;
     top: -16px;"> 
-	  <a href="{{ url('explore-activity')}}"><label style="left: 145%;
+	  <a href="{{ url('explore-activity')}}"><label style="left: 146%;
      position: relative;
      top: 21px;
      font-size: 18px;  color:#FF3500; font-weight:900;">Activities</label></a>
