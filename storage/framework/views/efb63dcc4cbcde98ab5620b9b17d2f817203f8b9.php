@@ -34,8 +34,8 @@
         <div class="col-lg-12" style="left: 50px;">
             <div class="row">
              <div class="col-md-4">
-                <h4 class="text-heading"  style="font-size:50px; font-weight:600; font-family='poppins';">Stay & Play Kids Go Free Offer</h4>
-                <div class="sub-heading mb-3">1 paying adult can now stay for free in the same room booked with the parents.</div>
+                <h4 class="text-heading"  style="font-size:45px; font-weight:600; font-family='poppins';"> <?php echo e($title); ?></h4>
+                <div class="sub-heading mb-3"><?php echo e($sub_title); ?></div>
                 <button class="btn btn-light">Explore</button>
                 </div>   
             </div>
