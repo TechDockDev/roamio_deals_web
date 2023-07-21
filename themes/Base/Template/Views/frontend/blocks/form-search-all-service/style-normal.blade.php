@@ -16,7 +16,7 @@
 
 
 @if(!empty($style) and $style == "carousel" and !empty($list_slider))
-    <div class="effect" style="width: 95vw; margin: auto;">
+    <div class="effect">
         <div class="owl-carousel">
             @foreach($list_slider as $item)
                 @php $img = get_file_url($item['bg_image'],'full') @endphp

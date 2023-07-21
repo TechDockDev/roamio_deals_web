@@ -78,7 +78,7 @@
         <?php endif; ?>
     </div>
     <div class="location">
-        <?php if(!empty($row->location->name)): ?>
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>   <?php if(!empty($row->location->name)): ?>
             <?php $location =  $row->location->translate() ?>
             <?php echo e($location->name ?? ''); ?>
 
@@ -90,8 +90,8 @@
     $score_total = $reviewData['score_total'];
     ?>
     <div class="service-review">
-        <span class="rate Daily-btn text-white mb-5">
-            <?php if($reviewData['total_review'] > 0): ?> <?php echo e($score_total); ?>/5 <?php endif; ?> <span class="rate-text"><?php echo e($reviewData['review_text']); ?></span>
+        <span class="rate">
+            <span class="Daily-btn text-white w-30"><?php if($reviewData['total_review'] > 0): ?> <?php echo e($score_total); ?>/5 <i class="fa fa-star"></i> <?php endif; ?></span> &nbsp; &nbsp;<span class="rate-text" style="color:black"><?php echo e($reviewData['review_text']); ?></span>
         </span>
         <span class="review">
              <?php if($reviewData['total_review'] > 1): ?>
@@ -107,10 +107,17 @@
     <div class="info mt-4">
         <div class="g-price">
             <div class="prefix">
-                <span class="fr_text" style="color:black;"><?php echo e(__("from")); ?></span>
+                <span class="fr_text" style="color:black;"><?php echo e(__("AED")); ?></span>
             </div>
             <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white" style="padding: 0px 1px;"><?php echo e($row->display_price); ?> <span class="unit  text-white"><?php echo e(__("/night")); ?></span></span>
+                <span class="text-price" style="padding: 0px 1px;"><?php echo e($row->display_price); ?> <span class="unit  text-dark"><?php echo e(__("/night")); ?></span></span> &nbsp;
+               
+                <?php if(isset($row->discount_percent)): ?>
+                <span class=" btn btn-light Daily-btn text-white"><?php echo e($row->discount_percent); ?>% off</span>
+        <?php else: ?>
+       <span class=" btn btn-light Daily-btn text-white" style="color: white !important;
+      ">0% off</span>
+   <?php endif; ?>
             </div>
         </div>
     </div>

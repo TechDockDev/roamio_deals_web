@@ -59,11 +59,66 @@
 </head>
 
 <style>
+ .p{
+ font-family: 'Poppins';
+  }
+  h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+}
 .main-footer{
   background-image: url('images/footer-img1.png');
 }
 
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#FFF5E9;
+    /* background-color: rgba(255, 245, 233, 0.1); */
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    border-radius: 10px;
+}
 </style>
+
+<div class="popup" id="offerPopup" >
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="cardbox mb-3">
+
+        <div class="row g-0">
+          {{-- <button class="close-btn" onclick="hidePopup()">&times;</button> --}}
+          <div class="col-md-4">
+          <img src="{{ asset('images/home-screen(Approved).svg')}}" class="img-fluid rounded-start" alt="..." style="position: relative;
+          top: -85px;">
+          </div>
+          <div class="col-md-8 mt-2 pt-3">
+          <div class="card-body">
+            <h4 class="card-title" style="font-weight:800;">Get 5% off your 1st app booking</h4>
+            <p class="card-text mt-2">
+            Booking’s better on the app. Use promo code“BetterOnApp” to save
+            </p>
+          </div>
+          </div>
+        </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-4 text-center mb-2 py-5">
+               <p class="card-text" style="font-weight:700">Scan this QR</p>
+        <img src="{{ asset('images/image_8.svg')}}" style="height: 96px;">
+      
+    </div>
+  </div>
+</div>
+
+
+
 <body class="frontend-page {{ !empty($row->header_style) ? "header-".$row->header_style : "header-normal" }} {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif">
     @if(!is_demo_mode())
         {!! setting_item('body_scripts') !!}
@@ -87,6 +142,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
+ 
+    <script>
+      // Show the popup immediately when the page loads
+      document.addEventListener("DOMContentLoaded", function() {
+          const popup = document.getElementById("offerPopup");
+          popup.style.display = "block";
+
+          // Function to hide the popup
+          function hidePopup() {
+              popup.style.display = "none";
+          }
+
+          // Hide the popup after 2 minutes
+          setTimeout(hidePopup, 60000); // 2 minutes in milliseconds
+
+          // Function to show the popup every 4 minutes
+          function showPopup() {
+              popup.style.display = "block";
+
+              // Hide the popup after 2 minutes
+              setTimeout(hidePopup, 120000); // 2 minutes in milliseconds
+          }
+
+          // Show the popup immediately and then every 4 minutes
+          setInterval(showPopup, 240000); // 4 minutes in milliseconds (2 * 60 * 1000)
+      });
+  </script>
+
+
+
 
 
   <script>
@@ -105,7 +190,6 @@
 
 
   </script>
-
 <script>
 
   var cards = document.querySelectorAll('.card');

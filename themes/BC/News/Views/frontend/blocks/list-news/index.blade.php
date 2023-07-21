@@ -2,12 +2,18 @@
     .image{
         background: url("images/img.png");
          height:400px;
+         width:100%;
          border-radius:10px;
+         background-repeat: no-repeat;
+         background-size:cover;
     }
     .image1{
         background: url("images/img_1.png");
          height:400px;
-         border-radius:10px;   
+         width:100%;
+         border-radius:10px;  
+         background-repeat: no-repeat;
+         background-size:cover; 
     }
     .text1{
         font-size: 30px;

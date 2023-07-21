@@ -47,14 +47,8 @@
             <div class="sale_info"><?php echo e($row->discount_percent); ?></div>
         <?php endif; ?>
     </div>
-    <div class="location">
-        <?php if(!empty($row->location->name)): ?>
-            <?php $location =  $row->location->translate() ?>
-            <?php echo e($location->name ?? ''); ?>
-
-        <?php endif; ?>
-    </div>
-    <div class="item-title">
+   
+    <div class="item-title mt-2 pt-2">
         <a <?php if(!empty($blank)): ?> target="_blank" <?php endif; ?> href="<?php echo e($row->getDetailUrl($include_param ?? true)); ?>">
             <?php if($row->is_instant): ?>
                 <i class="fa fa-bolt d-none"></i>
@@ -63,14 +57,22 @@
 
         </a>
     </div>
+
+    <div class="location mb-3" style="color:black; margin-top:-7px;">
+      <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>   <?php if(!empty($row->location->name)): ?>
+            <?php $location =  $row->location->translate() ?>
+            <?php echo e($location->name ?? ''); ?>
+
+        <?php endif; ?>
+    </div>
     <?php if(setting_item('space_enable_review')): ?>
     <?php
     $reviewData = $row->getScoreReview();
     $score_total = $reviewData['score_total'];
     ?>
         <div class="service-review">
-            <span class="rate Daily-btn text-white">
-                <?php if($reviewData['total_review'] > 0): ?> <?php echo e($score_total); ?>/5 <?php endif; ?> <span class="rate-text"><?php echo e($reviewData['review_text']); ?></span>
+            <span class="rate">
+              <span class="Daily-btn text-white w-30"> <?php if($reviewData['total_review'] > 0): ?> <?php echo e($score_total); ?>/5 <i class="fa fa-star"></i> <?php endif; ?>  </span> &nbsp; &nbsp;<span class="rate-text"><?php echo e($reviewData['review_text']); ?></span>
             </span>
             <span class="review">
              <?php if($reviewData['total_review'] > 1): ?>
@@ -83,24 +85,23 @@
             </span>
         </div>
     <?php endif; ?>
-    <?php if(!empty($time = $row->start_time)): ?>
-        <div class="start-time mt-1">
-            <?php echo e(__("Start Time: :time",['time'=>$time])); ?>
-
-        </div>
-    <?php endif; ?>
-    <div class="info">
-        <div class="duration">
-            <?php echo e(duration_format($row->duration)); ?>
-
-        </div>
-        <div class="g-price">
+    
+    <div class="info mt-3">
+        
+        
+        <div class="g-price text-start">
             <div class="prefix">
-                <span class="fr_text"><?php echo e(__("from")); ?></span>
+                <span class="fr_text"><?php echo e(__("AED")); ?></span>
             </div>
             <div class="price">
-                <span class="onsale"><?php echo e($row->display_sale_price); ?></span>
-                <span class="text-price btn btn-light Daily-btn text-white"><?php echo e($row->display_price); ?></span>
+                 <span class="text-price" style="font-weight:700;"><?php echo e($row->display_price); ?></span>&nbsp;
+                 <?php if(isset($row->discount_percent)): ?>
+                 <span class=" btn btn-light Daily-btn text-white"><?php echo e($row->discount_percent); ?>% off</span>
+         <?php else: ?>
+        <span class=" btn btn-light Daily-btn text-white" style="color: white !important;
+       ">0% off</span>
+    <?php endif; ?>
+              
             </div>
         </div>
     </div>

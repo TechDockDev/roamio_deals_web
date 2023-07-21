@@ -302,83 +302,10 @@ $totalUsers = count($user_review);
 </div>
 
 
-<div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
-    <div class="row d-flex justify-content-center p-4">
-   
-      <div class="col-md-6">
-        <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-        <p class="card-text text-white pt-3"><?php echo e($reviews->title); ?> </p>
-        <div class="row">
-          <div class="col-md-6">
-            <h3 class="card-text pt-2 text-white p-1"><?php echo e($totalUsers); ?> +</h3>
-            <p class="card-text text-white">Happy Customers</p>
-          </div>
-          <div class="col-md-6">
-            <h3 class="card-text pt-2 text-white p-1"><?php echo e($reviews->rate_number); ?> <i class="fa fa-star"></i></h3>
-            <p class="card-text text-white">Overall Rating</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 p-4">
-        <div id="slider" style="height: 400px;">
-          <div class="dp-wrap">
-            <div id="dp-slider">
 
-              <?php $__currentLoopData = $user_review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            
-               <div class="dp_item" data-class="1" data-position="1">
-                <div class="row">
-                  <div class="col-md-12">
-                    <p class="card-text text-dark p-3 text-item-p">
-                      <?php echo e($item->content); ?> 
-                    </p>
-                  </div>
-                  <div class="col-md-12 mb-4">
-                    <div class="row">
-                      <div class="col-md-4 offset-md-1">
-                        <?php if(!empty($item->user->images)): ?>
-                        <img class="img-fluid dpimg" src="/image/<?php echo e($item->user->images); ?>" height="10%" alt="investing" style="border-radius:100%; height:100px; width:100px;">
-                        <?php endif; ?>
-                      </div>
-                      <div class="col-md-5">
-                        <?php if(!empty($item->user->first_name) && !empty($item->user->last_name)): ?>
-                        <h6 class="text-dark sell-item">
-                       <?php echo e($item->user->first_name); ?> <?php echo e($item->user->last_name); ?>
 
-                        </h6>
-                        <?php endif; ?>
-                        <p class="text-dark">
-                          <?php if(!empty($item->rate_number)): ?>
-                          <div class="star">
-                              <?php for($i = 0; $i < $item->rate_number; $i++): ?>
-                                  <i class="fa fa-star" style="color:#FE9000;"></i>
-                              <?php endfor; ?>
-                          </div>
-                      <?php endif; ?>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            
-            </div>
-            <ul id="dp-dots" style="display:none;">
-              <li data-class="slide1"></li>
-              <li data-class="slide2"></li>
-              <li data-class="slide3"></li>
-            </ul>
-            <div class="btn" style="display:none;">
-              <button id="dp-prev" class="btn btn-light"></button>
-              <button id="dp-next" class="btn btn-light"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-  </div>
 
+  
 
 <script>
 var slides = document.querySelectorAll('#slideshow-inner>ul>li');

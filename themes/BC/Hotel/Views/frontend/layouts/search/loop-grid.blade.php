@@ -75,7 +75,7 @@
         @endif
     </div>
     <div class="location">
-        @if(!empty($row->location->name))
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>   @if(!empty($row->location->name))
             @php $location =  $row->location->translate() @endphp
             {{$location->name ?? ''}}
         @endif
@@ -86,8 +86,8 @@
     $score_total = $reviewData['score_total'];
     ?>
     <div class="service-review">
-        <span class="rate Daily-btn text-white mb-5">
-            @if($reviewData['total_review'] > 0) {{$score_total}}/5 @endif <span class="rate-text">{{$reviewData['review_text']}}</span>
+        <span class="rate">
+            <span class="Daily-btn text-white w-30">@if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif</span> &nbsp; &nbsp;<span class="rate-text" style="color:black">{{$reviewData['review_text']}}</span>
         </span>
         <span class="review">
              @if($reviewData['total_review'] > 1)
@@ -101,10 +101,17 @@
     <div class="info mt-4">
         <div class="g-price">
             <div class="prefix">
-                <span class="fr_text" style="color:black;">{{__("from")}}</span>
+                <span class="fr_text" style="color:black;">{{__("AED")}}</span>
             </div>
             <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white" style="padding: 0px 1px;">{{ $row->display_price }} <span class="unit  text-white">{{__("/night")}}</span></span>
+                <span class="text-price" style="padding: 0px 1px;">{{ $row->display_price }} <span class="unit  text-dark">{{__("/night")}}</span></span> &nbsp;
+               
+                @if(isset($row->discount_percent))
+                <span class=" btn btn-light Daily-btn text-white">{{ $row->discount_percent }}% off</span>
+        @else
+       <span class=" btn btn-light Daily-btn text-white" style="color: white !important;
+      ">0% off</span>
+   @endif
             </div>
         </div>
     </div>

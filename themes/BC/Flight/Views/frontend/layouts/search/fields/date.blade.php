@@ -7,7 +7,7 @@
         <div class="form-date-search">
             <div class="date-wrapper">
                 <div class="check-in-wrapper">
-                    <label style="left: 24px;
+                    <label style="left: 43px;
                  
                     top: 7px;
                     position: relative;

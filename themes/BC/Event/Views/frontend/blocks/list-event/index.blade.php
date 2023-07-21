@@ -311,7 +311,7 @@ $totalUsers = count($user_review);
 </div>
 
 
-<div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
+{{-- <div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
     <div class="row d-flex justify-content-center p-4">
    
       <div class="col-md-6">
@@ -385,8 +385,10 @@ $totalUsers = count($user_review);
         </div>
       </div>
   </div>
-  </div>
+  </div> --}}
 
+
+  
 
 <script>
 var slides = document.querySelectorAll('#slideshow-inner>ul>li');
