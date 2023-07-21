@@ -1,11 +1,11 @@
 <div class="container">
     <div class="bravo-list-locations <?php if(!empty($layout)): ?> <?php echo e($layout); ?> <?php endif; ?>">
-        <div class="title">
+        <div class="title mx-2 mt-3 pt-3">
             <?php echo e($title); ?>
 
         </div>
         <?php if(!empty($desc)): ?>
-            <div class="sub-title">
+            <div class="sub-title mx-3">
                 <?php echo e($desc); ?>
 
             </div>

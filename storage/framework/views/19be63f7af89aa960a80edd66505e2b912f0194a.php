@@ -97,7 +97,7 @@ button.close-btn {
 </style>
 
 <div class="popup" id="offerPopup" >
-  <button class="close-btn" onclick="hidePopup()" style="float: right; ">&times;</button>
+  <button class="close-btn" onclick="hidePopup()" style="float: right; font-size: 29px !important;">&times;</button>
   <div class="row">
     <div class="col-lg-8">
       <div class="cardbox mb-3">
