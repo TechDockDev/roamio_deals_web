@@ -83,15 +83,21 @@
     z-index: 999;
     border-radius: 10px;
 }
+button.close-btn {
+    height: 21px;
+    width: 21px;
+    border-radius: 22px;
+}
 </style>
 
 <div class="popup" id="offerPopup" >
+  <button class="close-btn" onclick="hidePopup()" style="float: right;">&times;</button>
   <div class="row">
     <div class="col-lg-8">
       <div class="cardbox mb-3">
 
         <div class="row g-0">
-          {{-- <button class="close-btn" onclick="hidePopup()">&times;</button> --}}
+        
           <div class="col-md-4">
           <img src="{{ asset('images/home-screen(Approved).svg')}}" class="img-fluid rounded-start" alt="..." style="position: relative;
           top: -85px;">
@@ -144,31 +150,28 @@
 
  
     <script>
+      // Function to hide the popup
+      function hidePopup() {
+          const popup = document.getElementById("offerPopup");
+          popup.style.display = "none";
+      }
+
       // Show the popup immediately when the page loads
       document.addEventListener("DOMContentLoaded", function() {
           const popup = document.getElementById("offerPopup");
           popup.style.display = "block";
 
-          // Function to hide the popup
-          function hidePopup() {
-              popup.style.display = "none";
-          }
-
-          // Hide the popup after 2 minutes
-          setTimeout(hidePopup, 60000); // 2 minutes in milliseconds
-
-          // Function to show the popup every 4 minutes
-          function showPopup() {
-              popup.style.display = "block";
-
-              // Hide the popup after 2 minutes
-              setTimeout(hidePopup, 120000); // 2 minutes in milliseconds
-          }
-
           // Show the popup immediately and then every 4 minutes
           setInterval(showPopup, 240000); // 4 minutes in milliseconds (2 * 60 * 1000)
       });
+
+      // Function to show the popup every 4 minutes
+      function showPopup() {
+          const popup = document.getElementById("offerPopup");
+          popup.style.display = "block";
+      }
   </script>
+
 
 
 
