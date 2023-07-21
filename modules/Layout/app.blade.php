@@ -86,12 +86,14 @@
 button.close-btn {
     height: 21px;
     width: 21px;
-    border-radius: 22px;
+  border:none;
+  font-size: :14px;
+  background-color:#FFF5E9;
 }
 </style>
 
 <div class="popup" id="offerPopup" >
-  <button class="close-btn" onclick="hidePopup()" style="float: right;">&times;</button>
+  <button class="close-btn" onclick="hidePopup()" style="float: right; font-size: 29px !important;">&times;</button>
   <div class="row">
     <div class="col-lg-8">
       <div class="cardbox mb-3">
