@@ -34,7 +34,7 @@
         <div class="col-lg-12" style="left: 50px;">
             <div class="row">
              <div class="col-md-4">
-                <h4 class="text-heading"  style="font-size:45px; font-weight:600; font-family='poppins';"> {{$title}}</h4>
+                <h4 class="text-heading"  style="font-size:40px; font-weight:600; font-family='poppins';"> {{$title}}</h4>
                 <div class="sub-heading mb-3">{{$sub_title}}</div>
                 <button class="btn btn-light">Explore</button>
                 </div>   
