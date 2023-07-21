@@ -305,7 +305,7 @@ p {
                          height: 30px;
                          width: 30px;
                          background: white;
-                         padding: 5px 5px;
+                         padding: 8px 7px;
                          border-radius: 30px;"
             ></span>
              </div>
@@ -390,7 +390,7 @@ p {
                          height: 30px;
                          width: 30px;
                          background: white;
-                         padding: 5px 5px;
+                         padding: 8px 7px;
                          border-radius: 30px;"></span>
                 </div>
                 <div class="card-body">

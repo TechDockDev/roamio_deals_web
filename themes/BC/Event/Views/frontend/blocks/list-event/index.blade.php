@@ -280,12 +280,12 @@ $totalUsers = count($user_review);
  <div class="container">
     <div class="bravo-list-event layout_{{$style_list}}">
         @if($title)
-        <div class="title">
+        <div class="title mx-3">
             {{$title}} <span><a href="{{ url('/event/') }}"><span style="float:right; color:#FF3500; font-size:15px; font-weight: 900;">View All</span></a></span>
         </div>
         @endif
         @if($desc)
-            <div class="sub-title">
+            <div class="sub-title mx-3">
                 {{$desc}}
             </div>
         @endif
