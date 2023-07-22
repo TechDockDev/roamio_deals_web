@@ -28,13 +28,13 @@
     </div>
 <?php endif; ?>
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top:-80px;">
         
         
         <div class="col-lg-12" style="left: 50px;">
             <div class="row">
              <div class="col-md-4">
-                <h4 class="text-heading"  style="font-size:30px; font-weight:600; font-family='poppins';"> <?php echo e($title); ?></h4>
+                <h4 class="text-heading"  style="font-size:30px; font-weight:600; font-family:'poppins';margin-top: 38px;"> <?php echo e($title); ?></h4>
                 <div class="sub-heading mb-3"><?php echo e($sub_title); ?></div>
                 <button class="btn btn-light">Explore</button>
                 </div>   
