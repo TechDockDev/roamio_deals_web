@@ -384,14 +384,6 @@ function printDivs() {
   </script>
 
 
-
-
-
-
-
-
-
-
   <script>
   function handleFileInputChange(event, inputId) {
     var input = event.target;
@@ -447,17 +439,16 @@ $(document).ready(function() {
                 autoclose: true,
                 placeholder:'Date of Booking'
             });
-
+         
+         $('#activityBookDate').datepicker({
+    format: 'dd/mm/yyyy',
+    todayHighlight: true,
+    autoclose: true,
+    startDate: 'today', // Set the start date to today
+    placeholder: 'Date of Booking'
+           });
 
         });
-
-
-
-
-  
-
-
-
 
     </script>
 

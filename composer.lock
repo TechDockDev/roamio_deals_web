@@ -1042,7 +1042,8 @@
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
-            ],
+             ],
+             
             "authors": [
                 {
                     "name": "Neuman Vong",

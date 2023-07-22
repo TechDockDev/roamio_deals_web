@@ -13,6 +13,10 @@ use DB;
 use Session;
 use DateTime;
 
+use DatePeriod;
+
+use dateInterval;
+
 class HomeController extends Controller
 {
     /**
@@ -101,40 +105,41 @@ class HomeController extends Controller
   public function cartaddingfunction(request $request)
   {
  
-$user_id = null;
+// $user_id = null;
 
-if (auth()->check()) {
-    $user_id = auth()->user()->id;
-}
+// if (auth()->check()) {
+//     $user_id = auth()->user()->id;
+// }
 
-$cart = [];
+// $cart = [];
 
-foreach ($request->id as $index => $id) {
-    $packageQuantity = $request->packageQuantity[$index];
+// foreach ($request->id as $index => $id) {
+//     $packageQuantity = $request->packageQuantity[$index];
 
-    if ($packageQuantity != "0") {
-        $cartId = DB::table('cart')->insertGetId([
-            'user_id' => $user_id,
-            'type' => $request->type[$index],
-            'room_qty' => $packageQuantity,
-            'product_id' => $request->product_id[$index],
-            'package_id' => $id,
-            'room_price' => $request->price[$index],
-            'package_name' => $request->package_name[$index],
-        ]);
+//     if ($packageQuantity != "0") {
+//         $cartId = DB::table('cart')->insertGetId([
+//             'user_id' => $user_id,
+//             'type' => $request->type[$index],
+//             'room_qty' => $packageQuantity,
+//             'product_id' => $request->product_id[$index],
+//             'package_id' => $id,
+//             'room_price' => $request->price[$index],
+//             'package_name' => $request->package_name[$index],
+//         ]);
 
-        $cart[] = $cartId;
-    }
-}
+//         $cart[] = $cartId;
+//     }
+// }
 
 
-   if (!empty($cart)) {
-    return response()->json(['message' => 'Data added successfully', 'status' => true]);
-   } else {
-    return response()->json(['message' => 'Oops, something error', 'status' => false]);
-   }
+//    if (!empty($cart)) {
+//     return response()->json(['message' => 'Data added successfully', 'status' => true]);
+//    } else {
+//     return response()->json(['message' => 'Oops, something error', 'status' => false]);
+//    }
 
   }
+
  
 public function cartDelete(request $request)
 {
@@ -157,53 +162,72 @@ public function cartDelete(request $request)
 public function getDatesData(Request $request)
 {
 
+ $id =  Session::get('rooms_id_session');
 
+
+ $hotel = DB::table('bravo_hotel_rooms')->where('id',$id)->first();
+
+ $choosingdate = DB::table('bravo_hotel_room_dates')->where('target_id',$id)->get();
+
+$data = [];
+
+foreach ($choosingdate as $choosing) {
+    $start = new DateTime($choosing->start_date);
+    $end = new DateTime($choosing->end_date);
+    $price = $choosing->price;
+
+    $dateInterval = $start->diff($end);
+    $numberOfDays = $dateInterval->days;
+
+    $period = new DatePeriod($start, new DateInterval('P1D'), $end);
+    foreach ($period as $date) {
+        $data[] = [
+            'date' => $date->format('Y-m-d'),
+            'price' => $price,
+        ];
+    }
+}
 
 $currentYear = date('Y');
 $currentMonth = date('m');
-
+$currentDay = date('d');
 
 $startDateString = $currentYear . '-' . $currentMonth . '-01';
-
-$lastDayOfMonth = date('t', strtotime($startDateString));
-$endDateString = $currentYear . '-' . $currentMonth . '-' . $lastDayOfMonth;
-
-
-
-$data = [
-    ['date' => '2023-07-24', 'price' => 100],
-    ['date' => '2023-07-21', 'price' => 200],
-    ['date' => '2023-07-26', 'price' => 3300],
- ];
-
-$startDateString = $startDateString;
-$endDateString = $endDateString;
-
-$defaultPrice = 500; // Set the default price here
-
 $startDate = new DateTime($startDateString);
-$endDate = new DateTime($endDateString);
+
+$endDate = clone $startDate;
+$endDate->modify('+2 months');
 
 $dates = [];
+$defaultPrice = $hotel->price; 
 
 while ($startDate <= $endDate) {
     $dateString = $startDate->format('Y-m-d');
     $price = null;
-    foreach ($data as $item) {
-        if ($item['date'] === $dateString) {
-            $price = $item['price'];
-            break;
+if (!empty($data)) {
+    // Get the first and last dates from $data
+    $firstDate = new DateTime($data[0]['date']);
+    $lastDate = new DateTime(end($data)['date']);
+
+    // Check if the $startDate is within the range of $data dates
+    if ($startDate >= $firstDate && $startDate <= $lastDate) {
+        foreach ($data as $item) {
+            if ($item['date'] === $dateString) {
+                $price = $item['price'];
+                break;
+            }
         }
     }
+}
+
 
     $price = ($price !== null) ? $price : $defaultPrice;
-    
+
     $dates[] = ['date' => $dateString, 'price' => $price];
-    
+
     $startDate->modify('+1 day');
 }
 
-// Return the $dates array as a JSON response
 return response()->json($dates);
 
     }

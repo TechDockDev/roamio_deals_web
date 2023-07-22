@@ -9,6 +9,7 @@ use Modules\Location\Models\LocationCategory;
 use Modules\Review\Models\Review;
 use Modules\Core\Models\Attributes;
 use DB;
+use Session;
 use Modules\Hotel\Controllers\Event;
 
 use Modules\User\Models\UserWishList;
@@ -278,14 +279,7 @@ class HotelController extends Controller
 
 
 }
-// return $this->sendSuccess(
-//     [
-//         'data'=>$rows,
-//         'total'=>$query->total(),
-//         'total_pages'=>$query->lastPage(),
-//     ]
-// );
-// }
+
 
 
     return view('Hotel::frontend.wishlist-list',compact('rows'));
@@ -293,9 +287,7 @@ class HotelController extends Controller
 
 
 
-
-
- public function staycationexplore(){
+public function staycationexplore(){
 
 
 if (auth()->check()) {
@@ -385,13 +377,10 @@ foreach ($terms as $parent) {
 }
    
 
-
     $limit = 3; // Specify the limit to 3
 
     $posts = DB::table('bravo_hotels')->where('deleted_at',null)->take(6)->get();
 
-
- 
     $datas = [];
  
  foreach ($posts as $p) {
@@ -424,7 +413,7 @@ foreach ($terms as $parent) {
 
 public function deals(Request  $request) {
 
-    if (auth()->check()) {
+if (auth()->check()) {
     $user_id = auth()->user()->id;
 } else {
    $user_id = Null;
@@ -523,13 +512,13 @@ $data[] = [
 ];
 }
 
-   
 return view ('Hotel::frontend.Deals',compact('dataff','data'));
+
  }
 
  public function hasWishList()
  {
-     return $this->hasOne($this->userWishListClass, 'object_id', 'id')->where('object_model', $this->type)->where('user_id', Auth::id() ?? 0);
+     return $this->hasOne($this->userWishListClass,'object_id', 'id')->where('object_model', $this->type)->where('user_id', Auth::id() ?? 0);
  }
 
  public function isWishList()
@@ -542,8 +531,42 @@ return view ('Hotel::frontend.Deals',compact('dataff','data'));
      return '';
  }
 
+ public function staycationCart(request $request){
+
+     $data = DB::table('bravo_hotel_rooms')->where('id',$request->id)->get();
+
+     Session::put('rooms_id_session',$request->id);
 
 
+     return view('Hotel::frontend.staycationbookingdetail', compact('data'));
+}
+
+
+public function editTermsStatus(request $request)
+{
+
+  $checktermsStatus = DB::table('bravo_terms')->where('id',$request->id)->first();
+
+  if($checktermsStatus->status == '0')
+   {
+
+    $term = DB::table('bravo_terms')->where('id',$request->id)->update([
+
+         'status' => '1',
+        ]);
+
+    }else
+    {
+      $term = DB::table('bravo_terms')->where('id',$request->id)->update([
+        
+        'status' => '0',
+     ]);
+
+      }
+
+   return redirect()->back()->with('TermsStausUpdatedSuccessfully','operation done');
+
+}
  
 
 }

@@ -30,13 +30,13 @@
                                     <option value="">{{__(" Bulk Action ")}}</option>
                                     <option value="delete">{{__(" Delete ")}}</option>
                                 </select>
-                                <button data-confirm="{{__("Do you want to delete?")}}" class="btn-info btn btn-icon dungdt-apply-form-btn" type="button">{{__('Apply')}}</button>
+                                <button data-confirm="{{__('Do you want to delete?')}}" class="btn-info btn btn-icon dungdt-apply-form-btn" type="button">{{__('Apply')}}</button>
                             </form>
                         @endif
                     </div>
                     <div class="col-left">
                         <form method="get" action="{{route('event.admin.attribute.term.index',['id'=>$attr->id])}} " class="filter-form filter-form-right d-flex justify-content-end" role="search">
-                            <input type="text" name="s" value="{{ Request()->s }}" class="form-control" placeholder="{{__("Search by name")}}">
+                            <input type="text" name="s" value="{{ Request()->s }}" class="form-control" placeholder="{{__('Search by name')}}">
                             <button class="btn-info btn btn-icon btn_search" id="search-submit" type="submit">{{__('Search')}}</button>
                         </form>
                     </div>
@@ -50,6 +50,7 @@
                                 <tr>
                                     <th width="60px"><input type="checkbox" class="check-all"></th>
                                     <th>{{__("Name")}}</th>
+                                    <th>{{__("Status")}}</th>
                                     <th class="date">{{__("Date")}}</th>
                                     <th class="date"></th>
                                 </tr>
@@ -62,8 +63,38 @@
                                             <td class="title">
                                                 <a href="{{route('event.admin.attribute.term.edit',['id'=>$row->id])}}">{{$row->name}}</a>
                                             </td>
+                                            <td>
+                                                
+                                    
+                                                @if($row->status == "0" || $row->status == null)
+                                                 
+                                                 Inactive
+
+                                                @else
+                                                
+                                                  Active
+
+                                                @endif
+                                         
+                                            </td>
+
+
+
                                             <td>{{ display_date($row->updated_at)}}</td>
                                             <td><a class="btn btn-primary btn-sm" href="{{route('event.admin.attribute.term.edit',['id'=>$row->id])}}"><i class="fa fa-edit"></i> {{__('Edit')}}</a></td>
+                                            
+                                               <td>
+                                                     @if($row->status == "0" || $row->status == null)
+                                                 
+                                                     <a class="btn btn-danger btn-sm" href="{{url('termsEdit',['id'=>$row->id])}}"><i class="fa fa-edit"></i> {{__('Able')}}</a>
+
+                                                     @else
+                                                    <a class="btn btn-danger btn-sm" style="background:grey;" href="{{url('termsEdit',['id'=>$row->id])}}"><i class="fa fa-edit"></i> {{__('Disable')}}</a>
+
+                                                      @endif
+
+                                                </td>
+
                                         </tr>
                                     @endforeach
                                 @else
@@ -80,4 +111,20 @@
             </div>
         </div>
     </div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+@if(Session::get('TermsStausUpdatedSuccessfully'))
+    <script>
+ 
+
+ Swal.fire("Term Status Updated Successfully");
+    
+    </script>
+
+    <?php
+
+       Session::forget('TermsStausUpdatedSuccessfully');
+    ?>
+@endif
 @endsection

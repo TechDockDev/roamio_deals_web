@@ -14,6 +14,11 @@ Route::get('event-activity-checkout','EventController@activitycheckout');
 Route::get('user-cart','EventController@Cart');
 
 
+Route::get('activity_booking_detail/{id}','EventController@activityCart');
+
+
+
+
 Route::get('explore-activity','EventController@ActivityExp');
 
 Route::group(['prefix'=>'user/'.env('EVENT_ROUTE_PREFIX','event'),'middleware' => ['auth','verified']],function(){

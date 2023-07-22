@@ -2,8 +2,8 @@
 @extends('layouts.app')
 @push('css')
     <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('libs/fotorama/fotorama.css') }}"/>
     <style>
         .dp-wrap {
   /* margin: 120px auto; */
@@ -265,10 +265,6 @@ fass:hover{
  width: 11%;
 } 
 
-
-
-
-
 .categories{
   background-size: cover;
   height:200px;
@@ -303,7 +299,7 @@ fass:hover{
     top: 9px;
 }
 .Daily-btn{
-    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
 color:white;
 padding: 4px 4px;
 }
