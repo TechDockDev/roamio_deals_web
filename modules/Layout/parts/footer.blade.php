@@ -36,7 +36,7 @@
 			</div>
 		</div> --}}
 
-		{{-- <div class="mailchimp mt-5 pt-5" style=" background:#FFF5E9; height: 193px; !important">
+		<div class="mailchimp mt-5 pt-5" style=" background:#FFF5E9; height: 193px; !important">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8">
@@ -66,7 +66,7 @@
 					</div>
 				</div>
 			</div>
-         </div> --}}
+         </div>
 
 		<div class="main-footer">
 			<div class="container">
