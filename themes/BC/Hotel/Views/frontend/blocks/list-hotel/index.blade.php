@@ -517,7 +517,7 @@ p {
           
                 <div class="card" style="position: relative; border:none; ">
                     <div class="categoriesss" style="position: relative;">
-                        <img src="{{$cat->banner_image }}" alt="" srcset="" style="height:286px; width:100%; border-radius:10px;">
+                        <img src="{{$cat->banner_image }}" alt="" srcset="" style="height:286px; width:100%; border-radius:10px; opacity: 0.1;">
                         <h2 class="heading" style="position: absolute; top: 85%; left: 14px; color: white; text-align: start; width: 100%; font-weight: 900;">{{ $cat->name }}</h2>
                     </div>
                 </div>

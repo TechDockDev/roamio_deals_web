@@ -31,7 +31,7 @@
                    </div>
        <div class="col-md-12 mx-auto">
            <div class="input-group" style="left: -97%;
-           width: 193%;
+             width: 151%;
            top: 10px;">
                <input class="form-control border-end-0 border" type="search" id="example-search-input" placeholder="What are you looking for?" style="background:#F6F6F6;">
                <span class="input-group-append" style="margin-bottom: 0px;
@@ -59,9 +59,10 @@
                 ?>
       
               <div class="col-md-12">
-                <a href="{{url('hotel-wish-list')}}"><p style="color:#CDCFD0;left: 314px; position:relative; top:-22px; font-size:15px; font-weight:600;"><span><i class="fa fa-heart-o" aria-hidden="true" style=" font-size:20px;"></i></span>&nbsp;   WishList</p></a>
+                <a href="{{url('hotel-wish-list')}}">
+                    <p style="color:#CDCFD0;left: 70%; position:relative; top:-22px; font-size:15px; font-weight:600;"><span><i class="fa fa-heart-o" aria-hidden="true" style=" font-size:20px;"></i></span>&nbsp;   WishList</p></a>
                <a href="{{url('user-cart')}}"> <p style="color:#CDCFD0;
-                      left: 460px;
+                     left: 116%;
                 position: relative;
               
 
@@ -86,7 +87,7 @@
                  ">{{ count($cartdata) }}</span> </span> </p></a>
               </div>
       <div style="float: right;
-       right: -542px;
+          right: -125%;
        position: relative;
        top: -122px;
       ">
