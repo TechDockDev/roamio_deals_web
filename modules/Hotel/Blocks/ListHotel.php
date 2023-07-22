@@ -135,6 +135,7 @@ class ListHotel extends BaseBlock
 
     public function content($model = [])
     {
+
         $list = $this->query($model);
         
         $data = [
@@ -144,8 +145,6 @@ class ListHotel extends BaseBlock
             'desc'       => $model['desc'],
         ];
 
-
-     //fetch for category
            
         $datacat = DB::table('bravo_terms')->where('attr_id','22')->get();
     
@@ -165,12 +164,9 @@ class ListHotel extends BaseBlock
      $user_id = Null;
     }
 
-        //   fetch for daily 
 
-        // $user_id = $request->id;
-
-      $terms = DB::table('bravo_terms')->where('attr_id', '18')->get();
-        $datas = [];
+      $terms = DB::table('bravo_terms')->where('status','1')->where('attr_id', '18')->get();
+      $datas = [];
         
 
    foreach ($terms as $parent) {
@@ -203,15 +199,11 @@ class ListHotel extends BaseBlock
         'id' => $parent->id,
         'parent_name' => $name,
         'hotels' => $hotels,
-    ];
-}
-
-
-// dd($datas);
+               ];
+ }
 
 
 
-        // return view('Hotel::frontend.blocks.list-hotel.index', $data , $fetch);
         return view('Hotel::frontend.blocks.list-hotel.index',$data, compact('fetch','datas'));
     }
 

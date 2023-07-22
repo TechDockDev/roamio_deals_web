@@ -555,7 +555,7 @@ class Event extends Bookable
                     }
                     $type['number'] = 0;
                     $type['enable'] = 0;
-                    $type['price_html'] = format_money($type['price']);
+                    // $type['price_html'] = format_money($type['price']);
                     // $type['price_type'] = '';
                     // switch ($type['type']) {
                     //     case "per_day":
