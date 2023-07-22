@@ -142,7 +142,8 @@ height: 336px;
     background: #FFF3E3;
 }
     
-    .totl {
+
+.totl {
    background: none;
 }
 
