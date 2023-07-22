@@ -5,13 +5,13 @@
 @endpush
 @section('content')
     <div class="bravo_search_event">
-        <div class="bravo_banner" @if($bg = setting_item("event_page_search_banner")) style="background-image: url({{get_file_url($bg,'full')}})" @endif >
+        {{-- <div class="bravo_banner" @if($bg = setting_item("event_page_search_banner")) style="background-image: url({{get_file_url($bg,'full')}})" @endif >
             <div class="container">
                 <h1>
                     {{setting_item_with_lang("event_page_search_title")}}
                 </h1>
             </div>
-        </div>
+        </div> --}}
         <div class="bravo_form_search">
             <div class="container">
                 <div class="row">

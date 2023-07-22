@@ -212,7 +212,7 @@ return [
         Custom\ServiceProvider::class,
         App\Providers\AdminRouteServiceProvider::class,
         Propaganistas\LaravelPhone\PhoneServiceProvider::class,
-
+      
 
 
     ],
@@ -228,6 +228,7 @@ return [
     |
     */
 
+    'Crypto' => Crypto::class,
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),

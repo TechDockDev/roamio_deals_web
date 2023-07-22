@@ -70,7 +70,7 @@
                 </div>
                 @if(auth()->user())
                 <div class="col-md-4 py-4">
-                   <a href="{{ url('visa-apply')}}" style="text-decoration: none;"><img src="{{ asset('images\info-circle_1.svg')}}" alt="">
+                   <a href="{{ url('apply-visa-page')}}" style="text-decoration: none;"><img src="{{ asset('images\info-circle_1.svg')}}" alt="">
                     <div class="card-body">
                         Apply UAE Visa
                     </div>
@@ -184,12 +184,12 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Is it mandatory for me to obtain a Application to enter Dubai as well as UAE?
+                        Why should I use this system to apply online for UAE visa?
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>Dubai is a part of the United Arab Emirates (UAE) and with a UAE Application, you can visit all the seven Emirates of UAE. Citizens of all countries have to get a UAE Application, except for those belonging to GCC nations: Qatar, Saudi Arabia, Oman, Bahrain and Kuwait.
+                        <p>It is easy and convenient to apply for your visa online. Simply provide the required information, documents and pay the visa fee online without having to send documents by email or visiting the office in person. Once your visa application is approved, you will receive an approved e-Visa copy via email.
                         </p>
                     </div>
                 </div>
@@ -197,24 +197,25 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Do infants and kids require Application to enter UAE?
+                     
+                        How far in advance I should apply for UAE visa?
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                     <p>You can apply at least 20 to 28 days prior to your arrival.</>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Which countries are eligible for Application on arrival in Dubai?
+                        When my entry permit will be valid for entry after approval?
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                       <p>Your entry permit is valid from the date of issue.</p>
                     </div>
                 </div>
             </div>
@@ -222,12 +223,12 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="fourThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                        Which countries are eligible for Application on arrival in Dubai?
+                        What is the reason of the application refusal?
                     </button>
                 </h2>
                 <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="fourThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                       <p>The UAE immigration do not reveal reason of the refusal / rejection.</p>
                     </div>
                 </div>
             </div>

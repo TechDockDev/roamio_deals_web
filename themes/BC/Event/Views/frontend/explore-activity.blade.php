@@ -482,7 +482,7 @@ fass:hover{
 </style>
 
 
-  <center><h3  class="title" style="margin-top: 43px;">Explore UAE <span style="color: #FE9000;">Activities!</span></h3></center>
+  <center><h3  class="title py-2" style="margin-top: 43px; font-weight:700; font-size:28px;">Explore UAE <span style="color: #FE9000;">Activities!</span></h3></center>
 
   <div class="container">
     <div class="row">
@@ -494,11 +494,8 @@ fass:hover{
   </div>
  
   <div class="container">
-    <div class="row">
-     <h4 class="py-2 mx-3">Categories</h4> 
-    </div>
-    
     <div class="row"> 
+      <h4 class="mt-2 mx-3" style="font-weight:700; font-size:28px;">Categories</h4> 
       @foreach($fetch as $cat)
        <div class="col-md-3">
            <div class="column Top Trending In Dubai">
@@ -519,14 +516,15 @@ fass:hover{
 
 @foreach($data as $datas)
 
+
 <div class="container mt-5">
    <div class="row">
-    <h4  class="title mx-3" style="margin-top:43px;">{{$datas['parent_name']}}</h4> 
+    <h4  class="title mx-3" style="margin-top:43px; font-weight:700; font-size:28px;">{{$datas['parent_name']}}<a href="{{ url('event')}}" ><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4> 
    </div>
    <div class="row">
        @foreach($datas['events'] as $dt)
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="card"  style="border-radius: 10px;">
                 <div class="Daily-Deals1" style="position: relative;">
                    <a href = "{{url('/event/'.$dt->slug)}}"> <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
@@ -542,7 +540,7 @@ fass:hover{
                 }   ?>" attr="{{$dt->id}}" style="position: absolute;
                 top: 10px;
                 right: 10px;
-                color: white;
+                color: red;
                 text-shadow: 1px 1px 27px black;
                 /* float: right; */
                 left: 270px;
@@ -560,7 +558,7 @@ fass:hover{
                   <p class="card-text">
                     <span><i class="fa fa-map-marker" aria-hidden="true"></i>
                     {{ $dt->address}}</p></span>
-                    <p><span class="btn btn-light Daily-btn">{{$dt->review_score}} </span> (4) </span><span> Excellent </span></p>
+                    <p><span class="btn btn-light Daily-btn">{{$dt->review_score}} </span></span><span> Excellent </span></p>
                   <p><span style="font-size:25px; color:black;">{{$dt->price}}</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">{{$dt->discount}}% OFF</span></p>
                 </div>
               </div>
@@ -580,14 +578,16 @@ fass:hover{
    
       <div class="col-md-6">
         <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-        <p class="card-text text-white pt-3">{{ $reviews->title}} </p>
+        <p class="card-text text-white pt-3">Experience blissful relaxation, captivating local adventures, and charming accommodations - all in one staycation destination; our guests' reviews speak volumes about the unforgettable memories and cherished experiences awaiting you!</p>
         <div class="row">
           <div class="col-md-6">
             <h3 class="card-text pt-2 text-white p-1">{{ $totalUsers}} +</h3>
             <p class="card-text text-white">Happy Customers</p>
           </div>
           <div class="col-md-6">
-            <h3 class="card-text pt-2 text-white p-1">{{ $reviews->rate_number}} <i class="fa fa-star"></i></h3>
+            
+           <i class="fa fa-star"></i></h3>
+        
             <p class="card-text text-white">Overall Rating</p>
           </div>
         </div>
@@ -662,7 +662,7 @@ fass:hover{
                        <small class="text2">Experience Better</small>
                        <h4 class="title text1">Top Staycation Around UAE</h4>
                          <div class="desc">                                                                                                                                                                                                                                             
-                        <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                        <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
                            Explore
                         </a> 
                        </div>
@@ -681,7 +681,7 @@ fass:hover{
                        <small class="text2">Experience More</small>
                        <h4 class="title text1">Top Activities Around UAE</h4>
                          <div class="desc">                                                                                                                                                                                                                                             
-                        <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                        <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
                            Explore
                         </a> 
                        </div>
@@ -696,19 +696,19 @@ fass:hover{
        <div class="row">
            <div class="col-md-4 text-center">
                <div class="card1">
-                   <img src="images/Frame_1.svg" class="card-img-top" alt="...">
+                <img src="{{ url('images/Frame_1.svg')}}" class="card-img-top" alt="...">
                  
                </div>
            </div>
            <div class="col-md-4 text-center">
                <div class="card1">
-                   <img src="images/Frame_2.png" class="card-img-top" alt="...">
+                <img src="{{ url('images/Frame_2.png')}}" class="card-img-top" alt="...">
                   
                </div>
            </div>
            <div class="col-md-4 text-center">
                <div class="card1">
-                   <img src="images/Group2608634.svg" class="card-img-top" alt="..." style="height:64px">
+                <img src="{{ ('images/Group2608634.svg')}}" class="card-img-top" alt="..." style="height:64px">
                    <div class="card-body">
                        <h5 class="card-title pt-3" style="font-weight:900">Best Offer</h5>
                        <p class="card-text">Best Recommendations according to your Interest and offers.</p>

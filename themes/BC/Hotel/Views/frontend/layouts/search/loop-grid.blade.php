@@ -11,7 +11,7 @@
 @php
     $translation = $row->translate();
 @endphp
-<div class="item-loop {{$wrap_class ?? ''}}">
+<div class="item-loop {{$wrap_class ?? ''}} h-100" >
     @if($row->is_featured == "1")
         <div class="featured">
             {{__("Featured")}}
@@ -53,22 +53,29 @@
             </div>
         @endif
         <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
-            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart-o" style="height: 30px;
+            width: 30px;
+            background: white;
+            padding: 8px 7px;
+            border-radius: 30px;
+            color:black;
+            text-shadow: 1px 1px 27px black;
+        "></i>
         </div>
     </div>
     <div class="item-title">
-        <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl()}}">
+       <h5> <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl()}}">
             @if($row->is_instant)
                 <i class="fa fa-bolt d-none"></i>
             @endif
                 {{$translation->title}}
-        </a>
+        </a></h5>
         @if($row->discount_percent)
             <div class="sale_info">{{$row->discount_percent}}</div>
         @endif
     </div>
     <div class="location">
-        @if(!empty($row->location->name))
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>   @if(!empty($row->location->name))
             @php $location =  $row->location->translate() @endphp
             {{$location->name ?? ''}}
         @endif
@@ -80,7 +87,7 @@
     ?>
     <div class="service-review">
         <span class="rate">
-            @if($reviewData['total_review'] > 0) {{$score_total}}/5 @endif <span class="rate-text">{{$reviewData['review_text']}}</span>
+            <span class="Daily-btn text-white w-30">@if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif</span> &nbsp;<span class="rate-text" style="color:black">{{$reviewData['review_text']}}</span>
         </span>
         <span class="review">
              @if($reviewData['total_review'] > 1)
@@ -91,13 +98,20 @@
         </span>
     </div>
     @endif
-    <div class="info">
+    <div class="info mt-4 mb-1">
         <div class="g-price">
             <div class="prefix">
-                <span class="fr_text" style="color: #FF3500;">{{__("from")}}</span>
+                <span class="fr_text" style="color:black;">{{__("AED")}}</span>
             </div>
             <div class="price">
-                <span class="text-price btn btn-light Daily-btn text-white">{{ $row->display_price }} <span class="unit  text-white">{{__("/night")}}</span></span>
+                <span class="text-price" style="padding: 0px 1px;">{{ $row->display_price }} <span class="unit  text-dark">{{__("/night")}}</span></span> &nbsp;
+               
+                @if(isset($row->discount_percent))
+                <span class=" btn btn-light Daily-btn text-white">{{ $row->discount_percent }}% off</span>
+        @else
+       <span class=" btn btn-light Daily-btn text-white" style="color: white !important;
+      ">0% off</span>
+   @endif
             </div>
         </div>
     </div>
