@@ -129,7 +129,6 @@ height: 336px;
     .card-btn{
        background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
        color:white;
-    
     }
     .btn-text{
        color:#FF3500;   
