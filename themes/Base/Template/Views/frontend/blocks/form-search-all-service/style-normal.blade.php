@@ -28,7 +28,7 @@
     </div>
 @endif
 <div class="container">
-    <div class="row" style="margin-top:-80px;">
+    <div class="row" style="margin-top:-100px;">
         {{-- {{$title}} --}}
         {{-- {{$sub_title}} --}}
         <div class="col-lg-12" style="left: 50px;">
