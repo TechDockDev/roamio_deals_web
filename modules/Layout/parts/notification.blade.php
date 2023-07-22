@@ -3,9 +3,9 @@ if(!auth()->check()) return;
 [$notifications,$countUnread] = getNotify();
 ?>
 
-<li class="dropdown-notifications dropdown p-0">
+<li class="dropdown-notifications dropdown p-0" style="margin-top: 9px;">
     <a href="#" data-toggle="dropdown" class="is_login">
-        <i class="fa fa-bell mr-2"></i>
+        <i class="fa fa-bell mr-2 mt-2"></i>
         <span class="badge badge-danger notification-icon">{{$countUnread}}</span>
         <i class="fa fa-angle-down"></i>
     </a>

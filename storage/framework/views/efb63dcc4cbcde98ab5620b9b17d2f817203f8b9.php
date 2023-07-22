@@ -34,7 +34,7 @@
         <div class="col-lg-12" style="left: 50px;">
             <div class="row">
              <div class="col-md-4">
-                <h4 class="text-heading"  style="font-size:30px; font-weight:600; font-family:'poppins';margin-top: 38px;"> <?php echo e($title); ?></h4>
+                <h4 class="text-heading"  style="font-size: 35px; font-weight:600; font-family:'poppins';margin-top: 38px;"> <?php echo e($title); ?></h4>
                 <div class="sub-heading mb-3"><?php echo e($sub_title); ?></div>
                 <button class="btn btn-light">Explore</button>
                 </div>   
@@ -63,7 +63,7 @@
                         <?php endif; ?>
                     </ul> 
                     <div class="col-md-12 w-100 helloo">
-                        <div role="tabpanel" class="tab-pane active" id="bravo_flight" style="width:90%;top: 186px;position: relative; background:white; border-radius:10%">
+                        <div role="tabpanel" class="tab-pane active" id="bravo_flight" style="width:92%;top: 186px;position: relative; background:white; border-radius:10%">
                             <?php echo $__env->make(ucfirst("flight").'::frontend.layouts.search.form-search', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div> 
                     </div>

@@ -64,12 +64,12 @@
         </div>
     </div>
     <div class="item-title">
-        <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl()}}">
+       <h5> <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl()}}">
             @if($row->is_instant)
                 <i class="fa fa-bolt d-none"></i>
             @endif
                 {{$translation->title}}
-        </a>
+        </a></h5>
         @if($row->discount_percent)
             <div class="sale_info">{{$row->discount_percent}}</div>
         @endif

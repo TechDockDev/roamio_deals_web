@@ -24,9 +24,10 @@ background-repeat: no-repeat;
      .Daily-btn {
          background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
          color: white;
-         padding: 5px 10px !important;
+       
          font-size: 10px !important;
-         border-radius: 6px !important;
+    border-radius: 6px !important;
+    text-align: center !important;
      }
 
      /* Anchor tag decoration */
@@ -173,7 +174,7 @@ background-repeat: no-repeat;
              height: 30px;
              width: 30px;
              background: white;
-             padding: 8px 7px;
+             padding: 7px 6px !important;
              border-radius: 30px;
          }
 
@@ -264,7 +265,7 @@ background-repeat: no-repeat;
                          height: 30px;
                          width: 30px;
                          background: white;
-                         padding: 8px 7px;
+                         padding: 7px 6px;
                          border-radius: 30px;"></span>
                              </div>
                              <div class="card-body">
