@@ -92,7 +92,7 @@ button.close-btn {
 }
 </style>
 
-<div class="popup" id="offerPopup" >
+{{-- <div class="popup" id="offerPopup" >
   <button class="close-btn" onclick="hidePopup()" style="float: right; font-size: 29px !important;">&times;</button>
   <div class="row">
     <div class="col-lg-8">
@@ -123,7 +123,7 @@ button.close-btn {
       
     </div>
   </div>
-</div>
+</div> --}}
 
 
 

@@ -58,7 +58,7 @@
             background: white;
             padding: 8px 7px;
             border-radius: 30px;
-            color:red;
+            color:black;
             text-shadow: 1px 1px 27px black;
         "></i>
         </div>
@@ -87,7 +87,7 @@
     ?>
     <div class="service-review">
         <span class="rate">
-            <span class="Daily-btn text-white w-30">@if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif</span> &nbsp; &nbsp;<span class="rate-text" style="color:black">{{$reviewData['review_text']}}</span>
+            <span class="Daily-btn text-white w-30">@if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif</span> &nbsp;<span class="rate-text" style="color:black">{{$reviewData['review_text']}}</span>
         </span>
         <span class="review">
              @if($reviewData['total_review'] > 1)
@@ -98,7 +98,7 @@
         </span>
     </div>
     @endif
-    <div class="info mt-4">
+    <div class="info mt-4 mb-1">
         <div class="g-price">
             <div class="prefix">
                 <span class="fr_text" style="color:black;">{{__("AED")}}</span>

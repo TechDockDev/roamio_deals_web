@@ -293,7 +293,7 @@ $totalUsers = count($user_review);
             @if($style_list === "normal")
                 <div class="row">
                     @foreach($rows as $row)
-                        <div class="col-lg-{{$col ?? 3}} col-md-6">
+                        <div class="col-lg-{{$col ?? 3}} col-md-6" style="height:93%; width:100%">
                             @include('Event::frontend.layouts.search.loop-grid')
                         </div>
                     @endforeach

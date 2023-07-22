@@ -40,7 +40,7 @@
         </a>
         <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
             <i class="fa fa-heart-o" style="height:30px; width:30px; border-radius:30px;background: white;
-            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: red;"></i>
+            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: black;"></i>
         </div>
         @if($row->discount_percent)
             <div class="sale_info">{{$row->discount_percent}}</div>
@@ -67,17 +67,18 @@
     $reviewData = $row->getScoreReview();
     $score_total = $reviewData['score_total'];
     ?>
-        <div class="service-review">
+        <div class="service-review mb-4">
             <span class="rate">
-              <span class="Daily-btn text-white w-30"> @if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif  </span> &nbsp; &nbsp;<span class="rate-text">{{$reviewData['review_text']}}</span>
+              <span class="Daily-btn text-white w-30"> @if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif</span>
+              &nbsp; &nbsp;<span class="rate-text" style="color:black;">{{$reviewData['review_text']}}</span>
             </span>
-            <span class="review">
+            {{-- <span class="review">
              @if($reviewData['total_review'] > 1)
                     {{ __(":number Reviews",["number"=>$reviewData['total_review'] ]) }}
                 @else
                     {{ __(":number Review",["number"=>$reviewData['total_review'] ]) }}
                 @endif
-            </span>
+            </span> --}}
         </div>
     @endif
     {{-- @if(!empty($time = $row->start_time))
@@ -90,7 +91,7 @@
             {{duration_format($row->duration)}}
         </div> --}}
         {{-- onsale --}}
-        <div class="g-price text-start">
+        <div class="g-price text-start mb-3">
             <div class="prefix">
                 <span class="fr_text">{{__("AED")}}</span>
             </div>

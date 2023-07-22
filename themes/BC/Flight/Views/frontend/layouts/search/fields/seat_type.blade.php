@@ -8,7 +8,7 @@ $minValue = 0;
     top: 20px;
     position: relative;"> 
 
-   <a href="{{ url('deals')}}" ><label style="position: relative;
+   <a href="{{ url('deals')}}" ><label class="deals" style="position: relative;
     bottom: -40px;
     left: 49px;
     top: 57px;

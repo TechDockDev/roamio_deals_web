@@ -41,7 +41,7 @@
         </a>
         <div class="service-wishlist <?php echo e($row->isWishList()); ?>" data-id="<?php echo e($row->id); ?>" data-type="<?php echo e($row->type); ?>">
             <i class="fa fa-heart-o" style="height:30px; width:30px; border-radius:30px;background: white;
-            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: red;"></i>
+            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: black;"></i>
         </div>
         <?php if($row->discount_percent): ?>
             <div class="sale_info"><?php echo e($row->discount_percent); ?></div>
@@ -70,26 +70,19 @@
     $reviewData = $row->getScoreReview();
     $score_total = $reviewData['score_total'];
     ?>
-        <div class="service-review">
+        <div class="service-review mb-4">
             <span class="rate">
-              <span class="Daily-btn text-white w-30"> <?php if($reviewData['total_review'] > 0): ?> <?php echo e($score_total); ?>/5 <i class="fa fa-star"></i> <?php endif; ?>  </span> &nbsp; &nbsp;<span class="rate-text"><?php echo e($reviewData['review_text']); ?></span>
+              <span class="Daily-btn text-white w-30"> <?php if($reviewData['total_review'] > 0): ?> <?php echo e($score_total); ?>/5 <i class="fa fa-star"></i> <?php endif; ?></span>
+              &nbsp; &nbsp;<span class="rate-text" style="color:black;"><?php echo e($reviewData['review_text']); ?></span>
             </span>
-            <span class="review">
-             <?php if($reviewData['total_review'] > 1): ?>
-                    <?php echo e(__(":number Reviews",["number"=>$reviewData['total_review'] ])); ?>
-
-                <?php else: ?>
-                    <?php echo e(__(":number Review",["number"=>$reviewData['total_review'] ])); ?>
-
-                <?php endif; ?>
-            </span>
+            
         </div>
     <?php endif; ?>
     
     <div class="info mt-3">
         
         
-        <div class="g-price text-start">
+        <div class="g-price text-start mb-3">
             <div class="prefix">
                 <span class="fr_text"><?php echo e(__("AED")); ?></span>
             </div>

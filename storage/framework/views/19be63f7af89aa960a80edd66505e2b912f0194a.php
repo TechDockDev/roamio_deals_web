@@ -96,38 +96,7 @@ button.close-btn {
 }
 </style>
 
-<div class="popup" id="offerPopup" >
-  <button class="close-btn" onclick="hidePopup()" style="float: right; font-size: 29px !important;">&times;</button>
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="cardbox mb-3">
 
-        <div class="row g-0">
-        
-          <div class="col-md-4">
-          <img src="<?php echo e(asset('images/home-screen(Approved).svg')); ?>" class="img-fluid rounded-start" alt="..." style="position: relative;
-          top: -85px;">
-          </div>
-          <div class="col-md-8 mt-2 pt-3">
-          <div class="card-body">
-            <h4 class="card-title" style="font-weight:800;">Get 5% off your 1st app booking</h4>
-            <p class="card-text mt-2">
-            Booking’s better on the app. Use promo code“BetterOnApp” to save
-            </p>
-          </div>
-          </div>
-        </div>
-        </div>
-
-    </div>
-
-    <div class="col-md-4 text-center mb-2 py-5">
-               <p class="card-text" style="font-weight:700">Scan this QR</p>
-        <img src="<?php echo e(asset('images/image_8.svg')); ?>" style="height: 96px;">
-      
-    </div>
-  </div>
-</div>
 
 
 

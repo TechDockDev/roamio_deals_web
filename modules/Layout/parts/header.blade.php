@@ -1,3 +1,161 @@
+ <style>
+@media screen and (min-width: 1400px) {     
+.logni_sign{
+    float: right;
+    right: -191% !important;
+    position: relative !important;
+    top: -122px !important;
+    
+}  
+.input_search{
+    left: -99% !important;
+    width: 216% !important;
+    top: 10px !important;
+}
+    
+.wish_list{
+    color: #CDCFD0;
+    left: 139% !important;
+    position: relative;
+    top: -22px;
+    font-size: 15px;
+    font-weight: 600;
+} 
+.cart_list{
+  color: #CDCFD0;
+    left: 190% !important;
+    position: relative;
+    top: -67px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+}
+@media screen and (max-width: 1200px) {
+    .input_search {
+        left: -129% !important;
+    width: 133% !important;
+    top: 10px !important;
+    }
+    .logni_sign{
+        position: relative;
+    top: -122px !important;
+    display: flex !important;
+    margin: auto !important;
+    text-align: end !important;
+    padding: 10px 9px !important;
+    right: -110% !important;
+    font-size: 10px !important;
+   
+}  
+   .wish_list{
+    color: #CDCFD0;
+   
+    position: relative;
+    top: -22px;
+    font-size: 15px;
+    font-weight: 600;
+    left: 15% !important;
+   } 
+    
+   .cart_list{
+    color: #CDCFD0;
+    left: 73% !important;
+    position: relative;
+    top: -67px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.login-btnss{
+    position: relative !important;
+    left: -40px !important;
+}
+.signssssbtn{
+    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+    color: white;
+    border-radius: 10px;
+    font-size: 15px !important;
+    width: 144% !important;
+    position: relative !important;
+    left: -26px;
+}
+
+}
+@media screen and (max-width: 991px){
+ .input_search{
+    width: 121% !important;
+    font-size: 6px !important;
+    position: relative;
+    left: -266px !important;
+ }
+ .topbar-items{
+    position: relative;
+    left: -39px; 
+ }
+
+ .wish_list{
+    top: -22px;
+    font-size: 11px !important;
+    font-weight: 600;
+    left: 30px !important;
+    position: relative !important;
+    /* left: 47px; */
+    left: -58px !important;
+ }
+
+ .cart_list{
+    color: #CDCFD0;
+    left: 15% !important;
+    position: relative !important;
+    top: -67px;
+    font-size: 11px !important;
+    font-weight: 600;
+ 
+}
+.logni_sign{
+    position: relative !important;
+    left: 82px !important;
+}
+.btn-light{
+    color: #FF3500;
+    font-weight: 800;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 10px;
+    position: relative;
+    left: 46px !important;
+    font-size: 9px !important;
+} 
+.signssssbtn{
+    background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
+    color: white;
+    border-radius: 10px;
+    font-size: 8px !important;
+}
+}
+@media screen and (max-width: 1399px){
+.check-in-wrapper{
+    position: relative;
+    left: -12% !important;
+
+}
+.deals{
+    position: relative;
+    bottom: -40px;
+    left: 34px !important;
+    top: 57px;
+    font-size: 18px;
+    color: #FF3500;
+    font-weight: 900;   
+}
+
+
+}
+
+
+</style>
 <div class="bravo_header">
    <div class="{{$container_class ?? 'container'}} "  
 >
@@ -30,7 +188,7 @@
                    {{-- @include('Language::frontend.switcher') --}}
                    </div>
        <div class="col-md-12 mx-auto">
-           <div class="input-group" style="left: -97%;
+           <div class="input-group  input_search" style="left: -97%;
              width: 151%;
            top: 10px;">
                <input class="form-control border-end-0 border" type="search" id="example-search-input" placeholder="What are you looking for?" style="background:#F6F6F6;">
@@ -60,8 +218,8 @@
       
               <div class="col-md-12">
                 <a href="{{url('hotel-wish-list')}}">
-                    <p style="color:#CDCFD0;left: 70%; position:relative; top:-22px; font-size:15px; font-weight:600;"><span><i class="fa fa-heart-o" aria-hidden="true" style=" font-size:20px;"></i></span>&nbsp;   WishList</p></a>
-               <a href="{{url('user-cart')}}"> <p style="color:#CDCFD0;
+                    <p class="wish_list" style="color:#CDCFD0;left: 70%; position:relative; top:-22px; font-size:15px; font-weight:600;"><span><i class="fa fa-heart-o" aria-hidden="true" style=" font-size:20px;"></i></span>&nbsp;   WishList</p></a>
+               <a href="{{url('user-cart')}}"> <p class="cart_list" style="color:#CDCFD0;
                      left: 116%;
                 position: relative;
               
@@ -86,13 +244,13 @@
                    text-align: center;border-width: 48px;
                  ">{{ count($cartdata) }}</span> </span> </p></a>
               </div>
-      <div style="float: right;
+      <div  class="logni_sign" style="float: right;
           right: -125%;
        position: relative;
        top: -122px;
       ">
                @if(!Auth::check())
-                       <li class="login-item">
+                       <li class="login-item login-btnss">
                            <a href="#login" data-toggle="modal" data-target="#login" class="login btn  btn-light" style="color:#FF3500;font-weight:900; background:white; box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; border-radius: 10px; 
                            position: relative;
                            left: 20px;
@@ -100,7 +258,7 @@
                        </li>
                        @if(is_enable_registration())
                            <li class="signup-item">
-                               <a href="#register" class="btn btn-primary" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; border-radius: 10px;" data-toggle="modal" data-target="#register" class="signup">{{__('Sign Up')}}</a>
+                               <a href="#register" class="btn btn-primary signssssbtn" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; border-radius: 10px;" data-toggle="modal" data-target="#register" class="signup">{{__('Sign Up')}}</a>
                            </li>
                        @endif
                    @else

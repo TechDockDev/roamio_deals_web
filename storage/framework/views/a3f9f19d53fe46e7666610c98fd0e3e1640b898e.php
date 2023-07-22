@@ -3,7 +3,37 @@
 	<div class="bravo_footer " style="margin-top:120px;">
 		
 
-		
+		<div class="mailchimp mt-5 pt-5" style=" background:#FFF5E9; height: 193px; !important">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="cardbox mb-3">
+							<div class="row g-0">
+							  <div class="col-md-4">
+								<img src="<?php echo e(asset('images/home-screen(Approved).svg')); ?>" class="img-fluid rounded-start" alt="..." style="position: relative;
+								top: -119px;">
+							  </div>
+							  <div class="col-md-8">
+								<div class="card-body">
+								  <h4 class="card-title">Get 5% off your 1st app booking</h4>
+								  <p class="card-text">
+									Booking’s better on the app. Use promo code“BetterOnApp” to save
+								  </p>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						
+					</div>
+
+					<div class="col-md-4 text-center mb-2">
+					           <p class="card-text">Scan this QR</p>
+							<img src="<?php echo e(asset('images/image_8.svg')); ?>" style="height: 96px;">
+						
+					</div>
+				</div>
+			</div>
+         </div>
 
 		<div class="main-footer">
 			<div class="container">
