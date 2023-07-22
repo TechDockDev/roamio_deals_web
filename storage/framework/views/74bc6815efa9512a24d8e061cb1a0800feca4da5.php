@@ -2,7 +2,7 @@
     .Daily-btn {
     background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
     color: white;
-    padding: 4px 4px;
+    padding: 6px 6px !important;
 }
 </style>
 
@@ -41,7 +41,7 @@
         </a>
         <div class="service-wishlist <?php echo e($row->isWishList()); ?>" data-id="<?php echo e($row->id); ?>" data-type="<?php echo e($row->type); ?>">
             <i class="fa fa-heart-o" style="height:30px; width:30px; border-radius:30px;background: white;
-            padding: 9px 7px; text-shadow: 1px 1px 27px black; color: black;"></i>
+               padding: 8px 8px; text-shadow: 1px 1px 27px black; color: black;"></i>
         </div>
         <?php if($row->discount_percent): ?>
             <div class="sale_info"><?php echo e($row->discount_percent); ?></div>
@@ -49,13 +49,13 @@
     </div>
    
     <div class="item-title mt-2 pt-2">
-        <a <?php if(!empty($blank)): ?> target="_blank" <?php endif; ?> href="<?php echo e($row->getDetailUrl($include_param ?? true)); ?>">
+       <h5 > <a <?php if(!empty($blank)): ?> target="_blank" <?php endif; ?> href="<?php echo e($row->getDetailUrl($include_param ?? true)); ?>">
             <?php if($row->is_instant): ?>
                 <i class="fa fa-bolt d-none"></i>
             <?php endif; ?>
                 <?php echo e($translation->title); ?>
 
-        </a>
+        </a></h5>
     </div>
 
     <div class="location mb-3" style="color:black; margin-top:-7px;">

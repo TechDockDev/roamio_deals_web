@@ -66,13 +66,13 @@
         </div>
     </div>
     <div class="item-title">
-        <a <?php if(!empty($blank)): ?> target="_blank" <?php endif; ?> href="<?php echo e($row->getDetailUrl()); ?>">
+       <h5> <a <?php if(!empty($blank)): ?> target="_blank" <?php endif; ?> href="<?php echo e($row->getDetailUrl()); ?>">
             <?php if($row->is_instant): ?>
                 <i class="fa fa-bolt d-none"></i>
             <?php endif; ?>
                 <?php echo e($translation->title); ?>
 
-        </a>
+        </a></h5>
         <?php if($row->discount_percent): ?>
             <div class="sale_info"><?php echo e($row->discount_percent); ?></div>
         <?php endif; ?>
