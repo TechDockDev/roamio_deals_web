@@ -141,8 +141,6 @@ height: 336px;
     border-radius: 14px;
     background: #FFF3E3;
 }
-    
-
 .totl {
    background: none;
 }
