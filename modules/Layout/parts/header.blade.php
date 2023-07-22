@@ -263,8 +263,8 @@
                        @endif
                    @else
                        @include('Layout::parts.notification')
-                       <li class="login-item dropdown">
-                           <a href="#" data-toggle="dropdown"  class="login " style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; border-radius: 10px; ">{{__("Hi, :name",['name'=>Auth::user()->getDisplayName()])}}
+                       <li class="login-item dropdown " style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; border-radius: 10px; font-size:10px;">
+                           <a href="#" data-toggle="dropdown"  class="login btn btn-light" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);color:white; border-radius: 10px; ">{{__("Hi, :name",['name'=>Auth::user()->getDisplayName()])}}
                                <i class="fa fa-angle-down"></i>
                            </a>
                            <ul class="dropdown-menu dropdown-menu-user text-left" style="width:140px;">
