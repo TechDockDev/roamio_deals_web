@@ -72,7 +72,7 @@
     ?>
         <div class="service-review mb-4">
             <span class="rate">
-              <span class="Daily-btn text-white w-30"> <?php if($reviewData['total_review'] > 0): ?> <?php echo e($score_total); ?>/5 <i class="fa fa-star"></i> <?php endif; ?></span>
+              <span class="Daily-btn text-white w-30" style="padding: 3px 5px !important;"> <?php if($reviewData['total_review'] > 0): ?> <?php echo e($score_total); ?>/5 <i class="fa fa-star"></i> <?php endif; ?></span>
               &nbsp; &nbsp;<span class="rate-text" style="color:black;"><?php echo e($reviewData['review_text']); ?></span>
             </span>
             
@@ -83,15 +83,15 @@
         
         
         <div class="g-price text-start mb-3">
-            <div class="prefix">
+            <div class="prefix" style="font-size: 20px;">
                 <span class="fr_text"><?php echo e(__("AED")); ?></span>
             </div>
             <div class="price">
-                 <span class="text-price" style="font-weight:700;"><?php echo e($row->display_price); ?></span>&nbsp;
+                 <span class="text-price" style="font-weight:700; font-size: 20px;"><?php echo e($row->display_price); ?></span>&nbsp;
                  <?php if(isset($row->discount_percent)): ?>
-                 <span class=" btn btn-light Daily-btn text-white"><?php echo e($row->discount_percent); ?>% off</span>
+                 <span class=" btn btn-light Daily-btn text-white" style="padding: 3px 5px !important;"><?php echo e($row->discount_percent); ?>% off</span>
          <?php else: ?>
-        <span class=" btn btn-light Daily-btn text-white" style="color: white !important;
+        <span class=" btn btn-light Daily-btn text-white" style="color: white !important; padding: 3px 5px !important;
        ">0% off</span>
     <?php endif; ?>
               

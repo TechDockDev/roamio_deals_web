@@ -69,7 +69,7 @@
     ?>
         <div class="service-review mb-4">
             <span class="rate">
-              <span class="Daily-btn text-white w-30"> @if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif</span>
+              <span class="Daily-btn text-white w-30" style="padding: 3px 5px !important;"> @if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif</span>
               &nbsp; &nbsp;<span class="rate-text" style="color:black;">{{$reviewData['review_text']}}</span>
             </span>
             {{-- <span class="review">
@@ -92,15 +92,15 @@
         </div> --}}
         {{-- onsale --}}
         <div class="g-price text-start mb-3">
-            <div class="prefix">
+            <div class="prefix" style="font-size: 20px;">
                 <span class="fr_text">{{__("AED")}}</span>
             </div>
             <div class="price">
-                 <span class="text-price" style="font-weight:700;">{{ $row->display_price }}</span>&nbsp;
+                 <span class="text-price" style="font-weight:700; font-size: 20px;">{{ $row->display_price }}</span>&nbsp;
                  @if(isset($row->discount_percent))
-                 <span class=" btn btn-light Daily-btn text-white">{{ $row->discount_percent }}% off</span>
+                 <span class=" btn btn-light Daily-btn text-white" style="padding: 3px 5px !important;">{{ $row->discount_percent }}% off</span>
          @else
-        <span class=" btn btn-light Daily-btn text-white" style="color: white !important;
+        <span class=" btn btn-light Daily-btn text-white" style="color: white !important; padding: 3px 5px !important;
        ">0% off</span>
     @endif
               

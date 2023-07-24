@@ -24,10 +24,10 @@ background-repeat: no-repeat;
      .Daily-btn {
          background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
          color: white;
-       
+         padding: 3px 6px !important;
          font-size: 10px !important;
-    border-radius: 6px !important;
-    text-align: center !important;
+         border-radius: 6px !important;
+         text-align: center !important;
      }
 
      /* Anchor tag decoration */
@@ -180,47 +180,11 @@ background-repeat: no-repeat;
 
 
      }
+     /* .image-fixd:hover {
+  transform: scale(1.2);
+     } */
+     
  </style>
-
- <div class="container mt-3 pt-3">
-     <div class="bravo-list-hotel layout_{{ $style_list }}">
-         @if ($title)
-             <div class="title mx-1" style=" font-weight:700; font-size:28px;">
-                 {{ $title }} <span> <a href="{{ url('/hotel/') }}">
-                         <span style="float:right; color:#FF3500; font-size:15px; font-weight: 900;">View All</span>
-                     </a></span>
-             </div>
-         @endif
-         {{-- @if ($desc)
-            <div class="sub-title">
-                {{$desc}}
-            </div>
-        @endif --}}
-
-         <div class="sub-title mx-1 mb-2">
-             Staycation highly rated for thoughtful design
-         </div>
-         <div class="list-item">
-             @if ($style_list === 'normal')
-                 <div class="row">
-                     @foreach ($rows as $row)
-                         <div class="col-lg-{{ $col ?? 3 }} col-md-6" style="height:93%;">
-                             @include('Hotel::frontend.layouts.search.loop-grid')
-                         </div>
-                     @endforeach
-                 </div>
-             @endif
-             @if ($style_list === 'carousel')
-                 <div class="owl-carousel">
-                     @foreach ($rows as $row)
-                         @include('Hotel::frontend.layouts.search.loop-grid')
-                     @endforeach
-                 </div>
-             @endif
-         </div>
-     </div>
- </div>
-
 
  <div class="container mt-5">
      @foreach ($datas as $dealydeal)
@@ -245,8 +209,8 @@ background-repeat: no-repeat;
                              style="border-radius: 10px;position: relative; box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; height: 93% !important;">
                              <div class="Daily-Deals1" style="position: relative;">
 
-                                 <img src="{{ $hotel->banner_image }}"
-                                     style="height:200px; width:100%; border-radius: 10px;">
+                                 <img src="{{ $hotel->banner_image }}" 
+                                     style="height:200px; width:100%; border-radius: 10px;" class="image-fixd">
 
                                  <input type="text" class="objectidgetclass{{ $hotel->id }}" style="display:none;"
                                      name="object_id" value="{{ $hotel->id }}">
@@ -277,8 +241,9 @@ background-repeat: no-repeat;
                                      <span><i class="fa fa-map-marker" aria-hidden="true"></i>
                                          {{ $hotel->address }}</span>
                                  </p>
-                                 <p style="margin-top: -8px;" class="mb-4">
-                                     <span class="btn btn-light Daily-btn">{{ $hotel->review_score }} <i
+                                 <p style="margin-top: -8px;" class="mb-5">
+                                     <span class="btn btn-light Daily-btn"
+                                         style="padding: 3px 6px !important;">{{ $hotel->review_score }} <i
                                              class="fa fa-star"></i></span>
                                      {{ $hotel->star_rate }}
                                      <span>
@@ -291,9 +256,11 @@ background-repeat: no-repeat;
                                  </p>
                                  <p>
                                      <span
-                                         style="font-size:19px; color:black; font-weight:700;">{{ $hotel->price }}</span>
-                                     <span style="font-size:19px;"> AED </span>
-                                     <span class="btn btn-light Daily-btn">{{ $hotel->discount_percent }}% OFF</span>
+                                         style="font-size: 25px; color:black; font-weight:700;">{{ $hotel->price }}</span>
+                                     <span style="font-size: 25px;"> AED </span>
+                                     <span class="btn btn-light Daily-btn"
+                                         style=" padding: 3px 6px !important;">{{ $hotel->discount_percent }}%
+                                         OFF</span>
                                  </p>
                              </div>
                          </div>
@@ -304,6 +271,45 @@ background-repeat: no-repeat;
      @endforeach
  </div>
 
+
+ <div class="container mt-3 pt-3">
+    <div class="bravo-list-hotel layout_{{ $style_list }}">
+        @if ($title)
+            <div class="title mx-1" style=" font-weight:700; font-size:28px;">
+                {{ $title }} <span> <a href="{{ url('/hotel/') }}">
+                        <span style="float:right; color:#FF3500; font-size:15px; font-weight: 900;">View All</span>
+                    </a></span>
+            </div>
+        @endif
+        {{-- @if ($desc)
+           <div class="sub-title">
+               {{$desc}}
+           </div>
+       @endif --}}
+
+        <div class="sub-title mx-1 mb-2">
+            Staycation highly rated for thoughtful design
+        </div>
+        <div class="list-item">
+            @if ($style_list === 'normal')
+                <div class="row">
+                    @foreach ($rows as $row)
+                        <div class="col-lg-{{ $col ?? 3 }} col-md-6" style="height:93%;">
+                            @include('Hotel::frontend.layouts.search.loop-grid')
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+            @if ($style_list === 'carousel')
+                <div class="owl-carousel">
+                    @foreach ($rows as $row)
+                        @include('Hotel::frontend.layouts.search.loop-grid')
+                    @endforeach
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
 
 
 
@@ -512,7 +518,9 @@ background-repeat: no-repeat;
                          <img src="{{ $cat->banner_image }}" alt="" srcset=""
                              style=" position: relative; height:286px; width:100%; border-radius:10px;">
                          <div
-                             style="height: 286px; width:100%;  border-radius: 10px;background:rgba(0, 0, 0,0.4);position: absolute;top:0px;left:0px">
+                             style="height: 286px; width:100%;  border-radius: 10px;background: rgba(0,0,0,0.3);
+                             background: linear-gradient(359deg, rgba(0,0,0,0.8) 10%, rgba(255,255,255,0.1) 55%);
+                             position: absolute;top:0px;left:0px">
                          </div>
                          <h2 class="heading"
                              style="position: absolute; top: 85%; left: 14px; color: white; text-align: start; width: 100%; font-weight: 900;">
