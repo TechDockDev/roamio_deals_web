@@ -108,10 +108,8 @@ class HotelController extends Controller
      {
                     
         
-        $row = $this->hotelClass::where('slug', $slug)->with(['location','translation','hasWishList'])->first();;
+       $row = $this->hotelClass::where('slug', $slug)->with(['location','translation','hasWishList'])->first();
       
-       
-
        $id =$row->id;
        
      
