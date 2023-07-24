@@ -334,7 +334,7 @@ $totalUsers = count($user_review);
         <?php $__currentLoopData = $dataff; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dealydeal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="row">
                 <h4 class="title"style="margin-top: 13px;
-                margin-bottom: 27px;"><?php echo e($dealydeal['parent_name']); ?><a href="<?php echo e(url('hotel')); ?>"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
+                margin-bottom: 27px; font-weight:700; font-size:28px;"><?php echo e($dealydeal['parent_name']); ?><a href="<?php echo e(url('hotel')); ?>"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
             </div>
             <div class="row">
                 <?php if(isset($dealydeal['hotels']) && is_array($dealydeal['hotels'])): ?>
@@ -390,7 +390,7 @@ $totalUsers = count($user_review);
     <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="row">
             <h4 class="title mx-3 mt-3 pt-3 mb-3" style="margin-top: 13px;
-            margin-bottom: 27px;"><?php echo e($datas['parent_name']); ?><a href="<?php echo e(url('event')); ?>"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
+            margin-bottom: 27px; font-weight:700; font-size:28px;"><?php echo e($datas['parent_name']); ?><a href="<?php echo e(url('event')); ?>"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
         </div>
         <div class="row">
             <?php if(is_array($datas['events'])): ?>
