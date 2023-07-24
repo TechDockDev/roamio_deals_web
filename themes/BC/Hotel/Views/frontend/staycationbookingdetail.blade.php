@@ -153,8 +153,16 @@ height: 336px;
 
 }
 
+#fieldGenaratorAuto label {
+     width: 90px;
+}
+.roomheading {
+    left: 1px;
+    position: relative;
+    width: 100px;
 }
    </style>
+
 
 @endpush
 
@@ -217,13 +225,15 @@ height: 336px;
                       position: relative;
                       margin-top: -38px;
                       margin-bottom: 46px;">
-                            <button type="button" data-decrease class="inbtn">-</button>
+                            <button type="button" id="decrementButton"  data-decrease class="inbtn">-</button>
                             <input name="packageQuantity[]"  data-value type="text" value="1" style="width: 21px; border:none;">
-                            <button type="button" data-increase class="inbtn">+</button>
+                            <button type="button" id="incrementButton" data-increase class="inbtn">+</button>
                             <small>Quantity</small>
                         </div></p> 
 
-                    
+                     
+                      <span id="counter" style="display:none;">0</span>
+                      
 
                         <div class="row">
                         <div class="col-md-4" style="">  
@@ -247,10 +257,7 @@ height: 336px;
               <div class="row" style="margin-top: -45px;
                margin-bottom: -5px;">
               <div class="col-md-4">
-              <label>Lead Guest Name:</label>
-              <input type="text"  style="border-radius: 5px;
-               border: 1px solid lightgrey;" name="guest_name" >
-
+          
               <label>Phone No:</label>
               <input type="text"  style="border-radius: 5px;
                border: 1px solid lightgrey;"  name="Phone_no" >
@@ -259,32 +266,33 @@ height: 336px;
 
               </div>
 
-            <div class="col-md-4">
-           
 
-@if($dd->adults)
-@for ($i = 0; $i < $dd->adults; $i++)
-    <label for="adults">Adult Age {{ $i + 1 }}:</label>
-    <input type="number" style="border-radius: 5px;
-             border: 1px solid lightgrey;" id="adults age{{ $i }}" name="adults[]" min="0" value="">
-@endfor
+            <div class="col-md-4  autogeneratorClass">
+            @if($dd->adults)
+            @for ($i = 0; $i < $dd->adults; $i++)
+             <label for="adults">Lead Guest Name:</label>
+             <input type="number" style="border-radius: 5px;
+             border: 1px solid lightgrey;" id="adults age{{ $i }}" name="adults[]"  value="">
+             @endfor
 
-@endif
+             @endif
 
 
-@if($dd->children)
-
-@for ($i = 0; $i < $dd->children; $i++)
-    <label for="children">Child Age {{ $i + 1 }}:</label>
-    <input type="number" style="border-radius: 5px;
-             border: 1px solid lightgrey;" id="children age{{ $i }}" name="children[]" min="0" value="">
-@endfor
-
-@endif
+             @if($dd->children)
+             @for ($i = 0; $i < $dd->children; $i++)
+            <label for="children">Child Age :</label>
+            <input type="number" style="border-radius: 5px;
+             border: 1px solid lightgrey;" id="children age{{ $i }}" name="children[]"  value="">
+              @endfor
+              @endif
+             </div>
 
             </div>
-            </div>
-       
+             
+             <div style="left: -22px;
+               top: -35px;" class="col-md-4"  id="fieldGenaratorAuto">
+             </div>
+
                 </div>
             </div>
         </div>
@@ -308,7 +316,7 @@ height: 336px;
             </div>
             
           </div>
-          <div class="col-md-7 ">
+          <div class="col-md-6 ">
               <div class="card-body totlx">
                 <div class="row ">
                   <div class="col-md-6">
@@ -339,6 +347,7 @@ height: 336px;
   
 </div>
 
+  
 
     @push('css')
     <link rel="stylesheet" href="{{asset('libs/fullcalendar-4.2.0/core/main.css')}}">
@@ -362,6 +371,53 @@ height: 336px;
 <script src="{{ asset('libs/fullcalendar-4.2.0/core/main.js') }}"></script>
 <script src="{{ asset('libs/fullcalendar-4.2.0/interaction/main.js') }}"></script>
 <script src="{{ asset('libs/fullcalendar-4.2.0/daygrid/main.js') }}"></script>
+
+<script>
+    $(document).ready(function () {
+      let counterValue = 0;
+      $('#counter').text(counterValue);
+
+      function generateDiv() {
+        const templateDiv = $('.autogeneratorClass').first().clone(); // Clone the template div
+        templateDiv.find('[id]').each(function () {
+          // Update IDs to avoid duplicate IDs in cloned divs
+          $(this).attr('id', $(this).attr('id') + '_' + counterValue);
+        });
+
+        // Create and add the heading to the cloned div
+        const heading = $('<h6 class="roomheading">').text('Room ' + (counterValue + 1));
+        templateDiv.prepend(heading);
+
+        return templateDiv;
+      }
+
+      function generateDivs() {
+        $('#fieldGenaratorAuto').empty(); // Clear previous divs
+        for (let i = 0; i < counterValue; i++) {
+          $('#fieldGenaratorAuto').append(generateDiv());
+        }
+      }
+
+      // Increment button click handler
+      $('#incrementButton').on('click', function () {
+        counterValue++;
+        $('#counter').text(counterValue);
+        generateDivs();
+      });
+
+      // Decrement button click handler
+      $('#decrementButton').on('click', function () {
+        if (counterValue > 0) {
+          counterValue--;
+          $('#counter').text(counterValue);
+          generateDivs();
+        }
+      });
+
+      // Trigger generateDivs initially to display the initial divs
+      generateDivs();
+    });
+  </script>
 
 <script>
    
@@ -527,6 +583,9 @@ function valueChange() {
 
     updatePrice();
 }
+
+
+
 
 function updatePrice() {
     var priceElement = $('.pricex[data-price]');

@@ -1,6 +1,15 @@
 /*!
  * Fotorama 4.6.4 | http://fotorama.io/license/
  */
+.fotorama__img{
+
+    width: 825px !important;
+    height: 363px !important;
+    left: 0px !important;
+    top: 0px !important;
+}
+
+
 .fotorama__arr:focus:after,
 .fotorama__fullscreen-icon:focus:after,
 .fotorama__html,
