@@ -86,18 +86,109 @@
     
 </div>
 
-
-
-
-
 <?php if($translation->content): ?>
     <div class="g-overview">
-        <h3><?php echo e(__("Description")); ?></h3>
+        <h3><?php echo e(__("DescriptionX")); ?></h3>
         <div class="description">
             <?php echo $translation->content ?>
         </div>
     </div>
 <?php endif; ?>
+
+
+
+<?php
+
+ 
+  $slug = request()->slug;
+
+  $data = DB::table('bravo_hotels')->where('slug',$slug)->first();
+
+  $description = $data->extra_price;
+
+  $descriptionArray = json_decode($description, true);
+
+?>
+
+<style>
+ .accordion {
+    margin-bottom: 2px;
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 2px solid lightgrey;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    position: relative;
+}
+
+
+.accordion:after {
+    height: 27px;
+    content: '\203A';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    font-size: 29px;
+    margin-left: 5px;
+}
+
+.active:after {
+  content: '\2039'; /* Left-pointing arrow when accordion is active (open) */
+}
+
+.panelx {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+</style>
+
+
+
+
+<?php $__currentLoopData = $descriptionArray; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dsc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<button class="accordion"><b><?php echo e($dsc['title']); ?></b></button>
+<div class="panelx">
+  <p> <?php echo e($dsc['description']); ?></p>
+ 
+</div>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panelx.style.maxHeight = null;
+    } else {
+      panelx.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+
+
+              
+
+
+
 <?php echo $__env->make('Hotel::frontend.layouts.details.hotel-rooms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <div class="g-all-attribute is_mobile">
     <?php echo $__env->make('Hotel::frontend.layouts.details.hotel-attributes', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -166,4 +257,23 @@
     </div>
 <?php endif; ?>
 <div class="bravo-hr"></div>
-<?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Hotel/Views/frontend/layouts/details/hotel-detail.blade.php ENDPATH**/ ?>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script><?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Hotel/Views/frontend/layouts/details/hotel-detail.blade.php ENDPATH**/ ?>

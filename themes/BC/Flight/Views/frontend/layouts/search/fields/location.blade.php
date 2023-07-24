@@ -5,7 +5,7 @@
     left:26%;
     position: relative;"> 
 	<div class="form-content">
-		<label style=" left: -32px;
+		<label style=" left: -27px;
     position: relative;
     top: 10px;
     font-size: 18px;

@@ -2,7 +2,7 @@
     .Daily-btn {
     background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);
     color: white;
-    padding: 4px 4px;
+    padding: 4px 5px !important;
 }
 </style>
 
@@ -56,9 +56,10 @@
             <i class="fa fa-heart-o" style="height: 30px;
             width: 30px;
             background: white;
-            padding: 8px 7px;
+            padding: 8px 8px;
             border-radius: 30px;
             color:black;
+            margin-top: -6px;
             text-shadow: 1px 1px 27px black;
         "></i>
         </div>
@@ -87,7 +88,7 @@
     ?>
     <div class="service-review">
         <span class="rate">
-            <span class="Daily-btn text-white w-30">@if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif</span> &nbsp;<span class="rate-text" style="color:black">{{$reviewData['review_text']}}</span>
+            <span class="Daily-btn text-white w-30"style=" padding: 4px 6px !important;">@if($reviewData['total_review'] > 0) {{$score_total}}/5 <i class="fa fa-star"></i> @endif</span> &nbsp;<span class="rate-text" style="color:black">{{$reviewData['review_text']}}</span>
         </span>
         <span class="review">
              @if($reviewData['total_review'] > 1)
@@ -107,10 +108,10 @@
                 <span class="text-price" style="padding: 0px 1px;">{{ $row->display_price }} <span class="unit  text-dark">{{__("/night")}}</span></span> &nbsp;
                
                 @if(isset($row->discount_percent))
-                <span class=" btn btn-light Daily-btn text-white">{{ $row->discount_percent }}% off</span>
+                <span class=" btn btn-light Daily-btn text-white" style="padding: 4px 6px !important;">{{ $row->discount_percent }}% off</span>
         @else
-       <span class=" btn btn-light Daily-btn text-white" style="color: white !important;
-      ">0% off</span>
+       <span class=" btn btn-light Daily-btn text-white" style="color: white !important; padding: 4px 6px !important;"
+      >0% off</span>
    @endif
             </div>
         </div>

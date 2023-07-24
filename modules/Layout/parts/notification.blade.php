@@ -5,9 +5,10 @@ if(!auth()->check()) return;
 
 <li class="dropdown-notifications dropdown p-0" style="margin-top: 9px;">
     <a href="#" data-toggle="dropdown" class="is_login">
-        <i class="fa fa-bell mr-2 mt-2"></i>
-        <span class="badge badge-danger notification-icon">{{$countUnread}}</span>
-        <i class="fa fa-angle-down"></i>
+        <i class="fa fa-bell mr-3 mt-3"></i>
+        <span class="badge badge-danger notification-icon" style="top: -1px;">{{$countUnread}}</span>
+        <i class="fa fa-angle-down " style="left: -18px;
+        position: relative;"></i>
     </a>
     <ul class="dropdown-menu overflow-auto notify-items dropdown-container dropdown-menu-right dropdown-large">
         <div class="dropdown-toolbar">
