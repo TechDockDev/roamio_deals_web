@@ -160,6 +160,19 @@ public function Cart(){
 
 
 
+public function activityCart(request $request){
+
+     
+     $data = DB::table('activity_packages')->where('id',$request->id)->first();
+
+
+    return view('Event::frontend.activity-checkout', compact('data'));
+}
+
+
+
+
+
 
 
 public function ActivityExp(Request $request) {
@@ -175,7 +188,9 @@ public function ActivityExp(Request $request) {
     
 $user_id = auth()->user()->id ??  '';
 
-$terms = DB::table('bravo_terms')->where('attr_id', '20')->get();
+$terms = DB::table('bravo_terms')->where('status','1')->where('attr_id', '20')->get();
+
+
 $data = [];
 
 foreach ($terms as $parent) {

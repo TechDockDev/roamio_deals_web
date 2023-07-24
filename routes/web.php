@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 // use Artisan;
 
@@ -41,7 +42,24 @@ Route::get('/clearcache',function(){
     
 });
 
+Route::get('/get_dates_data', 'HomeController@getDatesData');
 
 Route::post('adding-to-cart','HomeController@cartaddingfunction');
 
+
+
 Route::get('deleteCart/{cartId}','HomeController@cartDelete');
+
+
+Route::post('promo',function(request $request){
+
+
+$data = DB::table('promo_code')->where('promo_name', $request->promoCode)->get();
+
+if ($data->isEmpty()) {
+    return response()->json(['status' => 0, 'data' => null, 'message' => 'Data not found']);
+} else {
+    return response()->json(['status' => 1, 'message' => 'Data retrieved successfully', 'data' => $data[0]]);
+}
+
+});

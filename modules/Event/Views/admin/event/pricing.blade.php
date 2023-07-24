@@ -102,17 +102,16 @@
 
         @endif
         <div class="form-group @if(!is_default_lang()) d-none @endif">
-            <label><input type="checkbox" name="enable_extra_price" @if(!empty($row->enable_extra_price)) checked @endif value="1"> {{__('Enable extra price')}}
+            <label><input type="checkbox" name="enable_extra_price" @if(!empty($row->enable_extra_price)) checked @endif value="1"> {{__('Enable extra Description')}}
             </label>
         </div>
         <div class="form-group-item @if(!is_default_lang()) d-none @endif" data-condition="enable_extra_price:is(1)">
-            <label class="control-label">{{__('Extra Price')}}</label>
+            <label class="control-label">{{__('Extra Description')}}</label>
             <div class="g-items-header">
                 <div class="row">
-                    <div class="col-md-5">{{__("Name")}}</div>
-                    <div class="col-md-2">{{__('Price')}}</div>
-                    <div class="col-md-2">{{__('Discount')}}</div>
-                    <div class="col-md-2">{{__('Person')}}</div>
+                    <div class="col-md-5">{{__("Title")}}</div>
+                    <div class="col-md-2">{{__('Description')}}</div>
+                   
                     <div class="col-md-1"></div>
                 </div>
             </div>
@@ -131,33 +130,15 @@
                                             </div>
                                         @endforeach
                                     @else
-                                        <input type="text" name="extra_price[{{$key}}][name]" class="form-control" value="{{$extra_price['name'] ?? ''}}" placeholder="{{__('Extra price name')}}">
+                                        <input type="text" name="extra_price[{{$key}}][title]" class="form-control" value="{{$extra_price['title'] ?? ''}}" placeholder="{{__('Extra description name')}}">
                                     @endif
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="number" @if(!is_default_lang()) disabled @endif  name="extra_price[{{$key}}][price]" class="form-control" value="{{$extra_price['price']}}">
+                                <div class="col-md-5">
+                                    <textarea type="text" @if(!is_default_lang()) disabled @endif  name="extra_price[{{$key}}][description]" class="form-control" value="{{$extra_price['description']}}">{{$extra_price['description']}}</textarea>
                                 </div>
-                                <div class="col-md-2">
-                                   {{--  <select name="extra_price[{{$key}}][discounted_price]" class="form-control" @if(!is_default_lang()) disabled @endif>
-                                        <option @if($extra_price['discounted_price'] ==  'one_time') selected @endif value="one_time">{{__("One-time")}}</option>
-                                        <option @if($extra_price['discounted_price'] ==  'per_hour') selected @endif value="per_hour">{{__("Per hour")}}</option>
-                                    </select> --}}
-                                    
-                                    
-                                    <input type="number" name="extra_price[{{$key}}][discount]" class="form-control" value="{{$extra_price['discount']}}">
-                                    
-                                </div>
+                              
                                 
-                                <div class="col-md-2">
-                                           <select name="extra_price[{{$key}}][person]" class="form-control" @if(!is_default_lang()) disabled @endif>
-                                                <option @if($extra_price['person'] ==  'adult') selected @endif value="adult">{{__("adult")}}</option>
-                                                <option @if($extra_price['person'] ==  'child') selected @endif value="child">{{__("child")}}</option>
-                                            </select> 
-                                    
-                                    
-                                    
-                                    
-                                </div>
+                               
                                 <div class="col-md-1">
                                     @if(is_default_lang())
                                         <span class="btn btn-danger btn-sm btn-remove-item"><i class="fa fa-trash"></i></span>
@@ -182,34 +163,18 @@
                                     <?php $key = setting_item('site_locale') != $language->locale ? "_".$language->locale : ""   ?>
                                     <div class="g-lang">
                                         <div class="title-lang">{{$language->name}}</div>
-                                        <input type="text" __name__="extra_price[__number__][name{{$key}}]" class="form-control" value="" placeholder="{{__('Extra price name')}}">
+                                        <input type="text" __name__="extra_price[__number__][name{{$key}}]" class="form-control" value="" placeholder="{{__('Extra description name')}}">
                                     </div>
                                 @endforeach
                             @else
-                                <input type="text" __name__="extra_price[__number__][name]" class="form-control" value="" placeholder="{{__('Extra price name')}}">
+                                <input type="text" __name__="extra_price[__number__][description]" class="form-control" value="" placeholder="{{__('Extra description name')}}">
                             @endif
                         </div>
-                        <div class="col-md-2">
-                            <input type="number"  __name__="extra_price[__number__][price]" class="form-control" value="">
+                        <div class="col-md-5">
+                            <textarea type="text"  __name__="extra_price[__number__][description]" class="form-control" value=""></textarea>
                         </div>
-                        <div class="col-md-2">
+                       
                           
-                            
-                <input type="number" __name__="extra_price[__number__][discount]" class="form-control" value="">
-                                    
-                        </div>
-                         <div class="col-md-2">
-                           <select __name__="extra_price[__number__][person]" class="form-control">
-                                <option value="adult">{{__("adult")}}</option>
-                                <option value="child">{{__("child")}}</option>
-                            </select> 
-                            
-              
-                                    
-                        </div>
-                        
-                        
-                        
                         
                         <div class="col-md-1">
                             <span class="btn btn-danger btn-sm btn-remove-item"><i class="fa fa-trash"></i></span>

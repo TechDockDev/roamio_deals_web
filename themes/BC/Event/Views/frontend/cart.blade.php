@@ -44,7 +44,60 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+  #calendar {
+    max-width: 384px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .fc-toolbar h2 {
+    font-size: 0.999em;
+    margin: 0;
+}
+
+  .fc-dayGridMonth-view .fc-day-grid {
+    width: 100%; /* Adjust the grid cell width */
+  }
+
+  .fc-dayGridMonth-view .fc-day-grid .fc-day {
+    width: 25px; /* Adjust the grid cell size */
+    height: 25px; /* Adjust the grid cell size */
+  }
+  
+  .fc-title{
+
+    background: #FF3500 !Important;
+    border: none !important;
+  }
+   .fc-event, .fc-event-dot {
+      background: #FF3500 !Important;
+    border: none !important;
+      }
+   
+    .fc-dayGrid {
+    border: none;
+  }
+
+    #calendar {
+       border-radius: 10px;
+    }
+
+.fc-day:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius:12px;
+  }
+
+  .fc-dayGridMonth-view .fc-day-grid .fc-day {
+    width: 25px;
+    height: 25px;
+    border: none;
+}
+
+
     </style>
+
+
 @endpush
 
 @section('content')
@@ -74,9 +127,13 @@ $totalAmount = 0;
                         <span>{{$dd->package_name}}</span>
                        <a href="{{url('deleteCart/'.$dd->id)}}"> <span class="text-end" style="float:right;"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
                     </h5>
-                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i><span>@if($dd->type == 'hotel')   Staycation @else       
+                    <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i><span>@if($dd->type == 'hotel')   Staycation 
+
+                        @else     
+
                             Activity
                     @endif     </span></p>
+                        
                     <p class="card-text"><small><i class="fa fa-users" aria-hidden="true"></i> <span>{{$dd->room_qty}} x Adult</span></small></p>
                     <h5 class="card-text price  pricex{{$dd->id}}">{{$dd->room_price * $dd->room_qty}}<span class="text">AED</span></h5>
                 </div>
@@ -133,9 +190,15 @@ $totalAmount = 0;
               </div>
           </div>
       </div>
+    </div>
   </div>
-  
-</div>
+
+
+   
+
+   
+
+
 
 @if(Session::get('successdataadded'))
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -146,7 +209,13 @@ $totalAmount = 0;
 </script>
 
 
-{{Session::forget('successdataadded')}}
+<?php
+
+Session::forget('successdataadded');
+
+
+?>
+
 
 @endif
 

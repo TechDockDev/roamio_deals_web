@@ -85,71 +85,58 @@ text-decoration: line-through;
  
    ?>
    
- 
- <form id="packagesForm">
+  
+
+  <form id ="packagesForm">
     @csrf
-
-
-    <div class="bravo-list-hotel-related-widget">
+               
+<div class="bravo-list-hotel-related-widget">
         <h5  style="margin-top:-23px;">Packages</h5>
-        @if(count($datas) > 0)
+        @if(count($room) > 0)
         @foreach($room as $rooms)
             <div class="card mb-3">
                 <div class="card-body">
-                    <p class="card-title">{{ $rooms->title }}</p>
-                    <p class="card-text">
 
-                          <input type="text"  style="display:none;"  name="package_name[]" value="{{$rooms->title}}">
- 
-                          <input type="text"  style="display:none;"  name="product_id[]" value="{{$hotel->id}}">
+                   <input type="text"  style="display:none;"  name="package_name[]" value="{{$rooms->title}}">
 
-                          <input type ="text" style="display:none;" id="packagesId" name ="id[]" value="{{$rooms->id}}">
 
-                          <input type ="text" style="display:none;" id = "parentnameofpackages" name ="type[]" value="hotel">
+                     <input type="text"  style="display:none" name = "product_id[]" value="{{$hotel->id}}">
+
+                    <input type ="text" style="display:none;" id="packagesId" name ="id[]" value="{{$rooms->id}}">
+
+                    <input type ="text" style="display:none;" id = "parentnameofpackages" name ="type[]" value="event">
 
                 <input type ="text" style="display:none;" id = "xparentnameofpackages" name ="price[]" value="{{ number_format($rooms->price - $rooms->discount_price, 2) }}">
 
-
-                         
-
+                    <p class="card-title">{{ $rooms->title }}</p>
+                    <p class="card-text">
                         <span class="text-item2">{{ $rooms->price }} AED</span>
                         <span class="text-item">
-  <?php
-$originalPrice = $rooms->price;
-$discountAmount = $rooms->discount_price;
-
-$discountPercentage = ($discountAmount / $originalPrice) * 100;
-
-$formattedDiscountPercentage = number_format($discountPercentage, 2);
-?>
+                   <?php
+                   $originalPrice = $rooms->price;
+                   $discountAmount = $rooms->discount_price;
+                   $discountPercentage = ($discountAmount / $originalPrice) * 100;
+                   $formattedDiscountPercentage = number_format($discountPercentage, 2);
+                   ?>
 
                     {{ $formattedDiscountPercentage }}%
 
                         </span>
+                         
                         <br>
                         <span class="text-black">{{ number_format($rooms->price - $rooms->discount_price, 2) }}</span>
                         <small>AED </small>
                     </p>
                     <p>
-                        <div class="container">
+                       <!--  <div class="container">
                             <button type="button" data-decrease class="inbtn">-</button>
-                            <input type="text"  name="packageQuantity[]" value="0"  data-value  style="width: 21px; border:none;">
+                            <input name="packageQuantity[]"  data-value type="text" value="0" style="width: 21px; border:none;">
                             <button type="button" data-increase class="inbtn">+</button>
                             <small>Quantity</small>
-                        </div>
+                        </div> -->
                     </p>
-                     
-                </div>
-            </div>
 
-             </form>
-        @endforeach
-    @else
-        <p>No data found.</p>
-    @endif
-    
-       
-        <?php 
+    <?php 
       
       if(auth()->check())
       {
@@ -160,26 +147,31 @@ $formattedDiscountPercentage = number_format($discountPercentage, 2);
         $user_id = null;
       }
      
-      
-
     ?>
 
        @if($user_id == null)
-       
-        <button type="button" class="btn btn-light btn-text w-100 mb-3" data-toggle="modal" data-target="#login">Quick Checkout</button>
 
-
-        <button type="button" class="btn btn-light w-100 card-btn mb-3" data-toggle="modal" data-target="#login">Add to Cart</button> 
-          
+        <button class="btn btn-light w-100 card-btn mb-3" data-toggle="modal" data-target="#login">Select</button> 
           @else
 
-         <button type="button" class="btn btn-light btn-text w-100 mb-3">Quick Checkout</button>
-
-
-         <button type="button" id ="cartSubmitButton" class="btn btn-light w-100 card-btn mb-3">Add to Cart</button> 
-
+   <a href="{{url('/staycation_booking_details/'.$rooms->id)}}" class=" btn btn-light w-100 card-btn mb-3">Select</a>
 
           @endif
+
+
+                </div>
+            </div>
+        @endforeach
+
+
+         </form>
+       
+    @else
+        <p>No data found.</p>
+    @endif
+    
+       
+       
     </div>
     
 
@@ -206,7 +198,7 @@ $(document).ready(function() {
                 if(response.status == true)
                 {
 
-                  window.location.href ="/user-cart"
+                  window.location.href ="/staycation_booking_details"
 
                 }else if(response.status == false)
                 {
