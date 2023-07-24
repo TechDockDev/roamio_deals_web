@@ -150,8 +150,9 @@
                                                 </div>
                                             @endif
                                         @endif
+                                     </td>
 
-                                    </td>
+
                                     <td>
                                         @if(!empty($service))
                                             <a href="{{ route('review.admin.index',['service_id'=>$service->id,'object_model'=>$service->type]) }}">
@@ -166,6 +167,7 @@
                                             {{__("[Deleted]")}}
                                         @endif
                                     </td>
+
                                     <td>
                                         @if(!empty($service))
                                             <a href="{{ route('review.admin.index',['service'=>$service->getModelName()]) }}" class="badge badge-dark">{{  $service->getModelName() }}</a>

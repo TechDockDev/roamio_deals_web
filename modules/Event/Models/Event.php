@@ -83,7 +83,7 @@ class Event extends Bookable
 
     public static function getModelName()
     {
-        return __("Event");
+        return __("Activity");
     }
 
     public static function getTableName()

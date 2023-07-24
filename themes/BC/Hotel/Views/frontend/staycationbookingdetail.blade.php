@@ -612,7 +612,7 @@ function updatePrice() {
         var multiplyQuantityElement = $('.multiply-quantity');
         multiplyQuantityElement.html(quantity + ' * ');
     }
-}
+
 
 
 

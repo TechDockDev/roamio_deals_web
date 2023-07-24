@@ -76,7 +76,7 @@ class EventController extends AdminController
             'event_manage_others' => $this->hasPermission('event_manage_others'),
             'breadcrumbs'         => [
                 [
-                    'name' => __('Events'),
+                    'name' => __('Activities'),
                     'url'  => route('event.admin.index')
                 ],
                 [
