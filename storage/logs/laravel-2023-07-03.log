@@ -1,4 +1,0 @@
-[2023-07-03 06:43:50] production.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 60 seconds exceeded at C:\\Users\\komal\\OneDrive\\Desktop\\roamiodeals_T\\roamiodeals\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Concerns\\CompilesAuthorizations.php:103)
-[stacktrace]
-#0 {main}
-"} 

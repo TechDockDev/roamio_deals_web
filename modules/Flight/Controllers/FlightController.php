@@ -10,6 +10,8 @@ use Modules\Location\Models\Location;
 use Modules\Review\Models\Review;
 use Modules\Core\Models\Attributes;
 use DB;
+use App\Helpers\Crypto;
+use Session;
 
 class FlightController extends Controller
 {
@@ -142,6 +144,7 @@ public function VishStatus(){
    public function visaApply(){
 
     $data = DB::table('visa_entry')->get();
+   
     $visadata = [];
     
     foreach ($data as $dt) {
@@ -150,81 +153,256 @@ public function VishStatus(){
         $visadata[] = $dt;
     }
 
+   
+
     return view ('Flight::frontend.visa-apply',compact('visadata'));
    }
 
-    public function visasubmit(request $request)
-   {  
+//    public function visasubmit(Request $request)
+//    {
+//        $passport_first_page = $request->hasFile('passport_first_page') ? $request->file('passport_first_page') : [];
+//        $passport_second_page = $request->hasFile('passport_second_page') ? $request->file('passport_second_page') : [];
+//        $passport_size_photo = $request->hasFile('passport_size_photo') ? $request->file('passport_size_photo') : [];
+   
+//        foreach ($request->firstname as $key => $firstname) {
+//            $passportfirst = null;
+//            if (isset($passport_first_page[$key]) && $passport_first_page[$key] !== null) {
+//                $passportfirst = date('mdYHis').uniqid().'.'.$passport_first_page[$key]->getClientOriginalExtension();
+//                $passport_first_page[$key]->move(public_path('visa'), $passportfirst);
+//            }
+   
+//            // Upload passport second page
+//            $passportsecond = null;
+//            if (isset($passport_second_page[$key]) && $passport_second_page[$key] !== null) {
+//                $passportsecond = date('mdYHis').uniqid().'.'.$passport_second_page[$key]->getClientOriginalExtension();
+//                $passport_second_page[$key]->move(public_path('visa'), $passportsecond);
+//            }
+   
+//            // Upload passport size photo
+//            $passportphoto = null;
+//            if (isset($passport_size_photo[$key]) && $passport_size_photo[$key] !== null) {
+//                $passportphoto = date('mdYHis').uniqid().'.'.$passport_size_photo[$key]->getClientOriginalExtension();
+//                $passport_size_photo[$key]->move(public_path('visa'), $passportphoto);
+//            }
+   
+//            $data = DB::table('visa_booking_detail')->insert([
+//                'user_id' => auth()->user()->id,
+//                'entry_id' => $request->entry_id,
+//                'entry_detail_id' => $request->entry_detail_id,
+//                'nationality' => $request->nationality,
+//                'email' => $request->email[$key],
+//                'alternate_number' => $request->alternate_number[$key],
+//                'traveldate' => $request->traveldate,
+//                'place_issues' => $request->place_issues[$key],
+//                'firstname' => $firstname,
+//                'lastname' => $request->lastname[$key],
+//                'dob' => $request->dob[$key],
+//                'child' => $request->child,
+//                'adult' => $request->adult,
+//                'passport_no' => $request->passportnumber[$key],
+//                'passport_expiry' => $request->passport_expiry[$key],
+//                'contact_no' => $request->contact[$key],
+//                'passport_first_page' => $passportfirst !== null ? '/visa/'.$passportfirst : null,
+//                'passport_second_page' => $passportsecond !== null ? '/visa/'.$passportsecond : null,
+//                'passport_size_photo' => $passportphoto !== null ? '/visa/'.$passportphoto : null,
+//                'payment_status' => 'unpaid',
+//                'visa_status' => 'pending'
+//            ]);
+//        }
+   
+//        return redirect('confirm-visa');
+//    }
+   
 
+public function visasubmit(Request $request)
+{
+    $passport_first_page = $request->hasFile('passport_first_page') ? $request->file('passport_first_page') : [];
+    $passport_second_page = $request->hasFile('passport_second_page') ? $request->file('passport_second_page') : [];
+    $passport_size_photo = $request->hasFile('passport_size_photo') ? $request->file('passport_size_photo') : [];
 
-$passport_first_page = $request->allFiles()['passport_first_page'];
-$passport_second_page = $request->allFiles()['passport_second_page'];
-$passport_size_photo = $request->allFiles()['passport_size_photo'];
+    $successCount = 0; // Track the number of successful form data saves
+
+    foreach ($request->firstname as $key => $firstname) {
+        $passportfirst = null;
+        if (isset($passport_first_page[$key]) && $passport_first_page[$key] !== null) {
+            $passportfirst = date('mdYHis').uniqid().'.'.$passport_first_page[$key]->getClientOriginalExtension();
+            $passport_first_page[$key]->move(public_path('visa'), $passportfirst);
+        }
+
+        // Upload passport second page
+        $passportsecond = null;
+        if (isset($passport_second_page[$key]) && $passport_second_page[$key] !== null) {
+            $passportsecond = date('mdYHis').uniqid().'.'.$passport_second_page[$key]->getClientOriginalExtension();
+            $passport_second_page[$key]->move(public_path('visa'), $passportsecond);
+        }
+
+        // Upload passport size photo
+        $passportphoto = null;
+        if (isset($passport_size_photo[$key]) && $passport_size_photo[$key] !== null) {
+            $passportphoto = date('mdYHis').uniqid().'.'.$passport_size_photo[$key]->getClientOriginalExtension();
+            $passport_size_photo[$key]->move(public_path('visa'), $passportphoto);
+        }
+
+        $data = DB::table('visa_booking_detail')->insert([
+            'user_id' => auth()->user()->id,
+            'entry_id' => $request->entry_id,
+            'entry_detail_id' => $request->entry_detail_id,
+            'nationality' => $request->nationality,
+            'email' => $request->email[$key],
+            'alternate_number' => $request->alternate_number[$key],
+            'traveldate' => $request->traveldate,
+            'place_issues' => $request->place_issues[$key],
+            'firstname' => $firstname,
+            'lastname' => $request->lastname[$key],
+            'dob' => $request->dob[$key],
+            'child' => $request->child,
+            'adult' => $request->adult,
+            'passport_no' => $request->passportnumber[$key],
+            'passport_expiry' => $request->passport_expiry[$key],
+            'contact_no' => $request->contact[$key],
+            'passport_first_page' => $passportfirst !== null ? '/visa/'.$passportfirst : null,
+            'passport_second_page' => $passportsecond !== null ? '/visa/'.$passportsecond : null,
+            'passport_size_photo' => $passportphoto !== null ? '/visa/'.$passportphoto : null,
+            'payment_status' => 'unpaid',
+            'visa_status' => 'pending'
+        ]);
 
        
-    foreach ($request->firstname as $key => $firstname) {
-
-    $passportfirst = null;
-    if (isset($passport_first_page[$key]) && $passport_first_page[$key] !== null) {
-        $passportfirst = date('mdYHis').uniqid().'.'.$passport_first_page[$key]->getClientOriginalExtension();
-        $passport_first_page[$key]->move(public_path('visa'), $passportfirst);
-    }
-
-    // Upload passport second page
-    $passportsecond = null;
-    if (isset($passport_second_page[$key]) && $passport_second_page[$key] !== null) {
-        $passportsecond = date('mdYHis').uniqid().'.'.$passport_second_page[$key]->getClientOriginalExtension();
-        $passport_second_page[$key]->move(public_path('visa'), $passportsecond);
-    }
-
-    // Upload passport size photo
-    $passportphoto = null;
-    if (isset($passport_size_photo[$key]) && $passport_size_photo[$key] !== null) {
-        $passportphoto = date('mdYHis').uniqid().'.'.$passport_size_photo[$key]->getClientOriginalExtension();
-        $passport_size_photo[$key]->move(public_path('visa'), $passportphoto);
-    }
-    
-
-    $data = DB::table('visa_booking_detail')->insert([
-        'user_id' => auth()->user()->id,
-        'entry_id' => $request->entry_id,
-        'entry_detail_id' => $request->entry_detail_id,
-        'nationality' => $request->nationality,
-        'email' => $request->email[$key],
-        'alternate_number' => $request->alternate_number[$key],
-        'traveldate' => $request->traveldate,
-        'place_issues' => $request->place_issues[$key],
-        'firstname' => $firstname,
-        'lastname' => $request->lastname[$key],
-        'dob' => $request->dob[$key],
-        'child' => $request->child,
-        'adult' => $request->adult,
-        'passport_no' => $request->passportnumber[$key],
-        'passport_expiry' => $request->passport_expiry[$key],
-        'contact_no' => $request->contact[$key],
-         'passport_first_page' => $passportfirst !== null ? '/visa/'.$passportfirst : null,
-        'passport_second_page' => $passportsecond !== null ? '/visa/'.$passportsecond : null,
-        'passport_size_photo' => $passportphoto !== null ? '/visa/'.$passportphoto : null,
-        'payment_status' => 'unpaid',
-        'visa_status' => 'pending'
-    ]);
-}
-
-return redirect('confirm-visa');
-
-
-     
-
-   }
-
-
-public function visaConfirm(request $request)
-{
+    }    
+       
+ return response()->json(['message'=>'data submitted successfully','status'=>200]);
    
-   return view('Flight::frontend.visaconfirmation');
+}
 
+
+   
+
+
+public function visaConfirm(Request $request)
+{
+
+    $userId = auth()->user()->id;
+
+   
+    $datas = DB::table('visa_booking_detail')
+        ->where('visa_status', 'pending')
+        ->where('user_id', $userId)
+        ->where('payment_status','unpaid')
+        ->get();
+
+      
+        return view('Flight::frontend.visaconfirmation' ,compact('datas'));
+}
+ 
+
+
+ 
+
+
+
+ 
+public function  visaApplyPage(){
+
+    $data = DB::table('visa_entry')->get();
+    $visadata = [];
+    
+    foreach ($data as $dt) {
+        $details = DB::table('visa_entry_details')->where('entry_id', $dt->id)->get();
+        $dt->visa_entry_details = $details;
+        $visadata[] = $dt;
+    }
+ 
+
+   return view ('Flight::frontend.visa-apply-page',compact('visadata'));  
 }
 
 
 
+
+
+
+
+public function showPaymentForm(Request $request)
+{
+    $visaID = $request->input('visa_id');
+    $userId = $request->input('user_id');
+    $email = $request->input('email');
+    $firstname = $request->input('firstname');
+    $passport_expiry = $request->input('passport_expiry');
+    $passport_no = $request->input('passport_no');
+    $translation_id = sprintf("%.2f", rand(0, 99));
+    $order_id = sprintf("%.2f", rand(0, 99));
+    $payment_status = 'Pending';
+   
+    $merchant_id = $request->input('merchant_id');
+
+    $data=DB::table('visa_payment_booking_cc')->insert([
+        'visa_id' => $visaID,
+        'user_id' => $userId,
+        'email' => $email,
+        'firstname' => $firstname,
+        'passport_expiry' => $passport_expiry,
+        'passport_no' => $passport_no,
+        'translation_id' => $translation_id,
+        'order_id' => $order_id,
+        'payment_status' => $payment_status,
+        'merchant_id' => $merchant_id,
+    ]);
+    
+    $enc_key= '857876E262EA034EA5139E4C250FE758';// Replace with your actual working key
+    $accessCode = 'AVOG04JJ40AW48GOWA';  // Replace with your actual access code
+
+    $merchantData = 'merchant_id=' . urlencode($merchant_id) . '&order_id=' . urlencode($order_id) . '&amount=' . urlencode('0.01') . '&currency=AED';
+
+
+
+
+    $encryptedData = Crypto::encrypt($merchantData, $merchant_id);
+    
+    $paymentData = [
+        'encrypted_data' => $encryptedData,
+        'access_code' => $accessCode,
+          'enc_key'  =>   $enc_key,
+        'other_data' => $request->all(),
+    ];
+    
+    
+    return view('Flight::frontend.redirect', compact('encryptedData', 'accessCode','enc_key'));
+}
+
+
+
+
+
+public function visasubmits(Request $request)
+{
+    $visaID = $request->input('visa_id');
+    $userId = $request->input('user_id');
+    $email = $request->input('email');
+    $firstname = $request->input('firstname');
+    $passport_expiry = $request->input('passport_expiry');
+    $passport_no = $request->input('passport_no');
+    $merchant_id = $request->input('merchant_id');
+
+    $successCount = 0; // Track the number of successful form data saves
+
+    foreach ($request->firstname as $key => $fname) {
+        // ...
+
+        $data = DB::table('visa_booking_detail')->insert([
+            // ... (existing code)
+
+            'payment_status' => 'unpaid',
+            'visa_status' => 'pending',
+        ]);
+
+        $successCount++;
+    }
+
+    if ($successCount > 0) {
+        return redirect()->route('payment.visa.form', compact('visaID', 'userId', 'email', 'firstname', 'passport_expiry', 'passport_no', 'merchant_id'));
+    } else {
+        return redirect()->back()->with('error', 'Failed to save data.');
+    }
+}
 }

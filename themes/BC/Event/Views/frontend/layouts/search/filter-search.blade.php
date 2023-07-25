@@ -1,3 +1,10 @@
+<style>
+    .irs-from{
+        background:#FF3500 !important;
+    }
+</style>
+
+
 <div class="bravo_filter">
     <form action="{{url(app_get_locale(false,false,'/').env('EVENT_ROUTE_PREFIX','event'))}}" class="bravo_form_filter">
         @if( !empty(Request::query('location_id')) )
@@ -17,7 +24,7 @@
             <input type="hidden" value="{{Request::query('end',date("d/m/Y",strtotime("+1 day")))}}" name="end">
             <input type="hidden" name="date" value="{{Request::query('date')}}">
         @endif
-        <div class="filter-title">
+        <div class="filter-title" style="color:#FF3500; border:none;">
             {{__("FILTER BY")}}
         </div>
         <div class="g-filter-item">
@@ -26,7 +33,7 @@
                 <i class="fa fa-angle-up" aria-hidden="true"></i>
             </div>
             <div class="item-content">
-                <div class="bravo-filter-price">
+                <div class="bravo-filter-price" >
                     <?php
                     $price_min = $pri_from = floor ( App\Currency::convertPrice($event_min_max_price[0]) );
                     $price_max = $pri_to = ceil ( App\Currency::convertPrice($event_min_max_price[1]) );
@@ -36,11 +43,11 @@
                     }
                     $currency = App\Currency::getCurrency( App\Currency::getCurrent() );
                     ?>
-                    <input type="hidden" class="filter-price irs-hidden-input" name="price_range"
+                    <input type="hidden" class="filter-price irs-hidden-input" name="price_range" style="background:#FF3500"
                            data-symbol=" {{$currency['symbol'] ?? ''}}"
                            data-min="{{$price_min}}"
                            data-max="{{$price_max}}"
-                           data-from="{{$pri_from}}"
+                           data-from="{{$pri_from}}" 
                            data-to="{{$pri_to}}"
                            readonly="" value="{{$price_range}}">
                     <button type="submit" class="btn btn-link btn-apply-price-range" style="color:#FF3500;">{{__("APPLY")}}</button>

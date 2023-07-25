@@ -321,7 +321,7 @@ $totalUsers = count($user_review);
 @section('content')
  <div class="container">
     <div class="row mt-3 pt-3">
-      <h3 class="text-center">Explore UAE <span style="color:#FF3500;"> Deals! </span></h3>
+      <h3 class="text-center" style="font-weight:700; font-size:28px;">Explore UAE <span style="color: #FE9000;"> Deals! </span></h3>
    </div>
       {{-- <div class="row d-flex justify-content-center mt-2">
         <div class="col-md-4">
@@ -343,22 +343,22 @@ $totalUsers = count($user_review);
         @foreach ($dataff as $dealydeal)
             <div class="row">
                 <h4 class="title"style="margin-top: 13px;
-                margin-bottom: 27px;">{{ $dealydeal['parent_name'] }} <span style="float:right; color:#FF3500; font-size:15px;">View All</span></h4>
+                margin-bottom: 27px; font-weight:700; font-size:28px;">{{ $dealydeal['parent_name'] }}<a href="{{ url('hotel')}}"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
             </div>
             <div class="row">
                 @if (isset($dealydeal['hotels']) && is_array($dealydeal['hotels']))
                     @foreach ($dealydeal['hotels'] as $hotel)
-                        <div class="col-md-4">
-                            <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
+                        <div class="col-md-4 mb-3">
+                            <div class="card mb-3" style="border-radius: 10px;  position: relative;">
                                 <div class="Daily-Deals1" style="position: relative;">
                                     <a href="{{ url('/hotel/' . $hotel->slug) }}"><img src="{{ $hotel->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
                                    
-                                 <span class="fa fa-heart fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
+                                 <span class="fa fa-heart-o fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
                   echo "class";
                 }   ?>" attr="{{$hotel->id}}" style="position: absolute;
                 top: 10px;
                 right: 10px;
-                color: white;
+                color: red;
                 text-shadow: 1px 1px 27px black;
                 /* float: right; */
                 left: 270px;
@@ -375,8 +375,8 @@ $totalUsers = count($user_review);
                                         <span><i class="fa fa-map-marker" aria-hidden="true"></i>  {{ $hotel->address }}</span>
                                     </p>
                                     <p>
-                                        <span class="btn btn-light Daily-btn">{{ $hotel->star_rate }} <i class="fa fa-star"></i></span>
-                                        (4)
+                                        <span class="btn btn-light Daily-btn"> {{$hotel->review_score }} <i class="fa fa-star"></i></span>
+                                        {{ $hotel->star_rate }}
                                         <span> Excellent </span>
                                     </p>
                                     <p>
@@ -398,18 +398,18 @@ $totalUsers = count($user_review);
     @foreach($data as $datas)
         <div class="row">
             <h4 class="title mx-3 mt-3 pt-3 mb-3" style="margin-top: 13px;
-            margin-bottom: 27px;">{{$datas['parent_name']}}</h4>
+            margin-bottom: 27px; font-weight:700; font-size:28px;">{{$datas['parent_name']}}<a href="{{ url('event')}}"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
         </div>
         <div class="row">
             @if(is_array($datas['events']))
                 @foreach($datas['events'] as $dt)
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-4">
                         <div class="card" style="border-radius: 10px;">
                             <div class="Daily-Deals1" style="position: relative;">
                                 <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;">
-                                <span class="fa fa-heart fa-3x fass" style="
+                                <span class="fa fa-heart-o fa-3x fass" style="
                                     right: 10px;
-                                    color: white;
+                                    color: red;
                                        height: 30px;
                                         width: 30px;
                                         background: white;
@@ -445,155 +445,154 @@ $totalUsers = count($user_review);
     @endforeach
     </div>
 
-      <div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
-        <div class="row d-flex justify-content-center p-4">
-       
-          <div class="col-md-6">
-            <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-            <p class="card-text text-white pt-3">{{ $reviews->title}} </p>
-            <div class="row">
-              <div class="col-md-6">
-                <h3 class="card-text pt-2 text-white p-1">{{ $totalUsers}} +</h3>
-                <p class="card-text text-white">Happy Customers</p>
-              </div>
-              <div class="col-md-6">
-                <h3 class="card-text pt-2 text-white p-1">{{ $reviews->rate_number}} <i class="fa fa-star"></i></h3>
-                <p class="card-text text-white">Overall Rating</p>
-              </div>
+    <div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
+      <div class="row d-flex justify-content-center p-4">
+     
+        <div class="col-md-6">
+          <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
+          <p class="card-text text-white pt-3">{{ $reviews->title}} </p>
+          <div class="row">
+            <div class="col-md-6">
+              <h3 class="card-text pt-2 text-white p-1">{{ $totalUsers}} +</h3>
+              <p class="card-text text-white">Happy Customers</p>
+            </div>
+            <div class="col-md-6">
+              <h3 class="card-text pt-2 text-white p-1">{{ $reviews->rate_number}} <i class="fa fa-star"></i></h3>
+              <p class="card-text text-white">Overall Rating</p>
             </div>
           </div>
-          <div class="col-md-4 p-4">
-            <div id="slider" style="height: 400px;">
-              <div class="dp-wrap">
-                <div id="dp-slider">
-
-                  @foreach($user_review  as $item)
-                
-                   <div class="dp_item" data-class="1" data-position="1">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <p class="card-text text-dark p-3 text-item-p">
-                          {{ $item->content}} 
-                        </p>
-                      </div>
-                      <div class="col-md-12 mb-4">
-                        <div class="row">
-                          <div class="col-md-4 offset-md-1">
-                            @if(!empty($item->user->images))
-                            <img class="img-fluid dpimg" src="/image/{{$item->user->images}}" height="10%" alt="investing" style="border-radius:100%; height:100px; width:100px;">
-                            @endif
-                          </div>
-                          <div class="col-md-5">
-                            @if(!empty($item->user->first_name) && !empty($item->user->last_name))
-                            <h6 class="text-dark sell-item">
-                           {{$item->user->first_name}} {{$item->user->last_name}}
-                            </h6>
-                            @endif
-                            <p class="text-dark">
-                              @if(!empty($item->rate_number))
-                              <div class="star">
-                                  @for($i = 0; $i < $item->rate_number; $i++)
-                                      <i class="fa fa-star" style="color:#FE9000;"></i>
-                                  @endfor
-                              </div>
+        </div>
+        <div class="col-md-4 p-4">
+          <div id="slider" style="height: 400px;">
+            <div class="dp-wrap">
+              <div id="dp-slider">
+  
+                @foreach($user_review  as $item)
+              
+                 <div class="dp_item" data-class="1" data-position="1">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="card-text text-dark p-3 text-item-p">
+                        {{ $item->content}} 
+                      </p>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                      <div class="row">
+                        <div class="col-md-4 offset-md-1">
+                          @if(!empty($item->user->images))
+                          <img class="img-fluid dpimg" src="/image/{{$item->user->images}}" height="10%" alt="investing" style="border-radius:100%; height:100px; width:100px;">
                           @endif
-                            </p>
-                          </div>
+                        </div>
+                        <div class="col-md-5">
+                          @if(!empty($item->user->first_name) && !empty($item->user->last_name))
+                          <h6 class="text-dark sell-item">
+                         {{$item->user->first_name}} {{$item->user->last_name}}
+                          </h6>
+                          @endif
+                          <p class="text-dark">
+                            @if(!empty($item->rate_number))
+                            <div class="star">
+                                @for($i = 0; $i < $item->rate_number; $i++)
+                                    <i class="fa fa-star" style="color:#FE9000;"></i>
+                                @endfor
+                            </div>
+                        @endif
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  @endforeach
-                
                 </div>
-                <ul id="dp-dots" style="display:none;">
-                  <li data-class="slide1"></li>
-                  <li data-class="slide2"></li>
-                  <li data-class="slide3"></li>
-                </ul>
-                <div class="btn" style="display:none;">
-                  <button id="dp-prev" class="btn btn-light"></button>
-                  <button id="dp-next" class="btn btn-light"></button>
-                </div>
+                @endforeach
+              
+              </div>
+              <ul id="dp-dots" style="display:none;">
+                <li data-class="slide1"></li>
+                <li data-class="slide2"></li>
+                <li data-class="slide3"></li>
+              </ul>
+              <div class="btn" style="display:none;">
+                <button id="dp-prev" class="btn btn-light"></button>
+                <button id="dp-next" class="btn btn-light"></button>
               </div>
             </div>
           </div>
-      </div>
-      </div>
-       <div class="container">
-           <div class="row">
-           <div class="col-md-6">
-                 <div class="card1">
-                   <div class="destination-item">
-                       <div class="image">
-                       <div class="effect"></div>
-                        <div class="content">
-                           
-                           <small class="text2">Experience Better</small>
-                           <h4 class="title text1">Top Staycation Around UAE</h4>
-                             <div class="desc">                                                                                                                                                                                                                                             
-                            <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
-                               Explore
-                            </a> 
-                           </div>
+        </div>
+    </div>
+    </div>
+     <div class="container">
+         <div class="row">
+         <div class="col-md-6">
+               <div class="card1">
+                 <div class="destination-item">
+                     <div class="image">
+                     <div class="effect"></div>
+                      <div class="content">
+                         
+                         <small class="text2">Experience Better</small>
+                         <h4 class="title text1">Top Staycation Around UAE</h4>
+                           <div class="desc">                                                                                                                                                                                                                                             
+                          <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                             Explore
+                          </a> 
                          </div>
-                   </div>
-               </div>
-                 </div>
-           </div>
-           <div class="col-md-6">
-               <div class="card1"> 
-                   <div class="destination-item">
-                       <div class="image1">
-                       <div class="effect"></div>
-                       <div class="content">
-                           
-                           <small class="text2">Experience More</small>
-                           <h4 class="title text1">Top Activities Around UAE</h4>
-                             <div class="desc">                                                                                                                                                                                                                                             
-                            <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
-                               Explore
-                            </a> 
-                           </div>
-                         </div>
-                   </div>
-               </div>
-                 </div>
-           </div>
-         </div>
-      </div>
-        <div class="container mt-5 pt-5 mb-5">
-           <div class="row">
-               <div class="col-md-4 text-center">
-                   <div class="card1">
-                       <img src="images/Frame_1.svg" class="card-img-top" alt="...">
-                       {{-- <div class="card-body">
-                           <h5 class="card-title">Best Price Guarantee</h5>
-                           <p class="card-text">Best Recommendations according to your Interest</p>
-                       </div> --}}
-                   </div>
-               </div>
-               <div class="col-md-4 text-center">
-                   <div class="card1">
-                       <img src="images/Frame_2.png" class="card-img-top" alt="...">
-                       {{-- <div class="card-body">
-                           <h5 class="card-title">Best Offer</h5>
-                           <p class="card-text">Best Recommendations according to your Interest and offers.</p>
-                       </div> --}}
-                   </div>
-               </div>
-               <div class="col-md-4 text-center">
-                   <div class="card1">
-                       <img src="images/Group2608634.svg" class="card-img-top" alt="..." style="height:64px">
-                       <div class="card-body">
-                           <h5 class="card-title pt-3" style="font-weight:900">Best Offer</h5>
-                           <p class="card-text">Best Recommendations according to your Interest and offers.</p>
                        </div>
-                   </div>
+                 </div>
+             </div>
                </div>
-           </div>
+         </div>
+         <div class="col-md-6">
+             <div class="card1"> 
+                 <div class="destination-item">
+                     <div class="image1">
+                     <div class="effect"></div>
+                     <div class="content">
+                         
+                         <small class="text2">Experience More</small>
+                         <h4 class="title text1">Top Activities Around UAE</h4>
+                           <div class="desc">                                                                                                                                                                                                                                             
+                          <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                             Explore
+                          </a> 
+                         </div>
+                       </div>
+                 </div>
+             </div>
+               </div>
+         </div>
        </div>
-      
+    </div>
+      <div class="container mt-5 pt-5 mb-5">
+         <div class="row">
+             <div class="col-md-4 text-center">
+                 <div class="card1">
+                     <img src="{{ url('images/Frame_1.svg')}}" class="card-img-top" alt="...">
+                     {{-- <div class="card-body">
+                         <h5 class="card-title">Best Price Guarantee</h5>
+                         <p class="card-text">Best Recommendations according to your Interest</p>
+                     </div> --}}
+                 </div>
+             </div>
+             <div class="col-md-4 text-center">
+                 <div class="card1">
+                     <img src="{{ url('images/Frame_2.png')}}" class="card-img-top" alt="...">
+                     {{-- <div class="card-body">
+                         <h5 class="card-title">Best Offer</h5>
+                         <p class="card-text">Best Recommendations according to your Interest and offers.</p>
+                     </div> --}}
+                 </div>
+             </div>
+             <div class="col-md-4 text-center">
+                 <div class="card1">
+                     <img src="{{ ('images/Group2608634.svg')}}" class="card-img-top" alt="..." style="height:64px">
+                     <div class="card-body">
+                         <h5 class="card-title pt-3" style="font-weight:900">Best Offer</h5>
+                         <p class="card-text">Best Recommendations according to your Interest and offers.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       
        <script>

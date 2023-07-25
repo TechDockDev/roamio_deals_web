@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Event/Views/frontend/layouts/details/banner.blade.php ENDPATH**/ ?>

@@ -1216,3 +1216,6 @@ function generate_timezone_list()
     function get_main_lang(){
         return setting_item('site_locale');
     }
+
+
+    

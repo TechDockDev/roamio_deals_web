@@ -5,11 +5,11 @@
     left:26%;
     position: relative;"> 
 	<div class="form-content">
-		<label style=" left: -32px;
+		<label style=" left: -27px;
     position: relative;
     top: 10px;
     font-size: 18px;
-    "><a  style="text-decoration:none;" href="{{url('explore-staycation')}}">StayCation</a></label>
+    "><a  style="text-decoration:none;  color:#FF3500; font-weight:900;" href="{{url('explore-staycation')}}">StayCation</a></label>
 	</div>
   </div>
 

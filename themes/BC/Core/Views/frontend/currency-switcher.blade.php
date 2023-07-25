@@ -17,12 +17,14 @@
             @foreach($actives as $currency)
                 @if($current != $currency['currency_main'])
                     <li>
-                        <a href="{{get_currency_switcher_url($currency['currency_main'])}}" class="is_login">
+                        <a href="{{get_currency_switcher_url($currency['currency_main'])}}" class="is_login" >
                             {{strtoupper($currency['currency_main'])}}
                         </a>
                     </li>
                 @endif
             @endforeach
+
+          
         </ul>
     </li>
 @endif

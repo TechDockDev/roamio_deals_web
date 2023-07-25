@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mt-5 pt-5">
     <div class="col-lg-3 col-md-12">
         @include('Event::frontend.layouts.search.filter-search')
     </div>

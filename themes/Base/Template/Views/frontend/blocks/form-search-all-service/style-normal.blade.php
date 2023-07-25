@@ -28,10 +28,21 @@
     </div>
 @endif
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top:-100px;">
+        {{-- {{$title}} --}}
+        {{-- {{$sub_title}} --}}
         <div class="col-lg-12" style="left: 50px;">
-            <h3 class="text-heading">{{$title}}</h3>
-            <div class="sub-heading">{{$sub_title}}</div>
+            <div class="row">
+             <div class="col-md-4">
+                <h4 class="text-heading"  style="font-size: 35px; font-weight:600; font-family:'poppins';position: relative;
+                top: 105px; "> {{$title}}</h4>
+                <div class="sub-heading mb-3" style="position: relative;
+                top: 105px;">{{$sub_title}}</div>
+                <button class="btn btn-light" style="position: relative;
+                top: 105px;">Explore</button>
+                </div>   
+            </div>
+           
             @if(empty($hide_form_search))
                 <div class="g-form-control">
                     <ul class="nav nav-tabs" role="tablist">
@@ -54,7 +65,7 @@
                         @endif
                     </ul> 
                     <div class="col-md-12 w-100 helloo">
-                        <div role="tabpanel" class="tab-pane active" id="bravo_flight" style="width:90%;top: 186px;position: relative; background:white; border-radius:10%">
+                        <div role="tabpanel" class="tab-pane active" id="bravo_flight" style="width:92%;top: 186px;position: relative; background:white; border-radius:10%">
                             @include(ucfirst("flight").'::frontend.layouts.search.form-search')
                         </div> 
                     </div>
