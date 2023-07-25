@@ -343,15 +343,16 @@ $totalUsers = count($user_review);
         @foreach ($dataff as $dealydeal)
             <div class="row">
                 <h4 class="title"style="margin-top: 13px;
-                margin-bottom: 27px; font-weight:700; font-size:28px;">{{ $dealydeal['parent_name'] }}<a href="{{ url('hotel')}}"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
+                margin-bottom: 27px; font-weight:700; font-size:28px;">{{ $dealydeal['parent_name'] }}<a href="{{ url('staycation')}}"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
             </div>
             <div class="row">
                 @if (isset($dealydeal['hotels']) && is_array($dealydeal['hotels']))
                     @foreach ($dealydeal['hotels'] as $hotel)
                         <div class="col-md-4 mb-3">
+                            <a href="{{ url('/staycation/' . $hotel->slug) }}" style="text-decoration:none;">
                             <div class="card mb-3" style="border-radius: 10px;  position: relative;">
                                 <div class="Daily-Deals1" style="position: relative;">
-                                    <a href="{{ url('/hotel/' . $hotel->slug) }}"><img src="{{ $hotel->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
+                                 <img src="{{ $hotel->banner_image }}" style="height:200px; width:100%; border-radius: 10px;">
                                    
                                  <span class="fa fa-heart-o fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
                   echo "class";
@@ -386,6 +387,7 @@ $totalUsers = count($user_review);
                                     </p>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     @endforeach
                 @endif
@@ -398,21 +400,22 @@ $totalUsers = count($user_review);
     @foreach($data as $datas)
         <div class="row">
             <h4 class="title mx-3 mt-3 pt-3 mb-3" style="margin-top: 13px;
-            margin-bottom: 27px; font-weight:700; font-size:28px;">{{$datas['parent_name']}}<a href="{{ url('event')}}"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
+            margin-bottom: 27px; font-weight:700; font-size:28px;">{{$datas['parent_name']}}<a href="{{ url('activity')}}"><span style="float:right; color:#FF3500; font-size:15px;">View All</span></a></h4>
         </div>
         <div class="row">
             @if(is_array($datas['events']))
                 @foreach($datas['events'] as $dt)
                     <div class="col-md-4 mb-4">
+                        <a href="{{ url('/activity/' . $dt->slug) }}" style="text-decoration:none;">
                         <div class="card" style="border-radius: 10px;">
                             <div class="Daily-Deals1" style="position: relative;">
                                 <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;">
                                 <span class="fa fa-heart-o fa-3x fass" style="
                                     right: 10px;
                                     color: red;
-                                       height: 30px;
-                                        width: 30px;
-                                        background: white;
+                                    height: 30px;
+                                    width: 30px;
+                                    background: white;
                                     text-shadow: 1px 1px 27px black;
                                     top: -188px;
                                     padding: 6px 6px;
@@ -438,6 +441,7 @@ $totalUsers = count($user_review);
                                 </p>
                             </div>
                         </div>
+                       </a>
                     </div>
                 @endforeach
             @endif
@@ -470,6 +474,7 @@ $totalUsers = count($user_review);
                 @foreach($user_review  as $item)
               
                  <div class="dp_item" data-class="1" data-position="1">
+                 <a href="{{ url('/activity/' . $dt->slug) }}" style="text-decoration:none;">
                   <div class="row">
                     <div class="col-md-12">
                       <p class="card-text text-dark p-3 text-item-p">
@@ -502,6 +507,7 @@ $totalUsers = count($user_review);
                       </div>
                     </div>
                   </div>
+              </a>
                 </div>
                 @endforeach
               
@@ -532,7 +538,7 @@ $totalUsers = count($user_review);
                          <small class="text2">Experience Better</small>
                          <h4 class="title text1">Top Staycation Around UAE</h4>
                            <div class="desc">                                                                                                                                                                                                                                             
-                          <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                          <a href="{{url('staycation?location_id=11')}}" class="btn btn-light butn" target="_blank"> 
                              Explore
                           </a> 
                          </div>
@@ -551,7 +557,7 @@ $totalUsers = count($user_review);
                          <small class="text2">Experience More</small>
                          <h4 class="title text1">Top Activities Around UAE</h4>
                            <div class="desc">                                                                                                                                                                                                                                             
-                          <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                          <a href="{{url('staycation?location_id=11')}}" class="btn btn-light butn" target="_blank"> 
                              Explore
                           </a> 
                          </div>

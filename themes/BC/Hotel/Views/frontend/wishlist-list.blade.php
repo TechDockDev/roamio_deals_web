@@ -260,7 +260,7 @@ foreach ($xxwishlist as $xstay) {
                         <small class="text2">Experience Better</small>
                         <h4 class="title text1">Top Staycation Around UAE</h4>
                           <div class="desc">                                                                                                                                                                                                                                             
-                         <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                         <a href="{{url('staycation?location_id=11')}}" class="btn btn-light butn" target="_blank"> 
                             Explore
                          </a> 
                         </div>
@@ -279,7 +279,7 @@ foreach ($xxwishlist as $xstay) {
                         <small class="text2">Experience More</small>
                         <h4 class="title text1">Top Activities Around UAE</h4>
                           <div class="desc">                                                                                                                                                                                                                                             
-                         <a href="http://127.0.0.1:8000/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                         <a href="{{url('staycation?location_id=11')}}" class="btn btn-light butn" target="_blank"> 
                             Explore
                          </a> 
                         </div>
