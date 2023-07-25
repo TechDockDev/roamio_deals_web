@@ -134,6 +134,7 @@ background-repeat: no-repeat;
          font-size: 22px;
      }
 
+
      .fass:hover {
          color: red !important;
      }
@@ -193,7 +194,7 @@ background-repeat: no-repeat;
                  {{ $dealydeal['parent_name'] }}
 
 
-                 <a href="{{ url('hotel' . ($dealydeal['location_id'] ?? '')) }}">
+                 <a href="{{ url('staycation' . ($dealydeal['location_id'] ?? '')) }}">
                      <span style="float:right; color:#FF3500; font-size:15px; font-weight: 900;">View All</span>
                  </a>
 
@@ -203,7 +204,7 @@ background-repeat: no-repeat;
 
          <div class="row">
              @foreach ($dealydeal['hotels'] as $hotel)
-                 <div class="col-md-4 mb-3"> <a href="{{ url('/hotel/' . $hotel->slug) }}"
+                 <div class="col-md-4 mb-3"> <a href="{{ url('/staycation/' . $hotel->slug) }}"
                          style="text-decoration:none;">
                          <div class="card mb-3"
                              style="border-radius: 10px;position: relative; box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; height: 93% !important;">
@@ -276,7 +277,7 @@ background-repeat: no-repeat;
     <div class="bravo-list-hotel layout_{{ $style_list }}">
         @if ($title)
             <div class="title mx-1" style=" font-weight:700; font-size:28px;">
-                {{ $title }} <span> <a href="{{ url('/hotel/') }}">
+                {{ $title }} <span> <a href="{{ url('/staycation/') }}">
                         <span style="float:right; color:#FF3500; font-size:15px; font-weight: 900;">View All</span>
                     </a></span>
             </div>
@@ -310,13 +311,6 @@ background-repeat: no-repeat;
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
 
 
  <div class="container">
@@ -539,10 +533,6 @@ background-repeat: no-repeat;
      </div>
  </div>
 
-
-
-
-
  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
      crossorigin="anonymous"></script>
 
@@ -657,3 +647,4 @@ background-repeat: no-repeat;
          });
      }
  </script>
+

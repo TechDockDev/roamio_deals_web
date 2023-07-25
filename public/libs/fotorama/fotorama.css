@@ -1,6 +1,32 @@
 /*!
  * Fotorama 4.6.4 | http://fotorama.io/license/
  */
+.fotorama__pointer{
+    width: 825px;
+    height: 431px !important;
+
+}
+
+.fotorama__fullscreen-icon{
+
+  display:none;
+}
+.fotorama__nav__frame--thumb {
+    width: 194px !important;
+    padding: 15px;
+    height: 135px;
+}
+
+
+.fotorama__img{
+
+    width: 825px !important;
+    height: 363px !important;
+    left: 0px !important;
+    top: 0px !important;
+}
+
+
 .fotorama__arr:focus:after,
 .fotorama__fullscreen-icon:focus:after,
 .fotorama__html,
@@ -382,10 +408,14 @@ z-index: 8;
   z-index: 2;
 }
 .fotorama__thumb-border {
+  display:none;
+  transition-duration: 390ms;
+    transform: translate3d(0px, 0px, 0px);
+    width: 191px !Important;
   position: absolute;
   z-index: 9;
   top: 0;
-  left: 0;
+  left: 0px;
   border-style: solid;
   border-color: #00afea;
   background-image: linear-gradient(

@@ -108,11 +108,10 @@ class HotelController extends Controller
      {
                     
         
-        $row = $this->hotelClass::where('slug', $slug)->with(['location','translation','hasWishList'])->first();;
-      
-       
+         $row = $this->hotelClass::where('slug', $slug)->with(['location','translation','hasWishList'])->first();
+    
 
-       $id =$row->id;
+         $id =$row->id;
        
      
         if ( empty($row) or !$row->hasPermissionDetailView()) {
@@ -190,8 +189,6 @@ class HotelController extends Controller
      $datas[] = $p;
      }
  
-
-
  return view('Hotel::frontend.detail', $data ,compact('datas'));
     }
 
@@ -419,7 +416,7 @@ if (auth()->check()) {
    $user_id = Null;
 }
 
- $terms = DB::table('bravo_terms')->where('attr_id', '18')->get();
+ $terms = DB::table('bravo_terms')->where('attr_id','18')->where('status','1')->get();
  $dataff = [];
 
 foreach ($terms as $parent) {

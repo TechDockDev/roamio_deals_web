@@ -112,6 +112,46 @@ $value = request()->quantity;
     </span></p>
  <p id="finalPrice"></p>
 
+
+  <div class="row">
+        <div class="col-md-6">
+            <label> Lead Guest Name </label>
+             <input type="text" name="lead_guest_name" class="form-control" id="activityBookDate" aria-describedby="emailHelp" placeholder="Travel Dates" pattern="\d{2}/\d{2}/\d{4}">
+        </div>
+        <div class="col-md-6">
+            <label> Phone no </label>
+            <input name="mobile_no"  class="form-control" type="text">
+        </div>
+    </div>
+
+
+    <div class="row">
+       
+@if($data->adults)
+@for ($i = 0; $i < $data->adults; $i++)
+    <div class="col-md-6">
+    <label for="adults">Adult Age {{ $i + 1 }}:</label>
+    <input class="form-control" type="number" style="border-radius: 5px;
+             border: 1px solid lightgrey;" id="adults age{{ $i }}" name="adults[]" min="0" value="">
+    </div>
+@endfor
+
+@endif
+
+
+@if($data->children)
+
+@for ($i = 0; $i < $data->children; $i++)
+   <div class="col-md-6">
+    <label for="children">Child Age {{ $i + 1 }}:</label>
+    <input class="form-control" type="number" style="border-radius: 5px;
+             border: 1px solid lightgrey;" id="children age{{ $i }}" name="children[]" min="0" value="">
+    </div>
+@endfor
+
+@endif
+    </div>
+
     <div class="row">
         <div class="col-md-6">
             <label> Select Date </label>

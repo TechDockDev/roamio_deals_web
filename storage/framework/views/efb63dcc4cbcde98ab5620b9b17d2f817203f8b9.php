@@ -32,7 +32,10 @@
         
         
         <div class="col-lg-12" style="left: 50px;">
-            <div class="row">
+            <div class="row" style="
+    top: 96px;
+    position: relative;
+">
              <div class="col-md-4">
                 <h4 class="text-heading"  style="font-size: 35px; font-weight:600; font-family:'poppins';position: relative;
                 top: 105px; "> <?php echo e($title); ?></h4>

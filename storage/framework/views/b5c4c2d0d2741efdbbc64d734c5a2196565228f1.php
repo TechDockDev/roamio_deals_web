@@ -134,6 +134,7 @@ background-repeat: no-repeat;
          font-size: 22px;
      }
 
+
      .fass:hover {
          color: red !important;
      }
@@ -194,7 +195,7 @@ background-repeat: no-repeat;
 
 
 
-                 <a href="<?php echo e(url('hotel' . ($dealydeal['location_id'] ?? ''))); ?>">
+                 <a href="<?php echo e(url('staycation' . ($dealydeal['location_id'] ?? ''))); ?>">
                      <span style="float:right; color:#FF3500; font-size:15px; font-weight: 900;">View All</span>
                  </a>
 
@@ -204,7 +205,7 @@ background-repeat: no-repeat;
 
          <div class="row">
              <?php $__currentLoopData = $dealydeal['hotels']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                 <div class="col-md-4 mb-3"> <a href="<?php echo e(url('/hotel/' . $hotel->slug)); ?>"
+                 <div class="col-md-4 mb-3"> <a href="<?php echo e(url('/staycation/' . $hotel->slug)); ?>"
                          style="text-decoration:none;">
                          <div class="card mb-3"
                              style="border-radius: 10px;position: relative; box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; height: 93% !important;">
@@ -278,7 +279,7 @@ background-repeat: no-repeat;
     <div class="bravo-list-hotel layout_<?php echo e($style_list); ?>">
         <?php if($title): ?>
             <div class="title mx-1" style=" font-weight:700; font-size:28px;">
-                <?php echo e($title); ?> <span> <a href="<?php echo e(url('/hotel/')); ?>">
+                <?php echo e($title); ?> <span> <a href="<?php echo e(url('/staycation/')); ?>">
                         <span style="float:right; color:#FF3500; font-size:15px; font-weight: 900;">View All</span>
                     </a></span>
             </div>
@@ -308,13 +309,6 @@ background-repeat: no-repeat;
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
 
 
  <div class="container">
@@ -540,10 +534,6 @@ background-repeat: no-repeat;
      </div>
  </div>
 
-
-
-
-
  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
      crossorigin="anonymous"></script>
 
@@ -658,4 +648,5 @@ background-repeat: no-repeat;
          });
      }
  </script>
+
 <?php /**PATH C:\Users\komal\OneDrive\Desktop\roamiodeals_T\roamiodeals\themes/BC/Hotel/Views/frontend/blocks/list-hotel/index.blade.php ENDPATH**/ ?>

@@ -24,7 +24,10 @@
      
      
      ?>
-        <a <?php if(!empty($blank)): ?> target="_blank" <?php endif; ?> href="<?php echo e($row->getDetailUrl($include_param ?? true)); ?>">
+
+    
+
+       <a <?php if(!empty($blank)): ?> target="_blank" <?php endif; ?> href="<?php echo e(url('activity/'.$row->slug)); ?>">
             <?php if($row->banner_image_id): ?>
                 <?php if(!empty($disable_lazyload)): ?>
                     <img src="<?php echo e($row->image_url); ?>" class="img-responsive" alt="">
@@ -38,7 +41,7 @@
                  
                 <?php endif; ?>
             <?php endif; ?>
-        </a>
+        </a> 
         <div class="service-wishlist <?php echo e($row->isWishList()); ?>" data-id="<?php echo e($row->id); ?>" data-type="<?php echo e($row->type); ?>">
             <i class="fa fa-heart-o" style="height:30px; width:30px; border-radius:30px;background: white;
                padding: 8px 8px; text-shadow: 1px 1px 27px black; color: black;"></i>

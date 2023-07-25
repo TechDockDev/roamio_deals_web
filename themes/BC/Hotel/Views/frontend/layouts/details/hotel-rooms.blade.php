@@ -63,12 +63,12 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-btn">
-                    <div class="g-button-submit">
+                   <!--  <div class="g-button-submit">
                         <button class="btn btn-primary btn-search" @click="checkAvailability" :class="{'loading':onLoadAvailability}" type="submit">
                             {{__("Check Availability")}}
                             <i v-show="onLoadAvailability" class="fa fa-spinner fa-spin"></i>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

@@ -458,14 +458,14 @@ $totalUsers = count($user_review);
 </div>
 <div class="container mt-5">
    <div class="row">
-      <h4 class="title mx-2" style="margin-top: 43px;font-weight:700; font-size:28px;">Best Deal On Staycation <a href="{{ url('hotel')}}"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
+      <h4 class="title mx-2" style="margin-top: 43px;font-weight:700; font-size:28px;">Best Deal On Staycation <a href="{{ url('staycation')}}"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
    </div>
    <div class="row">
       @foreach ($bestDeal['hotels'] as $hotelx)
       <div class="col-md-4 mb-3">
-         <div class="card mb-2" style="border-radius: 10px; position: relative; height:95%; border-radius: 20px;">
+        <a href="{{ url('/staycation/' . $hotelx->slug) }}" style="text-decoration:none;"> <div class="card mb-2" style="border-radius: 10px; position: relative; height:95%; border-radius: 20px;">
             <div class="Daily-Deals1" style="position: relative;">
-               <a href="{{ url('/hotel/' . $hotelx->slug) }}"><img src="{{$hotelx->banner_image}}" style="height:200px; width:100%; border-radius: 20px;"></a>
+               <img src="{{$hotelx->banner_image}}" style="height:200px; width:100%; border-radius: 20px;">
                <input type ="text" class="objectidgetclass{{$hotelx->id}}" style="display:none;" name="object_id" value="{{$hotelx->id}}">
                <input type ="text" class="objectmodalgetclass{{$hotelx->id}}" style="display:none;" name="object_model" value="hotel">
                <span class="fa fa-heart-o fa-3x fass newhotelheartstatus{{$hotelx->id}} hotelwishlistaddingheart <?php if ($hotelx->wishlist== true) {
@@ -510,21 +510,22 @@ $totalUsers = count($user_review);
                   <span class="btn btn-light Daily-btn" style="margin-top: -10px;">{{ $hotelx->discount_percent }}% OFF</span>
                </p>
             </div>
-         </div>
+         </div></a>
       </div>
       @endforeach
    </div>
 </div>
 <div class="container mt-5">
    <div class="row">
-      <h4 class="title mx-2" style="margin-top: 43px; font-weight:700; font-size:28px;">Budget Staycation <a href="{{ url('hotel')}}"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
+      <h4 class="title mx-2" style="margin-top: 43px; font-weight:700; font-size:28px;">Budget Staycation <a href="{{ url('staycation')}}"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
    </div>
    <div class="row">
       @foreach ($budget['hotels'] as $hotelx)
       <div class="col-md-4 mb-3">
-         <div class="card mb-3" style="border-radius: 10px;  position: relative; height:93%; border-radius: 20px;">
+          <a href="{{ url('/staycation/' . $hotelx->slug) }}" style="text-decoration:none;">
+            <div class="card mb-3" style="border-radius: 10px;  position: relative; height:93%; border-radius: 20px;">
             <div class="Daily-Deals1" style="position: relative;">
-               <a href="{{ url('/hotel/' . $hotelx->slug) }}"><img src="{{$hotelx->banner_image}}" style="height:200px; width:100%; border-radius: 20px;"></a>
+              <img src="{{$hotelx->banner_image}}" style="height:200px; width:100%; border-radius: 20px;">
                <input type ="text" class="objectidgetclass{{$hotelx->id}}" style="display:none;" name="object_id" value="{{$hotelx->id}}">
                <input type ="text" class="objectmodalgetclass{{$hotelx->id}}" style="display:none;" name="object_model" value="hotel">
                <span class="fa fa-heart-o fa-3x fass newhotelheartstatus{{$hotelx->id}} hotelwishlistaddingheart <?php if ($hotelx->wishlist== true) {
@@ -564,7 +565,7 @@ $totalUsers = count($user_review);
                   <span class="btn btn-light Daily-btn"  style="margin-top: -10px;">{{ $hotelx->discount_percent }}% OFF</span>
                </p>
             </div>
-         </div>
+         </div></a>
       </div>
       @endforeach
    </div>
@@ -573,14 +574,14 @@ $totalUsers = count($user_review);
    
    <div class="container mt-5">
       <div class="row">
-         <h4 class="title mx-2" style="margin-top: 43px; font-weight:700; font-size:28px;">Explore Staycation <a href="{{ url('hotel')}}"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
+         <h4 class="title mx-2" style="margin-top: 43px; font-weight:700; font-size:28px;">Explore Staycation <a href="{{ url('staycation')}}"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
       </div>
       <div class="row">
          @foreach ($datas as $hotel)
          <div class="col-md-4 mb-3">
-            <div class="card mb-3" style="border-radius: 10px;  position: relative; height:93%;border-radius: 20px;">
+            <a href="{{ url('/staycation/' . $hotelx->slug) }}" style="text-decoration:none;"> <div class="card mb-3" style="border-radius: 10px;  position: relative; height:93%;border-radius: 20px;">
                <div class="Daily-Deals1" style="position: relative;">
-                  <a href="{{ url('/hotel/' . $hotel->slug) }}"><img src="{{ $hotel->bannerImage }}" style="height:200px; width:100%; border-radius: 20px;"></a>
+               <img src="{{ $hotel->bannerImage }}" style="height:200px; width:100%; border-radius: 20px;">
                   <input type ="text" class="objectidgetclass{{$hotel->id}}" style="display:none;" name="object_id" value="{{$hotelx->id}}">
                   <input type ="text" class="objectmodalgetclass{{$hotel->id}}" style="display:none;" name="object_model" value="hotel">
                   <span class="fa fa-heart-o fa-3x fass newhotelheartstatus{{$hotel->id}} hotelwishlistaddingheart <?php if ($hotel->wishlist== true) {
@@ -621,7 +622,7 @@ $totalUsers = count($user_review);
                      <span class="btn btn-light Daily-btn" style="margin-top:-10px;">{{ $hotel->discount_percent }}% OFF</span>
                   </p>
                </div>
-            </div>
+            </div></a>
          </div>
          @endforeach
       </div>
@@ -713,7 +714,7 @@ $totalUsers = count($user_review);
                      <small class="text2">Experience Better</small>
                      <h4 class="title text1">Top Staycation Around UAE</h4>
                      <div class="desc">                                                                                                                                                                                                                                             
-                        <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                        <a href="{{url('staycation?location_id=11')}}" class="btn btn-light butn" target="_blank"> 
                         Explore
                         </a> 
                      </div>
@@ -731,7 +732,7 @@ $totalUsers = count($user_review);
                      <small class="text2">Experience More</small>
                      <h4 class="title text1">Top Activities Around UAE</h4>
                      <div class="desc">                                                                                                                                                                                                                                             
-                        <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                        <a href="{{url('staycation?location_id=11')}}" class="btn btn-light butn" target="_blank"> 
                         Explore
                         </a> 
                      </div>
