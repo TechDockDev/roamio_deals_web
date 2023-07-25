@@ -35,11 +35,11 @@
             <div class="row">
              <div class="col-md-4">
                 <h4 class="text-heading"  style="font-size: 35px; font-weight:600; font-family:'poppins';position: relative;
-                top: 101px; "> <?php echo e($title); ?></h4>
+                top: 105px; "> <?php echo e($title); ?></h4>
                 <div class="sub-heading mb-3" style="position: relative;
-                top: 101px;"><?php echo e($sub_title); ?></div>
+                top: 105px;"><?php echo e($sub_title); ?></div>
                 <button class="btn btn-light" style="position: relative;
-                top: 101px;">Explore</button>
+                top: 105px;">Explore</button>
                 </div>   
             </div>
            

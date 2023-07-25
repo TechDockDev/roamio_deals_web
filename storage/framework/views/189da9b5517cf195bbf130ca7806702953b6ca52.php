@@ -229,12 +229,17 @@
         background: url("images/img.png");
          height:400px;
          border-radius:10px;
-
+       background-repeat: no-repeat; 
+       background-size:cover;
+       width:100%;
     }
     .image1{
         background: url("images/img_1.png");
          height:400px;
-         border-radius:10px;   
+         border-radius:10px; 
+         background-repeat: no-repeat; 
+       background-size:cover; 
+       width:100%; 
     }
     .text1{
         font-size: 30px;
@@ -307,30 +312,7 @@ color:white;
 padding: 4px 4px;
 }
 
-.image{
-        background: url("images/img.png");
-         height:400px;
-         border-radius:10px;
-    }
-    .image1{
-        background: url("images/img_1.png");
-         height:400px;
-         border-radius:10px;   
-    }
-    .text1{
-        font-size: 30px;
-    position: relative;
-    top: 244px;
-    left: 10px;
-    color: white;
-    }
-    .text2{
-        font-size: 16px;
-    position: relative;
-    top: 234px;
-    left: 10px;
-    color: white;   
-    }
+
     .butn{
         position: relative;
     top: 241px;
@@ -591,7 +573,6 @@ $totalUsers = count($user_review);
 </div>
 <div class="container">
    
-   
    <div class="container mt-5">
       <div class="row">
          <h4 class="title mx-2" style="margin-top: 43px; font-weight:700; font-size:28px;">Explore Staycation <a href="<?php echo e(url('hotel')); ?>"><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4>
@@ -651,8 +632,8 @@ $totalUsers = count($user_review);
 <div class="container-fluid mb-5 w-100 mt-5 pt-5" style="background: linear-gradient(180deg, #FE9000 0%, #FF3500 100%);">
    <div class="row d-flex justify-content-center p-4">
       <div class="col-md-6">
-         <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-         <p class="card-text text-white pt-3">Experience blissful relaxation, captivating local adventures, 
+         <h3 class="card-text pt-5 text-white p-1" >Listen to Our Happy Customers</h3>
+         <p class="card-text text-white pt-3" style="font-size: 17px;">Experience blissful relaxation, captivating local adventures, 
             <br>  and charming accommodations - all in one staycation destination; 
             our guests' reviews speak volumes about the unforgettable memories and cherished experiences awaiting you!
          </p>
@@ -662,7 +643,8 @@ $totalUsers = count($user_review);
                <p class="card-text text-white">Happy Customers</p>
             </div>
             <div class="col-md-6">
-               <h3 class="card-text pt-2 text-white p-1"><?php echo e($reviews->rate_number); ?> <i class="fa fa-star"></i></h3>
+               <h3 class="card-text pt-2 text-white p-1"><?php echo e(number_format($reviews->rate_number, 2)); ?> <i class="fa fa-star" style=" font-size:20px;position: relative;
+                  top: -2px;"></i></h3>
                <p class="card-text text-white">Overall Rating</p>
             </div>
          </div>
