@@ -23,7 +23,10 @@
      
      
      ?>
-        <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
+
+    
+
+       <a @if(!empty($blank)) target="_blank" @endif href="{{url('activity/'.$row->slug)}}">
             @if($row->banner_image_id)
                 @if(!empty($disable_lazyload))
                     <img src="{{$row->image_url}}" class="img-responsive" alt="">
@@ -37,7 +40,7 @@
                  
                 @endif
             @endif
-        </a>
+        </a> 
         <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
             <i class="fa fa-heart-o"></i>
         </div>

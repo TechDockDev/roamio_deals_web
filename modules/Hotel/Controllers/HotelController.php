@@ -108,9 +108,10 @@ class HotelController extends Controller
      {
                     
         
-       $row = $this->hotelClass::where('slug', $slug)->with(['location','translation','hasWishList'])->first();
-      
-       $id =$row->id;
+         $row = $this->hotelClass::where('slug', $slug)->with(['location','translation','hasWishList'])->first();
+    
+
+         $id =$row->id;
        
      
         if ( empty($row) or !$row->hasPermissionDetailView()) {
@@ -188,8 +189,6 @@ class HotelController extends Controller
      $datas[] = $p;
      }
  
-
-
  return view('Hotel::frontend.detail', $data ,compact('datas'));
     }
 

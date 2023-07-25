@@ -156,7 +156,7 @@ p {
           <div class="card mb-3" style="border-radius: 10px; padding: 10px; position: relative;">
              <div class="Daily-Deals1" style="position: relative;">
                 
-               <a href="{{ url('/hotel/' . $hotel->slug) }}"><img src="{{ $hotel->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
+               <a href="{{ url('/staycation/' . $hotel->slug) }}"><img src="{{ $hotel->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
                      
            <input type ="text" class="objectidgetclass{{$hotel->id}}" style="display:none;" name="object_id" value="{{$hotel->id}}">
            <input type ="text" class="objectmodalgetclass{{$hotel->id}}" style="display:none;" name="object_model" value="hotel">
@@ -319,14 +319,10 @@ $('.hotelwishlistaddingheart').click(function() {
     error: function(xhr, status, error) {
           
      $('#login').modal('show');
-
-      // alert("AJAX request failed: " + error);
       
     }
   });
 });
-
-
 
 });
 
