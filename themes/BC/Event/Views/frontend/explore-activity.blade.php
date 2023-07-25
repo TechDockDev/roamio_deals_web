@@ -519,15 +519,16 @@ fass:hover{
 
 <div class="container mt-5">
    <div class="row">
-    <h4  class="title mx-3" style="margin-top:43px; font-weight:700; font-size:28px;">{{$datas['parent_name']}}<a href="{{ url('event')}}" ><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4> 
+    <h4  class="title mx-3" style="margin-top:43px; font-weight:700; font-size:28px;">{{$datas['parent_name']}}<a href="{{ url('activity')}}" ><span style="font-size:15px; font-weight: 900; float:right;color:#FF3500; ">View All</span></a></h4> 
    </div>
    <div class="row">
        @foreach($datas['events'] as $dt)
 
         <div class="col-md-4 mb-3">
+            <a href = "{{url('/activity/'.$dt->slug)}}" style="text-decoration:none;">
             <div class="card"  style="border-radius: 10px;">
                 <div class="Daily-Deals1" style="position: relative;">
-                   <a href = "{{url('/event/'.$dt->slug)}}"> <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;"></a>
+                  <img src="{{ $dt->banner_image }}" style="height:200px; width:100%; border-radius: 10px;">
                  
             <input type ="text" class="objectidgetclass{{$dt->id}}" style="display:none;" name="object_id" value="{{$dt->id}}">
            <input type ="text" class="objectmodalgetclass{{$dt->id}}" style="display:none;" name="object_model" value="event">
@@ -562,6 +563,7 @@ fass:hover{
                   <p><span style="font-size:25px; color:black;">{{$dt->price}}</span><span style="font-size:25px;"> AED </span> <span class="btn btn-light Daily-btn">{{$dt->discount}}% OFF</span></p>
                 </div>
               </div>
+              </a>
         </div>
 
         @endforeach
@@ -662,7 +664,7 @@ fass:hover{
                        <small class="text2">Experience Better</small>
                        <h4 class="title text1">Top Staycation Around UAE</h4>
                          <div class="desc">                                                                                                                                                                                                                                             
-                        <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                        <a href="{{url('staycation?location_id=11')}}" class="btn btn-light butn" target="_blank"> 
                            Explore
                         </a> 
                        </div>
@@ -681,7 +683,7 @@ fass:hover{
                        <small class="text2">Experience More</small>
                        <h4 class="title text1">Top Activities Around UAE</h4>
                          <div class="desc">                                                                                                                                                                                                                                             
-                        <a href="https://roamiogit.techdocklabs.com/hotel?location_id=11" class="btn btn-light butn" target="_blank"> 
+                        <a href="{{url('staycation?location_id=11')}}" class="btn btn-light butn" target="_blank"> 
                            Explore
                         </a> 
                        </div>

@@ -1,0 +1,1 @@
+<?php /**PATH D:\new_roamio\roamio_deals_web\themes/BC/Hotel/Views/frontend/layouts/details/hotel-banner.blade.php ENDPATH**/ ?>
