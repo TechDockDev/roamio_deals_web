@@ -151,15 +151,13 @@ text-decoration: line-through;
 
        @if($user_id == null)
 
-        <button class="btn btn-light w-100 card-btn mb-3" data-toggle="modal" data-target="#login">Select</button> 
+        <button type="button" class="btn btn-light w-100 card-btn mb-3" data-toggle="modal" data-target="#login">Select</button> 
           @else
 
    <a href="{{url('/staycation_booking_details/'.$rooms->id)}}" class=" btn btn-light w-100 card-btn mb-3">Select</a>
 
           @endif
-
-
-                </div>
+      </div>
             </div>
         @endforeach
 

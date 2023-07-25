@@ -110,7 +110,7 @@ class ModuleProvider extends ModuleServiceProvider
     {
         if(!Hotel::isEnable()) return [];
         return [
-            'hotel'=>[
+            'Staycation'=>[
                 'class' => Hotel::class,
                 'name'  => __("Hotel"),
                 'items' => Hotel::searchForMenu(),

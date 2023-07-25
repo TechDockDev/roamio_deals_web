@@ -134,6 +134,7 @@ background-repeat: no-repeat;
          font-size: 22px;
      }
 
+
      .fass:hover {
          color: red !important;
      }
@@ -310,13 +311,6 @@ background-repeat: no-repeat;
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
 
 
  <div class="container">
@@ -539,10 +533,6 @@ background-repeat: no-repeat;
      </div>
  </div>
 
-
-
-
-
  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
      crossorigin="anonymous"></script>
 
@@ -657,3 +647,4 @@ background-repeat: no-repeat;
          });
      }
  </script>
+

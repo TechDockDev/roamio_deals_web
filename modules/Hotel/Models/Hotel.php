@@ -1110,6 +1110,7 @@ class Hotel extends Bookable
         if($forSingle){
             
             $data['review_score'] = $this->getReviewDataAttribute();
+            
             // $data['review_stats'] = $this->getReviewStats();
             // $data['review_lists'] = $this->getReviewList();
             // // $data['weekdays'] = $this->policy;

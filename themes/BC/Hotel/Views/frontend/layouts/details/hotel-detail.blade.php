@@ -207,11 +207,6 @@ for (i = 0; i < acc.length; i++) {
 </script>
 
 
-
-              
-
-
-
 @include('Hotel::frontend.layouts.details.hotel-rooms')
 <div class="g-all-attribute is_mobile">
     @include('Hotel::frontend.layouts.details.hotel-attributes')
