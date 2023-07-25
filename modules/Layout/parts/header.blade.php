@@ -151,7 +151,6 @@
     font-weight: 900;   
 }
 
-
 }
 
 
@@ -218,15 +217,19 @@
       
               <div class="col-md-12">
                 <a href="{{url('hotel-wish-list')}}">
-                    <p class="wish_list" style="color:#CDCFD0;left: 70%; position:relative; top:-22px; font-size:15px; font-weight:600;"><span><i class="fa fa-heart-o" aria-hidden="true" style=" font-size:20px;"></i></span>&nbsp;   WishList</p></a>
+                    <p class="wish_list" style="color:#CDCFD0;left: 70%; position:relative; top:-22px; font-size:15px; font-weight:600;"><span><i class="fa fa-heart-o" aria-hidden="true" style=" font-size:20px;"></i></span>&nbsp;   Wishlist</p></a>
                <a href="{{url('user-cart')}}"> <p class="cart_list" style="color:#CDCFD0;
                      left: 116%;
                 position: relative;
               
 
              top: -67px; font-size:15px; font-weight:600;"><span>
-      
-                   <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:20px;"></i>&nbsp; &nbsp; &nbsp;Cart <span 
+                    <img src="{{ url('images/cart.png')}}" style="height: 25px;
+                    position: relative;
+                    left: 6px;">
+                   {{-- <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:20px;"></i> --}}
+                   
+                   &nbsp; &nbsp; &nbsp;Cart <span 
                    class="badge bg-danger"
                    style="width: 30px;
                    height: 30px;

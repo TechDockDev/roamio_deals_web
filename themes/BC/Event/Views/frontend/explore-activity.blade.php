@@ -1,6 +1,7 @@
 
 @extends('layouts.app')
 @push('css')
+
     <link href="{{ asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version')) }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
@@ -143,14 +144,7 @@ a:hover {
     display: none;
 }
   
-/* Content decoration */
-.content {
-    /* background-color: white;
-    padding: 10px;
-    border: 1px solid gray; */
-}
-  
-/* Paragraph decoration */
+
 p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -164,12 +158,7 @@ p {
     clear: both;
 }
   
-/* .content {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid gray;
-} */
-  
+
 .show {
     display: block;
 }
@@ -458,7 +447,7 @@ p {
     color: white;   
     }
     .butn{
-        position: relative;
+    position: relative;
     top: 241px;
     left: 10px;
 }
@@ -478,6 +467,7 @@ fass:hover{
 
      }
 
+    
 
 </style>
 
@@ -492,6 +482,9 @@ fass:hover{
        
     </div>
   </div>
+
+
+
  
   <div class="container">
     <div class="row"> 
@@ -506,11 +499,12 @@ fass:hover{
                   </div>
               </div>
            </div>
-      </div>
+       </div>
       @endforeach
-  </div>
-    
+   </div>  
 </div>
+
+
 
 
 
@@ -580,19 +574,23 @@ fass:hover{
    
       <div class="col-md-6">
         <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-        <p class="card-text text-white pt-3">Experience blissful relaxation, captivating local adventures, and charming accommodations - all in one staycation destination; our guests' reviews speak volumes about the unforgettable memories and cherished experiences awaiting you!</p>
+        <p class="card-text text-white pt-3" style="font-size: 17px;">Experience blissful relaxation, captivating local adventures, 
+          <br> and charming accommodations - all in one staycation destination; 
+          our guests' reviews speak volumes about the unforgettable memories and cherished experiences awaiting you!
+       </p>
+       
+
         <div class="row">
           <div class="col-md-6">
-            <h3 class="card-text pt-2 text-white p-1">{{ $totalUsers}} +</h3>
-            <p class="card-text text-white">Happy Customers</p>
+             <h3 class="card-text pt-2 text-white p-1">{{ $totalUsers}} +</h3>
+             <p class="card-text text-white">Happy Customers</p>
           </div>
           <div class="col-md-6">
-            
-           <i class="fa fa-star"></i></h3>
-        
-            <p class="card-text text-white">Overall Rating</p>
+             <h3 class="card-text pt-2 text-white p-1">{{ number_format($reviews->rate_number, 2) }} <i class="fa fa-star" style=" font-size:20px;position: relative;
+                top: -2px;"></i></h3>
+             <p class="card-text text-white">Overall Rating</p>
           </div>
-        </div>
+       </div>
       </div>
       <div class="col-md-4 p-4">
         <div id="slider" style="height: 400px;">
@@ -689,7 +687,7 @@ fass:hover{
                        </div>
                      </div>
                </div>
-           </div>
+              </div>
              </div>
        </div>
      </div>
@@ -699,13 +697,12 @@ fass:hover{
            <div class="col-md-4 text-center">
                <div class="card1">
                 <img src="{{ url('images/Frame_1.svg')}}" class="card-img-top" alt="...">
-                 
+
                </div>
            </div>
            <div class="col-md-4 text-center">
-               <div class="card1">
-                <img src="{{ url('images/Frame_2.png')}}" class="card-img-top" alt="...">
-                  
+                <div class="card1">
+                <img src="{{ url('images/Frame_2.png')}}" class="card-img-top" alt="...">    
                </div>
            </div>
            <div class="col-md-4 text-center">
@@ -720,9 +717,22 @@ fass:hover{
        </div>
    </div>
        
-
+   {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+   <script>
+    $(document).ready(function() {
+  
+      $('.multi-item-carousel .item').each(function() {
+      
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+      });
+    });
+  </script>
    <script>
 
 $('document').ready(function(){
@@ -910,4 +920,65 @@ for (var i = 0; i < btns.length; i++) {
    </script>
    
 
+{{-- <script>  
+$('.multi-item-carousel').carousel({
+  interval: false
+});
+
+$('.multi-item-carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  } else {
+  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
+   </script> --}}
+
+
+   <script>
+    $('.owl-carousel').owlCarousel({
+  autoplay: true,
+  autoplayTimeout: 5000,
+  autoplayHoverPause: true,
+  loop: true,
+  margin: 50,
+  responsiveClass: true,
+  nav: true,
+  loop: true,
+  stagePadding: 100,
+  responsive: {
+    0: {
+      items: 1
+    },
+    568: {
+      items: 2
+    },
+    600: {
+      items: 3
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
+$(document).ready(function() {
+  $('.popup-youtube').magnificPopup({
+    disableOn: 320,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: true
+  });
+});
+$('.item').magnificPopup({
+  delegate: 'a',
+});
+   </script>
 @endsection

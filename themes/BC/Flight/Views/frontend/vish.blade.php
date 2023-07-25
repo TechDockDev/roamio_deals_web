@@ -18,7 +18,7 @@
       .UAE-Img{
             margin-top:30px;
             height: 48px;
-            width: 17%; 
+            width: 15%;
         }
         .card-item{
         background:white;
@@ -36,26 +36,10 @@
  
    <div class="container mt-4 pt-4">
     <div class="row">
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://www.wonderplugin.com/wp-content/uploads/2019/05/tutorial-city-900x288.jpg" alt="Los Angeles" class="d-block" style="width:100%; border-radius:10px;">
-            </div>
-            <div class="carousel-item">
-              <img src="https://www.jqueryscript.net/demo/Responsive-Full-Width-jQuery-Image-Slider-Plugin-skdslider/slides/1.jpg" alt="Chicago" class="d-block" style="width:100%; border-radius:10px;">
-            </div>
-            <div class="carousel-item">
-              <img src="https://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg" alt="New York" class="d-block" style="width:100%;  border-radius:10px;">
-            </div>
-          </div>
-        
-          <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>   
+        <div class="container mt-3">
+            <div class="row">
+               <img src="{{ asset('images\divitem-bg.png')}}" style="height: 400px;"> 
+         </div> 
      </div>
     </div>
     <div class="container">
@@ -236,12 +220,54 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="fiveThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
-                        Which countries are eligible for Application on arrival in Dubai?
+                        How long the visa processing takes?
                     </button>
                 </h2>
                 <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="fiveThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                     <p>The visa processing takes 24 to 74 hours however, depending on your nationality the Immigration may take longer time.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sixThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsefive">
+                        Is this site being safe to make the payment?
+                    </button>
+                </h2>
+                <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="sixThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                     <p>Yes, this site is safe to make the payments and encrypted with SSL security.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="sevenThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                        what is the procedure if I am eligible to get visa on arrival or I exempt from the visa.
+                    </button>
+                </h2>
+                <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="sevenThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                     <p>If your nationality appears on our visa on arrival section, you can simply disembark from your flight and get simply your passport stamps free of charge on Immigration counter (note for nationality who can get visa on arrival they can buy their visas on Immigration counter)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="EightThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false" aria-controls="collapseeight">
+                        Do Indian citizen are eligible to apply visa on arrival?
+                    </button>
+                </h2>
+                <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="EightThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                     <p>If you are Indian passport holder with US Green / Residence card, you can apply for visa on arrival into UAE or to avoid ques you can also apply visa on arrival in advance with us.</p>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 
 
 <?php $__env->startPush('css'); ?>
+
     <link href="<?php echo e(asset('dist/frontend/module/hotel/css/hotel.css?_ver='.config('app.asset_version'))); ?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css")); ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset("libs/fotorama/fotorama.css")); ?>"/>
@@ -143,14 +144,7 @@ a:hover {
     display: none;
 }
   
-/* Content decoration */
-.content {
-    /* background-color: white;
-    padding: 10px;
-    border: 1px solid gray; */
-}
-  
-/* Paragraph decoration */
+
 p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -164,12 +158,7 @@ p {
     clear: both;
 }
   
-/* .content {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid gray;
-} */
-  
+
 .show {
     display: block;
 }
@@ -478,6 +467,7 @@ fass:hover{
 
      }
 
+    
 
 </style>
 
@@ -492,25 +482,13 @@ fass:hover{
        
     </div>
   </div>
+
+
+
  
-  <div class="container">
-    <div class="row"> 
-      <h4 class="mt-2 mx-3" style="font-weight:700; font-size:28px;">Categories</h4> 
-      <?php $__currentLoopData = $fetch; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-       <div class="col-md-3">
-           <div class="column Top Trending In Dubai">
-              <div class="card1" style="position: relative;">
-                  <div class="categories1" style="position: relative;">
-                      <img src="<?php echo e($cat->banner_image); ?>" alt="" srcset="" style="height:200px; width:100%; border-radius:10px;">
-                      <h2 class="heading" style="position: absolute; top: 76%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 100%; font-weight: 900;"><?php echo e($cat->name); ?></h2>
-                  </div>
-              </div>
-           </div>
-      </div>
-      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-  </div>
-    
-</div>
+  
+
+
 
 
 
@@ -580,19 +558,30 @@ fass:hover{
    
       <div class="col-md-6">
         <h3 class="card-text pt-5 text-white p-1">Listen to Our Happy Customers</h3>
-        <p class="card-text text-white pt-3">Experience blissful relaxation, captivating local adventures, and charming accommodations - all in one staycation destination; our guests' reviews speak volumes about the unforgettable memories and cherished experiences awaiting you!</p>
+        <p class="card-text text-white pt-3" style="font-size: 17px;">Experience blissful relaxation, captivating local adventures, 
+          <br> and charming accommodations - all in one staycation destination; 
+          our guests' reviews speak volumes about the unforgettable memories and cherished experiences awaiting you!
+       </p>
+       
+
         <div class="row">
           <div class="col-md-6">
-            <h3 class="card-text pt-2 text-white p-1"><?php echo e($totalUsers); ?> +</h3>
-            <p class="card-text text-white">Happy Customers</p>
+             <h3 class="card-text pt-2 text-white p-1"><?php echo e($totalUsers); ?> +</h3>
+             <p class="card-text text-white">Happy Customers</p>
           </div>
           <div class="col-md-6">
+<<<<<<< HEAD:storage/framework/views/eee8240bc75f23e9350e46bad0c8340dedbf020f.php
+             <h3 class="card-text pt-2 text-white p-1"><?php echo e(number_format($reviews->rate_number, 2)); ?> <i class="fa fa-star" style=" font-size:20px;position: relative;
+                top: -2px;"></i></h3>
+             <p class="card-text text-white">Overall Rating</p>
+=======
             
            <i class="fa fa-star"></i></h3>
         
             <p class="card-text text-white">Overall Rating</p>
+>>>>>>> 85b00876bc926055097e1d9658682e6a961cb6c6:storage/framework/views/65e1c6efa8dfd83c1c057fea356277049fb6fad4.php
           </div>
-        </div>
+       </div>
       </div>
       <div class="col-md-4 p-4">
         <div id="slider" style="height: 400px;">
@@ -690,7 +679,7 @@ fass:hover{
                        </div>
                      </div>
                </div>
-           </div>
+              </div>
              </div>
        </div>
      </div>
@@ -700,13 +689,12 @@ fass:hover{
            <div class="col-md-4 text-center">
                <div class="card1">
                 <img src="<?php echo e(url('images/Frame_1.svg')); ?>" class="card-img-top" alt="...">
-                 
+
                </div>
            </div>
            <div class="col-md-4 text-center">
-               <div class="card1">
-                <img src="<?php echo e(url('images/Frame_2.png')); ?>" class="card-img-top" alt="...">
-                  
+                <div class="card1">
+                <img src="<?php echo e(url('images/Frame_2.png')); ?>" class="card-img-top" alt="...">    
                </div>
            </div>
            <div class="col-md-4 text-center">
@@ -721,9 +709,22 @@ fass:hover{
        </div>
    </div>
        
-
+   
    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+   <script>
+    $(document).ready(function() {
+  
+      $('.multi-item-carousel .item').each(function() {
+      
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+      });
+    });
+  </script>
    <script>
 
 $('document').ready(function(){
@@ -911,5 +912,48 @@ for (var i = 0; i < btns.length; i++) {
    </script>
    
 
+
+
+
+   <script>
+    $('.owl-carousel').owlCarousel({
+  autoplay: true,
+  autoplayTimeout: 5000,
+  autoplayHoverPause: true,
+  loop: true,
+  margin: 50,
+  responsiveClass: true,
+  nav: true,
+  loop: true,
+  stagePadding: 100,
+  responsive: {
+    0: {
+      items: 1
+    },
+    568: {
+      items: 2
+    },
+    600: {
+      items: 3
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
+$(document).ready(function() {
+  $('.popup-youtube').magnificPopup({
+    disableOn: 320,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: true
+  });
+});
+$('.item').magnificPopup({
+  delegate: 'a',
+});
+   </script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\new_roamio\roamio_deals_web\themes/BC/Event/Views/frontend/explore-activity.blade.php ENDPATH**/ ?>
